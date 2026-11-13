@@ -515,9 +515,10 @@ msgid "Above the status bar"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Accent"
-msgstr ""
+msgstr "צבע הדגשה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -659,9 +660,10 @@ msgid "Add Shared Mailbox"
 msgstr "הוסף תיבת דואר משותפת"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Add Shared Mailbox…"
-msgstr ""
+msgstr "הוספת תיבת דואר משותפת…"
 
 #. interface
 #: crates/ui-egui/src/chrome.rs
@@ -1091,9 +1093,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. command label, interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs
 msgid "Animations"
-msgstr ""
+msgstr "הנפשות"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -1358,9 +1361,10 @@ msgid "As the people you write to see it"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Ask again"
-msgstr ""
+msgstr "שאל שוב"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -1572,9 +1576,10 @@ msgid "Automatic Replies for {address}"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Automatic bulleted and numbered lists"
-msgstr ""
+msgstr "רשימות תבליטים ומספור אוטומטיות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -1751,9 +1756,10 @@ msgid "Block Sender"
 msgstr ""
 
 #. interface, name
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/theme/accent.rs
 msgid "Blue"
-msgstr ""
+msgstr "כחול"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -2068,14 +2074,16 @@ msgid "Change the colour"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Change this account's name, servers and sign-in"
-msgstr ""
+msgstr "שינוי שם החשבון, השרתים ופרטי ההתחברות"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Change this account's name, sign-in and mail to keep offline"
-msgstr ""
+msgstr "שינוי שם החשבון, פרטי ההתחברות והדואר לשמירה במצב לא מקוון"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -2152,9 +2160,10 @@ msgid "Check Again"
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/lib.rs
 msgid "Check Calendar Connection"
-msgstr ""
+msgstr "בדיקת החיבור ללוח השנה"
 
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs
@@ -2231,9 +2240,10 @@ msgid "Checking {folder} ({done} of {total})"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Checking: the report comes in a moment…"
-msgstr ""
+msgstr "מתבצעת בדיקה: הדוח יופיע בעוד רגע…"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -2524,14 +2534,16 @@ msgid "Connect Outlook's Favorites"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Connect calendar and contacts"
-msgstr ""
+msgstr "חיבור לוח שנה ואנשי קשר"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Connect to Microsoft (mail, calendar and contacts)"
-msgstr ""
+msgstr "התחברות ל־Microsoft (דואר, לוח שנה ואנשי קשר)"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -2583,9 +2595,10 @@ msgid "Continue editing"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Contributors"
-msgstr ""
+msgstr "תורמים"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -3158,9 +3171,10 @@ msgid "Desktop Alerts"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Desktop alerts"
-msgstr ""
+msgstr "התראות שולחן עבודה"
 
 #. interface
 #: crates/ui-egui/src/alerts.rs
@@ -3427,9 +3441,10 @@ msgid "Download in all mail"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Download messages in full:"
-msgstr ""
+msgstr "הורדת הודעות במלואן:"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -3712,9 +3727,10 @@ msgid "Empty Folder"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Empty Mailbox"
-msgstr ""
+msgstr "ריקון תיבת הדואר"
 
 #. command label
 #: crates/engine/src/cmd/rules.rs
@@ -3772,9 +3788,10 @@ msgid "Every message with this signature gets heavier by as much."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Every minute"
-msgstr ""
+msgstr "כל דקה"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -3797,9 +3814,10 @@ msgid "Everyone outside my organization"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Everything"
-msgstr ""
+msgstr "הכול"
 
 #. interface
 #: crates/ui-egui/src/opening.rs
@@ -3894,14 +3912,16 @@ msgid ""
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs
 msgid "Export Contacts"
-msgstr ""
+msgstr "ייצוא אנשי קשר"
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs
 msgid "Export Folder"
-msgstr ""
+msgstr "ייצוא תיקייה"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -4685,9 +4705,10 @@ msgid "Grab bag"
 msgstr ""
 
 #. interface, name
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/theme/accent.rs
 msgid "Graphite"
-msgstr ""
+msgstr "גרפיט"
 
 #. interface
 #: crates/ui-egui/src/sender_images.rs
@@ -4829,9 +4850,10 @@ msgid "High Importance"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "High contrast"
-msgstr ""
+msgstr "ניגודיות גבוהה"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -4982,9 +5004,10 @@ msgid "Import Your Certificate or Key"
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs
 msgid "Import a .pst File"
-msgstr ""
+msgstr "ייבוא קובץ ‎.pst"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -4992,9 +5015,10 @@ msgid "Import a Certificate"
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs
 msgid "Import a Folder of Mailboxes"
-msgstr ""
+msgstr "ייבוא תיקייה של תיבות דואר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -5204,9 +5228,10 @@ msgid "Include diagnostics"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Include the original message when replying"
-msgstr ""
+msgstr "כלול את ההודעה המקורית בעת מענה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -5225,9 +5250,10 @@ msgid "Indexing mail: {percent}%"
 msgstr ""
 
 #. command label, interface, name, ribbon location
+#, fuzzy
 #: crates/engine/src/cmd/account.rs crates/engine/src/cmd/auto_replies.rs crates/engine/src/cmd/file.rs crates/engine/src/cmd/graph_switch.rs crates/engine/src/cmd/offline.rs crates/engine/src/cmd/shared.rs crates/engine/src/cmd/tasks_remote.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs
 msgid "Info"
-msgstr ""
+msgstr "מידע"
 
 #. ribbon location
 #: crates/ui-egui/src/lib.rs
@@ -5290,14 +5316,16 @@ msgid "Interface Theme"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Interface size"
-msgstr ""
+msgstr "גודל הממשק"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Interface theme"
-msgstr ""
+msgstr "ערכת הנושא של הממשק"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -5670,9 +5698,10 @@ msgid "Keychain"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Label"
-msgstr ""
+msgstr "תווית"
 
 #. interface, ribbon
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/ribbon.rs
@@ -6003,9 +6032,10 @@ msgid "Mail to keep offline"
 msgstr "דואר לשמירה במצב לא מקוון"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Mail to keep offline:"
-msgstr ""
+msgstr "דואר לשמירה במצב לא מקוון:"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6215,9 +6245,10 @@ msgid "MailCraft's search for your keys stopped without an answer. Try again."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/nav.rs
 msgid "Mailbox"
-msgstr ""
+msgstr "תיבת דואר"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -6245,9 +6276,10 @@ msgid "Manage Calendars"
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/rules.rs crates/ui-egui/src/backstage.rs
 msgid "Manage Rules"
-msgstr ""
+msgstr "ניהול כללים"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -6306,9 +6338,10 @@ msgid "Mark Key Verified"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Mark a message as read when it is opened in the reading pane"
-msgstr ""
+msgstr "סמן הודעה כנקראה בעת פתיחתה בחלונית הקריאה"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -6458,9 +6491,10 @@ msgid "Messages on a Light Background"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Messages to download per folder"
-msgstr ""
+msgstr "מספר הודעות להורדה בכל תיקייה"
 
 #. name
 #: crates/model/src/mailbox.rs
@@ -7777,9 +7811,10 @@ msgid "Only to mention you if we make the report public on GitHub."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Only when I ask"
-msgstr ""
+msgstr "רק לפי בקשתי"
 
 #. interface
 #: crates/ui-egui/src/alerts.rs
@@ -7800,9 +7835,10 @@ msgid ""
 msgstr ""
 
 #. interface, ribbon location
+#, fuzzy
 #: crates/engine/src/cmd/calendar_opened.rs crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs
 msgid "Open & Export"
-msgstr ""
+msgstr "פתיחה וייצוא"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -7835,9 +7871,10 @@ msgid "Open Mailbox"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Open Mailbox File"
-msgstr ""
+msgstr "פתיחת קובץ תיבת דואר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -7992,9 +8029,10 @@ msgid "Optional"
 msgstr ""
 
 #. command label, interface, name, ribbon location
+#, fuzzy
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/invitation.rs crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/compose.rs crates/engine/src/cmd/file.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/keys.rs crates/engine/src/cmd/zones.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs
 msgid "Options"
-msgstr ""
+msgstr "אפשרויות"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -8435,9 +8473,10 @@ msgid "Preview attachments with local PhotoCraft"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Preview lines in the message list"
-msgstr ""
+msgstr "שורות תצוגה מקדימה ברשימת ההודעות"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs crates/ui-egui/src/security.rs
@@ -8683,9 +8722,10 @@ msgid "Receiving {name}: {read} of {total} · folder {number} of {folders}"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Recent"
-msgstr ""
+msgstr "אחרונים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
