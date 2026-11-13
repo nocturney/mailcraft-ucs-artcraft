@@ -109,8 +109,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "(No title)"
-msgstr ""
+msgstr "(ללא כותרת)"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -161,8 +162,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "+{n} more"
-msgstr ""
+msgstr "ועוד {n}"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -867,8 +869,9 @@ msgstr ""
 
 #. interface, what a command says
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "All day"
-msgstr ""
+msgstr "כל היום"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -1960,8 +1963,9 @@ msgstr "לבטל פגישה זו?"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Cancelled"
-msgstr ""
+msgstr "בוטל"
 
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/tasks_view.rs
@@ -2426,8 +2430,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Colour"
-msgstr ""
+msgstr "צבע"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/ribbon.rs
@@ -3072,8 +3077,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Delete This Occurrence"
-msgstr ""
+msgstr "מחק מופע זה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -4076,8 +4082,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Fold the calendars of this group away"
-msgstr ""
+msgstr "כווץ את לוחות השנה בקבוצה זו"
 
 #. interface, name, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar_opened.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/rules.rs crates/model/src/mailbox.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs
@@ -4268,8 +4275,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Forward This Occurrence…"
-msgstr ""
+msgstr "העבר מופע זה…"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -4285,8 +4293,9 @@ msgstr[1] ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Forward…"
-msgstr ""
+msgstr "העבר…"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -4751,8 +4760,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Hide This Copy"
-msgstr ""
+msgstr "הסתר עותק זה"
 
 #. interface
 #: crates/ui-egui/src/secret_field.rs
@@ -4776,8 +4786,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Hide this calendar"
-msgstr ""
+msgstr "הסתר לוח שנה זה"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
@@ -4807,8 +4818,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "High importance"
-msgstr ""
+msgstr "חשיבות גבוהה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -5004,8 +5016,9 @@ msgstr ""
 
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Importance"
-msgstr ""
+msgstr "חשיבות"
 
 #. name
 #: crates/ui-egui/src/forms.rs
@@ -5477,8 +5490,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Join {service} Meeting"
-msgstr ""
+msgstr "הצטרף לפגישת {service}"
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/notes.rs crates/ui-egui/src/nav.rs
@@ -5691,8 +5705,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Lay this calendar over the others"
-msgstr ""
+msgstr "הצג לוח שנה זה מעל האחרים"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
@@ -5869,8 +5884,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Low importance"
-msgstr ""
+msgstr "חשיבות נמוכה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -6673,8 +6689,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Move to Calendar"
-msgstr ""
+msgstr "העבר ללוח שנה"
 
 #. command label, interface
 #: crates/engine/src/cmd/gmail_move.rs crates/ui-egui/src/gmail_move.rs
@@ -6693,8 +6710,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Move to My Account's Calendar"
-msgstr ""
+msgstr "העבר ללוח השנה של החשבון שלי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6723,8 +6741,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "My Calendars"
-msgstr ""
+msgstr "לוחות השנה שלי"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -6857,13 +6876,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "New All Day Event"
-msgstr ""
+msgstr "אירוע חדש ליום שלם"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "New Appointment"
-msgstr ""
+msgstr "פעילות חדשה"
 
 #. command label
 #: crates/engine/src/cmd/category.rs
@@ -6897,8 +6918,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "New Meeting"
-msgstr ""
+msgstr "פגישה חדשה"
 
 #. command label, interface
 #: crates/engine/src/cmd/tasks.rs crates/ui-egui/src/forms.rs
@@ -6912,8 +6934,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "New items go to the calendar that is picked here"
-msgstr ""
+msgstr "פריטים חדשים יתווספו ללוח השנה שנבחר כאן"
 
 #. interface, name
 #: crates/model/src/sync/progress.rs crates/ui-egui/src/alerts.rs
@@ -7578,8 +7601,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/widgets.rs
+#, fuzzy
 msgid "On this computer"
-msgstr ""
+msgstr "במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7645,8 +7669,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Online meeting"
-msgstr ""
+msgstr "פגישה מקוונת"
 
 #. interface
 #: crates/ui-egui/src/windows.rs
@@ -7685,8 +7710,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Only on this computer: not in your Outlook calendar"
-msgstr ""
+msgstr "במחשב זה בלבד: לא בלוח השנה שלך ב־Outlook"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7960,8 +7986,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/meeting_dialogs/share.rs
+#, fuzzy
 msgid "Organizer: {name}"
-msgstr ""
+msgstr "מארגן: {name}"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/security.rs
@@ -7976,8 +8003,9 @@ msgstr "אחר (IMAP)"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Other Calendars"
-msgstr ""
+msgstr "לוחות שנה נוספים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8063,8 +8091,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar_settings.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Overlay"
-msgstr ""
+msgstr "תצוגת שכבות"
 
 #. why a mail server couldn't be used
 #: crates/proto/src/imap/password.rs
@@ -8191,8 +8220,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Pick a time in the calendar first, then paste"
-msgstr ""
+msgstr "יש לבחור תחילה מועד בלוח השנה ולאחר מכן להדביק"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -8412,8 +8442,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Private"
-msgstr ""
+msgstr "פרטי"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
@@ -8447,8 +8478,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Propose New Time…"
-msgstr ""
+msgstr "הצע מועד חדש…"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -8811,8 +8843,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar_opened.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Remove Shared Calendar"
-msgstr ""
+msgstr "הסר לוח שנה משותף"
 
 #. command label, interface
 #: crates/engine/src/cmd/shared.rs crates/ui-egui/src/dialogs.rs
@@ -9375,8 +9408,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Save as iCalendar…"
-msgstr ""
+msgstr "שמור כ־iCalendar…"
 
 #. interface
 #: crates/ui-egui/src/compose.rs
@@ -10077,8 +10111,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Shared Calendars"
-msgstr ""
+msgstr "לוחות שנה משותפים"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10126,8 +10161,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Show As"
-msgstr ""
+msgstr "הצג כ"
 
 #. command label
 #: crates/engine/src/cmd/calendar.rs
@@ -10152,8 +10188,9 @@ msgstr "הצגת קטגוריות Gmail תחת תיבת הדואר הנכנס"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar_settings.rs crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Show Only This Calendar"
-msgstr ""
+msgstr "הצג רק לוח שנה זה"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/nav.rs
@@ -10269,8 +10306,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Show the calendars of this group"
-msgstr ""
+msgstr "הרחב את לוחות השנה בקבוצה זו"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -10300,8 +10338,9 @@ msgstr "הצג את האזהרה בהודעה זו"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Show this week"
-msgstr ""
+msgstr "הצג שבוע זה"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -13183,8 +13222,9 @@ msgstr ""
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/time/src/lib.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/date_picker.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Today"
-msgstr ""
+msgstr "היום"
 
 #. interface, name, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
