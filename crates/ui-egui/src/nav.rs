@@ -57,44 +57,69 @@ const FAVORITES: Id = 0;
 const ACCOUNT_DOT_RADIUS: f32 = 4.5;
 const ACCOUNT_DOT_ROOM: f32 = 16.0;
 
+/// Keep the module and folder panes together on the reading edge of a Hebrew window.
+/// The document and calendar areas can then use the space to their left.
+fn navigation_on_right() -> bool {
+    matches!(crate::i18n::current().code(), "he" | "iw")
+}
+
+fn navigation_panel(id: &'static str, right: bool) -> egui::Panel {
+    if right { egui::Panel::right(id) } else { egui::Panel::left(id) }
+}
+
+/// The accent marking the active module follows the outer edge of its rail.
+fn rail_active_mark(r: Rect, right: bool) -> Rect {
+    let x = if right { r.max.x - 8.0 } else { r.min.x + 6.0 };
+    Rect::from_min_size(pos2(x, r.center().y - 16.0), vec2(2.0, 32.0))
+}
+
+fn hide_pane_button(r: Rect, right: bool) -> Rect {
+    let x = if right { r.min.x + 14.0 } else { r.max.x - 14.0 };
+    Rect::from_center_size(pos2(x, r.center().y), vec2(20.0, 20.0))
+}
+
 /// The module bar. It runs from under the title bar down to the status bar, beside the tabs and
 /// the ribbon as well as the panes, so the window lays it out before the ribbon.
 pub fn module_bar(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    egui::Panel::left("modules").exact_size(RAIL_W).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(t.nav)).show(ui, |ui| {
-        ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
-        for m in Module::ALL {
-            let (icon, id) = match m {
-                Module::Mail => ("mail", "view.mail"),
-                Module::Calendar => ("calendar", "view.calendar"),
-                Module::People => ("people", "view.people"),
-                Module::Tasks => ("tasks", "view.tasks"),
-            };
-            let (r, resp) = ui.allocate_exact_size(vec2(RAIL_W, RAIL_PITCH), Sense::click());
-            let active = app.session.view.module == m;
-            if active {
-                // The module in view: a bar at the window's edge, and its icon in the accent.
-                let bar = Rect::from_min_size(pos2(r.min.x + 6.0, r.center().y - 16.0), vec2(2.0, 32.0));
-                ui.painter().rect_filled(bar, 1.0, t.accent);
-            } else if resp.hovered() {
-                ui.painter().rect_filled(r.shrink(6.0), 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
+    let right = navigation_on_right();
+    navigation_panel("modules", right).exact_size(RAIL_W).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(t.nav)).show(
+        ui,
+        |ui| {
+            ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
+            for m in Module::ALL {
+                let (icon, id) = match m {
+                    Module::Mail => ("mail", "view.mail"),
+                    Module::Calendar => ("calendar", "view.calendar"),
+                    Module::People => ("people", "view.people"),
+                    Module::Tasks => ("tasks", "view.tasks"),
+                };
+                let (r, resp) = ui.allocate_exact_size(vec2(RAIL_W, RAIL_PITCH), Sense::click());
+                let active = app.session.view.module == m;
+                if active {
+                    // The module in view: a bar at the window's edge, and its icon in the accent.
+                    let bar = rail_active_mark(r, right);
+                    ui.painter().rect_filled(bar, 1.0, t.accent);
+                } else if resp.hovered() {
+                    ui.painter().rect_filled(r.shrink(6.0), 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
+                }
+                // One colour: the icons of the bar are line drawings, lit when theirs is the module in view.
+                let ink = if active { t.accent_text } else { t.icon };
+                icons::paint(ui.painter(), Rect::from_center_size(r.center(), vec2(24.0, 24.0)), icon, ink, ink);
+                let sc = crate::widgets::shortcut_text(app, id);
+                if resp.on_hover_text(format!("{} ({sc})", tl!(m.label()))).clicked() {
+                    let _ = app.run(id, json!({}));
+                }
             }
-            // One colour: the icons of the bar are line drawings, lit when theirs is the module in view.
-            let ink = if active { t.accent_text } else { t.icon };
-            icons::paint(ui.painter(), Rect::from_center_size(r.center(), vec2(24.0, 24.0)), icon, ink, ink);
-            let sc = crate::widgets::shortcut_text(app, id);
-            if resp.on_hover_text(format!("{} ({sc})", tl!(m.label()))).clicked() {
-                let _ = app.run(id, json!({}));
+            // What a .pst file's notes and journal entries will be read in: kept, with no view yet.
+            for (icon, name) in [("notes", tl!("Notes")), ("journal", tl!("Journal"))] {
+                let (r, resp) = ui.allocate_exact_size(vec2(RAIL_W, RAIL_PITCH), Sense::hover());
+                let ink = t.icon.linear_multiply(0.45);
+                icons::paint(ui.painter(), Rect::from_center_size(r.center(), vec2(24.0, 24.0)), icon, ink, ink);
+                resp.on_hover_text(format!("{name}: {}", tl!("Pending development")));
             }
-        }
-        // What a .pst file's notes and journal entries will be read in: kept, with no view yet.
-        for (icon, name) in [("notes", tl!("Notes")), ("journal", tl!("Journal"))] {
-            let (r, resp) = ui.allocate_exact_size(vec2(RAIL_W, RAIL_PITCH), Sense::hover());
-            let ink = t.icon.linear_multiply(0.45);
-            icons::paint(ui.painter(), Rect::from_center_size(r.center(), vec2(24.0, 24.0)), icon, ink, ink);
-            resp.on_hover_text(format!("{name}: {}", tl!("Pending development")));
-        }
-    });
+        },
+    );
 }
 
 /// How deep the pane follows subfolders, and how many rows it lists for one account: a mailbox
@@ -690,10 +715,11 @@ fn favorites_note(app: &mut MailApp, ui: &mut Ui, account: Id, note: &Note) {
 
 /// The pane as a sheet lying on the window: the panel colour with a line along its top and left,
 /// rounded where the two meet beside the module bar and under the ribbon.
-fn sheet(painter: &Painter, r: Rect, t: &Tokens) {
+fn sheet(painter: &Painter, r: Rect, t: &Tokens, right: bool) {
     let radius = f32::from(SHEET_CORNER);
-    painter.rect_filled(r, CornerRadius { nw: SHEET_CORNER, ne: 0, sw: 0, se: 0 }, t.panel);
-    // Up the left edge, round the corner, along the top: half a pixel in, so the line is crisp.
+    let corners = if right { CornerRadius { nw: 0, ne: SHEET_CORNER, sw: 0, se: 0 } } else { CornerRadius { nw: SHEET_CORNER, ne: 0, sw: 0, se: 0 } };
+    painter.rect_filled(r, corners, t.panel);
+    // Reflect the border and rounded corner without changing the left-to-right case.
     let (left, top) = (r.min.x + 0.5, r.min.y + 0.5);
     let centre = pos2(left + radius, top + radius);
     let mut line = vec![pos2(left, r.max.y)];
@@ -702,6 +728,11 @@ fn sheet(painter: &Painter, r: Rect, t: &Tokens) {
         pos2(centre.x + radius * a.cos(), centre.y + radius * a.sin())
     }));
     line.push(pos2(r.max.x, top));
+    if right {
+        for p in &mut line {
+            p.x = r.min.x + r.max.x - p.x;
+        }
+    }
     painter.add(Shape::line(line, Stroke::new(1.0, t.border_strong)));
 }
 
@@ -710,13 +741,18 @@ fn pane_top(app: &mut MailApp, ui: &mut Ui, t: &Tokens) {
     // The line along the pane's top, and a little air under it.
     ui.add_space(4.0);
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), ROW_H), Sense::hover());
-    let button = Rect::from_center_size(pos2(r.max.x - 14.0, r.center().y), vec2(20.0, 20.0));
+    let right = navigation_on_right();
+    let button = hide_pane_button(r, right);
     let resp = ui.interact(button, ui.scope_id().with("hide_pane"), Sense::click());
     if resp.hovered() {
         ui.painter().rect_filled(button, 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
     }
     let c = button.center();
-    ui.painter().add(Shape::line(vec![pos2(c.x + 1.75, c.y - 3.4), pos2(c.x - 1.65, c.y), pos2(c.x + 1.75, c.y + 3.4)], Stroke::new(1.5, t.text)));
+    let direction = if right { -1.0 } else { 1.0 };
+    ui.painter().add(Shape::line(
+        vec![pos2(c.x + 1.75 * direction, c.y - 3.4), pos2(c.x - 1.65 * direction, c.y), pos2(c.x + 1.75 * direction, c.y + 3.4)],
+        Stroke::new(1.5, t.text),
+    ));
     app.hit.add("folderPaneHide", 0, button);
     if resp.on_hover_text(tl!("Hide the folder pane")).clicked() {
         let _ = app.run("view.folderPane", json!({"value": false}));
@@ -727,8 +763,9 @@ fn pane_top(app: &mut MailApp, ui: &mut Ui, t: &Tokens) {
 /// brings it back, where the button that hid it was.
 pub fn folder_pane_strip(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    egui::Panel::left("folders_hidden").exact_size(STRIP_W).resizable(false).frame(egui::Frame::NONE.fill(t.canvas)).show(ui, |ui| {
-        sheet(ui.painter(), ui.max_rect(), &t);
+    let right = navigation_on_right();
+    navigation_panel("folders_hidden", right).exact_size(STRIP_W).resizable(false).frame(egui::Frame::NONE.fill(t.canvas)).show(ui, |ui| {
+        sheet(ui.painter(), ui.max_rect(), &t, right);
         ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
         ui.add_space(4.0);
         let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), ROW_H), Sense::hover());
@@ -738,8 +775,11 @@ pub fn folder_pane_strip(app: &mut MailApp, ui: &mut Ui) {
             ui.painter().rect_filled(button, 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
         }
         let c = button.center();
-        ui.painter()
-            .add(Shape::line(vec![pos2(c.x - 1.75, c.y - 3.4), pos2(c.x + 1.65, c.y), pos2(c.x - 1.75, c.y + 3.4)], Stroke::new(1.5, t.text)));
+        let direction = if right { -1.0 } else { 1.0 };
+        ui.painter().add(Shape::line(
+            vec![pos2(c.x - 1.75 * direction, c.y - 3.4), pos2(c.x + 1.65 * direction, c.y), pos2(c.x - 1.75 * direction, c.y + 3.4)],
+            Stroke::new(1.5, t.text),
+        ));
         app.hit.add("folderPaneShow", 0, button);
         if resp.on_hover_text(tl!("Show the folder pane")).clicked() {
             let _ = app.run("view.folderPane", json!({"value": true}));
@@ -750,7 +790,8 @@ pub fn folder_pane_strip(app: &mut MailApp, ui: &mut Ui) {
 /// The folder pane: favourites, then every account's folders.
 pub fn folder_pane(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    let panel = egui::Panel::left("folders")
+    let right = navigation_on_right();
+    let panel = navigation_panel("folders", right)
         .default_size(app.ui.folder_pane_width)
         .size_range(160.0..=420.0)
         .resizable(true)
@@ -759,7 +800,7 @@ pub fn folder_pane(app: &mut MailApp, ui: &mut Ui) {
         .show_separator_line(t.pane_rule)
         .frame(egui::Frame::NONE.fill(t.canvas));
     let shown = panel.show(ui, |ui| {
-        sheet(ui.painter(), ui.max_rect(), &t);
+        sheet(ui.painter(), ui.max_rect(), &t, right);
         ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
         pane_top(app, ui, &t);
         egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
@@ -953,3 +994,27 @@ pub(crate) fn heading_name(app: &MailApp, a: &mailcraft_model::Account) -> Strin
 #[cfg(test)]
 #[path = "nav_tests.rs"]
 pub(crate) mod tests;
+
+#[cfg(test)]
+mod rtl_navigation_geometry_tests {
+    use super::*;
+
+    #[test]
+    fn hebrew_rail_marker_and_folder_button_mirror_without_changing_their_sizes() {
+        let rail = Rect::from_min_size(pos2(100.0, 20.0), vec2(RAIL_W, RAIL_PITCH));
+        let left = rail_active_mark(rail, false);
+        let right = rail_active_mark(rail, true);
+        assert_eq!(left.min.x, 106.0);
+        assert_eq!(right.max.x, 142.0);
+        assert_eq!(left.size(), right.size());
+        assert_eq!(left.center().y, right.center().y);
+
+        let row = Rect::from_min_size(pos2(100.0, 40.0), vec2(240.0, ROW_H));
+        let ltr = hide_pane_button(row, false);
+        let rtl = hide_pane_button(row, true);
+        assert_eq!(ltr.center().x, 326.0);
+        assert_eq!(rtl.center().x, 114.0);
+        assert_eq!(ltr.size(), rtl.size());
+        assert_eq!(ltr.center().y, rtl.center().y);
+    }
+}
