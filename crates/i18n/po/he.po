@@ -332,18 +332,21 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "A link goes somewhere else."
-msgstr ""
+msgstr "הקישור מוביל לכתובת אחרת."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "A link that reads {named} goes to {host}."
-msgstr ""
+msgstr "קישור שהטקסט שלו הוא {named} מוביל אל {host}."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "A link whose text is mostly characters that aren't shown goes to {host}."
-msgstr ""
+msgstr "קישור שהטקסט שלו מורכב בעיקר מתווים מוסתרים מוביל אל {host}."
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
@@ -1715,8 +1718,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Be careful with this message."
-msgstr ""
+msgstr "יש לנקוט זהירות בהודעה זו."
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -3232,8 +3236,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "Dismiss"
-msgstr ""
+msgstr "התעלם"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
@@ -3267,8 +3272,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Dismiss this warning for this message. It comes back if a new kind of warning appears."
-msgstr ""
+msgstr "הסתר את האזהרה בהודעה זו. היא תופיע שוב אם תזוהה אזהרה מסוג חדש."
 
 #. interface, name
 #: crates/ui-egui/src/credits.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
@@ -3882,8 +3888,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "External"
-msgstr ""
+msgstr "חיצוני"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
@@ -3892,8 +3899,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Failed check."
-msgstr ""
+msgstr "הבדיקה נכשלה."
 
 #. interface, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
@@ -4335,8 +4343,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "From outside your organisation."
-msgstr ""
+msgstr "מחוץ לארגון שלך."
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -4721,8 +4730,9 @@ msgstr "עזרה"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Hide"
-msgstr ""
+msgstr "הסתר"
 
 #. command label
 #: crates/engine/src/cmd/calendar_opened.rs
@@ -4771,8 +4781,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Hide this message's warning again"
-msgstr ""
+msgstr "הסתר שוב את האזהרה בהודעה זו"
 
 #. interface, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/forms.rs
@@ -5822,8 +5833,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Lookalike address."
-msgstr ""
+msgstr "כתובת דומה ומטעה."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -6572,8 +6584,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Most of the sender's name is characters that aren't shown, and the message came from {real}."
-msgstr ""
+msgstr "רוב התווים בשם השולח מוסתרים, וההודעה נשלחה מ־{real}."
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/gmail_move.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/rules.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -7348,8 +7361,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Not every layout checked."
-msgstr ""
+msgstr "לא כל תצוגות ההודעה נבדקו."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -8284,8 +8298,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Point at a link to see where it goes."
-msgstr ""
+msgstr "רחף מעל קישור כדי לראות לאן הוא מוביל."
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -10279,8 +10294,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Show this message's warning"
-msgstr ""
+msgstr "הצג את האזהרה בהודעה זו"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -11752,18 +11768,21 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The name hides another address."
-msgstr ""
+msgstr "השם מסתיר כתובת אחרת."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The name hides characters."
-msgstr ""
+msgstr "השם מכיל תווים מוסתרים."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The name of someone you know."
-msgstr ""
+msgstr "שם של אדם המוכר לך."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -11892,23 +11911,27 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The sender uses your name, but this message came from {real}, which isn't one of your addresses."
-msgstr ""
+msgstr "השולח משתמש בשם שלך, אך ההודעה נשלחה מ־{real}, שאינה אחת מהכתובות שלך."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The sender's address is at {domain}."
-msgstr ""
+msgstr "כתובת השולח שייכת לשם התחום {domain}."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The sender's domain, {domain}, looks like {like}, which you correspond with, but it isn't the same."
-msgstr ""
+msgstr "שם התחום של השולח, {domain}, דומה ל־{like}, שעמו התכתבת, אך אינו זהה לו."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "The sender's name shows {shown}, but the message came from {real}."
-msgstr ""
+msgstr "שם השולח מוצג כ־{shown}, אך ההודעה נשלחה מ־{real}."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -12796,8 +12819,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "This message came from outside your organisation."
-msgstr ""
+msgstr "הודעה זו הגיעה מחוץ לארגון שלך."
 
 #. interface, what a command says
 #: crates/engine/src/cmd/calendar/invitation.rs crates/ui-egui/src/reading/invitation.rs
@@ -12856,13 +12880,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "This message lays itself out in more ways than MailCraft could check, so a link in one of them may go somewhere other than its text says."
-msgstr ""
+msgstr "בהודעה זו יש תצוגות נוספות שלא ניתן היה לבדוק ב־MailCraft. קישור באחת מהן עלול להוביל לכתובת אחרת מזו שמוצגת בטקסט."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "This message may not be what it seems."
-msgstr ""
+msgstr "ייתכן שהודעה זו אינה כפי שהיא נראית."
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -14080,13 +14106,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Your mail server checked where this message came from, and the check failed, though the sender's domain asks for nothing to be done about it: the sender's address may be forged."
-msgstr ""
+msgstr "שרת הדוא״ל שלך בדק את מקור ההודעה, אך הבדיקה נכשלה. אף ששם התחום של השולח אינו דורש פעולה בעקבות הכישלון, ייתכן שכתובת השולח מזויפת."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Your mail server checked where this message came from, and the check failed: the sender's address may be forged."
-msgstr ""
+msgstr "שרת הדוא״ל שלך בדק את מקור ההודעה, אך הבדיקה נכשלה. ייתכן שכתובת השולח מזויפת."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -14230,8 +14258,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "Your own name."
-msgstr ""
+msgstr "השם שלך."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -16839,8 +16868,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
+#, fuzzy
 msgid "{name} is the name of someone you know, but this message came from {real}, which isn't one of their addresses."
-msgstr ""
+msgstr "השם {name} שייך לאדם המוכר לך, אך ההודעה נשלחה מ־{real}, שאינה אחת מהכתובות שלו."
 
 #. what a command says
 #: crates/engine/src/cmd/file.rs
