@@ -19,54 +19,89 @@ pub const PAGES: &[(&str, &str, &str)] = &[
     ("about", "About", "help"),
 ];
 
+/// Physical positions of a Backstage navigation row. Hebrew mirrors the page rail
+/// while the same row keeps its icon, label and click target together.
+fn nav_row_positions(row: Rect, rtl: bool) -> (egui::Pos2, egui::Pos2, Align2) {
+    let icon_x = if rtl { row.max.x - 28.0 } else { row.min.x + 28.0 };
+    let text_x = if rtl { row.max.x - 48.0 } else { row.min.x + 48.0 };
+    let align = if rtl { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER };
+    (pos2(icon_x, row.center().y), pos2(text_x, row.center().y), align)
+}
+
+fn nav_selection_marker(row: Rect, rtl: bool) -> Rect {
+    let x = if rtl { row.max.x - 11.0 } else { row.min.x + 8.0 };
+    Rect::from_min_size(pos2(x, row.center().y - 9.0), vec2(3.0, 18.0))
+}
+
+#[cfg(test)]
+mod hebrew_backstage_geometry_tests {
+    use super::*;
+
+    #[test]
+    fn hebrew_page_rail_mirrors_without_changing_size_or_click_row() {
+        let row = Rect::from_min_size(pos2(10.0, 20.0), vec2(210.0, 36.0));
+        let (left_icon, left_text, left_align) = nav_row_positions(row, false);
+        let (right_icon, right_text, right_align) = nav_row_positions(row, true);
+        let axis = row.min.x + row.max.x;
+        assert_eq!(left_align, Align2::LEFT_CENTER);
+        assert_eq!(right_align, Align2::RIGHT_CENTER);
+        assert!((left_icon.x + right_icon.x - axis).abs() < 0.001);
+        assert!((left_text.x + right_text.x - axis).abs() < 0.001);
+        assert_eq!(left_icon.y, right_icon.y);
+        assert_eq!(left_text.y, right_text.y);
+
+        let left_mark = nav_selection_marker(row, false);
+        let right_mark = nav_selection_marker(row, true);
+        assert_eq!(left_mark.size(), right_mark.size());
+        assert!((left_mark.center().x + right_mark.center().x - axis).abs() < 0.001);
+        assert_eq!(left_mark.center().y, right_mark.center().y);
+    }
+}
+
 pub fn show(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
     let top = if app.integrated_titlebar { crate::chrome::MAC_TITLE_BAR } else { 0.0 };
     // The column of pages: the accent with its ink on a light window; in the dark a neutral
     // column, where the accent only marks the page in view.
     let (column, ink) = (t.backstage_column, t.backstage_ink);
-    egui::Panel::left("backstage_nav").exact_size(210.0).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(column)).show(
-        ui,
-        |ui| {
-            ui.spacing_mut().item_spacing = vec2(0.0, 2.0);
-            ui.add_space(top + 10.0);
-            // Back to the mailbox.
-            let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 40.0), Sense::click());
-            if resp.hovered() {
-                ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 5.0, ink.linear_multiply(0.14));
+    let rtl = crate::i18n::current().code() == "he";
+    let panel = if rtl { egui::Panel::right("backstage_nav") } else { egui::Panel::left("backstage_nav") };
+    panel.exact_size(210.0).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(column)).show(ui, |ui| {
+        ui.spacing_mut().item_spacing = vec2(0.0, 2.0);
+        ui.add_space(top + 10.0);
+        // Back to the mailbox.
+        let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 40.0), Sense::click());
+        if resp.hovered() {
+            ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 5.0, ink.linear_multiply(0.14));
+        }
+        let (icon_at, text_at, text_align) = nav_row_positions(r, rtl);
+        let arrow = if rtl { "next" } else { "previous" };
+        icons::paint(ui.painter(), Rect::from_center_size(icon_at, vec2(18.0, 18.0)), arrow, ink, ink);
+        ui.painter().text(text_at, text_align, tl!("Back"), semibold(13.5), ink);
+        if resp.clicked() {
+            let _ = app.run("ui.backstage", json!({"value": false}));
+        }
+        ui.add_space(10.0);
+        for (code, label, icon) in PAGES {
+            let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 36.0), Sense::click());
+            let active = app.ui.backstage_page == *code;
+            if active {
+                ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 6.0, t.accent_soft);
+            } else if resp.hovered() {
+                ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 6.0, t.hover);
             }
-            icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 28.0, r.center().y), vec2(18.0, 18.0)), "previous", ink, ink);
-            ui.painter().text(pos2(r.min.x + 48.0, r.center().y), Align2::LEFT_CENTER, tl!("Back"), semibold(13.5), ink);
+            let ink = if active { t.accent_soft_text } else { ink };
+            if active {
+                ui.painter().rect_filled(nav_selection_marker(r, rtl), 1.5, t.backstage_mark);
+            }
+            let (icon_at, text_at, text_align) = nav_row_positions(r, rtl);
+            icons::paint(ui.painter(), Rect::from_center_size(icon_at, vec2(16.0, 16.0)), icon, ink, ink);
+            ui.painter().text(text_at, text_align, tl!(label), if active { semibold(13.0) } else { regular(13.0) }, ink);
             if resp.clicked() {
-                let _ = app.run("ui.backstage", json!({"value": false}));
+                let _ = app.run("ui.backstage", json!({"value": true, "page": code}));
             }
-            ui.add_space(10.0);
-            for (code, label, icon) in PAGES {
-                let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 36.0), Sense::click());
-                let active = app.ui.backstage_page == *code;
-                if active {
-                    ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 6.0, t.accent_soft);
-                } else if resp.hovered() {
-                    ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 6.0, t.hover);
-                }
-                let ink = if active { t.accent_soft_text } else { ink };
-                if active {
-                    ui.painter().rect_filled(Rect::from_min_size(pos2(r.min.x + 8.0, r.center().y - 9.0), vec2(3.0, 18.0)), 1.5, t.backstage_mark);
-                }
-                icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 28.0, r.center().y), vec2(16.0, 16.0)), icon, ink, ink);
-                ui.painter().text(
-                    pos2(r.min.x + 48.0, r.center().y),
-                    Align2::LEFT_CENTER,
-                    tl!(label),
-                    if active { semibold(13.0) } else { regular(13.0) },
-                    ink,
-                );
-                if resp.clicked() {
-                    let _ = app.run("ui.backstage", json!({"value": true, "page": code}));
-                }
-            }
-        },
-    );
+        }
+    });
     egui::CentralPanel::default()
         .frame(egui::Frame::NONE.fill(t.surface).inner_margin(egui::Margin { left: 36, right: 36, top: 24, bottom: 24 }))
         .show(ui, |ui| {
