@@ -65,6 +65,7 @@ pub enum Lang {
     Italian,
     Dutch,
     Romanian,
+    Hebrew,
     ChineseSimplified,
     /// Accented look-alikes of the English text, for finding text that skips translation. Set by
     /// command only; never offered.
@@ -73,8 +74,8 @@ pub enum Lang {
 
 impl Lang {
     /// Every language there is a name for (whether or not it has a catalogue yet).
-    pub const ALL: [Lang; 9] =
-        [Lang::English, Lang::French, Lang::German, Lang::Spanish, Lang::Italian, Lang::Dutch, Lang::Romanian, Lang::ChineseSimplified, Lang::Pseudo];
+    pub const ALL: [Lang; 10] =
+        [Lang::English, Lang::French, Lang::German, Lang::Spanish, Lang::Italian, Lang::Dutch, Lang::Romanian, Lang::Hebrew, Lang::ChineseSimplified, Lang::Pseudo];
 
     /// Its code: `en`, `fr`, `pseudo` (the settings' and the commands' value; the `.po` file's name).
     pub fn code(self) -> &'static str {
@@ -86,6 +87,7 @@ impl Lang {
             Lang::Italian => "it",
             Lang::Dutch => "nl",
             Lang::Romanian => "ro",
+            Lang::Hebrew => "he",
             Lang::ChineseSimplified => "zh_CN",
             Lang::Pseudo => "pseudo",
         }
@@ -124,6 +126,7 @@ impl Lang {
             "it" => Some(Lang::Italian),
             "nl" => Some(Lang::Dutch),
             "ro" => Some(Lang::Romanian),
+            "he" | "iw" => Some(Lang::Hebrew),
             _ => None,
         }
     }
@@ -138,6 +141,7 @@ impl Lang {
             Lang::Italian => "Italiano",
             Lang::Dutch => "Nederlands",
             Lang::Romanian => "Română",
+            Lang::Hebrew => "עברית",
             Lang::ChineseSimplified => "简体中文",
             Lang::Pseudo => "Pseudo",
         }
@@ -145,7 +149,7 @@ impl Lang {
 
     /// No native speaker has reviewed its main screens yet: named "(preview)" where it is chosen.
     pub fn preview(self) -> bool {
-        matches!(self, Lang::French | Lang::German | Lang::Spanish | Lang::Italian | Lang::Dutch | Lang::Romanian | Lang::ChineseSimplified)
+        matches!(self, Lang::French | Lang::German | Lang::Spanish | Lang::Italian | Lang::Dutch | Lang::Romanian | Lang::Hebrew | Lang::ChineseSimplified)
     }
 
     /// Its name as the language picker shows it: in its own language, and, while it is a preview,
@@ -400,6 +404,9 @@ mod tests {
         assert_eq!(Lang::from_code("es_MX.UTF-8"), Some(Lang::Spanish));
         assert_eq!(Lang::from_code("it-CH"), Some(Lang::Italian));
         assert_eq!(Lang::from_code("nl-NL"), Some(Lang::Dutch));
+        assert_eq!(Lang::from_code("he-IL.UTF-8"), Some(Lang::Hebrew));
+        assert_eq!(Lang::from_code("iw_IL"), Some(Lang::Hebrew));
+        assert_eq!(Lang::Hebrew.code(), "he");
         let fr = if Lang::French.has_catalogue() { Lang::French } else { Lang::English };
         assert_eq!(Lang::from_pref("auto", Some("fr-BE")), fr);
         assert_eq!(Lang::from_pref("fr", None), fr);
@@ -438,6 +445,7 @@ mod tests {
             "Italiano (anteprima)",
             "Nederlands (voorbeeld)",
             "Română (previzualizare)",
+            "עברית (תצוגה מקדימה)",
         ];
         if !cfg!(target_arch = "wasm32") {
             expected.push("简体中文（预览）");
@@ -451,6 +459,10 @@ mod tests {
         assert_eq!(Lang::from_pref("nl", None), Lang::Dutch);
         assert_eq!(Lang::from_pref("auto", Some("ro_RO.UTF-8")), Lang::Romanian);
         assert_eq!(Lang::from_pref("ro", None), Lang::Romanian);
+        assert_eq!(Lang::from_pref("he", None), Lang::Hebrew);
+        assert_eq!(Lang::from_pref("auto", Some("he_IL")), Lang::Hebrew);
+        assert_eq!(Lang::Hebrew.t("Inbox"), "דואר נכנס");
+        assert_eq!(Lang::Hebrew.folder("Archive"), "ארכיון");
     }
 
     #[test]
