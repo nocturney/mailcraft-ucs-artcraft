@@ -56,8 +56,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "\"{name}\" has changes that aren't saved. Save them?"
-msgstr ""
+msgstr "יש שינויים שלא נשמרו ב־\"{name}\". לשמור אותם?"
 
 #. what a command says
 #: crates/engine/src/cmd/people_merge.rs
@@ -66,13 +67,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "\"{name}\" is one of a series. Do you mean just the one on {day}, or the entire series?"
-msgstr ""
+msgstr "הפריט \"{name}\" הוא חלק מסדרה. האם הכוונה לפריט בתאריך {day} בלבד או לסדרה כולה?"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "\"{name}\" will be permanently deleted."
-msgstr ""
+msgstr "\"{name}\" יימחק לצמיתות."
 
 #. why a mail server couldn't be used
 #: crates/proto/src/imap/mod.rs
@@ -388,8 +391,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs
+#, fuzzy
 msgid "A note to go with it (optional)"
-msgstr ""
+msgstr "הערה מצורפת (לא חובה)"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -490,8 +494,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "About {size} of mail older than {window} will be removed from this computer. It stays on the server."
-msgstr ""
+msgstr "כ־{size} של דואר שגילו עולה על {window} יוסר מהמחשב. הדואר יישאר בשרת."
 
 #. ribbon location
 #: crates/ui-egui/src/lib.rs
@@ -1651,8 +1656,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Available formats:"
-msgstr ""
+msgstr "תבניות זמינות:"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/ribbon.rs
@@ -1933,8 +1939,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Cancel This Meeting?"
-msgstr ""
+msgstr "לבטל פגישה זו?"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -1991,13 +1998,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Change Recurring Item"
-msgstr ""
+msgstr "שינוי פריט חוזר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Change This Meeting?"
-msgstr ""
+msgstr "לשנות פגישה זו?"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
@@ -2006,8 +2015,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Change Your Copy of This Meeting?"
-msgstr ""
+msgstr "לשנות את העותק שלך מפגישה זו?"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2076,13 +2086,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Characters (no spaces)"
-msgstr ""
+msgstr "תווים (ללא רווחים)"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Characters (with spaces)"
-msgstr ""
+msgstr "תווים (כולל רווחים)"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -2118,8 +2130,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Check Now"
-msgstr ""
+msgstr "בדיקה כעת"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -2514,8 +2527,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Contacts don't go to Deleted Items."
-msgstr ""
+msgstr "אנשי קשר אינם מועברים לפריטים שנמחקו."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/open_shared.rs crates/ui-egui/src/opening.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs crates/ui-egui/src/task_sync.rs
@@ -2874,13 +2888,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Date (YYYY-MM-DD)"
-msgstr ""
+msgstr "תאריך (YYYY-MM-DD)"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Date and Time"
-msgstr ""
+msgstr "תאריך ושעה"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -2914,13 +2930,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Decline and Tell the Organizer"
-msgstr ""
+msgstr "דחייה ושליחת הודעה למארגן"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Decline without Telling"
-msgstr ""
+msgstr "דחייה ללא שליחת הודעה"
 
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
@@ -2996,8 +3014,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Delete My Copy"
-msgstr ""
+msgstr "מחיקת העותק שלי"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -3007,8 +3026,9 @@ msgstr "מחק לצמיתות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Delete Recurring Item"
-msgstr ""
+msgstr "מחיקת פריט חוזר"
 
 #. command label
 #: crates/engine/src/cmd/rules.rs
@@ -3034,8 +3054,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Delete Your Copy of This Meeting?"
-msgstr ""
+msgstr "למחוק את העותק שלך מפגישה זו?"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -3250,8 +3271,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Don't Save"
-msgstr ""
+msgstr "לא לשמור"
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
@@ -3260,23 +3282,27 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading/invitation.rs
+#, fuzzy
 msgid "Don't Send a Response"
-msgstr ""
+msgstr "לא לשלוח תגובה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Don't Send, Keep on This Computer"
-msgstr ""
+msgstr "לא לשלוח; להשאיר במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Don't ask again for these accounts"
-msgstr ""
+msgstr "לא לשאול שוב לגבי חשבונות אלה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Don't ask again for this account"
-msgstr ""
+msgstr "לא לשאול שוב לגבי חשבון זה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
@@ -3338,8 +3364,9 @@ msgstr "הורד תמונות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Download Pictures in All Mail"
-msgstr ""
+msgstr "הורדת תמונות בכל הודעות הדואר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -3740,8 +3767,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Everything in \"{folder}\" will be permanently deleted."
-msgstr ""
+msgstr "כל התוכן בתיקייה \"{folder}\" יימחק לצמיתות."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -4059,8 +4087,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Folder name"
-msgstr ""
+msgstr "שם התיקייה"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -5282,8 +5311,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "It is removed from the mail server too, and that can't be undone."
-msgstr ""
+msgstr "הפריט יוסר גם משרת הדואר, ולא ניתן לבטל את הפעולה."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -5450,8 +5480,9 @@ msgstr "דואר זבל"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Just This One"
-msgstr ""
+msgstr "פריט זה בלבד"
 
 #. interface
 #: crates/ui-egui/src/open_shared.rs
@@ -7007,8 +7038,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "No command matches."
-msgstr ""
+msgstr "לא נמצאה פקודה תואמת."
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -7417,8 +7449,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/calendar_sync.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/move_items.rs crates/ui-egui/src/settings_notice.rs crates/ui-egui/src/software.rs crates/ui-egui/src/updates.rs
+#, fuzzy
 msgid "OK"
-msgstr ""
+msgstr "אישור"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -7642,8 +7675,9 @@ msgstr ""
 
 #. interface, ribbon
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Open"
-msgstr ""
+msgstr "פתיחה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -7694,8 +7728,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Open Recurring Item"
-msgstr ""
+msgstr "פתיחת פריט חוזר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
