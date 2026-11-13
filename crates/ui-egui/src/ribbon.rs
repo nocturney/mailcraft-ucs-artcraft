@@ -2170,7 +2170,30 @@ pub(crate) fn show_window(app: &mut MailApp, ui: &mut Ui, window: u64, tab: &mut
 
 /// The row of tabs, `current` the one in view, with Search commands at its right end; `id` names
 /// its panel. The tab clicked, and whether it was a double click.
+fn tab_strip_layout(hebrew: bool) -> egui::Layout {
+    if hebrew { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) }
+}
+
+fn tab_search_layout(hebrew: bool) -> egui::Layout {
+    // Search stays at the far end, opposite the first File tab.
+    if hebrew { egui::Layout::left_to_right(egui::Align::Center) } else { egui::Layout::right_to_left(egui::Align::Center) }
+}
+
 fn strip(app: &mut MailApp, ui: &mut Ui, tabs: &[&'static str], current: &str, id: egui::Id) -> Option<(&'static str, bool)> {
+    // Use the reading edge of the language, not the left edge of the window.
+    // Keep the stable command ids and logical keyboard order unchanged.
+    let hebrew = matches!(crate::i18n::current().code(), "he" | "iw");
+    strip_with_direction(app, ui, tabs, current, id, hebrew)
+}
+
+fn strip_with_direction(
+    app: &mut MailApp,
+    ui: &mut Ui,
+    tabs: &[&'static str],
+    current: &str,
+    id: egui::Id,
+    hebrew: bool,
+) -> Option<(&'static str, bool)> {
     let t = Tokens::get(ui.ctx());
     let mut clicked = None;
     egui::Panel::top(id)
@@ -2178,7 +2201,7 @@ fn strip(app: &mut MailApp, ui: &mut Ui, tabs: &[&'static str], current: &str, i
         .show_separator_line(false)
         .frame(egui::Frame::NONE.fill(t.tab_strip).inner_margin(egui::Margin { left: 3, right: 10, top: 0, bottom: 0 }))
         .show(ui, |ui| {
-            ui.horizontal_centered(|ui| {
+            ui.with_layout(tab_strip_layout(hebrew), |ui| {
                 ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
                 for tab in tabs {
                     let shown = tl!(tab);
@@ -2212,7 +2235,7 @@ fn strip(app: &mut MailApp, ui: &mut Ui, tabs: &[&'static str], current: &str, i
                 let label = tl!("Search commands");
                 let shown = fit::search(ui.available_width(), widgets::icon_text_width(ui, label));
                 if shown != fit::Search::Hidden {
-                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    ui.with_layout(tab_search_layout(hebrew), |ui| {
                         let resp = match shown {
                             fit::Search::Named => widgets::icon_text_button(ui, "search", label, true),
                             _ => widgets::icon_button(ui, "search", label, 16.0, true),
@@ -2356,6 +2379,39 @@ mod tests {
         let _ = harness.state_mut().execute("ui.dismissReminder", json!({"all": true}));
         harness.run_steps(3);
         harness
+    }
+
+    /// Hebrew tabs start at the right edge, while command search remains at the left.
+    /// In English the positions are opposite. Click and hit-map command ids are unchanged.
+    #[test]
+    fn hebrew_ribbon_tabs_and_search_mirror_without_changing_tab_ids() {
+        let positions = |hebrew| {
+            let mut harness = egui_kittest::Harness::builder()
+                .with_accessibility_check(false)
+                .allow_missing_glyphs()
+                .with_size(vec2(1200.0, 300.0))
+                .build_ui_state(
+                    move |ui, a: &mut MailApp| {
+                        let _ = strip_with_direction(a, ui, &["File", "Home", "View"], "Home", egui::Id::new("hebrew-ribbon-test"), hebrew);
+                    },
+                    app(),
+                );
+            harness.run_steps(3);
+            let hit = &harness.state().hit;
+            (
+                hit.rect("ribbonTab", hit_id("File")).expect("File tab"),
+                hit.rect("ribbonTab", hit_id("Home")).expect("Home tab"),
+                hit.rect("ribbonSearch", 0).expect("search button"),
+            )
+        };
+        let (file_en, home_en, search_en) = positions(false);
+        assert!(file_en.center().x < home_en.center().x);
+        assert!(search_en.center().x > home_en.center().x);
+        let (file_he, home_he, search_he) = positions(true);
+        assert!(file_he.center().x > home_he.center().x);
+        assert!(search_he.center().x < home_he.center().x);
+        assert_eq!(file_en.size(), file_he.size());
+        assert_eq!(home_en.size(), home_he.size());
     }
 
     fn click(harness: &mut Window, pos: egui::Pos2) {
