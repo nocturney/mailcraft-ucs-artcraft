@@ -113,6 +113,26 @@ fn drag_ghost(ui: &Ui) {
     );
 }
 
+/// Keep the message list on the reading edge in Hebrew, beside the right-hand folder pane.
+/// Other locales retain the original Outlook-style left list.
+pub(crate) fn list_on_right(language_code: &str) -> bool {
+    matches!(language_code, "he" | "iw")
+}
+
+#[cfg(test)]
+mod rtl_split_panel_tests {
+    use super::list_on_right;
+
+    #[test]
+    fn message_and_people_list_side_follows_hebrew_only() {
+        assert!(list_on_right("he"));
+        assert!(list_on_right("iw"));
+        for code in ["en", "fr", "de", "es", "it", "nl", "ro", "zh_CN", "pseudo"] {
+            assert!(!list_on_right(code), "unexpected RTL for {code}");
+        }
+    }
+}
+
 pub fn show(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
     drag_ghost(ui);
@@ -141,7 +161,12 @@ pub fn show(app: &mut MailApp, ui: &mut Ui) {
             .show(ui, |ui| list(app, ui));
     } else {
         let max = (ui.available_width() - 260.0).max(260.0);
-        let shown = egui::Panel::left("message_list")
+        let panel = if list_on_right(crate::i18n::current().code()) {
+            egui::Panel::right("message_list")
+        } else {
+            egui::Panel::left("message_list")
+        };
+        let shown = panel
             .default_size(app.ui.list_width.min(max))
             .size_range(240.0..=max)
             .resizable(true)
