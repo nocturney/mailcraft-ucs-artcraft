@@ -9,7 +9,7 @@ use egui_kittest::Harness;
 use egui_kittest::kittest::{By, NodeT as _, Queryable as _};
 use mailcraft_time::{Date, Weekday};
 
-use super::{Calendar, Picked, moved};
+use super::{Calendar, Picked, calendar_column, moved, moved_in_direction};
 
 fn day(s: &str) -> Date {
     Date::parse_iso(s).unwrap()
@@ -131,6 +131,22 @@ fn page_keys_keep_the_day_the_month_has() {
     assert_eq!(moved(day("2026-12-31"), Key::ArrowRight), Some(day("2027-01-01")));
     assert_eq!(moved(day("2026-10-14"), Key::Home), None, "as in Outlook");
     assert_eq!(moved(day("2026-10-14"), Key::A), None);
+}
+
+#[test]
+fn hebrew_calendar_columns_and_horizontal_keys_are_mirrored() {
+    // Chronological order remains Sunday through Saturday; only its display is mirrored.
+    assert_eq!((0..7).map(|i| calendar_column(i, false)).collect::<Vec<_>>(), [0, 1, 2, 3, 4, 5, 6]);
+    assert_eq!((0..7).map(|i| calendar_column(i, true)).collect::<Vec<_>>(), [6, 5, 4, 3, 2, 1, 0]);
+    let today = day("2026-10-14");
+    assert_eq!(moved_in_direction(today, Key::ArrowLeft, true), Some(day("2026-10-15")));
+    assert_eq!(moved_in_direction(today, Key::ArrowRight, true), Some(day("2026-10-13")));
+    assert_eq!(moved_in_direction(today, Key::ArrowLeft, false), Some(day("2026-10-13")));
+    assert_eq!(moved_in_direction(today, Key::ArrowRight, false), Some(day("2026-10-15")));
+    // Vertical and month navigation retain their chronological meaning in either direction.
+    for key in [Key::ArrowUp, Key::ArrowDown, Key::PageUp, Key::PageDown] {
+        assert_eq!(moved_in_direction(today, key, true), moved(today, key));
+    }
 }
 
 #[test]
