@@ -955,8 +955,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Allow New Time Proposals"
-msgstr ""
+msgstr "אפשר להציע מועדים חדשים"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -1267,13 +1268,15 @@ msgstr ""
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/zones.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Appointment"
-msgstr ""
+msgstr "פעילות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Appointment Recurrence"
-msgstr ""
+msgstr "פעילות חוזרת"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -1457,8 +1460,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "At start time"
-msgstr ""
+msgstr "בשעת ההתחלה"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -1750,8 +1754,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/people_view.rs
+#, fuzzy
 msgid "Birthday"
-msgstr ""
+msgstr "יום הולדת"
 
 #. command label, interface
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/ribbon.rs
@@ -1951,13 +1956,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Cancel Invitation"
-msgstr ""
+msgstr "ביטול הזמנה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Cancel Meeting"
-msgstr ""
+msgstr "ביטול פגישה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2967,8 +2974,9 @@ msgstr ""
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Day"
-msgstr ""
+msgstr "יום"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -3565,8 +3573,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Due date"
-msgstr ""
+msgstr "תאריך יעד"
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -3747,8 +3756,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "End"
-msgstr ""
+msgstr "סיום"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -3757,8 +3767,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Ends"
-msgstr ""
+msgstr "מסתיים"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -3772,8 +3783,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Every"
-msgstr ""
+msgstr "כל"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -3808,8 +3820,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Every weekday"
-msgstr ""
+msgstr "בכל יום שני עד שישי"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -4060,8 +4073,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Find a Time"
-msgstr ""
+msgstr "חיפוש מועד"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
@@ -5355,13 +5369,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Invite Attendees"
-msgstr ""
+msgstr "הזמנת משתתפים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Invite attendees"
-msgstr ""
+msgstr "הזמנת משתתפים"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -6266,8 +6282,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Make it repeat…"
-msgstr ""
+msgstr "הגדרת חזרה…"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -6389,8 +6406,9 @@ msgstr ""
 
 #. command label, interface, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/invitation.rs crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/calendar/share.rs crates/engine/src/cmd/people.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Meeting"
-msgstr ""
+msgstr "פגישה"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -7071,8 +7089,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Next week"
-msgstr ""
+msgstr "בשבוע הבא"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -7227,8 +7246,9 @@ msgstr "ללא תאריך יעד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "No end date"
-msgstr ""
+msgstr "ללא תאריך סיום"
 
 #. interface
 #: crates/ui-egui/src/forms/junk.rs
@@ -8288,13 +8308,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Pick a date"
-msgstr ""
+msgstr "בחירת תאריך"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Pick a time"
-msgstr ""
+msgstr "בחירת שעה"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -8547,8 +8569,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Proposals"
-msgstr ""
+msgstr "הצעות למועדים"
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/ribbon.rs
@@ -8652,8 +8675,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Range"
-msgstr ""
+msgstr "טווח"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -8779,8 +8803,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Recurrence"
-msgstr ""
+msgstr "חזרה"
 
 #. command label, name
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/menubar.rs
@@ -8920,8 +8945,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Remove Recurrence"
-msgstr ""
+msgstr "ביטול חזרה"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar_opened.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/dialogs.rs
@@ -8946,8 +8972,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Remove attendees"
-msgstr ""
+msgstr "הסרת משתתפים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9030,8 +9057,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs/share.rs
+#, fuzzy
 msgid "Repeats"
-msgstr ""
+msgstr "חוזר"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/find_replace.rs crates/ui-egui/src/ribbon.rs
@@ -9122,8 +9150,9 @@ msgstr "דווח על בעיה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Request Responses"
-msgstr ""
+msgstr "בקשת תגובות"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/ribbon.rs
@@ -9132,8 +9161,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs/share.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/scheduling.rs
+#, fuzzy
 msgid "Required"
-msgstr ""
+msgstr "נדרשים"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -9169,8 +9199,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Response Options"
-msgstr ""
+msgstr "אפשרויות תגובה"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/meeting.rs
@@ -9420,8 +9451,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Save & Close"
-msgstr ""
+msgstr "שמירה וסגירה"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -9877,8 +9909,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Send Update"
-msgstr ""
+msgstr "שליחת עדכון"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -10842,8 +10875,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Start date"
-msgstr ""
+msgstr "תאריך התחלה"
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -10867,8 +10901,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Starts"
-msgstr ""
+msgstr "מתחיל"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -11645,13 +11680,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "The day after"
-msgstr ""
+msgstr "ביום שלאחר מכן"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "The day before"
-msgstr ""
+msgstr "ביום שלפני כן"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -13171,8 +13208,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Time"
-msgstr ""
+msgstr "שעה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -13193,8 +13231,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/zones.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Time Zones"
-msgstr ""
+msgstr "אזורי זמן"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -13326,8 +13365,9 @@ msgstr "היום"
 
 #. interface, name, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Tomorrow"
-msgstr ""
+msgstr "מחר"
 
 #. what a command says
 #: crates/engine/src/cmd/remote.rs
