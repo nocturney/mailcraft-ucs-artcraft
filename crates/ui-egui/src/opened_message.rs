@@ -80,10 +80,20 @@ pub(crate) struct Asked {
     pub save: bool,
 }
 
+/// Keep a standalone .eml window's file actions on the reading edge in Hebrew.
+/// The action order stays logical: Move to Folder, followed by Save As.
+fn file_toolbar_layout(locale: &str) -> egui::Layout {
+    if matches!(locale, "he" | "iw") {
+        egui::Layout::right_to_left(egui::Align::Center)
+    } else {
+        egui::Layout::left_to_right(egui::Align::Center)
+    }
+}
+
 /// The bar of a window of a message file: Move to Folder, Save As.
 pub(crate) fn bar(app: &mut MailApp, ui: &mut Ui) -> Asked {
     let mut asked = Asked::default();
-    ui.horizontal(|ui| {
+    ui.with_layout(file_toolbar_layout(crate::i18n::current().code()), |ui| {
         ui.spacing_mut().item_spacing = egui::vec2(2.0, 0.0);
         ui.menu_button(tl!("Move to Folder"), |ui| {
             crate::ribbon::folder_menu(ui, app, |_, folder| asked.folder = Some(folder));
@@ -93,4 +103,34 @@ pub(crate) fn bar(app: &mut MailApp, ui: &mut Ui) -> Asked {
         }
     });
     asked
+}
+
+#[cfg(test)]
+mod file_toolbar_tests {
+    use super::file_toolbar_layout;
+
+    fn action_centers(locale: &str) -> (f32, f32) {
+        let mut centers = None;
+        egui::__run_test_ui(|ui| {
+            ui.set_width(360.0);
+            ui.with_layout(file_toolbar_layout(locale), |ui| {
+                let move_to = ui.button("Move to Folder");
+                let save_as = ui.button("Save As");
+                centers = Some((move_to.rect.center().x, save_as.rect.center().x));
+            });
+        });
+        centers.expect("both file actions must be laid out")
+    }
+
+    #[test]
+    fn standalone_eml_file_actions_follow_the_hebrew_reading_edge() {
+        for locale in ["he", "iw"] {
+            let (move_to, save_as) = action_centers(locale);
+            assert!(move_to > save_as, "{locale}: Move to Folder must be to the right of Save As");
+        }
+        for locale in ["en", "fr", "de", "es", "it", "nl", "ro", "zh_CN", "pseudo"] {
+            let (move_to, save_as) = action_centers(locale);
+            assert!(move_to < save_as, "{locale}: original action order must remain left-to-right");
+        }
+    }
 }
