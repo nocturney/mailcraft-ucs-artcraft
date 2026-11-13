@@ -8,6 +8,7 @@ use egui_kittest::kittest::Queryable;
 use mailcraft_engine::Session;
 use serde_json::json;
 
+use super::{Action, actions, reading_align};
 use crate::dialogs::Dialog;
 use crate::{MailApp, Services};
 
@@ -94,4 +95,18 @@ fn replace_all_from_the_dialog_is_one_undo_step() {
     }
     h.state_mut().execute("compose.undo", json!({})).unwrap();
     assert_eq!(body(h.state()), "cat and cat");
+}
+
+#[test]
+fn find_replace_hebrew_dialog_mirrors_actions_and_edit_alignment() {
+    use egui::Align;
+
+    // The shared dialog row lays its first action at the physical right edge.
+    // English keeps Close there; Hebrew puts Find Next there.
+    assert_eq!(actions(false, false), [Action::Close, Action::FindNext]);
+    assert_eq!(actions(true, false), [Action::FindNext, Action::Close]);
+    assert_eq!(actions(false, true), [Action::Close, Action::ReplaceAll, Action::ReplaceOne, Action::FindNext]);
+    assert_eq!(actions(true, true), [Action::FindNext, Action::ReplaceOne, Action::ReplaceAll, Action::Close]);
+    assert_eq!(reading_align(false), Align::LEFT);
+    assert_eq!(reading_align(true), Align::RIGHT);
 }
