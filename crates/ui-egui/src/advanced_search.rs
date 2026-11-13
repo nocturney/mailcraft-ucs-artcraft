@@ -274,19 +274,42 @@ fn choice<T: Clone + PartialEq>(ui: &mut Ui, label: egui::Id, id: &str, value: &
     resp.labelled_by(label);
 }
 
+/// The translated interface's reading direction, not the direction of an email address or date.
+fn hebrew_ui() -> bool {
+    matches!(crate::i18n::current().code(), "he" | "iw")
+}
+
+/// Keep the advanced-search popup anchored to the search box's reading edge.
+/// Clamp both directions to the same visible screen margins.
+fn popup_x(anchor: Rect, screen: Rect, width: f32, hebrew: bool) -> f32 {
+    let wanted = if hebrew { anchor.max.x - width } else { anchor.min.x };
+    wanted.min(screen.max.x - 8.0 - width).max(screen.min.x + 8.0)
+}
+
 /// One row of the panel: its label beside the field, in a column `label_w` wide, or above it
-/// when the panel is narrow (`None`).
+/// when the panel is narrow (`None`). Hebrew labels and fields begin at the right reading edge.
 fn row(ui: &mut Ui, label_w: Option<f32>, label: &str, add: impl FnOnce(&mut Ui, egui::Id)) {
+    let hebrew = hebrew_ui();
     let Some(label_w) = label_w else {
-        let id = ui.label(label).id;
+        let id = if hebrew {
+            ui.add_sized(vec2(ui.available_width(), 22.0), egui::Label::new(label).halign(egui::Align::RIGHT)).id
+        } else {
+            ui.label(label).id
+        };
         add(ui, id);
         ui.add_space(4.0);
         return;
     };
-    ui.horizontal(|ui| {
-        let id = ui.add_sized(vec2(label_w, 22.0), egui::Label::new(label).halign(egui::Align::LEFT)).id;
+    let draw = |ui: &mut Ui| {
+        let align = if hebrew { egui::Align::RIGHT } else { egui::Align::LEFT };
+        let id = ui.add_sized(vec2(label_w, 22.0), egui::Label::new(label).halign(align)).id;
         add(ui, id);
-    });
+    };
+    if hebrew {
+        ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), draw);
+    } else {
+        ui.horizontal(draw);
+    }
     ui.add_space(4.0);
 }
 
@@ -307,7 +330,8 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
     let list_open = egui::Popup::is_any_open(ctx);
     let screen = ctx.content_rect();
     let width = PANEL_W.max(anchor.width()).min((screen.width() - 16.0).max(0.0));
-    let x = anchor.min.x.min(screen.max.x - 8.0 - width).max(screen.min.x + 8.0);
+    let hebrew = hebrew_ui();
+    let x = popup_x(anchor, screen, width, hebrew);
     let top = anchor.max.y + 2.0;
     let narrow = width < NARROW;
     let layer = LayerId::new(Order::Background, panel_id());
@@ -383,7 +407,12 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
                         };
                         let (first, last) = (tl!("Pick the first day"), tl!("Pick the last day"));
                         if one_line {
-                            ui.horizontal(|ui| {
+                            let direction = if hebrew {
+                                egui::Layout::right_to_left(egui::Align::Center)
+                            } else {
+                                egui::Layout::left_to_right(egui::Align::Center)
+                            };
+                            ui.with_layout(direction, |ui| {
                                 ui.spacing_mut().item_spacing.x = 2.0;
                                 day(ui, "advanced_received_from", &mut panel.received_from, problems.0, side, first);
                                 ui.add_space(4.0);
@@ -396,7 +425,12 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
                                 ("advanced_received_from", &mut panel.received_from, problems.0, first),
                                 ("advanced_received_to", &mut panel.received_to, problems.1, last),
                             ] {
-                                ui.horizontal(|ui| {
+                                let direction = if hebrew {
+                                    egui::Layout::right_to_left(egui::Align::Center)
+                                } else {
+                                    egui::Layout::left_to_right(egui::Align::Center)
+                                };
+                                ui.with_layout(direction, |ui| {
                                     ui.spacing_mut().item_spacing.x = 2.0;
                                     day(ui, id, text, problem, (field_w - button).max(60.0), name);
                                 });
@@ -452,7 +486,11 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
                 });
             });
             ui.add_space(8.0);
-            ui.horizontal(|ui| {
+            // In Hebrew Add filters belongs at the right reading edge and the actions at
+            // the opposite edge; retain the original English placement.
+            let footer_direction =
+                if hebrew { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) };
+            ui.with_layout(footer_direction, |ui| {
                 ui.menu_button(format!("+ {}", tl!("Add filters")), |ui| {
                     for (label, which) in [(tl!("Cc"), Filter::Cc), (tl!("Read status"), Filter::Read), (tl!("Importance"), Filter::Importance)] {
                         let mut on = panel.shows(filters, which);
@@ -466,7 +504,9 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
                         }
                     }
                 });
-                ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                let actions_direction =
+                    if hebrew { egui::Layout::left_to_right(egui::Align::Center) } else { egui::Layout::right_to_left(egui::Align::Center) };
+                ui.with_layout(actions_direction, |ui| {
                     clear = ui.add(egui::Button::new(tl!("Clear filters")).min_size(vec2(0.0, 26.0))).clicked();
                     search = crate::widgets::primary_button(ui, tl!("Search"), ok).clicked();
                 });
@@ -492,6 +532,25 @@ pub(crate) fn show(app: &mut MailApp, ctx: &egui::Context, anchor: Rect, button:
     let outside = ctx.input(|i| i.pointer.any_pressed() && i.pointer.interact_pos().is_some_and(|p| !rect.contains(p) && !button.contains(p)));
     if !(outside && !list_open) {
         app.advanced_search = Some(panel);
+    }
+}
+
+#[cfg(test)]
+mod hebrew_advanced_search_geometry_tests {
+    use super::*;
+
+    #[test]
+    fn popup_anchors_to_the_translated_reading_edge_without_leaving_the_window() {
+        let screen = Rect::from_min_max(pos2(0.0, 0.0), pos2(1000.0, 600.0));
+        let search = Rect::from_min_max(pos2(350.0, 50.0), pos2(670.0, 88.0));
+        assert_eq!(popup_x(search, screen, 460.0, false), 350.0);
+        assert_eq!(popup_x(search, screen, 460.0, true), 210.0);
+
+        // The same margins protect a popup at either side of a narrow window.
+        let near_left = Rect::from_min_max(pos2(10.0, 50.0), pos2(140.0, 88.0));
+        assert_eq!(popup_x(near_left, screen, 460.0, true), 8.0);
+        let near_right = Rect::from_min_max(pos2(850.0, 50.0), pos2(950.0, 88.0));
+        assert_eq!(popup_x(near_right, screen, 460.0, false), 532.0);
     }
 }
 
