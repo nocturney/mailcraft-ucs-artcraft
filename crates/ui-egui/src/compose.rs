@@ -34,19 +34,13 @@ fn header_geometry(row: Rect, reserved: f32, rtl: bool) -> (egui::Pos2, Align2, 
         (
             pos2(row.max.x - 16.0, row.center().y),
             Align2::RIGHT_CENTER,
-            Rect::from_min_max(
-                pos2(row.min.x + 12.0 + reserved, row.min.y + 3.0),
-                pos2(row.max.x - 16.0 - LABEL_W, row.max.y - 3.0),
-            ),
+            Rect::from_min_max(pos2(row.min.x + 12.0 + reserved, row.min.y + 3.0), pos2(row.max.x - 16.0 - LABEL_W, row.max.y - 3.0)),
         )
     } else {
         (
             pos2(row.min.x + 16.0, row.center().y),
             Align2::LEFT_CENTER,
-            Rect::from_min_max(
-                pos2(row.min.x + 16.0 + LABEL_W, row.min.y + 3.0),
-                pos2(row.max.x - 12.0 - reserved, row.max.y - 3.0),
-            ),
+            Rect::from_min_max(pos2(row.min.x + 16.0 + LABEL_W, row.min.y + 3.0), pos2(row.max.x - 12.0 - reserved, row.max.y - 3.0)),
         )
     }
 }
