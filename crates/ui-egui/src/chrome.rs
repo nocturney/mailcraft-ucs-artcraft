@@ -692,10 +692,39 @@ pub(crate) fn sync_bar_rest(app: &MailApp, ctx: &egui::Context) {
     }
 }
 
+/// Right-to-left pane headings keep the detail to the left of the title.
+fn rtl_pane_title_detail_edge(rect: Rect, title_width: f32) -> f32 {
+    let left = rect.min.x + 12.0;
+    let right = rect.max.x - 12.0;
+    (right - title_width - 8.0).clamp(left, right)
+}
+
 /// A heading with a count beside it, for the tops of panes.
 pub fn pane_title(ui: &mut Ui, title: &str, detail: &str) {
     let t = Tokens::get(ui.ctx());
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 34.0), Sense::hover());
+    // Hebrew locale registration is in a separately claimed source change.
+    if crate::i18n::current().code() == "he" && r.width() > 24.0 {
+        let right = r.max.x - 12.0;
+        let left = r.min.x + 12.0;
+        let title_font = semibold(15.0);
+        let title_width = text_width(ui.painter(), title, &title_font, 0.0, t.text).min(right - left);
+        let detail_right = rtl_pane_title_detail_edge(r, title_width);
+        let title_clip = Rect::from_min_max(pos2(left, r.min.y), pos2(right, r.max.y));
+        ui.painter().with_clip_rect(title_clip).text(pos2(right, r.center().y), Align2::RIGHT_CENTER, title, title_font, t.text);
+        // A narrow pane suppresses the detail rather than letting it overlap the title.
+        if !detail.is_empty() && detail_right > left + 8.0 {
+            let detail_clip = Rect::from_min_max(pos2(left, r.min.y), pos2(detail_right, r.max.y));
+            ui.painter().with_clip_rect(detail_clip).text(
+                pos2(detail_right, r.center().y + 1.0),
+                Align2::RIGHT_CENTER,
+                detail,
+                regular(11.5),
+                t.text_dim,
+            );
+        }
+        return;
+    }
     let w = crate::theme::paint_clipped(ui.painter(), pos2(r.min.x + 12.0, r.center().y), r.width() - 24.0, title, semibold(15.0), t.text);
     if !detail.is_empty() {
         crate::theme::paint_clipped(
@@ -719,6 +748,14 @@ mod title_bar_tests;
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn hebrew_pane_title_places_detail_to_left_of_heading() {
+        let rect = Rect::from_min_size(pos2(40.0, 5.0), vec2(360.0, 34.0));
+        assert_eq!(rtl_pane_title_detail_edge(rect, 88.0), 292.0);
+        assert_eq!(rtl_pane_title_detail_edge(rect, 500.0), 52.0);
+        assert!(rtl_pane_title_detail_edge(rect, 160.0) < rtl_pane_title_detail_edge(rect, 88.0));
+    }
 
     #[test]
     fn mac_title_bar_centres_and_clears_the_traffic_lights() {
