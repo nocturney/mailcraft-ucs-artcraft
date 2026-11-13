@@ -38,6 +38,12 @@ const NAME_MIN_W: f32 = 100.0;
 /// A row's height, and the space between rows.
 const ROW_H: f32 = 20.0;
 const ROW_GAP: f32 = 4.0;
+
+/// The folder dialogs follow the window's reading edge in Hebrew, including the older `iw` tag.
+/// Keep the gate pure so RTL geometry is testable before the Hebrew catalog is integrated.
+fn folder_properties_rtl(code: &str) -> bool {
+    matches!(code, "he" | "iw")
+}
 /// Room for the rows: at most this, and less in a low window. What else Folder Size holds below
 /// the summary (the headings, the notes under the rows, Close and the frame) takes about `BELOW`.
 const ROWS_MAX_H: f32 = 360.0;
@@ -229,14 +235,8 @@ impl FolderProperties {
     /// when it is done with.
     pub fn show(&mut self, ui: &mut Ui, enter: bool) -> bool {
         let t = Tokens::get(ui.ctx());
-        // On a second line when the tabs' names don't fit on one.
-        ui.horizontal_wrapped(|ui| {
-            for tab in Tab::ALL {
-                if ui.selectable_label(self.tab == tab, tab.label()).clicked() {
-                    self.tab = tab;
-                }
-            }
-        });
+        // On a second line when the tabs' names don't fit on one; Hebrew starts at the right.
+        show_tabs(ui, &mut self.tab, folder_properties_rtl(crate::i18n::current().code()));
         ui.separator();
         ui.allocate_ui_with_layout(vec2(ui.available_width(), TAB_H), egui::Layout::top_down(egui::Align::Min), |ui| {
             ui.set_min_height(TAB_H);
@@ -266,15 +266,28 @@ impl FolderProperties {
             Some((tl!("Messages"), g.messages.to_string())),
             Some((tl!("Unread"), g.unread.to_string())),
         ];
-        egui::Grid::new("folder_properties_general").num_columns(2).spacing(vec2(GAP, 6.0)).show(ui, |ui| {
+        let rtl = folder_properties_rtl(crate::i18n::current().code());
+        if rtl {
             for (label, value) in lines.into_iter().flatten() {
-                cell(ui, LABEL_W, false, |ui| ui.label(RichText::new(label).color(t.text_dim)));
-                cell(ui, VALUE_W, false, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
-                ui.end_row();
+                // Keep the label at the reading edge and the value beside it, even for a
+                // Latin account name or a numeral. The whole row remains in the dialog.
+                general_pair_rtl(ui, t, label, &value);
+                ui.add_space(6.0);
             }
-        });
+        } else {
+            egui::Grid::new("folder_properties_general").num_columns(2).spacing(vec2(GAP, 6.0)).show(ui, |ui| {
+                for (label, value) in lines.into_iter().flatten() {
+                    cell(ui, LABEL_W, false, |ui| ui.label(RichText::new(label).color(t.text_dim)));
+                    cell(ui, VALUE_W, false, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
+                    ui.end_row();
+                }
+            });
+        }
         ui.add_space(8.0);
-        if ui.button(tl!("Folder Size…")).on_hover_text(tl!("How many messages each folder holds and the space they take")).clicked() {
+        let folder_size =
+            |ui: &mut Ui| ui.button(tl!("Folder Size…")).on_hover_text(tl!("How many messages each folder holds and the space they take")).clicked();
+        let clicked = if rtl { ui.with_layout(egui::Layout::right_to_left(egui::Align::Min), folder_size).inner } else { folder_size(ui) };
+        if clicked {
             self.size_open = true;
         }
     }
@@ -499,6 +512,33 @@ fn shown_path(folders: &HashMap<Id, &Folder>, f: &Folder) -> String {
     }
     parts.reverse();
     parts.join(" › ")
+}
+
+/// Keep the first (General) tab on the reading edge; wrap long translated labels in either
+/// direction without changing which tab the user has selected.
+fn show_tabs(ui: &mut Ui, selected: &mut Tab, rtl: bool) {
+    let tabs = |ui: &mut Ui| {
+        for tab in Tab::ALL {
+            if ui.selectable_label(*selected == tab, tab.label()).clicked() {
+                *selected = tab;
+            }
+        }
+    };
+    if rtl {
+        ui.with_layout(egui::Layout::right_to_left(egui::Align::Center).with_main_wrap(true), tabs);
+    } else {
+        ui.horizontal_wrapped(tabs);
+    }
+}
+
+/// General's value follows the label toward the left in Hebrew, not before it. Mixed Latin
+/// folder names and numbers keep their own text shaping; only the cells' places are mirrored.
+fn general_pair_rtl(ui: &mut Ui, t: &Tokens, label: &str, value: &str) {
+    ui.allocate_ui_with_layout(vec2(ui.available_width(), ROW_H), egui::Layout::right_to_left(egui::Align::Center), |ui| {
+        cell(ui, LABEL_W, true, |ui| ui.label(RichText::new(label).color(t.text_dim)));
+        ui.add_space(GAP);
+        cell(ui, VALUE_W, true, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
+    });
 }
 
 /// A cell `width` wide, what is in it at the left, or at the right (a number).

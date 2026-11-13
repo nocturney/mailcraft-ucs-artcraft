@@ -12,7 +12,7 @@ use mailcraft_engine::Session;
 use mailcraft_model::{FolderKind, Id};
 use serde_json::json;
 
-use super::{FolderProperties, Sort, Tab};
+use super::{FolderProperties, Sort, Tab, folder_properties_rtl, general_pair_rtl, show_tabs};
 use crate::dialogs::Dialog;
 use crate::{MailApp, Services};
 
@@ -73,6 +73,39 @@ fn key(h: &mut Harness<'static, MailApp>, key: egui::Key) {
 
 fn heading(app: &MailApp, account: Id) -> String {
     crate::nav::heading_name(app, app.session.mailbox.account(account).unwrap())
+}
+
+/// The Hebrew dialog starts with its first tab and labels at the right, while English stays
+/// left-to-right. The tiny harness tests actual egui widget rectangles without a translated
+/// mailbox or a global language switch, so a later Hebrew locale can safely reuse the layout.
+#[test]
+fn folder_properties_hebrew_tabs_and_fields_follow_the_reading_edge() {
+    assert!(folder_properties_rtl("he") && folder_properties_rtl("iw"));
+    assert!(!folder_properties_rtl("en") && !folder_properties_rtl("fr"));
+    for rtl in [false, true] {
+        let mut h = Harness::builder().with_accessibility_check(false).allow_missing_glyphs().with_size(egui::vec2(920.0, 380.0)).build_ui_state(
+            move |ui, tab: &mut Tab| {
+                ui.set_width(460.0);
+                show_tabs(ui, tab, rtl);
+                if rtl {
+                    ui.add_space(12.0);
+                    let t = crate::theme::Tokens::get(ui.ctx());
+                    general_pair_rtl(ui, &t, "Folder label", "Quarterly reports");
+                }
+            },
+            Tab::General,
+        );
+        h.run_steps(3);
+        let first = h.get_by_label("General").rect();
+        let last = h.get_by_label("Synchronization").rect();
+        assert_eq!(first.center().x > last.center().x, rtl, "tab order rtl={rtl}");
+        if rtl {
+            let label = h.get_by_label("Folder label").rect();
+            let value = h.get_by_label("Quarterly reports").rect();
+            assert!(label.center().x > value.center().x, "Hebrew label belongs to the right of its value: {label:?}, {value:?}");
+            assert!(label.min.x >= 0.0 && value.min.x >= 0.0);
+        }
+    }
 }
 
 /// Properties opens on General: the folder's name, what kind of folder it is, where it is, and
