@@ -346,13 +346,15 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "A mail server your organisation runs itself"
-msgstr ""
+msgstr "שרת דואר שהארגון שלך מפעיל בעצמו"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "A mailbox kept here, with no mail server"
-msgstr ""
+msgstr "תיבת דואר מקומית, ללא שרת דואר"
 
 #. interface
 #: crates/ui-egui/src/shared_calendars.rs
@@ -427,8 +429,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "A port is a number from 1 to 65535"
-msgstr ""
+msgstr "מספר היציאה חייב להיות בין 1 ל־65535"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -574,8 +577,9 @@ msgstr "הגדרות חשבון"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Account name"
-msgstr ""
+msgstr "שם החשבון"
 
 #. interface, ribbon
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/ribbon.rs
@@ -812,8 +816,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Advanced options"
-msgstr ""
+msgstr "אפשרויות מתקדמות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -1114,8 +1119,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Any other mail server"
-msgstr ""
+msgstr "שרת דואר אחר"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -1124,8 +1130,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Application (client) ID"
-msgstr ""
+msgstr "מזהה יישום (לקוח)"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -1338,8 +1345,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Ask before deleting a conversation"
-msgstr ""
+msgstr "בקשת אישור לפני מחיקת שיחה"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -2021,13 +2029,15 @@ msgstr "לשנות את העותק שלך מפגישה זו?"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Change account settings"
-msgstr ""
+msgstr "שינוי הגדרות החשבון"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Change email address"
-msgstr ""
+msgstr "שינוי כתובת הדוא״ל"
 
 #. interface
 #: crates/ui-egui/src/widgets.rs
@@ -2156,8 +2166,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Check the account's settings"
-msgstr ""
+msgstr "בדיקת הגדרות החשבון"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -2171,13 +2182,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Checking the account stopped unexpectedly"
-msgstr ""
+msgstr "בדיקת החשבון הופסקה באופן בלתי צפוי"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
+#, fuzzy
 msgid "Checking the account…"
-msgstr ""
+msgstr "בודק את החשבון…"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2236,8 +2249,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Choose the kind of account"
-msgstr ""
+msgstr "בחירת סוג החשבון"
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
@@ -2470,8 +2484,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "התחברות"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2533,8 +2548,9 @@ msgstr "אנשי קשר אינם מועברים לפריטים שנמחקו."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/open_shared.rs crates/ui-egui/src/opening.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs crates/ui-egui/src/task_sync.rs
+#, fuzzy
 msgid "Continue"
-msgstr ""
+msgstr "המשך"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -3091,8 +3107,9 @@ msgstr "פריטים שנמחקו"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Deleting"
-msgstr ""
+msgstr "מוחק"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -3131,8 +3148,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Desktop alerts only for mail in Primary"
-msgstr ""
+msgstr "התראות שולחן עבודה רק על הודעות בקטגוריה 'ראשי'"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -3306,8 +3324,9 @@ msgstr "לא לשאול שוב לגבי חשבון זה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
+#, fuzzy
 msgid "Don't send"
-msgstr ""
+msgstr "לא לשלוח"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -3630,8 +3649,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Email address"
-msgstr ""
+msgstr "כתובת דוא״ל"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -3783,8 +3803,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Exchange server (your organisation's own)"
-msgstr ""
+msgstr "שרת Exchange של הארגון"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -3988,8 +4009,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Finding your account settings…"
-msgstr ""
+msgstr "מאתר את הגדרות החשבון…"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -4444,8 +4466,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Gmail categories"
-msgstr ""
+msgstr "קטגוריות Gmail"
 
 #. why a command can't run
 #: crates/engine/src/gmail.rs
@@ -4598,8 +4621,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Google sign-in is not configured for this build. Use an app password instead."
-msgstr ""
+msgstr "כניסה באמצעות Google אינה מוגדרת בגרסה זו. השתמשו במקום זאת בסיסמה לאפליקציה."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -5136,8 +5160,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Incoming mail (IMAP)"
-msgstr ""
+msgstr "דואר נכנס (IMAP)"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -5306,8 +5331,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "It is on this device only: nothing is sent to or fetched from a server."
-msgstr ""
+msgstr "המידע נשמר במכשיר זה בלבד: דבר אינו נשלח לשרת או מתקבל ממנו."
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5652,8 +5678,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Leave empty to keep the one in use"
-msgstr ""
+msgstr "אפשר להשאיר ריק כדי לשמור על הערך הנוכחי"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -5672,8 +5699,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Let me set up my account manually"
-msgstr ""
+msgstr "ברצוני להגדיר את החשבון באופן ידני"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -5912,8 +5940,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Mail to keep offline"
-msgstr ""
+msgstr "דואר לשמירה במצב לא מקוון"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6409,8 +6438,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Microsoft needs an application ID"
-msgstr ""
+msgstr "ל־Microsoft נדרש מזהה יישום"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -7033,8 +7063,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "No colour"
-msgstr ""
+msgstr "ללא צבע"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -7540,8 +7571,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/backstage.rs
+#, fuzzy
 msgid "On this device only: no mail server"
-msgstr ""
+msgstr "במכשיר זה בלבד: ללא שרת דואר"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -7884,8 +7916,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Or is it one of these?"
-msgstr ""
+msgstr "או שאולי אחד מאלה?"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -7909,8 +7942,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Other (IMAP)"
-msgstr ""
+msgstr "אחר (IMAP)"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7950,8 +7984,9 @@ msgstr "דואר יוצא"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Outgoing mail (SMTP)"
-msgstr ""
+msgstr "דואר יוצא (SMTP)"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -8060,8 +8095,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Password"
-msgstr ""
+msgstr "סיסמה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -8580,13 +8616,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Recommended"
-msgstr ""
+msgstr "מומלץ"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Reconnect with Google"
-msgstr ""
+msgstr "התחברות מחדש באמצעות Google"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -9313,13 +9351,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Save or discard changes here before reconnecting."
-msgstr ""
+msgstr "יש לשמור או לבטל את השינויים כאן לפני התחברות מחדש."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Save or discard changes here before switching sign-in methods."
-msgstr ""
+msgstr "יש לשמור או לבטל את השינויים כאן לפני החלפת שיטת הכניסה."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -9773,8 +9813,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Send your password to another server?"
-msgstr ""
+msgstr "לשלוח את הסיסמה לשרת אחר?"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -9945,8 +9986,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Server Certificate"
-msgstr ""
+msgstr "תעודת האבטחה של השרת"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -10070,8 +10112,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Show Gmail's categories under the Inbox"
-msgstr ""
+msgstr "הצגת קטגוריות Gmail תחת תיבת הדואר הנכנס"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar_settings.rs crates/ui-egui/src/calendar_view.rs
@@ -10299,8 +10342,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Sign in again"
-msgstr ""
+msgstr "כניסה מחדש"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -10374,8 +10418,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Sign in to your account"
-msgstr ""
+msgstr "כניסה לחשבון"
 
 #. interface
 #: crates/ui-egui/src/shared_mailboxes.rs
@@ -10384,8 +10429,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Sign in with Google"
-msgstr ""
+msgstr "כניסה באמצעות Google"
 
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs crates/ui-egui/src/nav.rs
@@ -10459,8 +10505,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Signing in to {server}"
-msgstr ""
+msgstr "מתחבר לשרת {server}"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -10810,8 +10857,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Switch to Google sign-in"
-msgstr ""
+msgstr "מעבר לכניסה באמצעות Google"
 
 #. command label, interface
 #: crates/engine/src/cmd/graph_switch.rs crates/ui-egui/src/graph_switch.rs crates/ui-egui/src/lib.rs
@@ -11156,8 +11204,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
+#, fuzzy
 msgid "The account couldn't be added"
-msgstr ""
+msgstr "לא ניתן להוסיף את החשבון"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
