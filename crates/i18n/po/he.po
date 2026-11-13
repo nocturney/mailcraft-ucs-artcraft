@@ -666,9 +666,10 @@ msgid "Add Shared Mailbox…"
 msgstr "הוספת תיבת דואר משותפת…"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Add a mail server account in File › Add Account to send and receive."
-msgstr ""
+msgstr "כדי לשלוח ולקבל דואר, הוסף חשבון באמצעות קובץ › הוסף חשבון."
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -829,9 +830,10 @@ msgid "Addresses separated by ; (leave empty for replies to come to you)"
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/lib.rs
 msgid "Advanced Search"
-msgstr ""
+msgstr "חיפוש מתקדם"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -870,9 +872,10 @@ msgid "All Categories…"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/mail_view.rs
 msgid "All Mailboxes"
-msgstr ""
+msgstr "כל תיבות הדואר"
 
 #. interface
 #: crates/ui-egui/src/widgets.rs
@@ -1792,9 +1795,10 @@ msgid "Bring in"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Building the index search answers from; until it is done, some older mail is searched more slowly"
-msgstr ""
+msgstr "אינדקס החיפוש נבנה. עד להשלמת התהליך, החיפוש בדואר ישן עשוי להיות איטי יותר."
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -2624,9 +2628,10 @@ msgid ""
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/lib.rs
 msgid "Copy Diagnostics"
-msgstr ""
+msgstr "העתק מידע לאבחון"
 
 #. command label
 #: crates/engine/src/cmd/calendar_extra.rs
@@ -2684,9 +2689,10 @@ msgid "Copy the selected items to the folder:"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Copy the version, the platform and the end of MailCraft's own record, to paste into a problem report. No message, address, password or token is in it, and nothing is sent."
-msgstr ""
+msgstr "העתק את מספר הגרסה, פרטי הפלטפורמה ואת סוף יומן הפעילות של MailCraft לצורך דיווח על בעיה. המידע אינו כולל הודעות, כתובות, סיסמאות או אסימוני גישה, ודבר אינו נשלח."
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
@@ -2889,14 +2895,16 @@ msgid "Create from details"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Current Folder"
-msgstr ""
+msgstr "התיקייה הנוכחית"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/mail_view.rs
 msgid "Current Mailbox"
-msgstr ""
+msgstr "תיבת הדואר הנוכחית"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
@@ -5245,9 +5253,10 @@ msgid "Increase Indent"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Indexing mail: {percent}%"
-msgstr ""
+msgstr "יצירת אינדקס לדואר: {percent}%"
 
 #. command label, interface, name, ribbon location
 #, fuzzy
@@ -7121,9 +7130,10 @@ msgid "No account signs in with Microsoft"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "No account yet: File › Add Account"
-msgstr ""
+msgstr "עדיין לא הוגדר חשבון: קובץ › הוסף חשבון"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar.rs
@@ -7524,9 +7534,10 @@ msgid "Nothing is scheduled on these days."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Nothing is sent or received. Click to connect again."
-msgstr ""
+msgstr "לא מתבצעת שליחה או קבלה של דואר. לחץ כדי להתחבר מחדש."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -8783,9 +8794,10 @@ msgid "Redo Typing"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Redo {what}"
-msgstr ""
+msgstr "בצע שוב: {what}"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -9103,9 +9115,10 @@ msgid ""
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/lib.rs
 msgid "Report a Problem"
-msgstr ""
+msgstr "דווח על בעיה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -9702,19 +9715,22 @@ msgid "Search in"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Search mail"
-msgstr ""
+msgstr "חיפוש בדואר"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Search mail (try from:, has:attachment, is:unread)"
-msgstr ""
+msgstr "חיפוש בדואר (לדוגמה: from:, has:attachment, is:unread)"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Search people"
-msgstr ""
+msgstr "חיפוש באנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/zones.rs
@@ -9968,9 +9984,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. interface, ribbon
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
 msgid "Send/Receive"
-msgstr ""
+msgstr "שלח/קבל"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9980,9 +9997,10 @@ msgid ""
 msgstr ""
 
 #. command label, interface
+#, fuzzy
 #: crates/engine/src/cmd/account.rs crates/ui-egui/src/chrome.rs crates/ui-egui/src/lib.rs
 msgid "Send/Receive All Folders"
-msgstr ""
+msgstr "שלח/קבל בכל התיקיות"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
@@ -9995,9 +10013,10 @@ msgid "Send/Receive is already running"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Send/Receive problems"
-msgstr ""
+msgstr "בעיות בשליחה ובקבלה"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -10035,9 +10054,10 @@ msgid "Sending"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/ews_mail.rs crates/ui-egui/src/inbox_pass.rs crates/ui-egui/src/jmap_mail.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "Sending and receiving…"
-msgstr ""
+msgstr "שולח ומקבל…"
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
@@ -10278,9 +10298,10 @@ msgid "Show Ribbon Tab"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Show Send/Receive Progress"
-msgstr ""
+msgstr "הצג התקדמות שליחה וקבלה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -10890,9 +10911,10 @@ msgid "Stop keeping this Public key"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Stop opening it; the mailbox that is open stays"
-msgstr ""
+msgstr "עצור את הפתיחה; תיבת הדואר הפתוחה תישאר פתוחה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -10900,9 +10922,10 @@ msgid "Stop processing more rules"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/sync_panel.rs
 msgid "Stop this Send/Receive; what has arrived stays"
-msgstr ""
+msgstr "עצור את השליחה והקבלה; מה שכבר התקבל יישמר"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -10931,9 +10954,10 @@ msgid "Stopped; carries on from here next time"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/lib.rs
 msgid "Stopping…"
-msgstr ""
+msgstr "עוצר…"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -10957,9 +10981,10 @@ msgid "Styles"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Subfolders"
-msgstr ""
+msgstr "תיקיות משנה"
 
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/compose.rs
@@ -11165,9 +11190,10 @@ msgid "Teams meeting"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Tell MailCraft's makers what went wrong, on GitHub or by email. You check the report and send it yourself."
-msgstr ""
+msgstr "דווח למפתחי MailCraft על התקלה ב־GitHub או בדוא״ל. ניתן לעיין בדוח ולשלוח אותו בעצמך."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12853,9 +12879,10 @@ msgid "This mailbox is in Microsoft 365"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "This mailbox is on this device only"
-msgstr ""
+msgstr "תיבת דואר זו נמצאת במכשיר הזה בלבד"
 
 #. interface
 #: crates/ui-egui/src/unconfirmed.rs
@@ -13475,9 +13502,10 @@ msgid "Undo Typing"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Undo {what}"
-msgstr ""
+msgstr "בטל: {what}"
 
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/folder_properties.rs
@@ -13502,9 +13530,10 @@ msgid "Unread/ Read"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Unread: {n}"
-msgstr ""
+msgstr "לא נקראו: {n}"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -13557,9 +13586,10 @@ msgid "Updates"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Updating {account}"
-msgstr ""
+msgstr "מעדכן את {account}"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -14006,9 +14036,10 @@ msgid "Working Hours"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Working Offline"
-msgstr ""
+msgstr "עבודה במצב לא מקוון"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
