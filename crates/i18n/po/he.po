@@ -181,8 +181,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid ".pst file ({format})"
-msgstr ""
+msgstr "קובץ ‎.pst‎ ({format})"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
@@ -435,8 +436,9 @@ msgstr "מספר היציאה חייב להיות בין 1 ל־65535"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "A report is written beside your mailbox."
-msgstr ""
+msgstr "דוח יישמר לצד קובץ תיבת הדואר שלך."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -1079,8 +1081,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Another mailbox was opened: the import stopped."
-msgstr ""
+msgstr "נפתחה תיבת דואר אחרת ולכן הייבוא הופסק."
 
 #. interface, what a command says
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/meeting_dialogs.rs
@@ -4115,8 +4118,9 @@ msgstr "שם התיקייה"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Folder {folder} ({n} of {of})"
-msgstr ""
+msgstr "תיקייה {folder} ({n} מתוך {of})"
 
 #. name
 #: crates/model/src/sync/progress.rs
@@ -5059,8 +5063,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Importing a .pst file isn't supported in the browser yet."
-msgstr ""
+msgstr "ייבוא קובצי ‎.pst‎ עדיין אינו נתמך בדפדפן."
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -5084,13 +5089,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "In a new calendar named after the file on this computer"
-msgstr ""
+msgstr "בלוח שנה חדש במחשב הזה, שייקרא על שם הקובץ"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "In a new folder called {name} on this computer"
-msgstr ""
+msgstr "בתיקייה חדשה בשם {name} במחשב הזה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -5124,13 +5131,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "In this calendar:"
-msgstr ""
+msgstr "בלוח השנה הזה:"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "In {folder}"
-msgstr ""
+msgstr "בתיקייה {folder}"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5251,13 +5260,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Into your contacts on this computer, each marked as imported from the file."
-msgstr ""
+msgstr "לאנשי הקשר במחשב הזה; כל איש קשר יסומן כמיובא מהקובץ."
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Into your to-do list on this computer. Nothing is sent to anybody."
-msgstr ""
+msgstr "לרשימת המשימות במחשב הזה. לא יישלח דבר לאיש."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -5542,8 +5553,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Keep the notes and journal entries"
-msgstr ""
+msgstr "לשמור את ההערות ואת רשומות היומן"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -5880,8 +5892,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Mail comes in as it is read. Cancel keeps what is in; importing the file again brings the rest."
-msgstr ""
+msgstr "ההודעות מיובאות תוך כדי קריאתן. ביטול ישאיר את מה שכבר יובא; ייבוא חוזר של הקובץ יוסיף את השאר."
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
@@ -7566,8 +7579,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "On this computer. They have no views of their own yet."
-msgstr ""
+msgstr "במחשב הזה. עדיין אין להן תצוגה ייעודית."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/backstage.rs
@@ -8106,8 +8120,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Password:"
-msgstr ""
+msgstr "סיסמה:"
 
 #. command label, name, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/ribbon.rs
@@ -8467,23 +8482,27 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Put the calendar items"
-msgstr ""
+msgstr "לאן לייבא את פריטי לוח השנה"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Put the contacts"
-msgstr ""
+msgstr "לאן לייבא את אנשי הקשר"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Put the mail"
-msgstr ""
+msgstr "לאן לייבא את ההודעות"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Put the tasks"
-msgstr ""
+msgstr "לאן לייבא את המשימות"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -10776,8 +10795,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Stopped before the end. Import the file again to bring the rest."
-msgstr ""
+msgstr "הייבוא הופסק לפני שהסתיים. יש לייבא שוב את הקובץ כדי להוסיף את השאר."
 
 #. what a command says
 #: crates/engine/src/cmd/ews_mail.rs crates/engine/src/cmd/graph_mail.rs crates/engine/src/cmd/jmap_mail.rs
@@ -10791,8 +10811,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Stopping… what has come in stays."
-msgstr ""
+msgstr "הייבוא נעצר… מה שכבר יובא יישמר."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -11154,8 +11175,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "That isn't the password of this file."
-msgstr ""
+msgstr "זו אינה הסיסמה של הקובץ."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -11563,8 +11585,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "The full report is in:"
-msgstr ""
+msgstr "הדוח המלא נמצא כאן:"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -11573,8 +11596,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "The import stopped unexpectedly. What came in stays; import the file again for the rest."
-msgstr ""
+msgstr "הייבוא הופסק באופן בלתי צפוי. מה שכבר יובא יישמר; יש לייבא שוב את הקובץ כדי להוסיף את השאר."
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -12575,13 +12599,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "This file can't be imported: {why}"
-msgstr ""
+msgstr "לא ניתן לייבא את הקובץ: {why}"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "This file has a password. Nothing is imported without it."
-msgstr ""
+msgstr "הקובץ מוגן בסיסמה. לא ניתן לייבא ממנו דבר בלי הסיסמה."
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -13291,8 +13317,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "Under a folder on this computer:"
-msgstr ""
+msgstr "תחת תיקייה במחשב הזה:"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -16479,8 +16506,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "{added} brought in, of {found} found."
-msgstr ""
+msgstr "יובאו {added} מתוך {found} שנמצאו."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -16584,8 +16612,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{done} of {total}"
-msgstr ""
+msgstr "{done} מתוך {total}"
 
 #. interface
 #: crates/ui-egui/src/import_tree.rs
@@ -17658,8 +17687,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
+#, fuzzy
 msgid "{why} What came in before stays; import the file again for the rest."
-msgstr ""
+msgstr "{why} מה שכבר יובא יישמר; יש לייבא שוב את הקובץ כדי להוסיף את השאר."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
