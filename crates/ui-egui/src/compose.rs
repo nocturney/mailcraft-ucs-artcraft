@@ -21,35 +21,72 @@ mod tests;
 
 const LABEL_W: f32 = 62.0;
 
+/// UI chrome follows Hebrew reading direction. Addresses themselves remain LTR.
+fn rtl_header() -> bool {
+    matches!(crate::i18n::current().code(), "he" | "iw")
+}
+
+/// Label anchor, its alignment, and the editable rectangle of a compose header row.
+/// `reserved` is the width of an optional control at the row's *trailing*
+/// visual edge (the Bcc link), not part of the text input.
+fn header_geometry(row: Rect, reserved: f32, rtl: bool) -> (egui::Pos2, Align2, Rect) {
+    if rtl {
+        (
+            pos2(row.max.x - 16.0, row.center().y),
+            Align2::RIGHT_CENTER,
+            Rect::from_min_max(
+                pos2(row.min.x + 12.0 + reserved, row.min.y + 3.0),
+                pos2(row.max.x - 16.0 - LABEL_W, row.max.y - 3.0),
+            ),
+        )
+    } else {
+        (
+            pos2(row.min.x + 16.0, row.center().y),
+            Align2::LEFT_CENTER,
+            Rect::from_min_max(
+                pos2(row.min.x + 16.0 + LABEL_W, row.min.y + 3.0),
+                pos2(row.max.x - 12.0 - reserved, row.max.y - 3.0),
+            ),
+        )
+    }
+}
+
+/// Keep the optional Bcc link beside, never over, the recipient input.
+fn bcc_link_rect(last: Rect, top: f32, multiple_accounts: bool, rtl: bool) -> Rect {
+    let x = if rtl { last.min.x + 12.0 } else { last.max.x - 52.0 };
+    Rect::from_min_size(pos2(x, top + if multiple_accounts { 34.0 } else { 4.0 }), vec2(40.0, 22.0))
+}
+
 /// One labelled single-line field. Returns the new text when it was edited.
 fn field(ui: &mut Ui, label: &str, text: &str, hint: &str, focus: bool) -> Option<String> {
     let at = line(ui, label, 0.0);
     let mut buf = text.to_string();
-    let resp = crate::text_menu::field(ui.put(at, line_edit(&mut buf, ui.scope_id().with(("compose", label)), hint, at.width())));
+    let resp = crate::text_menu::field(ui.put(at, line_edit(&mut buf, ui.scope_id().with(("compose", label)), hint, at.width(), rtl_header())));
     if focus {
         resp.request_focus();
     }
     resp.changed().then_some(buf)
 }
 
-/// A labelled line, with the rule under it; where its text goes. `right` is room kept free at
-/// the line's right end for something drawn there (the Bcc link).
-fn line(ui: &mut Ui, label: &str, right: f32) -> Rect {
+/// A labelled line, mirrored only when the interface is Hebrew.
+/// `reserved` keeps room for the optional Bcc control beside the To field.
+fn line(ui: &mut Ui, label: &str, reserved: f32) -> Rect {
     let t = Tokens::get(ui.ctx());
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
-    ui.painter().text(pos2(r.min.x + 16.0, r.center().y), Align2::LEFT_CENTER, label, regular(12.0), t.text_dim);
+    let (at, align, edit) = header_geometry(r, reserved, rtl_header());
+    ui.painter().text(at, align, label, regular(12.0), t.text_dim);
     ui.painter().line_segment([pos2(r.min.x + 16.0, r.max.y), pos2(r.max.x - 12.0, r.max.y)], Stroke::new(1.0, t.border));
-    Rect::from_min_max(pos2(r.min.x + 16.0 + LABEL_W, r.min.y + 3.0), pos2(r.max.x - 12.0 - right, r.max.y - 3.0))
+    edit
 }
 
 /// The text of a labelled line, `width` wide.
-fn line_edit<'t>(text: &'t mut String, id: egui::Id, hint: &str, width: f32) -> egui::TextEdit<'t> {
+fn line_edit<'t>(text: &'t mut String, id: egui::Id, hint: &str, width: f32, right_align: bool) -> egui::TextEdit<'t> {
     egui::TextEdit::singleline(text)
         .id(id)
         .frame(egui::Frame::NONE)
         .hint_text(hint)
         .font(regular(13.0))
-        .align(egui::Align2::LEFT_CENTER)
+        .align(if right_align { egui::Align2::RIGHT_CENTER } else { egui::Align2::LEFT_CENTER })
         .desired_width(width)
 }
 
@@ -146,12 +183,12 @@ fn bcc_link(app: &MailApp) -> bool {
 /// A recipient line, with the recipient suggestions under it ([`recipient_line`]).
 fn recipient_field(app: &mut MailApp, ui: &mut Ui, key: &str, label: &str, text: &str, hint: &str, focus: bool) {
     let id = ui.scope_id().with(("compose", label));
-    // The Bcc link sits at the right end of the To line: a click there is for it, so the line's
-    // text stops short of it (a long To line was otherwise impossible to click at its end).
-    let right = if key == "to" && bcc_link(app) { 44.0 } else { 0.0 };
-    let at = line(ui, label, right);
+    // Reserve the To row's trailing visual edge for Bcc, on the left in Hebrew.
+    // Keep addresses LTR, even though the interface labels and boxes are mirrored.
+    let reserved = if key == "to" && bcc_link(app) { 44.0 } else { 0.0 };
+    let at = line(ui, label, reserved);
     let mut buf = text.to_string();
-    let edit = line_edit(&mut buf, id, hint, at.width());
+    let edit = line_edit(&mut buf, id, hint, at.width(), false);
     let layout = egui::Layout::centered_and_justified(egui::Direction::TopDown);
     let out = ui.scope_builder(egui::UiBuilder::new().max_rect(at).layout(layout), |ui| recipient_line(ui, &app.session, id, edit, true)).inner;
     if focus {
@@ -405,9 +442,10 @@ fn header(app: &mut MailApp, ui: &mut Ui, c: &Shown, focus_to: bool) {
     // From, when there is a choice.
     if app.session.mailbox.accounts.len() > 1 {
         let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
-        ui.painter().text(pos2(r.min.x + 16.0, r.center().y), Align2::LEFT_CENTER, tl!("From"), regular(12.0), t.text_dim);
+        let (at, align, field) = header_geometry(r, 0.0, rtl_header());
+        ui.painter().text(at, align, tl!("From"), regular(12.0), t.text_dim);
         let current = app.session.mailbox.account(c.account).map(|a| a.address().full()).unwrap_or_default();
-        let pick = Rect::from_min_max(pos2(r.min.x + 16.0 + LABEL_W, r.min.y + 4.0), pos2(r.max.x - 12.0, r.max.y - 4.0));
+        let pick = Rect::from_min_max(pos2(field.min.x, r.min.y + 4.0), pos2(field.max.x, r.max.y - 4.0));
         let resp = ui.interact(pick, ui.scope_id().with("compose_from"), Sense::click());
         if resp.hovered() {
             ui.painter().rect_filled(pick.expand2(vec2(4.0, 0.0)), 4.0, t.hover);
@@ -444,8 +482,7 @@ fn header(app: &mut MailApp, ui: &mut Ui, c: &Shown, focus_to: bool) {
     if bcc_link(app) {
         // A quiet way to get the Bcc line.
         let last = ui.min_rect();
-        let br =
-            Rect::from_min_size(pos2(last.max.x - 52.0, top + if app.session.mailbox.accounts.len() > 1 { 34.0 } else { 4.0 }), vec2(40.0, 22.0));
+        let br = bcc_link_rect(last, top, app.session.mailbox.accounts.len() > 1, rtl_header());
         let resp = ui.interact(br, ui.scope_id().with("show_bcc"), Sense::click());
         ui.painter().text(br.center(), Align2::CENTER_CENTER, tl!("Bcc"), regular(11.5), if resp.hovered() { t.accent_text } else { t.text_dim });
         if resp.clicked()
@@ -497,6 +534,39 @@ fn signature(app: &mut MailApp, ui: &mut Ui) {
     app.hit.add("composeSignatureAsText", 0, edit.rect);
     if edit.clicked() {
         let _ = app.run("compose.signatureAsText", json!({"value": true}));
+    }
+}
+
+#[cfg(test)]
+mod rtl_compose_header_tests {
+    use super::*;
+
+    #[test]
+    fn hebrew_mirrors_header_fields_without_covering_bcc_or_shrinking_inputs() {
+        let row = Rect::from_min_max(pos2(100.0, 10.0), pos2(560.0, 40.0));
+        let (ltr_label, ltr_align, ltr_field) = header_geometry(row, 44.0, false);
+        let (rtl_label, rtl_align, rtl_field) = header_geometry(row, 44.0, true);
+        let ltr_bcc = bcc_link_rect(row, 10.0, false, false);
+        let rtl_bcc = bcc_link_rect(row, 10.0, false, true);
+        assert_eq!(ltr_label.x, row.min.x + 16.0);
+        assert_eq!(rtl_label.x, row.max.x - 16.0);
+        assert_eq!(ltr_align, Align2::LEFT_CENTER);
+        assert_eq!(rtl_align, Align2::RIGHT_CENTER);
+        assert_eq!(ltr_field.size(), rtl_field.size());
+        assert!(ltr_field.max.x + 4.0 <= ltr_bcc.min.x);
+        assert!(rtl_bcc.max.x + 4.0 <= rtl_field.min.x);
+        // The email-entry side is kept for Latin addresses, separate from the right-anchored label.
+        assert!(rtl_field.max.x < rtl_label.x);
+    }
+
+    #[test]
+    fn the_bcc_control_keeps_the_same_vertical_row_in_both_directions() {
+        let row = Rect::from_min_max(pos2(100.0, 10.0), pos2(560.0, 40.0));
+        let ltr = bcc_link_rect(row, 10.0, true, false);
+        let rtl = bcc_link_rect(row, 10.0, true, true);
+        assert_eq!(ltr.size(), rtl.size());
+        assert_eq!(ltr.center().y, rtl.center().y);
+        assert_eq!(ltr.min.x - row.min.x, row.max.x - rtl.max.x);
     }
 }
 
