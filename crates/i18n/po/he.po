@@ -137,8 +137,9 @@ msgstr "(ללא נושא)"
 
 #. interface
 #: crates/ui-egui/src/alerts.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/reminders.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "(no title)"
-msgstr ""
+msgstr "(ללא כותרת)"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -675,48 +676,57 @@ msgstr "הוסף משימה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task due today"
-msgstr ""
+msgstr "הוספת משימה להיום"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task due today on this computer"
-msgstr ""
+msgstr "הוספת משימה להיום במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task due today on this computer for now"
-msgstr ""
+msgstr "הוספת משימה להיום במחשב זה בלבד, לעת עתה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task due today to {address}"
-msgstr ""
+msgstr "הוספת משימה להיום לחשבון {address}"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task due today to {address} (it waits here until To Do is allowed)"
-msgstr ""
+msgstr "הוספת משימה להיום לחשבון {address} (תמתין כאן עד שתאושר הגישה ל־To Do)"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task on this computer"
-msgstr ""
+msgstr "הוספת משימה במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task on this computer for now"
-msgstr ""
+msgstr "הוספת משימה במחשב זה בלבד, לעת עתה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task to {address}"
-msgstr ""
+msgstr "הוספת משימה לחשבון {address}"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Add a task to {address} (it waits here until To Do is allowed)"
-msgstr ""
+msgstr "הוספת משימה לחשבון {address} (תמתין כאן עד שתאושר הגישה ל־To Do)"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -1969,8 +1979,9 @@ msgstr "בוטל"
 
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Categories"
-msgstr ""
+msgstr "קטגוריות"
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -1979,8 +1990,9 @@ msgstr ""
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Categorize"
-msgstr ""
+msgstr "שיוך לקטגוריה"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -2476,8 +2488,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Completed on {date}"
-msgstr ""
+msgstr "הושלמה בתאריך {date}"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -3172,8 +3185,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Details"
-msgstr ""
+msgstr "פרטים"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -3517,8 +3531,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Due"
-msgstr ""
+msgstr "תאריך יעד"
 
 #. name
 #: crates/engine/src/session.rs
@@ -3557,8 +3572,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Due {when}"
-msgstr ""
+msgstr "תאריך יעד: {when}"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4358,8 +4374,9 @@ msgstr "מחוץ לארגון שלך."
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "From {name}"
-msgstr ""
+msgstr "מאת {name}"
 
 #. what a command says
 #: crates/engine/src/cmd/compose.rs
@@ -6273,13 +6290,15 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Mark Complete"
-msgstr ""
+msgstr "סמן כהושלמה"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Mark Incomplete"
-msgstr ""
+msgstr "סמן כלא הושלמה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -6367,8 +6386,9 @@ msgstr[1] ""
 
 #. interface, name, ribbon location
 #: crates/engine/src/cmd/compose.rs crates/engine/src/cmd/edit.rs crates/engine/src/cmd/format.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Message"
-msgstr ""
+msgstr "הודעה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -6747,8 +6767,9 @@ msgstr "לוחות השנה שלי"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "My Tasks"
-msgstr ""
+msgstr "המשימות שלי"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -7092,8 +7113,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "No category"
-msgstr ""
+msgstr "ללא קטגוריה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -7124,8 +7146,9 @@ msgstr "לא נמצאה פקודה תואמת."
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "No completed tasks yet."
-msgstr ""
+msgstr "עדיין אין משימות שהושלמו."
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -7154,8 +7177,9 @@ msgstr ""
 
 #. interface, ribbon
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "No due date"
-msgstr ""
+msgstr "ללא תאריך יעד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7314,8 +7338,9 @@ msgstr ""
 
 #. interface, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/ui-egui/src/account_setup.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/date_picker.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "ללא"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7425,8 +7450,9 @@ msgstr ""
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/notes.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/nav.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Notes"
-msgstr ""
+msgstr "הערות"
 
 #. interface
 #: crates/ui-egui/src/approval.rs
@@ -7490,8 +7516,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Nothing to do here."
-msgstr ""
+msgstr "אין כאן משימות לביצוע."
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
@@ -7890,8 +7917,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Open the message"
-msgstr ""
+msgstr "פתיחת ההודעה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -8086,8 +8114,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Overdue: was due {when}"
-msgstr ""
+msgstr "באיחור: תאריך היעד היה {when}"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar_settings.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/ribbon.rs
@@ -8756,8 +8785,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Reminder"
-msgstr ""
+msgstr "תזכורת"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10740,8 +10770,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Start"
-msgstr ""
+msgstr "התחלה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
