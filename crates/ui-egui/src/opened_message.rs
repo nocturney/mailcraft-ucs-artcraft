@@ -83,11 +83,7 @@ pub(crate) struct Asked {
 /// Keep a standalone .eml window's file actions on the reading edge in Hebrew.
 /// The action order stays logical: Move to Folder, followed by Save As.
 fn file_toolbar_layout(locale: &str) -> egui::Layout {
-    if matches!(locale, "he" | "iw") {
-        egui::Layout::right_to_left(egui::Align::Center)
-    } else {
-        egui::Layout::left_to_right(egui::Align::Center)
-    }
+    if matches!(locale, "he" | "iw") { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) }
 }
 
 /// The bar of a window of a message file: Move to Folder, Save As.
