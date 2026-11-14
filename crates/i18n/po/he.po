@@ -5352,9 +5352,8 @@ msgstr "בתיקייה {folder}"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "In {place}"
-msgstr "בתוך {place}"
+msgstr "מיקום: {place}"
 
 #. name
 #: crates/model/src/mailbox.rs crates/model/src/sync/progress.rs
@@ -16644,7 +16643,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "the top level"
-msgstr ""
+msgstr "הרמה העליונה"
 
 #. why a mail server couldn't be used
 #: crates/proto/src/lib.rs
