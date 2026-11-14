@@ -57,6 +57,36 @@ const FAVORITES: Id = 0;
 const ACCOUNT_DOT_RADIUS: f32 = 4.5;
 const ACCOUNT_DOT_ROOM: f32 = 16.0;
 
+/* Keep the existing pane and hit targets, but read folders from the right edge
+   when Hebrew is selected. The folder hierarchy itself stays unchanged. */
+fn hebrew_folder_layout() -> bool {
+    crate::i18n::current() == crate::i18n::Lang::Hebrew
+}
+
+fn folder_text_start(left: f32, right: f32, width: f32, hebrew: bool) -> f32 {
+    if hebrew { (right - width.max(0.0)).max(left) } else { left }
+}
+
+fn count_pill_start(r: Rect, width: f32, hebrew: bool) -> f32 {
+    if hebrew { r.min.x + COUNT_RIGHT - 4.0 } else { r.max.x - COUNT_RIGHT + 4.0 - width }
+}
+
+#[cfg(test)]
+mod hebrew_folder_geometry_tests {
+    use super::*;
+
+    #[test]
+    fn folder_labels_and_unread_counts_mirror_only_for_hebrew() {
+        let row = Rect::from_min_max(pos2(0.0, 0.0), pos2(200.0, 24.0));
+        assert_eq!(count_pill_start(row, 20.0, false), 168.0);
+        assert_eq!(count_pill_start(row, 20.0, true), 12.0);
+        assert_eq!(folder_text_start(30.0, 140.0, 50.0, false), 30.0);
+        assert_eq!(folder_text_start(30.0, 140.0, 50.0, true), 90.0);
+        assert_eq!(folder_text_start(30.0, 140.0, 180.0, true), 30.0);
+    }
+}
+
+
 /// The module bar. It runs from under the title bar down to the status bar, beside the tabs and
 /// the ribbon as well as the panes, so the window lays it out before the ribbon.
 pub fn module_bar(app: &mut MailApp, ui: &mut Ui) {
@@ -193,11 +223,11 @@ impl Count {
 
 /// A chevron centred on `c`, `half` its half-width when it points down (what is under it shows);
 /// it points right when that is folded away.
-fn chevron(painter: &Painter, c: Pos2, half: f32, open: bool, color: Color32) {
+fn chevron(painter: &Painter, c: Pos2, half: f32, open: bool, rtl: bool, color: Color32) {
     let points = if open {
         vec![pos2(c.x - half, c.y - half / 2.0), pos2(c.x, c.y + half / 2.0), pos2(c.x + half, c.y - half / 2.0)]
     } else {
-        vec![pos2(c.x - half / 2.0, c.y - half), pos2(c.x + half / 2.0, c.y), pos2(c.x - half / 2.0, c.y + half)]
+        vec![pos2(c.x + if rtl { half / 2.0 } else { -half / 2.0 }, c.y - half), pos2(c.x + if rtl { -half / 2.0 } else { half / 2.0 }, c.y), pos2(c.x + if rtl { half / 2.0 } else { -half / 2.0 }, c.y + half)]
     };
     painter.add(Shape::line(points, Stroke::new(1.5, color)));
 }
@@ -225,7 +255,7 @@ fn heading(app: &mut MailApp, ui: &mut Ui, id: Id, name: &str, height: f32, text
     }
     let open = !app.ui.collapsed_folders.contains(&id);
     let y = r.min.y + text_y;
-    chevron(ui.painter(), pos2(r.min.x + CHEVRON_X, y), HEADING_CHEVRON, open, if resp.hovered() { t.accent_text } else { t.text });
+    chevron(ui.painter(), pos2(r.min.x + CHEVRON_X, y), HEADING_CHEVRON, open, false, if resp.hovered() { t.accent_text } else { t.text });
     // An account's colour (#893): a dot after its name, which leaves room for it.
     let color = app.session.mailbox.account(id).and_then(|a| a.color).filter(|_| id != FAVORITES);
     let room = if color.is_some() { ACCOUNT_DOT_ROOM } else { 0.0 };
@@ -406,24 +436,30 @@ fn folder_row(app: &mut MailApp, ui: &mut Ui, f: &Folder, depth: usize, has_chil
     // another account's folder has too (two Inboxes); in its tree, its name.
     let name = if key == "fav" { result_folder_label(&app.session.mailbox, f) } else { folder_name(f).to_string() };
     let t = Tokens::get(ui.ctx());
+    let hebrew = hebrew_folder_layout();
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), ROW_H), Sense::hover());
     let resp = ui.interact(r, ui.scope_id().with((key, f.id)), Sense::click());
     app.hit.add("folder", f.id, r);
     let row = highlight(r).shrink2(vec2(0.0, ROW_HIGHLIGHT_INSET));
     if selected {
         ui.painter().rect_filled(row, 6.0, t.accent_soft);
-        ui.painter().rect_filled(Rect::from_center_size(pos2(row.min.x + 1.5, row.center().y), vec2(3.0, 14.0)), 1.5, t.selection_edge);
+        ui.painter().rect_filled(Rect::from_center_size(pos2(if hebrew { row.max.x - 1.5 } else { row.min.x + 1.5 }, row.center().y), vec2(3.0, 14.0)), 1.5, t.selection_edge);
     } else if resp.hovered() {
         // Quieter than on the ribbon: the pane is darker, and the selected row must stay the one that stands out.
         ui.painter().rect_filled(row, 6.0, t.hover_nav);
     }
-    let x = r.min.x + depth.min(MAX_INDENT_DEPTH) as f32 * INDENT;
+    let indent = depth.min(MAX_INDENT_DEPTH) as f32 * INDENT;
+    let x = if hebrew { r.max.x - indent } else { r.min.x + indent };
     // The chevron has its own click target, only on a folder with something under it.
     if has_children {
-        let tr = Rect::from_min_max(pos2(x + HIGHLIGHT_LEFT, r.min.y), pos2(x + NAME_LEFT, r.max.y));
+        let tr = if hebrew {
+            Rect::from_min_max(pos2(x - NAME_LEFT, r.min.y), pos2(x - HIGHLIGHT_LEFT, r.max.y))
+        } else {
+            Rect::from_min_max(pos2(x + HIGHLIGHT_LEFT, r.min.y), pos2(x + NAME_LEFT, r.max.y))
+        };
         let tresp = ui.interact(tr, ui.scope_id().with((key, "twisty", f.id)), Sense::click());
         let open = !app.ui.collapsed_folders.contains(&f.id);
-        chevron(ui.painter(), pos2(x + CHEVRON_X, r.center().y), ROW_CHEVRON, open, if tresp.hovered() { t.accent_text } else { t.text });
+        chevron(ui.painter(), pos2(if hebrew { x - CHEVRON_X } else { x + CHEVRON_X }, r.center().y), ROW_CHEVRON, open, hebrew, if tresp.hovered() { t.accent_text } else { t.text });
         if tresp.clicked() {
             let _ = app.execute("ui.toggleFolder", json!({"id": f.id}));
         }
@@ -431,26 +467,22 @@ fn folder_row(app: &mut MailApp, ui: &mut Ui, f: &Folder, depth: usize, has_chil
     let y = r.center().y;
     // The count, flush right, in a pill: an unread count in the accent's soft colour, a total
     // (Drafts, Junk) in a quiet grey one.
-    let mut name_end = r.max.x - COUNT_RIGHT;
+    let mut name_edge = if hebrew { r.min.x + COUNT_RIGHT } else { r.max.x - COUNT_RIGHT };
     if count != Count::Nothing {
         let (fill, ink) = if matches!(count, Count::Unread(_)) { (t.accent_soft, t.accent_soft_text) } else { (t.pill_quiet, t.text_dim) };
         let fill = if selected && matches!(count, Count::Unread(_)) { t.surface } else { fill };
         let galley = ui.painter().layout_no_wrap(count.digits(), bold(NAME_SIZE - 1.0), ink);
         let w = (galley.size().x + 12.0).max(20.0);
-        let pill = Rect::from_center_size(pos2(r.max.x - COUNT_RIGHT + 4.0 - w / 2.0, r.center().y), vec2(w, 18.0));
+        let pill = Rect::from_min_size(pos2(count_pill_start(r, w, hebrew), r.center().y - 9.0), vec2(w, 18.0));
         ui.painter().rect_filled(pill, 9.0, fill);
         ui.painter().galley(pill.center() - galley.size() / 2.0, galley, ink);
-        name_end = pill.min.x - 6.0;
+        name_edge = if hebrew { pill.max.x + 6.0 } else { pill.min.x - 6.0 };
     }
     let font = if selected { bold(NAME_SIZE) } else { regular(NAME_SIZE) };
-    paint_clipped(
-        ui.painter(),
-        pos2(x + NAME_LEFT, y),
-        (name_end - x - NAME_LEFT).max(0.0),
-        &name,
-        font,
-        if selected { t.accent_soft_text } else { t.text },
-    );
+    let ink = if selected { t.accent_soft_text } else { t.text };
+    let (left, right) = if hebrew { (name_edge, x - NAME_LEFT) } else { (x + NAME_LEFT, name_edge) };
+    let start = folder_text_start(left, right, crate::theme::text_width(ui.painter(), &name, &font, 0.0, ink), hebrew);
+    paint_clipped(ui.painter(), pos2(start, y), (right - start).max(0.0), &name, font, ink);
     if resp.clicked() {
         ui.data_mut(|d| d.insert_temp(egui::Id::unique("folder_picked_in_list"), key == "tree"));
         let _ = app.run("folder.select", json!({"id": f.id}));
@@ -537,13 +569,14 @@ fn gmail_hit(category: GmailCategory) -> &'static str {
 /// categories are on ([`crate::gmail_move`]), and stays where it was otherwise.
 fn gmail_row(app: &mut MailApp, ui: &mut Ui, inbox: Id, depth: usize, category: GmailCategory, unread: usize, selected: bool) {
     let t = Tokens::get(ui.ctx());
+    let hebrew = hebrew_folder_layout();
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), ROW_H), Sense::hover());
     let resp = ui.interact(r, ui.scope_id().with(("gmail", inbox, category.code())), Sense::click());
     app.hit.add(gmail_hit(category), inbox, r);
     let row = highlight(r).shrink2(vec2(0.0, ROW_HIGHLIGHT_INSET));
     if selected {
         ui.painter().rect_filled(row, 6.0, t.accent_soft);
-        ui.painter().rect_filled(Rect::from_center_size(pos2(row.min.x + 1.5, row.center().y), vec2(3.0, 14.0)), 1.5, t.selection_edge);
+        ui.painter().rect_filled(Rect::from_center_size(pos2(if hebrew { row.max.x - 1.5 } else { row.min.x + 1.5 }, row.center().y), vec2(3.0, 14.0)), 1.5, t.selection_edge);
     } else if resp.hovered() {
         ui.painter().rect_filled(row, 6.0, t.hover_nav);
     }
@@ -551,28 +584,25 @@ fn gmail_row(app: &mut MailApp, ui: &mut Ui, inbox: Id, depth: usize, category: 
     if resp.has_focus() {
         ui.painter().rect_stroke(row, 6.0, Stroke::new(1.5, t.accent), egui::StrokeKind::Inside);
     }
-    let x = r.min.x + depth.min(MAX_INDENT_DEPTH) as f32 * INDENT;
+    let indent = depth.min(MAX_INDENT_DEPTH) as f32 * INDENT;
+    let x = if hebrew { r.max.x - indent } else { r.min.x + indent };
     let y = r.center().y;
-    let mut name_end = r.max.x - COUNT_RIGHT;
+    let mut name_edge = if hebrew { r.min.x + COUNT_RIGHT } else { r.max.x - COUNT_RIGHT };
     if unread > 0 {
         let fill = if selected { t.surface } else { t.accent_soft };
         let galley = ui.painter().layout_no_wrap(unread.to_string(), bold(NAME_SIZE - 1.0), t.accent_soft_text);
         let w = (galley.size().x + 12.0).max(20.0);
-        let pill = Rect::from_center_size(pos2(r.max.x - COUNT_RIGHT + 4.0 - w / 2.0, r.center().y), vec2(w, 18.0));
+        let pill = Rect::from_min_size(pos2(count_pill_start(r, w, hebrew), r.center().y - 9.0), vec2(w, 18.0));
         ui.painter().rect_filled(pill, 9.0, fill);
         ui.painter().galley(pill.center() - galley.size() / 2.0, galley, t.accent_soft_text);
-        name_end = pill.min.x - 6.0;
+        name_edge = if hebrew { pill.max.x + 6.0 } else { pill.min.x - 6.0 };
     }
     let name = gmail_name(category);
     let font = if selected { bold(NAME_SIZE) } else { regular(NAME_SIZE) };
-    paint_clipped(
-        ui.painter(),
-        pos2(x + NAME_LEFT, y),
-        (name_end - x - NAME_LEFT).max(0.0),
-        name,
-        font,
-        if selected { t.accent_soft_text } else { t.text },
-    );
+    let ink = if selected { t.accent_soft_text } else { t.text };
+    let (left, right) = if hebrew { (name_edge, x - NAME_LEFT) } else { (x + NAME_LEFT, name_edge) };
+    let start = folder_text_start(left, right, crate::theme::text_width(ui.painter(), name, &font, 0.0, ink), hebrew);
+    paint_clipped(ui.painter(), pos2(start, y), (right - start).max(0.0), name, font, ink);
     // Read out as its name and how many of its messages are unread.
     let said = if unread > 0 { format!("{name}, {}", tln!(unread, "{n} unread", "{n} unread")) } else { name.to_string() };
     resp.widget_info(|| egui::WidgetInfo::selected(egui::Role::TreeItem, true, selected, &said));
