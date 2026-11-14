@@ -1597,7 +1597,14 @@ pub fn show(app: &mut MailApp, ctx: &egui::Context) {
                     let place = parent.map(|p| crate::nav::folder_path(&app.session.mailbox, p)).unwrap_or_else(|| tl!("the top level").to_string());
                     ui.label(egui::RichText::new(crate::i18n::fmt(tl!("In {place}"), &[("place", &place)])).color(t.text_dim));
                 }
-                let resp = ui.add(egui::TextEdit::singleline(name).hint_text(tl!("Folder name")).desired_width(f32::INFINITY));
+                // Folder names are user-authored text: keep Hebrew at the reading edge,
+                // without changing the LTR layout for English or pseudo-locales.
+                let resp = ui.add(
+                    egui::TextEdit::singleline(name)
+                        .hint_text(tl!("Folder name"))
+                        .desired_width(f32::INFINITY)
+                        .align(command_query_alignment(crate::i18n::current())),
+                );
                 let resp = crate::text_menu::field(resp);
                 if error.is_empty() {
                     crate::text_menu::hold(&resp);
@@ -2344,6 +2351,19 @@ mod tests {
         // Displayed translations still match as text; command IDs continue to match too.
         assert_eq!(score("חפש", "חפש פקודות", "בית", "ui.commands"), Some(0));
         assert_eq!(score("commands", "חפש פקודות", "בית", "ui.commands"), Some(3));
+    }
+
+    #[test]
+    fn folder_name_input_alignment_is_hebrew_only() {
+        // Shared with command search: Hebrew folder names read from the right,
+        // English and pseudo-localized folder names keep the original left edge.
+        for (locale, expected) in [
+            (crate::i18n::Lang::Hebrew, Align2::RIGHT_CENTER),
+            (crate::i18n::Lang::English, Align2::LEFT_CENTER),
+            (crate::i18n::Lang::Pseudo, Align2::LEFT_CENTER),
+        ] {
+            assert_eq!(command_query_alignment(locale), expected);
+        }
     }
 
     #[test]
