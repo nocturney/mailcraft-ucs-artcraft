@@ -19,13 +19,24 @@ pub const PAGES: &[(&str, &str, &str)] = &[
     ("about", "About", "help"),
 ];
 
+/// Coordinates of an item in the File/Backstage navigation column.
+fn nav_positions(r: Rect, rtl: bool) -> (f32, f32, f32, Align2) {
+    if rtl {
+        (r.max.x - 28.0, r.max.x - 48.0, r.max.x - 11.0, Align2::RIGHT_CENTER)
+    } else {
+        (r.min.x + 28.0, r.min.x + 48.0, r.min.x + 8.0, Align2::LEFT_CENTER)
+    }
+}
+
 pub fn show(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     let top = if app.integrated_titlebar { crate::chrome::MAC_TITLE_BAR } else { 0.0 };
     // The column of pages: the accent with its ink on a light window; in the dark a neutral
     // column, where the accent only marks the page in view.
     let (column, ink) = (t.backstage_column, t.backstage_ink);
-    egui::Panel::left("backstage_nav").exact_size(210.0).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(column)).show(
+    let nav_panel = if rtl { egui::Panel::right("backstage_nav") } else { egui::Panel::left("backstage_nav") };
+    nav_panel.exact_size(210.0).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(column)).show(
         ui,
         |ui| {
             ui.spacing_mut().item_spacing = vec2(0.0, 2.0);
@@ -35,8 +46,9 @@ pub fn show(app: &mut MailApp, ui: &mut Ui) {
             if resp.hovered() {
                 ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 5.0, ink.linear_multiply(0.14));
             }
-            icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 28.0, r.center().y), vec2(18.0, 18.0)), "previous", ink, ink);
-            ui.painter().text(pos2(r.min.x + 48.0, r.center().y), Align2::LEFT_CENTER, tl!("Back"), semibold(13.5), ink);
+            let (icon_x, label_x, _, align) = nav_positions(r, rtl);
+            icons::paint(ui.painter(), Rect::from_center_size(pos2(icon_x, r.center().y), vec2(18.0, 18.0)), if rtl { "next" } else { "previous" }, ink, ink);
+            ui.painter().text(pos2(label_x, r.center().y), align, tl!("Back"), semibold(13.5), ink);
             if resp.clicked() {
                 let _ = app.run("ui.backstage", json!({"value": false}));
             }
@@ -50,13 +62,14 @@ pub fn show(app: &mut MailApp, ui: &mut Ui) {
                     ui.painter().rect_filled(r.shrink2(vec2(8.0, 2.0)), 6.0, t.hover);
                 }
                 let ink = if active { t.accent_soft_text } else { ink };
+                let (icon_x, label_x, mark_x, align) = nav_positions(r, rtl);
                 if active {
-                    ui.painter().rect_filled(Rect::from_min_size(pos2(r.min.x + 8.0, r.center().y - 9.0), vec2(3.0, 18.0)), 1.5, t.backstage_mark);
+                    ui.painter().rect_filled(Rect::from_min_size(pos2(mark_x, r.center().y - 9.0), vec2(3.0, 18.0)), 1.5, t.backstage_mark);
                 }
-                icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 28.0, r.center().y), vec2(16.0, 16.0)), icon, ink, ink);
+                icons::paint(ui.painter(), Rect::from_center_size(pos2(icon_x, r.center().y), vec2(16.0, 16.0)), icon, ink, ink);
                 ui.painter().text(
-                    pos2(r.min.x + 48.0, r.center().y),
-                    Align2::LEFT_CENTER,
+                    pos2(label_x, r.center().y),
+                    align,
                     tl!(label),
                     if active { semibold(13.0) } else { regular(13.0) },
                     ink,
@@ -84,6 +97,30 @@ pub fn show(app: &mut MailApp, ui: &mut Ui) {
                 }
             });
         });
+}
+
+#[cfg(test)]
+mod backstage_hebrew_nav_tests {
+    use super::*;
+
+    #[test]
+    fn backstage_nav_mirrors_only_in_hebrew() {
+        for width in [210.0, 260.0, 340.0] {
+            let rect = Rect::from_min_size(pos2(10.0, 20.0), vec2(width, 40.0));
+            let (left_icon, left_text, left_mark, _) = nav_positions(rect, false);
+            let (right_icon, right_text, right_mark, _) = nav_positions(rect, true);
+            assert_eq!(left_icon, rect.min.x + 28.0);
+            assert_eq!(left_text, rect.min.x + 48.0);
+            assert_eq!(left_mark, rect.min.x + 8.0);
+            assert_eq!(right_icon, rect.max.x - 28.0);
+            assert_eq!(right_text, rect.max.x - 48.0);
+            assert_eq!(right_mark, rect.max.x - 11.0);
+            assert!(left_icon + 8.0 < left_text - 8.0);
+            assert!(right_text + 8.0 < right_icon - 8.0);
+            assert!(left_mark + 3.0 < left_icon - 8.0);
+            assert!(right_mark > right_icon + 8.0);
+        }
+    }
 }
 
 fn heading(ui: &mut Ui, text: &str, t: &Tokens) {
