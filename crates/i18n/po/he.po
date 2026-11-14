@@ -174,8 +174,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid ", {n} sent"
-msgstr ""
+msgstr ", נשלחו: {n}"
 
 #. what a command says
 #: crates/engine/src/cmd/compose.rs
@@ -891,8 +892,9 @@ msgstr "כל היום"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "All of them"
-msgstr ""
+msgstr "כולם"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -2508,8 +2510,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Company"
-msgstr ""
+msgstr "חברה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -2716,8 +2719,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Copy problems"
-msgstr ""
+msgstr "העתק בעיות"
 
 #. interface
 #: crates/ui-egui/src/move_items.rs
@@ -3202,8 +3206,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Department"
-msgstr ""
+msgstr "מחלקה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/signatures.rs
@@ -3357,8 +3362,9 @@ msgstr "הסתר את האזהרה בהודעה זו. היא תופיע שוב �
 
 #. interface, name
 #: crates/ui-egui/src/credits.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Display name"
-msgstr ""
+msgstr "שם תצוגה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -3430,13 +3436,15 @@ msgstr "בוצע"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Done: up to date"
-msgstr ""
+msgstr "הושלם: הכול מעודכן"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Done: {n} new"
-msgstr ""
+msgstr "הושלם · פריטים חדשים: {n}"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -3645,8 +3653,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "E-mail"
-msgstr ""
+msgstr "דוא״ל"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -4036,8 +4045,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Fewer than two of these contacts are still here, so there is nothing to merge."
-msgstr ""
+msgstr "נותרו כאן פחות משני אנשי קשר, ולכן אין מה למזג."
 
 #. command label, name, ribbon location
 #: crates/engine/src/cmd/account.rs crates/engine/src/cmd/auto_replies.rs crates/engine/src/cmd/calendar/invitation.rs crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/calendar_opened.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/file.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/graph_switch.rs crates/engine/src/cmd/help.rs crates/engine/src/cmd/keys.rs crates/engine/src/cmd/offline.rs crates/engine/src/cmd/shared.rs crates/engine/src/cmd/signature.rs crates/engine/src/cmd/tasks_remote.rs crates/engine/src/cmd/zones.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs
@@ -4142,8 +4152,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "First name"
-msgstr ""
+msgstr "שם פרטי"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -4464,8 +4475,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Full messages: {done} of {total}"
-msgstr ""
+msgstr "הודעות מלאות: {done} מתוך {total}"
 
 #. interface, name
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/folder_properties.rs
@@ -4771,8 +4783,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Group {n} of {total}"
-msgstr ""
+msgstr "קבוצה {n} מתוך {total}"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
@@ -5578,8 +5591,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Job title"
-msgstr ""
+msgstr "תפקיד"
 
 #. interface, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/reminders.rs crates/ui-egui/src/ribbon.rs
@@ -5687,8 +5701,9 @@ msgstr "לשמור את ההערות ואת רשומות היומן"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Keep this one"
-msgstr ""
+msgstr "שמור איש קשר זה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -5794,8 +5809,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Last name"
-msgstr ""
+msgstr "שם משפחה"
 
 #. interface, name
 #: crates/ui-egui/src/graph_switch.rs crates/ui-egui/src/tasks_view.rs
@@ -5836,8 +5852,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Leave this account out of this Send/Receive"
-msgstr ""
+msgstr "דלג על חשבון זה בפעולת השליחה והקבלה הנוכחית"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -6448,8 +6465,9 @@ msgstr "פגישה"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Merge"
-msgstr ""
+msgstr "מזג"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -6470,8 +6488,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Merge this contact"
-msgstr ""
+msgstr "מזג איש קשר זה"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -6653,8 +6672,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Middle name"
-msgstr ""
+msgstr "שם אמצעי"
 
 #. interface
 #: crates/ui-egui/src/menubar.rs
@@ -7132,8 +7152,9 @@ msgstr "בשבוע הבא"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Nickname"
-msgstr ""
+msgstr "כינוי"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/updates.rs
@@ -7177,8 +7198,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "No account is connected to a mail server (File › Add Account)"
-msgstr ""
+msgstr "אין חשבון המחובר לשרת דואר (קובץ › הוסף חשבון)"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs crates/ui-egui/src/favorites_sync.rs crates/ui-egui/src/lib.rs
@@ -7399,8 +7421,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "No two contacts share an e-mail address or a phone number."
-msgstr ""
+msgstr "לא נמצאו שני אנשי קשר עם אותה כתובת דוא״ל או אותו מספר טלפון."
 
 #. interface
 #: crates/ui-egui/src/windows.rs
@@ -7567,8 +7590,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Nothing has been sent or received yet."
-msgstr ""
+msgstr "עדיין לא נשלחו או התקבלו הודעות."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -8343,8 +8367,9 @@ msgstr "הרשאות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Phone"
-msgstr ""
+msgstr "טלפון"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -10082,8 +10107,9 @@ msgstr "שלח/קבל בכל התיקיות"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Send/Receive Progress"
-msgstr ""
+msgstr "התקדמות שליחה וקבלה"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -10805,13 +10831,15 @@ msgstr "גודל"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Skip"
-msgstr ""
+msgstr "דלג"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Skipped"
-msgstr ""
+msgstr "בוצע דילוג"
 
 #. name
 #: crates/model/src/calendar.rs
@@ -10948,8 +10976,9 @@ msgstr "שעת התחלה:"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Starting…"
-msgstr ""
+msgstr "מתחיל…"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -10989,8 +11018,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Stop"
-msgstr ""
+msgstr "עצור"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -11021,8 +11051,9 @@ msgstr ""
 
 #. interface, what a command says
 #: crates/engine/src/cmd/account.rs crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "הופסק"
 
 #. what a command says
 #: crates/engine/src/cmd/account.rs
@@ -11725,8 +11756,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "The contacts you picked"
-msgstr ""
+msgstr "אנשי הקשר שבחרת"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -11866,8 +11898,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "The kept contact is always merged"
-msgstr ""
+msgstr "איש הקשר שיישמר נכלל תמיד במיזוג"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -12456,8 +12489,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Their details are the same; the kept contact loses nothing."
-msgstr ""
+msgstr "הפרטים שלהם זהים; לא יאבד מידע באיש הקשר שיישמר."
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -12522,8 +12556,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "These contacts can't be merged here: fewer than two of them can be changed."
-msgstr ""
+msgstr "אי אפשר למזג אנשי קשר אלה כאן: ניתן לערוך פחות משניים מהם."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -12567,8 +12602,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "They share {what}."
-msgstr ""
+msgstr "הפרטים המשותפים להם: {what}."
 
 #. name, ribbon
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
@@ -13240,13 +13276,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Tick at least one more contact to merge into the kept one."
-msgstr ""
+msgstr "סמן לפחות איש קשר נוסף למיזוג עם איש הקשר שיישמר."
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Tick the contacts that are the same person, and choose the one to keep:"
-msgstr ""
+msgstr "סמן את אנשי הקשר ששייכים לאותו אדם ובחר איזה מהם לשמור:"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -13854,8 +13892,9 @@ msgstr "יש להמתין לסיום התצוגה המקדימה של הקובץ
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "Waiting"
-msgstr ""
+msgstr "ממתין"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -13874,8 +13913,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Website"
-msgstr ""
+msgstr "אתר אינטרנט"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -13929,8 +13969,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "What the Send/Receive before came to: the last one brought nothing new"
-msgstr ""
+msgstr "תוצאת השליחה והקבלה הקודמות: לא התקבלו פריטים חדשים"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar.rs
@@ -14016,8 +14057,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
+#, fuzzy
 msgid "Where they differ, the kept contact has:"
-msgstr ""
+msgstr "כאשר הפרטים שונים, איש הקשר שיישמר מכיל:"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar.rs
@@ -16886,8 +16928,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{counted} · Paused until the next Send/Receive"
-msgstr ""
+msgstr "{counted} · מושהה עד השליחה והקבלה הבאות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -17029,8 +17072,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{m} min {s} s"
-msgstr ""
+msgstr "{m} דק׳ {s} שנ׳"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs
@@ -17766,8 +17810,9 @@ msgstr[1] ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{n} s"
-msgstr ""
+msgstr "{n} שנ׳"
 
 #. interface
 #: crates/ui-egui/src/chrome.rs
@@ -17871,13 +17916,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{phase} {time}"
-msgstr ""
+msgstr "{phase} · משך: {time}"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{phase}: {detail}"
-msgstr ""
+msgstr "{phase} — פרטים: {detail}"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -17891,8 +17938,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
+#, fuzzy
 msgid "{result} · {time}"
-msgstr ""
+msgstr "{result} · משך: {time}"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
