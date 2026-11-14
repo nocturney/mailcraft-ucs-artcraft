@@ -21,11 +21,42 @@ mod tests;
 
 const LABEL_W: f32 = 62.0;
 
+/// Hebrew mirrors the compose form's chrome; recipients' email-address text stays LTR.
+fn hebrew_compose_layout() -> bool {
+    crate::i18n::current() == crate::i18n::Lang::Hebrew
+}
+
+/// The label anchor and the editable rectangle within one compose header row.
+/// `reserve` leaves space for the Bcc affordance at the leading edge of the form.
+fn line_positions(row: Rect, reserve: f32, hebrew: bool) -> (egui::Pos2, Align2, Rect) {
+    let left = row.min.x + 16.0;
+    let right = row.max.x - 12.0;
+    let reserve = reserve.max(0.0);
+    let (anchor, align, start, end) = if hebrew {
+        (pos2(right, row.center().y), Align2::RIGHT_CENTER, left + reserve, right - LABEL_W)
+    } else {
+        (pos2(left, row.center().y), Align2::LEFT_CENTER, left + LABEL_W, right - reserve)
+    };
+    let edit = Rect::from_min_max(pos2(start, row.min.y + 3.0), pos2(end.max(start), row.max.y - 3.0));
+    (anchor, align, edit)
+}
+
+fn bcc_link_rect(row: Rect, top: f32, multiple_accounts: bool, hebrew: bool) -> Rect {
+    let x = if hebrew { row.min.x + 12.0 } else { row.max.x - 52.0 };
+    let y = top + if multiple_accounts { 34.0 } else { 4.0 };
+    Rect::from_min_size(pos2(x, y), vec2(40.0, 22.0))
+}
+
 /// One labelled single-line field. Returns the new text when it was edited.
 fn field(ui: &mut Ui, label: &str, text: &str, hint: &str, focus: bool) -> Option<String> {
     let at = line(ui, label, 0.0);
     let mut buf = text.to_string();
-    let resp = crate::text_menu::field(ui.put(at, line_edit(&mut buf, ui.scope_id().with(("compose", label)), hint, at.width())));
+    let mut edit = line_edit(&mut buf, ui.scope_id().with(("compose", label)), hint, at.width());
+    // Subject is free text; unlike email-address inputs, it follows the Hebrew form direction.
+    if hebrew_compose_layout() {
+        edit = edit.align(Align2::RIGHT_CENTER);
+    }
+    let resp = crate::text_menu::field(ui.put(at, edit));
     if focus {
         resp.request_focus();
     }
@@ -37,9 +68,10 @@ fn field(ui: &mut Ui, label: &str, text: &str, hint: &str, focus: bool) -> Optio
 fn line(ui: &mut Ui, label: &str, right: f32) -> Rect {
     let t = Tokens::get(ui.ctx());
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
-    ui.painter().text(pos2(r.min.x + 16.0, r.center().y), Align2::LEFT_CENTER, label, regular(12.0), t.text_dim);
+    let (anchor, align, edit) = line_positions(r, right, hebrew_compose_layout());
+    ui.painter().text(anchor, align, label, regular(12.0), t.text_dim);
     ui.painter().line_segment([pos2(r.min.x + 16.0, r.max.y), pos2(r.max.x - 12.0, r.max.y)], Stroke::new(1.0, t.border));
-    Rect::from_min_max(pos2(r.min.x + 16.0 + LABEL_W, r.min.y + 3.0), pos2(r.max.x - 12.0 - right, r.max.y - 3.0))
+    edit
 }
 
 /// The text of a labelled line, `width` wide.
@@ -405,9 +437,9 @@ fn header(app: &mut MailApp, ui: &mut Ui, c: &Shown, focus_to: bool) {
     // From, when there is a choice.
     if app.session.mailbox.accounts.len() > 1 {
         let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::hover());
-        ui.painter().text(pos2(r.min.x + 16.0, r.center().y), Align2::LEFT_CENTER, tl!("From"), regular(12.0), t.text_dim);
+        let (anchor, align, pick) = line_positions(r, 0.0, hebrew_compose_layout());
+        ui.painter().text(anchor, align, tl!("From"), regular(12.0), t.text_dim);
         let current = app.session.mailbox.account(c.account).map(|a| a.address().full()).unwrap_or_default();
-        let pick = Rect::from_min_max(pos2(r.min.x + 16.0 + LABEL_W, r.min.y + 4.0), pos2(r.max.x - 12.0, r.max.y - 4.0));
         let resp = ui.interact(pick, ui.scope_id().with("compose_from"), Sense::click());
         if resp.hovered() {
             ui.painter().rect_filled(pick.expand2(vec2(4.0, 0.0)), 4.0, t.hover);
@@ -444,8 +476,7 @@ fn header(app: &mut MailApp, ui: &mut Ui, c: &Shown, focus_to: bool) {
     if bcc_link(app) {
         // A quiet way to get the Bcc line.
         let last = ui.min_rect();
-        let br =
-            Rect::from_min_size(pos2(last.max.x - 52.0, top + if app.session.mailbox.accounts.len() > 1 { 34.0 } else { 4.0 }), vec2(40.0, 22.0));
+        let br = bcc_link_rect(last, top, app.session.mailbox.accounts.len() > 1, hebrew_compose_layout());
         let resp = ui.interact(br, ui.scope_id().with("show_bcc"), Sense::click());
         ui.painter().text(br.center(), Align2::CENTER_CENTER, tl!("Bcc"), regular(11.5), if resp.hovered() { t.accent_text } else { t.text_dim });
         if resp.clicked()
