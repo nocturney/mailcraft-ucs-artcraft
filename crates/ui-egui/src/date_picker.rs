@@ -82,6 +82,34 @@ pub fn moved(day: Date, key: Key) -> Option<Date> {
     })
 }
 
+/// A calendar with Hebrew reading order runs from the right edge of the grid to the left.
+/// The dates themselves, the source week-start setting, and accessibility labels are unchanged.
+fn hebrew_calendar() -> bool {
+    crate::i18n::current() == crate::i18n::Lang::Hebrew
+}
+
+fn visual_column(index: i64, hebrew: bool) -> i64 {
+    if hebrew { 6 - index } else { index }
+}
+
+fn month_arrow_x(rect: Rect, previous: bool, hebrew: bool) -> f32 {
+    if previous != hebrew { rect.min.x + 12.0 } else { rect.max.x - 12.0 }
+}
+
+/// Left/right keys walk along the calendar's visible row, including when it reads right-to-left.
+fn moved_in_direction(day: Date, key: Key, hebrew: bool) -> Option<Date> {
+    let key = if hebrew {
+        match key {
+            Key::ArrowLeft => Key::ArrowRight,
+            Key::ArrowRight => Key::ArrowLeft,
+            other => other,
+        }
+    } else {
+        key
+    };
+    moved(day, key)
+}
+
 impl Calendar<'_> {
     /// Draws the calendar button and, while it is open, the calendar; gives back what was picked.
     pub fn show(self, ui: &mut Ui) -> Option<Picked> {
@@ -127,6 +155,7 @@ impl Calendar<'_> {
         let t = Tokens::get(ui.ctx());
         let mut open = ui.ctx().data(|d| d.get_temp::<Open>(state_id))?;
         let mut picked = None;
+        let hebrew = hebrew_calendar();
         let width = 7.0 * CELL.x;
         ui.set_width(width);
         // The heading: the month between the arrows to the months either side, which stop at the
@@ -134,8 +163,8 @@ impl Calendar<'_> {
         let (r, _) = ui.allocate_exact_size(vec2(width, 26.0), Sense::hover());
         ui.painter().text(r.center(), Align2::CENTER_CENTER, crate::dates::month_year(open.month), semibold(13.0), t.text);
         let arrows = [
-            ("previous", tl!("Previous Month"), -1, r.min.x + 12.0, open.month != first_day().start_of_month()),
-            ("next", tl!("Next Month"), 1, r.max.x - 12.0, open.month != last_day().start_of_month()),
+            ("previous", tl!("Previous Month"), -1, month_arrow_x(r, true, hebrew), open.month != first_day().start_of_month()),
+            ("next", tl!("Next Month"), 1, month_arrow_x(r, false, hebrew), open.month != last_day().start_of_month()),
         ];
         for (icon, tip, by, x, enabled) in arrows {
             let br = Rect::from_center_size(pos2(x, r.center().y), vec2(24.0, 24.0));
@@ -145,7 +174,9 @@ impl Calendar<'_> {
                 ui.painter().rect_filled(br, 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
             }
             let ink = if enabled { t.icon } else { t.text_disabled };
-            icons::paint(ui.painter(), Rect::from_center_size(br.center(), vec2(12.0, 12.0)), icon, ink, if enabled { t.accent } else { ink });
+            // In Hebrew the previous month is on the right, and its chevron points right.
+            let glyph = if hebrew { if by < 0 { "next" } else { "previous" } } else { icon };
+            icons::paint(ui.painter(), Rect::from_center_size(br.center(), vec2(12.0, 12.0)), glyph, ink, if enabled { t.accent } else { ink });
             if enabled && resp.on_hover_text(tip).clicked() {
                 open.month = open.month.add_months(by);
                 // The keyboard's day follows, to the same day of that month.
@@ -158,7 +189,7 @@ impl Calendar<'_> {
         let (r, _) = ui.allocate_exact_size(vec2(width, 18.0), Sense::hover());
         for i in 0..7u8 {
             let weekday = Weekday::from_index(i64::from(self.week_start.index()) + i64::from(i));
-            let x = r.min.x + (f32::from(i) + 0.5) * CELL.x;
+            let x = r.min.x + (visual_column(i64::from(i), hebrew) as f32 + 0.5) * CELL.x;
             ui.painter().text(pos2(x, r.center().y), Align2::CENTER_CENTER, tl!(weekday.short()), regular(10.0), t.text_dim);
         }
         // The days: one widget has the keyboard, on one day; each day is clicked, and named for
@@ -176,7 +207,7 @@ impl Calendar<'_> {
             });
             for key in [Key::ArrowLeft, Key::ArrowRight, Key::ArrowUp, Key::ArrowDown, Key::PageUp, Key::PageDown] {
                 if ui.input_mut(|i| i.consume_key(Modifiers::NONE, key))
-                    && let Some(day) = moved(open.active, key)
+                    && let Some(day) = moved_in_direction(open.active, key, hebrew)
                 {
                     open.active = day;
                     open.month = day.start_of_month();
@@ -198,7 +229,10 @@ impl Calendar<'_> {
                 continue;
             }
             let day = Date::from_days(days);
-            let cell = Rect::from_min_size(pos2(area.min.x + (n % 7) as f32 * CELL.x, area.min.y + (n / 7) as f32 * CELL.y), CELL);
+            let cell = Rect::from_min_size(
+                pos2(area.min.x + visual_column(n % 7, hebrew) as f32 * CELL.x, area.min.y + (n / 7) as f32 * CELL.y),
+                CELL,
+            );
             let resp = ui.interact(cell, state_id.with(("day", days)), Sense::CLICK);
             let current = self.current == Some(day);
             resp.widget_info(|| WidgetInfo::selected(Role::Button, true, current, crate::dates::long(day)));
