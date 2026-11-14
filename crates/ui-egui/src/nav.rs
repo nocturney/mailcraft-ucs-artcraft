@@ -71,6 +71,29 @@ fn count_pill_start(r: Rect, width: f32, hebrew: bool) -> f32 {
     if hebrew { r.min.x + COUNT_RIGHT - 4.0 } else { r.max.x - COUNT_RIGHT + 4.0 - width }
 }
 
+/// The heading's label, chevron and account-colour dot share the reading direction of
+/// the folder rows; the row's full hit rectangle and drag behaviour do not move.
+fn heading_chevron_x(r: Rect, hebrew: bool) -> f32 {
+    if hebrew { r.max.x - CHEVRON_X } else { r.min.x + CHEVRON_X }
+}
+
+fn heading_text_bounds(r: Rect, name_width: f32, room: f32, hebrew: bool) -> (f32, f32) {
+    let (left, right) = if hebrew {
+        (r.min.x + 8.0 + room, (r.max.x - NAME_LEFT).max(r.min.x + 8.0 + room))
+    } else {
+        (r.min.x + NAME_LEFT, (r.max.x - 8.0 - room).max(r.min.x + NAME_LEFT))
+    };
+    (folder_text_start(left, right, name_width, hebrew), right)
+}
+
+fn heading_color_dot_x(r: Rect, visible_name_width: f32, hebrew: bool) -> f32 {
+    if hebrew {
+        r.min.x + 8.0 + ACCOUNT_DOT_ROOM / 2.0
+    } else {
+        r.min.x + NAME_LEFT + visible_name_width + ACCOUNT_DOT_ROOM / 2.0 + 1.0
+    }
+}
+
 #[cfg(test)]
 mod hebrew_folder_geometry_tests {
     use super::*;
@@ -83,6 +106,29 @@ mod hebrew_folder_geometry_tests {
         assert_eq!(folder_text_start(30.0, 140.0, 50.0, false), 30.0);
         assert_eq!(folder_text_start(30.0, 140.0, 50.0, true), 90.0);
         assert_eq!(folder_text_start(30.0, 140.0, 180.0, true), 30.0);
+    }
+
+    #[test]
+    fn favorites_and_account_headings_mirror_without_overlapping_colour_dots() {
+        let r = Rect::from_min_max(pos2(10.0, 0.0), pos2(230.0, 24.0));
+        assert_eq!(heading_chevron_x(r, false), 25.0);
+        assert_eq!(heading_chevron_x(r, true), 215.0);
+        let (ltr_x, ltr_right) = heading_text_bounds(r, 80.0, ACCOUNT_DOT_ROOM, false);
+        let (rtl_x, rtl_right) = heading_text_bounds(r, 80.0, ACCOUNT_DOT_ROOM, true);
+        assert_eq!((ltr_x, ltr_right), (36.0, 206.0));
+        assert_eq!((rtl_x, rtl_right), (124.0, 204.0));
+        assert_eq!(heading_color_dot_x(r, 80.0, false), 125.0);
+        let dot = heading_color_dot_x(r, 80.0, true);
+        assert_eq!(dot, 26.0);
+        assert!(dot + ACCOUNT_DOT_RADIUS < rtl_x);
+        assert!(rtl_right < heading_chevron_x(r, true));
+        // Long account names remain clipped before the right-hand chevron.
+        let (clipped_x, right) = heading_text_bounds(r, 300.0, ACCOUNT_DOT_ROOM, true);
+        assert_eq!(clipped_x, 34.0);
+        assert_eq!(right, 204.0);
+        // Favorites have no account-colour dot, and keep their own full-width hit target.
+        let (favorite_x, favorite_right) = heading_text_bounds(r, 80.0, 0.0, true);
+        assert_eq!((favorite_x, favorite_right), (124.0, 204.0));
     }
 }
 
@@ -255,14 +301,18 @@ fn heading(app: &mut MailApp, ui: &mut Ui, id: Id, name: &str, height: f32, text
     }
     let open = !app.ui.collapsed_folders.contains(&id);
     let y = r.min.y + text_y;
-    chevron(ui.painter(), pos2(r.min.x + CHEVRON_X, y), HEADING_CHEVRON, open, false, if resp.hovered() { t.accent_text } else { t.text });
-    // An account's colour (#893): a dot after its name, which leaves room for it.
+    let hebrew = hebrew_folder_layout();
+    chevron(ui.painter(), pos2(heading_chevron_x(r, hebrew), y), HEADING_CHEVRON, open, hebrew, if resp.hovered() { t.accent_text } else { t.text });
+    // Account names and their colour dots mirror for Hebrew, without changing the
+    // heading's original full-width click/drag target or English spacing (#893).
     let color = app.session.mailbox.account(id).and_then(|a| a.color).filter(|_| id != FAVORITES);
     let room = if color.is_some() { ACCOUNT_DOT_ROOM } else { 0.0 };
-    let w =
-        paint_clipped(ui.painter(), pos2(r.min.x + NAME_LEFT, y), (r.width() - NAME_LEFT - 8.0 - room).max(0.0), name, regular(HEADING_SIZE), t.text);
+    let font = regular(HEADING_SIZE);
+    let name_width = crate::theme::text_width(ui.painter(), name, &font, 0.0, t.text);
+    let (name_x, name_right) = heading_text_bounds(r, name_width, room, hebrew);
+    let w = paint_clipped(ui.painter(), pos2(name_x, y), (name_right - name_x).max(0.0), name, font, t.text);
     if let Some(color) = color {
-        let center = pos2(r.min.x + NAME_LEFT + w + ACCOUNT_DOT_ROOM / 2.0 + 1.0, y + 1.0);
+        let center = pos2(heading_color_dot_x(r, w, hebrew), y + 1.0);
         ui.painter().circle_filled(center, ACCOUNT_DOT_RADIUS, crate::theme::c32(color));
         // (In High Contrast a ring in the text's colour, so that a mid-tone stays in sight.)
         if t.high_contrast {
