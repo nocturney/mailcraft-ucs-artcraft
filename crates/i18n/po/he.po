@@ -310,12 +310,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "A copy of the mailbox is being saved for a switch already: wait for it to finish."
-msgstr ""
+msgstr "כבר נשמר עותק של תיבת הדואר לצורך מעבר: יש להמתין לסיום."
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "A copy of your whole mailbox is saved next to it first, as always. Mail in the Outbox isn't left behind: it is sent through Microsoft Graph."
-msgstr ""
+msgstr "כמו תמיד, קודם נשמר לצידה עותק של כל תיבת הדואר שלך. הודעות בדואר יוצא לא נשארות מאחור: הן נשלחות דרך Microsoft Graph."
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -330,7 +330,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "A large mailbox takes a while. {account} switches to Microsoft Graph as soon as the copy is saved; nothing has changed yet."
-msgstr ""
+msgstr "תיבת דואר גדולה דורשת זמן מה. החשבון {account} יעבור ל-Microsoft Graph ברגע שהעותק יישמר; עדיין שום דבר לא השתנה."
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -1790,7 +1790,7 @@ msgstr "יש לנקוט זהירות בהודעה זו."
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "Before anything changes, a copy of your whole mailbox is saved next to it, with today's date in its name."
-msgstr ""
+msgstr "לפני שמשהו משתנה, נשמר לצידה עותק של כל תיבת הדואר שלך, עם התאריך של היום בשמו."
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/people_view.rs
@@ -2609,7 +2609,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "Connect Outlook's Favorites"
-msgstr ""
+msgstr "חיבור המועדפים של Outlook"
 
 #. interface
 #, fuzzy
@@ -4373,7 +4373,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "For an account that signs in with Microsoft: the folders you keep under Favorites in Outlook, in the same order. They are read from the server and never changed there. Without this, the favourites you mark in MailCraft are shown."
-msgstr ""
+msgstr "לחשבון שמשתמש בכניסה באמצעות Microsoft: התיקיות שמופיעות אצלך תחת מועדפים ב-Outlook, באותו סדר. הן נקראות מהשרת ואף פעם לא משתנות בו. בלי האפשרות הזו, מוצגים המועדפים שסימנת ב-MailCraft."
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -5774,7 +5774,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Keep Rules on the Server"
-msgstr ""
+msgstr "שמירת כללים בשרת"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -5783,8 +5783,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
+#, fuzzy
 msgid "Keep Waiting"
-msgstr ""
+msgstr "המשך המתנה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -5820,8 +5821,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
+#, fuzzy
 msgid "Keep waiting, and the switch goes ahead by itself once MailCraft can reach the server. Or switch without them, if the server can't be reached any more (for example, your organisation has turned IMAP off):"
-msgstr ""
+msgstr "אפשר להמשיך להמתין, והמעבר יתבצע מעצמו ברגע ש-MailCraft תוכל להגיע לשרת. אפשר גם לעבור בלעדיהם, אם כבר אי אפשר להגיע לשרת (למשל, אם הארגון שלך השבית את IMAP):"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -5920,8 +5922,9 @@ msgstr "מאוחר יותר"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
+#, fuzzy
 msgid "Later keeps this account on IMAP for now. You can switch whenever you like: search the commands for \"Switch to Microsoft Graph\"."
-msgstr ""
+msgstr "בחירה ב\"מאוחר יותר\" משאירה את החשבון הזה ב-IMAP לעת עתה. אפשר לעבור בכל עת: יש לחפש בפקודות את \"מעבר ל-Microsoft Graph\"."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -6234,7 +6237,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "MailCraft can now keep {account} in step with Microsoft through Microsoft Graph, the way Outlook on the web does, instead of IMAP. Your folders, flags, categories and drafts then match what you see in Outlook, and your mail keeps coming even where your organisation has turned IMAP off."
-msgstr ""
+msgstr "MailCraft יכולה עכשיו לסנכרן את {account} עם Microsoft דרך Microsoft Graph, כמו Outlook on the web, במקום דרך IMAP. כך התיקיות, הדגלים, הקטגוריות והטיוטות שלך יתאימו למה שמוצג ב-Outlook, והדואר שלך ימשיך להגיע גם אם הארגון שלך השבית את IMAP."
 
 #. name
 #: crates/engine/src/cmd/rules.rs
@@ -7305,7 +7308,7 @@ msgstr "ללא תאריך"
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "No Microsoft account is kept in step by IMAP"
-msgstr ""
+msgstr "אין חשבון Microsoft שמסונכרן באמצעות IMAP"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -7336,7 +7339,7 @@ msgstr "אין חשבון המחובר לשרת דואר (קובץ › הוסף 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs crates/ui-egui/src/favorites_sync.rs crates/ui-egui/src/lib.rs
 msgid "No account signs in with Microsoft"
-msgstr ""
+msgstr "אף חשבון לא משתמש בכניסה באמצעות Microsoft"
 
 #. interface
 #, fuzzy
@@ -7384,7 +7387,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "No changes are left behind: only mail in the Outbox is waiting."
-msgstr ""
+msgstr "שום שינוי לא נשאר מאחור: רק הודעות בדואר יוצא ממתינות."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -8365,8 +8368,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
+#, fuzzy
 msgid "Outlook's Favorites are switched off in File › Options"
-msgstr ""
+msgstr "המועדפים של Outlook מושבתים בהגדרות: קובץ › אפשרויות"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
@@ -9577,12 +9581,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules stay on this computer for now: {error}"
-msgstr ""
+msgstr "הכללים נשארים במחשב הזה בינתיים: {error}"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules weren't allowed on the server: {error}"
-msgstr ""
+msgstr "לא התקבל אישור לשמור את הכללים בשרת: {error}"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -9592,12 +9596,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules: asking for your permission…"
-msgstr ""
+msgstr "כללים: מתבצעת בקשת הרשאה…"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules: kept on the server"
-msgstr ""
+msgstr "כללים: נשמרים בשרת"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -9607,12 +9611,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules: not allowed on the server yet; new ones and changes stay on this computer"
-msgstr ""
+msgstr "כללים: עדיין אין אישור לשמור אותם בשרת; כללים חדשים ושינויים נשארים במחשב הזה"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Rules: not read from the server yet"
-msgstr ""
+msgstr "כללים: עדיין לא נקראו מהשרת"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -9844,7 +9848,7 @@ msgstr[1] ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "Saving a copy of your mailbox before the switch…"
-msgstr ""
+msgstr "נשמר עותק של תיבת הדואר שלך לפני המעבר…"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -10373,7 +10377,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "Sending what is waiting for the server first; then {account} switches to Microsoft Graph."
-msgstr ""
+msgstr "קודם נשלח מה שממתין לשרת; לאחר מכן החשבון {account} יעבור ל-Microsoft Graph."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -10463,7 +10467,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Server settings"
-msgstr ""
+msgstr "הגדרות שרת"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -10706,7 +10710,7 @@ msgstr "הצג את העותק תחת לוחות שנה משותפים"
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "Show the Favorites from Outlook in the folder pane"
-msgstr ""
+msgstr "הצגת המועדפים מ-Outlook בחלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -10921,7 +10925,7 @@ msgstr "כניסה באמצעות Google"
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs crates/ui-egui/src/nav.rs
 msgid "Sign in with Microsoft once more to let MailCraft read the folders you keep under Favorites in Outlook. They are only read, never changed, and everything else stays as it is."
-msgstr ""
+msgstr "יש להיכנס שוב באמצעות Microsoft כדי לאפשר ל-MailCraft לקרוא את התיקיות שמופיעות אצלך תחת מועדפים ב-Outlook. הן רק נקראות ואף פעם לא משתנות, וכל השאר נשאר כפי שהוא."
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -11364,7 +11368,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "Switch"
-msgstr ""
+msgstr "מעבר"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -11375,12 +11379,13 @@ msgstr "מעבר לכניסה באמצעות Google"
 #. command label, interface
 #: crates/engine/src/cmd/graph_switch.rs crates/ui-egui/src/graph_switch.rs crates/ui-egui/src/lib.rs
 msgid "Switch to Microsoft Graph"
-msgstr ""
+msgstr "מעבר ל-Microsoft Graph"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
+#, fuzzy
 msgid "Switch without Them"
-msgstr ""
+msgstr "מעבר בלעדיהם"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12155,7 +12160,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "The link is on the clipboard: send it to your organisation's administrator"
-msgstr ""
+msgstr "הקישור הועתק ללוח: יש לשלוח אותו למנהל המערכת בארגון שלך"
 
 #. what a command says
 #: crates/engine/src/sync_driver/calendar_plan.rs
@@ -12186,7 +12191,7 @@ msgstr "הלוגו הוא התמונה הראשונה בחתימה. ניתן ל�
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "The mail of this account is then downloaded again from Microsoft. The newest messages show within minutes; the rest follows in the background."
-msgstr ""
+msgstr "לאחר מכן הדואר של החשבון הזה יורד מחדש מ-Microsoft. ההודעות החדשות ביותר יופיעו תוך דקות; השאר יגיע ברקע."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -12652,7 +12657,7 @@ msgstr "השטח שהודעות התיקייה עצמה תופסות במחשב 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "The switch of {account} to Microsoft Graph waits until MailCraft can reach the server."
-msgstr ""
+msgstr "המעבר של {account} ל-Microsoft Graph ממתין עד ש-MailCraft תוכל להגיע לשרת."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -12858,7 +12863,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/approval.rs crates/ui-egui/src/calendar_sync.rs crates/ui-egui/src/favorites_sync.rs crates/ui-egui/src/lib.rs
 msgid "This account doesn't sign in with Microsoft"
-msgstr ""
+msgstr "החשבון הזה לא משתמש בכניסה באמצעות Microsoft"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/invitation.rs
@@ -12990,7 +12995,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "This build can't make a link for an administrator."
-msgstr ""
+msgstr "גרסה זו אינה יכולה ליצור קישור עבור מנהל מערכת."
 
 #. interface
 #: crates/ui-egui/src/approval.rs
@@ -13005,7 +13010,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
 msgid "This build can't reach the account's server."
-msgstr ""
+msgstr "גרסה זו אינה יכולה להגיע לשרת של החשבון."
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -13998,12 +14003,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/help.rs
 msgid "Use an app password"
-msgstr ""
+msgstr "שימוש בסיסמה לאפליקציה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Use an app password instead"
-msgstr ""
+msgstr "שימוש בסיסמה לאפליקציה במקום זאת"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -14281,7 +14286,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "When you switch:"
-msgstr ""
+msgstr "בעת המעבר:"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -14687,7 +14692,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
 msgid "Your organisation doesn't allow MailCraft to keep rules on the server"
-msgstr ""
+msgstr "הארגון שלך לא מאפשר ל-MailCraft לשמור כללים בשרת"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -15471,8 +15476,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs crates/ui-egui/src/import_tree.rs
+#, fuzzy
 msgid "it stopped unexpectedly"
-msgstr ""
+msgstr "הפעולה נעצרה באופן בלתי צפוי"
 
 #. name
 #: crates/engine/src/agent.rs
@@ -15762,8 +15768,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
+#, fuzzy
 msgid "not allowed on the server yet: File › Info › Ask again"
-msgstr ""
+msgstr "עדיין אין הרשאה לשמור בשרת: קובץ › מידע › שאל שוב"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -17063,7 +17070,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
 msgid "{account} is switching to Microsoft Graph, but MailCraft can't reach its IMAP server to send what is waiting there first."
-msgstr ""
+msgstr "החשבון {account} עובר ל-Microsoft Graph, אבל MailCraft לא מצליחה להגיע לשרת ה-IMAP שלו כדי לשלוח קודם את מה שממתין שם."
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -17074,8 +17081,8 @@ msgstr ""
 #: crates/ui-egui/src/graph_switch.rs
 msgid "{account} now uses Microsoft Graph, and its mail is downloading again. {n} change that didn't reach the IMAP server is in the copy of your mailbox from before the switch: {backup}."
 msgid_plural "{account} now uses Microsoft Graph, and its mail is downloading again. {n} changes that didn't reach the IMAP server are in the copy of your mailbox from before the switch: {backup}."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "החשבון {account} משתמש כעת ב-Microsoft Graph, והדואר שלו מורד שוב. {n} שינוי שלא הגיע לשרת ה-IMAP נמצא בעותק של תיבת הדואר שלך מלפני המעבר: {backup}."
+msgstr[1] "החשבון {account} משתמש כעת ב-Microsoft Graph, והדואר שלו מורד שוב. {n} שינויים שלא הגיעו לשרת ה-IMAP נמצאים בעותק של תיבת הדואר שלך מלפני המעבר: {backup}."
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -17629,8 +17636,8 @@ msgstr[1] ""
 #: crates/ui-egui/src/graph_switch.rs
 msgid "{n} change waiting for the IMAP server won't reach it; it stays in the backup copy."
 msgid_plural "{n} changes waiting for the IMAP server won't reach it; they stay in the backup copy."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} שינוי שממתין לשרת ה-IMAP לא יגיע אליו; הוא יישאר בעותק הגיבוי."
+msgstr[1] "{n} שינויים שממתינים לשרת ה-IMAP לא יגיעו אליו; הם יישארו בעותק הגיבוי."
 
 #. what a command says
 #: crates/engine/src/sync_driver/calendar_plan.rs
@@ -18032,8 +18039,8 @@ msgstr ""
 #: crates/ui-egui/src/sync_panel.rs
 msgid "{n} problem"
 msgid_plural "{n} problems"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} בעיה"
+msgstr[1] "{n} בעיות"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
