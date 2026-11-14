@@ -4437,7 +4437,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/people.rs
 msgid "Forward Contact"
-msgstr ""
+msgstr "העבר איש קשר"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -6499,7 +6499,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Mark All as Read"
-msgstr ""
+msgstr "סמן הכול כנקרא"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
@@ -6527,12 +6527,12 @@ msgstr "סמן הודעה כנקראה בעת פתיחתה בחלונית הקר
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Mark as Read"
-msgstr ""
+msgstr "סמן כנקרא"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Mark as Unread"
-msgstr ""
+msgstr "סמן כלא נקרא"
 
 #. interface, name
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs
@@ -6584,7 +6584,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/people_merge.rs
 msgid "Merge Contacts"
-msgstr ""
+msgstr "מזג אנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6866,7 +6866,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/account.rs
 msgid "Move Account"
-msgstr ""
+msgstr "העבר חשבון"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6877,12 +6877,12 @@ msgstr "העברת הכול ושליחת הזמנות"
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Move Down"
-msgstr ""
+msgstr "העבר למטה"
 
 #. command label
 #: crates/engine/src/cmd/calendar.rs
 msgid "Move Event"
-msgstr ""
+msgstr "העבר אירוע"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/ribbon.rs
@@ -6893,7 +6893,7 @@ msgstr "העברת תיקייה"
 #. interface
 #: crates/ui-egui/src/move_items.rs
 msgid "Move Items"
-msgstr ""
+msgstr "העבר פריטים"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6909,7 +6909,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Move Up"
-msgstr ""
+msgstr "העבר למעלה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6946,7 +6946,7 @@ msgstr "העבר ללוח שנה"
 #. command label, interface
 #: crates/engine/src/cmd/gmail_move.rs crates/ui-egui/src/gmail_move.rs
 msgid "Move to Category"
-msgstr ""
+msgstr "העבר לקטגוריה"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/opened_message.rs crates/ui-egui/src/ribbon.rs
@@ -7145,7 +7145,7 @@ msgstr "פעילות חדשה"
 #. command label
 #: crates/engine/src/cmd/category.rs
 msgid "New Category"
-msgstr ""
+msgstr "קטגוריה חדשה"
 
 #. command label, interface
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs
@@ -7171,7 +7171,7 @@ msgstr "פריטים חדשים"
 #. command label
 #: crates/engine/src/cmd/file.rs
 msgid "New Mailbox"
-msgstr ""
+msgstr "תיבת דואר חדשה"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
@@ -7187,7 +7187,7 @@ msgstr "משימה חדשה"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "New category"
-msgstr ""
+msgstr "קטגוריה חדשה"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7198,7 +7198,7 @@ msgstr "פריטים חדשים יתווספו ללוח השנה שנבחר כא
 #. interface, name
 #: crates/model/src/sync/progress.rs crates/ui-egui/src/alerts.rs
 msgid "New mail"
-msgstr ""
+msgstr "דוא״ל חדש"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -7220,7 +7220,7 @@ msgstr "הודעות חדשות"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "New rule"
-msgstr ""
+msgstr "כלל חדש"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -8073,17 +8073,17 @@ msgstr "פתיחה וייצוא"
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Open Attachment"
-msgstr ""
+msgstr "פתח קובץ מצורף"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Open Data Folder"
-msgstr ""
+msgstr "פתח את תיקיית הנתונים"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Open Dialog"
-msgstr ""
+msgstr "פתח תיבת דו־שיח"
 
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs
@@ -8122,7 +8122,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/search_server.rs
 msgid "Open Result from the Server"
-msgstr ""
+msgstr "פתח תוצאה מהשרת"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar_opened.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/open_shared.rs
@@ -8148,7 +8148,7 @@ msgstr "פתח בחלון"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Open in a Window of Its Own"
-msgstr ""
+msgstr "פתח בחלון נפרד"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -8163,7 +8163,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Open or save the Digital signature"
-msgstr ""
+msgstr "פתח או שמור את החתימה הדיגיטלית"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -8200,7 +8200,7 @@ msgstr "פתח שוב את הדף"
 #. interface
 #: crates/ui-egui/src/reading/sharing.rs
 msgid "Open this calendar"
-msgstr ""
+msgstr "פתח את לוח השנה הזה"
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
@@ -9043,7 +9043,7 @@ msgstr "בצע שוב"
 #. command label
 #: crates/engine/src/cmd/format.rs
 msgid "Redo Typing"
-msgstr ""
+msgstr "בצע שוב הקלדה"
 
 #. interface
 #, fuzzy
@@ -9124,12 +9124,12 @@ msgstr "הסר"
 #. command label, interface
 #: crates/engine/src/cmd/account.rs crates/ui-egui/src/dialogs.rs
 msgid "Remove Account"
-msgstr ""
+msgstr "הסר חשבון"
 
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/engine/src/cmd/mail.rs crates/ui-egui/src/reading.rs
 msgid "Remove Attachment"
-msgstr ""
+msgstr "הסר קובץ מצורף"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -9191,7 +9191,7 @@ msgstr "הסר לוח שנה משותף"
 #. command label, interface
 #: crates/engine/src/cmd/shared.rs crates/ui-egui/src/dialogs.rs
 msgid "Remove Shared Mailbox"
-msgstr ""
+msgstr "הסר תיבת דואר משותפת"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -9219,12 +9219,12 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/calendar/invitation.rs crates/ui-egui/src/reading/invitation.rs
 msgid "Remove from Calendar"
-msgstr ""
+msgstr "הסר מלוח השנה"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Remove from Favorites"
-msgstr ""
+msgstr "הסר מהמועדפים"
 
 #. command label
 #: crates/engine/src/cmd/junk.rs
@@ -9702,12 +9702,12 @@ msgstr "שמירה וסגירה"
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Save All Attachments"
-msgstr ""
+msgstr "שמור את כל הקבצים המצורפים"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Save All Attachments…"
-msgstr ""
+msgstr "שמור את כל הקבצים המצורפים…"
 
 #. ribbon location
 #: crates/engine/src/cmd/file.rs
@@ -9718,12 +9718,12 @@ msgstr "שמור בשם"
 #. interface
 #: crates/ui-egui/src/opened_message.rs crates/ui-egui/src/reading.rs
 msgid "Save As…"
-msgstr ""
+msgstr "שמירה בשם…"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Save Attachment"
-msgstr ""
+msgstr "שמור קובץ מצורף"
 
 #. command label, interface, ribbon location
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs
@@ -9759,7 +9759,7 @@ msgstr "שמור הודעה בשם…"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Save Message File As"
-msgstr ""
+msgstr "שמור קובץ הודעה בשם"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -9959,12 +9959,12 @@ msgstr "חיפוש פקודות"
 #. command label
 #: crates/engine/src/cmd/people.rs
 msgid "Search People"
-msgstr ""
+msgstr "חפש אנשים"
 
 #. command label
 #: crates/engine/src/cmd/view.rs
 msgid "Search Suggestions"
-msgstr ""
+msgstr "הצעות חיפוש"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -10051,32 +10051,32 @@ msgstr "בחר הכול"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Select All Text in Message"
-msgstr ""
+msgstr "בחר את כל הטקסט בהודעה"
 
 #. command label
 #: crates/engine/src/cmd/people.rs
 msgid "Select Contact"
-msgstr ""
+msgstr "בחר איש קשר"
 
 #. command label
 #: crates/engine/src/cmd/calendar.rs
 msgid "Select Event"
-msgstr ""
+msgstr "בחר אירוע"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Select Message"
-msgstr ""
+msgstr "בחר הודעה"
 
 #. command label
 #: crates/engine/src/cmd/tasks.rs
 msgid "Select Task"
-msgstr ""
+msgstr "בחר משימה"
 
 #. command label
 #: crates/engine/src/cmd/format.rs
 msgid "Select Text"
-msgstr ""
+msgstr "בחר טקסט"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -10123,12 +10123,12 @@ msgstr "שליחה וקבלה"
 #. ribbon location
 #: crates/engine/src/cmd/account.rs crates/engine/src/cmd/auto_replies.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/ews_mail.rs crates/engine/src/cmd/graph_mail.rs crates/engine/src/cmd/graph_send.rs crates/engine/src/cmd/jmap_mail.rs crates/engine/src/cmd/remote.rs crates/engine/src/cmd/rules_remote.rs crates/engine/src/cmd/send_receive.rs crates/engine/src/cmd/snooze.rs crates/engine/src/cmd/sync_progress.rs crates/engine/src/cmd/tasks_remote.rs crates/ui-egui/src/lib.rs
 msgid "Send / Receive"
-msgstr ""
+msgstr "שלח / קבל"
 
 #. command label, interface
 #: crates/engine/src/cmd/graph_send.rs crates/ui-egui/src/reading.rs
 msgid "Send Again"
-msgstr ""
+msgstr "שלח שוב"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -10151,7 +10151,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/tasks.rs
 msgid "Send Status Report"
-msgstr ""
+msgstr "שלח דוח מצב"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -10483,7 +10483,7 @@ msgstr "הגדרות"
 #. name
 #: crates/ui-egui/src/menubar.rs
 msgid "Settings…"
-msgstr ""
+msgstr "הגדרות…"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -10531,7 +10531,7 @@ msgstr "לא ניתנה הרשאה ללוחות השנה של תיבות דוא�
 #. ribbon location
 #: crates/engine/src/cmd/calendar/share.rs
 msgid "Show"
-msgstr ""
+msgstr "הצג"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
