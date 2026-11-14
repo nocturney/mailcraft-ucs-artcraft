@@ -993,7 +993,7 @@ msgstr "כבר נמצא באנשי הקשר"
 #. name
 #: crates/ui-egui/src/account_setup.rs
 msgid "Also Hotmail, Live and MSN"
-msgstr ""
+msgstr "כולל גם Hotmail, Live ו־MSN"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2326,7 +2326,7 @@ msgstr "בחר חתימת ברירת מחדל"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Choose Google sign-in, or select Use an app password instead."
-msgstr ""
+msgstr "בחרו בהתחברות באמצעות Google, או השתמשו בסיסמה לאפליקציה במקום זאת."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -4653,7 +4653,7 @@ msgstr "קטגוריות Gmail"
 #. name
 #: crates/ui-egui/src/account_setup.rs
 msgid "Gmail and Google Workspace"
-msgstr ""
+msgstr "Gmail ו־Google Workspace"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -4779,7 +4779,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Google did not confirm this unchanged account. Its previous sign-in and mail were kept."
-msgstr ""
+msgstr "Google לא אישרה את החשבון ללא שינוי. פרטי ההתחברות הקודמים והדואר נשמרו."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4809,7 +4809,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Google sign-in is not configured for this build."
-msgstr ""
+msgstr "התחברות באמצעות Google אינה מוגדרת בגרסה זו."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -4825,7 +4825,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Google sign-in needs Google's IMAP server"
-msgstr ""
+msgstr "התחברות באמצעות Google מחייבת שימוש בשרת IMAP של Google"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -5090,7 +5090,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "If you don't, nothing is sent, and you can change the servers in Server settings."
-msgstr ""
+msgstr "אם לא תעשו זאת, שום דבר לא יישלח. ניתן לשנות את השרתים בהגדרות השרת."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -5627,7 +5627,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Its mail is kept in step through Microsoft Graph, without mail servers"
-msgstr ""
+msgstr "הדואר מסונכרן באמצעות Microsoft Graph, ללא שרתי דואר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5817,7 +5817,7 @@ msgstr "אפשר להמשיך להמתין, והמעבר יתבצע מעצמו �
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Keep {address}"
-msgstr ""
+msgstr "השאר את {address}"
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -8695,7 +8695,7 @@ msgstr "מכין תצוגה מקדימה של הקובץ המצורף…"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Press Send/Receive to download your mail."
-msgstr ""
+msgstr "לחצו על 'שליחה/קבלה' כדי להוריד את הדואר."
 
 #. interface, name
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/signatures.rs
@@ -9793,12 +9793,12 @@ msgstr "יש לשמור או לבטל את השינויים כאן לפני הח
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Save or discard changes to this account before reconnecting with Google."
-msgstr ""
+msgstr "שמרו או בטלו את השינויים בחשבון לפני התחברות מחדש ל־Google."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Save or discard changes to this account before switching to Google sign-in."
-msgstr ""
+msgstr "שמרו או בטלו את השינויים בחשבון לפני מעבר להתחברות באמצעות Google."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10201,7 +10201,7 @@ msgstr "שליחה מתיבת דואר משותפת"
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
 msgid "Send my sign-in"
-msgstr ""
+msgstr "שלח את פרטי ההתחברות שלי"
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
@@ -10826,7 +10826,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Sign in again and pick {typed} on the sign-in page, or set up the account you signed in as instead."
-msgstr ""
+msgstr "התחברו שוב ובחרו ב־{typed} בדף ההתחברות, או הגדירו במקום זאת את החשבון שאליו התחברתם."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -10872,7 +10872,7 @@ msgstr "התחבר מחדש כדי ש־MailCraft יוכל להציג ולשנו�
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Sign in securely with Google in your browser. Your Google password is never entered in MailCraft."
-msgstr ""
+msgstr "התחברו ל־Google באופן מאובטח בדפדפן. הסיסמה שלכם ל־Google אינה מוזנת ב־MailCraft."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -10988,12 +10988,12 @@ msgstr "מתחבר לשרת {server}"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Signs in on the {provider} page in your browser"
-msgstr ""
+msgstr "מתחבר דרך הדף של {provider} בדפדפן"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Signs in to an Exchange server with a user name and password"
-msgstr ""
+msgstr "מתחבר לשרת Exchange באמצעות שם משתמש וסיסמה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -11003,7 +11003,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Signs in with a password"
-msgstr ""
+msgstr "מתחבר באמצעות סיסמה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -12097,7 +12097,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "The incoming mail server isn't a host name (letters, digits, dots and dashes)"
-msgstr ""
+msgstr "כתובת שרת הדואר הנכנס אינה שם מארח תקין (אותיות, ספרות, נקודות ומקפים)"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -12288,7 +12288,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "The outgoing mail server isn't a host name (letters, digits, dots and dashes)"
-msgstr ""
+msgstr "כתובת שרת הדואר היוצא אינה שם מארח תקין (אותיות, ספרות, נקודות ומקפים)"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -12304,7 +12304,7 @@ msgstr "התמונה הייתה גדולה מדי ולכן הוקטנה (רוח�
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "The port; leave it empty for the usual one"
-msgstr ""
+msgstr "מספר היציאה; השאירו ריק כדי להשתמש בברירת המחדל"
 
 #. what a command says
 #: crates/engine/src/private_keys.rs
@@ -12533,7 +12533,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "The server's name"
-msgstr ""
+msgstr "שם השרת"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12862,7 +12862,7 @@ msgstr "לחשבון זה אין כניסה באמצעות Microsoft"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "This account is no longer in the mailbox."
-msgstr ""
+msgstr "החשבון הזה כבר אינו נמצא בתיבת הדואר."
 
 #. what a command says
 #: crates/engine/src/sync_driver/rules.rs
@@ -12892,12 +12892,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "This account was removed before Google sign-in began"
-msgstr ""
+msgstr "החשבון הוסר לפני תחילת ההתחברות ל־Google"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "This account was removed while Google sign-in was open"
-msgstr ""
+msgstr "החשבון הוסר בזמן שחלון ההתחברות ל־Google היה פתוח"
 
 #. what a command says
 #: crates/engine/src/cmd/folder.rs
@@ -12953,7 +12953,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "This build can't connect to mail servers. The account can still be added."
-msgstr ""
+msgstr "גרסה זו אינה יכולה להתחבר לשרתי דואר. עדיין ניתן להוסיף את החשבון."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -13102,7 +13102,7 @@ msgstr[1] ""
 #. name
 #: crates/ui-egui/src/account_setup.rs
 msgid "This device only"
-msgstr ""
+msgstr "במכשיר זה בלבד"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -13189,7 +13189,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "This isn't the account you typed"
-msgstr ""
+msgstr "זה אינו החשבון שהזנתם"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -13600,7 +13600,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "To add another Google address, go back and start a new account setup."
-msgstr ""
+msgstr "כדי להוסיף כתובת Google אחרת, חזרו והתחילו בהגדרת חשבון חדש."
 
 #. interface
 #: crates/ui-egui/src/shared_mailboxes.rs
@@ -14622,7 +14622,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Your mail is downloading now. The first time can take a few minutes."
-msgstr ""
+msgstr "הדואר שלכם יורד כעת. ההורדה הראשונה עשויה להימשך כמה דקות."
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
