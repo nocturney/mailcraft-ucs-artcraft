@@ -571,8 +571,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Accessibility"
-msgstr ""
+msgstr "נגישות"
 
 #. command label, interface
 #: crates/engine/src/cmd/help.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/forms/junk.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
@@ -607,8 +608,9 @@ msgstr "חשבונות"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/calendar_opened.rs crates/engine/src/cmd/compose.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/people_merge.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Actions"
-msgstr ""
+msgstr "פעולות"
 
 #. name
 #: crates/engine/src/session.rs
@@ -653,8 +655,9 @@ msgstr "הוסף כלל"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Add Sender"
-msgstr ""
+msgstr "הוספת שולח"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -877,8 +880,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "All Categories…"
-msgstr ""
+msgstr "כל הקטגוריות…"
 
 #. interface
 #, fuzzy
@@ -1343,8 +1347,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Arrange By"
-msgstr ""
+msgstr "סידור לפי"
 
 #. command label
 #: crates/engine/src/cmd/people.rs
@@ -1761,8 +1766,9 @@ msgstr ""
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Basic Text"
-msgstr ""
+msgstr "טקסט בסיסי"
 
 #. interface
 #: crates/ui-egui/src/compose.rs
@@ -1794,8 +1800,9 @@ msgstr "יום הולדת"
 
 #. command label, interface
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Block Sender"
-msgstr ""
+msgstr "חסימת שולח"
 
 #. interface, name
 #, fuzzy
@@ -1815,13 +1822,15 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Bold"
-msgstr ""
+msgstr "מודגש"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Bookmark"
-msgstr ""
+msgstr "סימנייה"
 
 #. command label
 #: crates/engine/src/cmd/calendar_settings.rs
@@ -1841,8 +1850,9 @@ msgstr "אינדקס החיפוש נבנה. עד להשלמת התהליך, הח
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Bullets"
-msgstr ""
+msgstr "תבליטים"
 
 #. name
 #: crates/model/src/calendar.rs
@@ -2211,8 +2221,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Check Accessibility"
-msgstr ""
+msgstr "בדיקת נגישות"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/reading/signature.rs
@@ -2365,8 +2376,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Classic Ribbon"
-msgstr ""
+msgstr "רצועת הכלים הקלאסית"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/folder.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/rules.rs crates/ui-egui/src/ribbon.rs
@@ -2398,8 +2410,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Clear Flag"
-msgstr ""
+msgstr "הסרת דגל"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -2444,8 +2457,9 @@ msgstr ""
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/edit.rs crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Clipboard"
-msgstr ""
+msgstr "לוח"
 
 #. interface, ribbon
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/compose.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/find_replace.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/import_pst.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/meeting_dialogs/share.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/reminders.rs crates/ui-egui/src/report_problem.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/symbol.rs crates/ui-egui/src/sync_panel.rs crates/ui-egui/src/tasks_view.rs crates/ui-egui/src/view_source.rs
@@ -2622,8 +2636,9 @@ msgstr ""
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Contact"
-msgstr ""
+msgstr "איש קשר"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -3087,13 +3102,15 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Decrease Indent"
-msgstr ""
+msgstr "הקטנת כניסה"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Default"
-msgstr ""
+msgstr "ברירת מחדל"
 
 #. command label, interface, name, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/junk.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/agent_gate.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs crates/ui-egui/src/tasks_view.rs
@@ -3778,8 +3795,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Email Message"
-msgstr ""
+msgstr "הודעת דוא״ל"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -3794,8 +3812,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Emoji"
-msgstr ""
+msgstr "אימוג׳י"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -3851,8 +3870,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Equation"
-msgstr ""
+msgstr "משוואה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -4044,8 +4064,9 @@ msgstr "הבדיקה נכשלה."
 
 #. interface, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Favorite"
-msgstr ""
+msgstr "מועדף"
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/nav.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
@@ -4075,8 +4096,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/help.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Feedback"
-msgstr ""
+msgstr "משוב"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -4293,8 +4315,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Folder…"
-msgstr ""
+msgstr "תיקייה…"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -4305,8 +4328,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Follow Up"
-msgstr ""
+msgstr "המשך טיפול"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -4326,13 +4350,15 @@ msgstr "גופן"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Font Color"
-msgstr ""
+msgstr "צבע גופן"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Font Size"
-msgstr ""
+msgstr "גודל גופן"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -4376,8 +4402,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Format Painter"
-msgstr ""
+msgstr "מברשת עיצוב"
 
 #. ribbon location
 #: crates/engine/src/cmd/edit.rs crates/engine/src/cmd/format.rs
@@ -4386,13 +4413,15 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Format as HTML"
-msgstr ""
+msgstr "עיצוב כ־HTML"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Format as Plain Text"
-msgstr ""
+msgstr "עיצוב כטקסט רגיל"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
@@ -4695,8 +4724,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Go to Date"
-msgstr ""
+msgstr "מעבר לתאריך"
 
 #. command label
 #: crates/engine/src/cmd/folder.rs
@@ -4961,8 +4991,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "High Importance"
-msgstr ""
+msgstr "חשיבות גבוהה"
 
 #. interface
 #, fuzzy
@@ -4995,8 +5026,9 @@ msgstr "בית"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Horizontal Line"
-msgstr ""
+msgstr "קו אופקי"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
@@ -5362,8 +5394,9 @@ msgstr "דואר נכנס (IMAP)"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Increase Indent"
-msgstr ""
+msgstr "הגדלת כניסה"
 
 #. interface
 #, fuzzy
@@ -5389,8 +5422,9 @@ msgstr ""
 
 #. interface, name, ribbon
 #: crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Insert Calendar"
-msgstr ""
+msgstr "הוספת לוח שנה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5437,8 +5471,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Interface Theme"
-msgstr ""
+msgstr "ערכת הנושא של הממשק"
 
 #. interface
 #, fuzzy
@@ -5581,8 +5616,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Italic"
-msgstr ""
+msgstr "נטוי"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -5662,8 +5698,9 @@ msgstr "הצטרף"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Join Online Meeting"
-msgstr ""
+msgstr "הצטרפות לפגישה מקוונת"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -5942,8 +5979,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Line Spacing"
-msgstr ""
+msgstr "מרווח בין שורות"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/security.rs crates/ui-egui/src/signatures.rs
