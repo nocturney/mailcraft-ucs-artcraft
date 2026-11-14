@@ -320,7 +320,7 @@ msgstr "כמו תמיד, קודם נשמר לצידה עותק של כל תיב�
 #. interface
 #: crates/ui-egui/src/files.rs
 msgid "A file dialog is already open."
-msgstr ""
+msgstr "חלון לבחירת קובץ כבר פתוח."
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -776,7 +776,7 @@ msgstr "הוסף מספר טלפון נוסף"
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Add as a Microsoft account"
-msgstr ""
+msgstr "הוסף כחשבון Microsoft"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -811,7 +811,7 @@ msgstr "הוסף למועדפים"
 #. command label
 #: crates/engine/src/cmd/junk.rs
 msgid "Add to Safe or Blocked Senders"
-msgstr ""
+msgstr "הוסף לשולחים בטוחים או חסומים"
 
 #. command label, interface
 #: crates/engine/src/cmd/tasks.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -986,7 +986,7 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Allow Sending from Shared Mailboxes"
-msgstr ""
+msgstr "אפשר שליחה מתיבות דואר משותפות"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -1001,17 +1001,17 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Always Download Pictures from Sender"
-msgstr ""
+msgstr "הורד תמיד תמונות מהשולח"
 
 #. command label
 #: crates/engine/src/cmd/rules.rs
 msgid "Always Move Messages From"
-msgstr ""
+msgstr "העבר תמיד הודעות מאת"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "Always Move Messages From This Sender"
-msgstr ""
+msgstr "העבר תמיד הודעות משולח זה"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -1101,7 +1101,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "An import is under way"
-msgstr ""
+msgstr "מתבצע ייבוא"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -1375,7 +1375,7 @@ msgstr "כתיקיות"
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "As Tabs above the Inbox"
-msgstr ""
+msgstr "ככרטיסיות מעל תיבת הדואר הנכנס"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -1443,7 +1443,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Ask to be told when the message is read"
-msgstr ""
+msgstr "בקש אישור קריאה"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -1535,7 +1535,7 @@ msgstr[1] ""
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
 msgid "Attachment keywords"
-msgstr ""
+msgstr "מילות מפתח בקבצים מצורפים"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -1762,7 +1762,7 @@ msgstr "חזרה להגדרות החשבון"
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
 msgid "Basic (user name and password over a secure connection)"
-msgstr ""
+msgstr "בסיסי (שם משתמש וסיסמה בחיבור מאובטח)"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -1909,7 +1909,7 @@ msgstr "לוח שנה"
 #. command label
 #: crates/engine/src/cmd/remote.rs
 msgid "Calendar Changes to Send"
-msgstr ""
+msgstr "שינויים בלוח השנה הממתינים לשליחה"
 
 #. command label
 #: crates/engine/src/cmd/calendar_settings.rs
@@ -2008,7 +2008,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/send_receive.rs
 msgid "Cancel All"
-msgstr ""
+msgstr "בטל הכול"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -2025,7 +2025,7 @@ msgstr "ביטול פגישה"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Cancel Opening the Mailbox"
-msgstr ""
+msgstr "בטל את פתיחת תיבת הדואר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2265,7 +2265,7 @@ msgstr "בדוק אם קיימים עדכונים"
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Check for new versions"
-msgstr ""
+msgstr "בדוק אם קיימות גרסאות חדשות"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2281,7 +2281,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Checking for a new version…"
-msgstr ""
+msgstr "בודק אם קיימת גרסה חדשה…"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2303,7 +2303,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
 msgid "Checking the calendar connection…"
-msgstr ""
+msgstr "בודק את החיבור ללוח השנה…"
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -2453,7 +2453,7 @@ msgstr "נקה חיפוש (Esc)"
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Click to preview {name}; double-click to open it"
-msgstr ""
+msgstr "לחץ לתצוגה מקדימה של {name}; לחץ פעמיים לפתיחה"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/edit.rs crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -2493,7 +2493,7 @@ msgstr "סגור חיפוש"
 #. command label
 #: crates/engine/src/cmd/signature.rs
 msgid "Close Signature"
-msgstr ""
+msgstr "סגור חתימה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2604,7 +2604,7 @@ msgstr "התחברות"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Connect Calendar and Contacts"
-msgstr ""
+msgstr "חבר לוח שנה ואנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
@@ -2632,7 +2632,7 @@ msgstr "התחבר כדי להציג את צבעי הקטגוריות ואת ש�
 #. what a command says
 #: crates/model/src/sync/progress.rs
 msgid "Connecting to the mail server"
-msgstr ""
+msgstr "מתחבר לשרת הדואר"
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
@@ -2742,7 +2742,7 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Copy a Message for My Administrator"
-msgstr ""
+msgstr "העתק הודעה למנהל המערכת שלי"
 
 #. interface, name
 #: crates/engine/src/sync_driver/favorites.rs crates/ui-egui/src/account_setup/help.rs
@@ -2764,7 +2764,7 @@ msgstr "העתק בעיות"
 #. interface
 #: crates/ui-egui/src/move_items.rs
 msgid "Copy the selected items to the folder:"
-msgstr ""
+msgstr "העתק את הפריטים שנבחרו לתיקייה:"
 
 #. interface
 #, fuzzy
@@ -2781,7 +2781,7 @@ msgstr "העתקה לתיקייה"
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Could not open Google sign-in"
-msgstr ""
+msgstr "לא ניתן לפתוח את הכניסה באמצעות Google"
 
 #. why a mail server couldn't be used
 #: crates/net/src/push.rs
@@ -2806,7 +2806,7 @@ msgstr ""
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
 msgid "Couldn't check for new mail"
-msgstr ""
+msgstr "לא ניתן לבדוק אם הגיע דואר חדש"
 
 #. why a mail server couldn't be used
 #: crates/net/src/push.rs
@@ -2916,7 +2916,7 @@ msgstr ""
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
 msgid "Couldn't read the list of folders"
-msgstr ""
+msgstr "לא ניתן לקרוא את רשימת התיקיות"
 
 #. what a command says
 #: crates/engine/src/cmd/graph_drafts.rs
@@ -2941,7 +2941,7 @@ msgstr ""
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
 msgid "Couldn't send mail"
-msgstr ""
+msgstr "לא ניתן לשלוח דואר"
 
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
@@ -2961,7 +2961,7 @@ msgstr "יצירת הודעה"
 #. command label
 #: crates/engine/src/cmd/rules.rs
 msgid "Create Rule"
-msgstr ""
+msgstr "צור כלל"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -3128,7 +3128,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/calendar.rs
 msgid "Delete Calendar"
-msgstr ""
+msgstr "מחק לוח שנה"
 
 #. command label
 #: crates/engine/src/cmd/category.rs
