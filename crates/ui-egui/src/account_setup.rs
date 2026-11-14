@@ -2691,6 +2691,18 @@ fn disclosure(ui: &mut Ui, label: &str, open: &mut bool, t: &Tokens) {
     }
 }
 
+/// Keep the provider icon at the reading edge, with the text clear of the icon on
+/// both sides. Addresses and server identifiers elsewhere in the wizard remain LTR.
+fn account_tile_geometry(r: Rect, rtl: bool) -> (egui::Pos2, Rect) {
+    let icon_x = if rtl { r.max.x - 24.0 } else { r.min.x + 24.0 };
+    let text = if rtl {
+        Rect::from_min_max(pos2(r.min.x + 8.0, r.min.y), pos2(r.max.x - 46.0, r.max.y))
+    } else {
+        Rect::from_min_max(pos2(r.min.x + 46.0, r.min.y), pos2(r.max.x - 8.0, r.max.y))
+    };
+    (pos2(icon_x, r.center().y), text)
+}
+
 /// A kind of account to pick: a glyph, its name and a line about it.
 fn tile(ui: &mut Ui, kind: Kind, width: f32, t: &Tokens) -> Response {
     let (title, detail) = (tl!(kind.title()), tl!(kind.detail()));
@@ -2698,9 +2710,20 @@ fn tile(ui: &mut Ui, kind: Kind, width: f32, t: &Tokens) -> Response {
     resp.widget_info(|| WidgetInfo::labeled(Role::Button, true, title));
     let lit = resp.hovered() || resp.has_focus();
     ui.painter().rect(r, 6.0, if lit { t.hover } else { t.panel }, Stroke::new(1.0, if lit { t.accent } else { t.border }), StrokeKind::Inside);
-    icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 24.0, r.center().y), vec2(24.0, 24.0)), kind.icon(), t.icon, t.accent);
-    paint_clipped(ui.painter(), pos2(r.min.x + 46.0, r.min.y + 17.0), r.width() - 54.0, title, semibold(12.5), t.text);
-    paint_clipped(ui.painter(), pos2(r.min.x + 46.0, r.min.y + 34.0), r.width() - 54.0, detail, regular(11.0), t.text_dim);
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let (icon_center, text_clip) = account_tile_geometry(r, rtl);
+    icons::paint(ui.painter(), Rect::from_center_size(icon_center, vec2(24.0, 24.0)), kind.icon(), t.icon, t.accent);
+    if rtl {
+        // A Hebrew title or its explanation may be longer than the tile. Clip
+        // from the opposite edge without moving the full-width click target.
+        let painter = ui.painter().with_clip_rect(text_clip);
+        painter.text(pos2(text_clip.right(), r.min.y + 17.0), Align2::RIGHT_CENTER, title, semibold(12.5), t.text);
+        painter.text(pos2(text_clip.right(), r.min.y + 34.0), Align2::RIGHT_CENTER, detail, regular(11.0), t.text_dim);
+    } else {
+        // Retain the original English painter and offsets unchanged.
+        paint_clipped(ui.painter(), pos2(r.min.x + 46.0, r.min.y + 17.0), r.width() - 54.0, title, semibold(12.5), t.text);
+        paint_clipped(ui.painter(), pos2(r.min.x + 46.0, r.min.y + 34.0), r.width() - 54.0, detail, regular(11.0), t.text_dim);
+    }
     resp
 }
 
@@ -2727,6 +2750,22 @@ mod tests {
     use crate::forms::Form;
     use crate::{Services, SignInRequest};
     use egui::Key;
+
+    #[test]
+    fn account_provider_tile_mirrors_icon_and_clipped_text_for_hebrew() {
+        for width in [184.0, 260.0, 400.0] {
+            let r = Rect::from_min_size(pos2(100.0, 10.0), vec2(width, 50.0));
+            let (english_icon, english_text) = account_tile_geometry(r, false);
+            let (hebrew_icon, hebrew_text) = account_tile_geometry(r, true);
+            assert_eq!(english_icon, pos2(r.min.x + 24.0, r.center().y));
+            assert_eq!(hebrew_icon, pos2(r.max.x - 24.0, r.center().y));
+            assert_eq!((english_text.left(), english_text.right()), (r.min.x + 46.0, r.max.x - 8.0));
+            assert_eq!((hebrew_text.left(), hebrew_text.right()), (r.min.x + 8.0, r.max.x - 46.0));
+            assert_eq!(english_text.width(), hebrew_text.width());
+            assert!(english_text.left() > english_icon.x + 12.0);
+            assert!(hebrew_text.right() < hebrew_icon.x - 12.0);
+        }
+    }
 
     #[test]
     fn account_wizard_brand_header_mirrors_for_hebrew_without_changing_english() {
