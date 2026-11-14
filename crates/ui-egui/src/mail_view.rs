@@ -253,11 +253,13 @@ fn list_header(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), HEADER_H), Sense::hover());
     let rows_end = r.max.x - lane_width(app);
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
 
     // The arrow: up while the list starts where its arrangement naturally starts (the newest,
     // A, the largest), down once it is turned over.
     let (sort, descending) = (app.session.view.sort, app.session.view.sort_descending);
-    let arrow = Rect::from_center_size(pos2(rows_end - 11.0, r.min.y + 33.0), vec2(20.0, 22.0));
+    let arrow_x = if hebrew { r.min.x + 11.0 } else { rows_end - 11.0 };
+    let arrow = Rect::from_center_size(pos2(arrow_x, r.min.y + 33.0), vec2(20.0, 22.0));
     let arrow_resp = ui.interact(arrow, ui.scope_id().with("list_direction"), Sense::click()).on_hover_text(direction_label(sort, descending));
     app.hit.add("listSort", 1, arrow);
     if arrow_resp.hovered() {
@@ -271,15 +273,29 @@ fn list_header(app: &mut MailApp, ui: &mut Ui) {
     // The arrangement and its menu.
     let label = sort_label(sort);
     let label_w = ui.ctx().fonts_mut(|f| f.layout_no_wrap(label.to_string(), regular(SORT_TEXT), t.text).size().x);
-    let label_end = rows_end - 46.0;
-    let sr = Rect::from_min_max(pos2(label_end - label_w - 6.0, r.min.y + 22.0), pos2(rows_end - 25.0, r.min.y + 44.0));
+    let (sr, label_at, label_align, chevron_x) = if hebrew {
+        (
+            Rect::from_min_max(pos2(r.min.x + 25.0, r.min.y + 22.0), pos2(r.min.x + 46.0 + label_w + 6.0, r.min.y + 44.0)),
+            r.min.x + 46.0,
+            Align2::LEFT_CENTER,
+            r.min.x + 36.0,
+        )
+    } else {
+        let label_end = rows_end - 46.0;
+        (
+            Rect::from_min_max(pos2(label_end - label_w - 6.0, r.min.y + 22.0), pos2(rows_end - 25.0, r.min.y + 44.0)),
+            label_end,
+            Align2::RIGHT_CENTER,
+            rows_end - 36.0,
+        )
+    };
     let sresp = ui.interact(sr, ui.scope_id().with("list_sort"), Sense::click());
     app.hit.add("listSort", 0, sr);
     if sresp.hovered() {
         ui.painter().rect_filled(sr, 4.0, t.hover);
     }
-    ui.painter().text(pos2(label_end, r.min.y + 33.5), Align2::RIGHT_CENTER, label, regular(SORT_TEXT), t.text);
-    let chevron = pos2(rows_end - 36.0, r.min.y + 34.0);
+    ui.painter().text(pos2(label_at, r.min.y + 33.5), label_align, label, regular(SORT_TEXT), t.text);
+    let chevron = pos2(chevron_x, r.min.y + 34.0);
     let line = Stroke::new(1.2, t.text);
     ui.painter().line(vec![chevron + vec2(-4.5, -2.5), chevron + vec2(0.0, 2.5), chevron + vec2(4.5, -2.5)], line);
     let filter = app.session.view.filter;
@@ -308,10 +324,11 @@ fn list_header(app: &mut MailApp, ui: &mut Ui) {
     }
     // A tab is its text with a little either side (the line under it is that wide), and the
     // next one starts 14 further on.
-    let mut x = r.min.x + TEXT_LEFT - 1.0;
+    let mut x = if hebrew { rows_end - TEXT_LEFT + 1.0 } else { r.min.x + TEXT_LEFT - 1.0 };
     // In a list too narrow for them all, the tab in use is the last to give: the others are
     // cut short, then left out (the arrangement's menu has every filter), then it is cut too.
-    let mut over = tabs.iter().map(|(.., w)| w + 3.0).sum::<f32>() + TAB_GAP * tabs.len().saturating_sub(1) as f32 - (sr.min.x - 8.0 - x);
+    let room = if hebrew { x - sr.max.x - 8.0 } else { sr.min.x - 8.0 - x };
+    let mut over = tabs.iter().map(|(.., w)| w + 3.0).sum::<f32>() + TAB_GAP * tabs.len().saturating_sub(1) as f32 - room;
     for (.., w) in tabs.iter_mut().rev().filter(|(f, ..)| *f != filter) {
         let cut = over.clamp(0.0, (*w - TAB_MIN).max(0.0));
         *w -= cut;
@@ -329,10 +346,24 @@ fn list_header(app: &mut MailApp, ui: &mut Ui) {
         if w < TAB_MIN / 2.0 {
             continue;
         }
-        let tab = Rect::from_min_max(pos2(x, r.min.y + 18.0), pos2(x + w + 3.0, r.max.y));
+        let tab = if hebrew {
+            Rect::from_min_max(pos2(x - w - 3.0, r.min.y + 18.0), pos2(x, r.max.y))
+        } else {
+            Rect::from_min_max(pos2(x, r.min.y + 18.0), pos2(x + w + 3.0, r.max.y))
+        };
         let resp = ui.interact(tab.expand2(vec2(5.0, 0.0)), ui.scope_id().with(("list_tab", n)), Sense::click());
         app.hit.add("listTab", n, tab);
-        paint_clipped(ui.painter(), pos2(x + 2.0, r.min.y + 31.5), w + 1.0, label, regular(SENDER_TEXT), if on { t.accent_text } else { t.text });
+        if hebrew {
+            ui.painter().with_clip_rect(tab).text(
+                pos2(x - 2.0, r.min.y + 31.5),
+                Align2::RIGHT_CENTER,
+                label,
+                regular(SENDER_TEXT),
+                if on { t.accent_text } else { t.text },
+            );
+        } else {
+            paint_clipped(ui.painter(), pos2(x + 2.0, r.min.y + 31.5), w + 1.0, label, regular(SENDER_TEXT), if on { t.accent_text } else { t.text });
+        }
         let under = Rect::from_min_max(pos2(tab.min.x, r.max.y - 1.0), tab.max);
         if on {
             ui.painter().rect_filled(under, 0.0, t.accent_text);
@@ -342,7 +373,7 @@ fn list_header(app: &mut MailApp, ui: &mut Ui) {
         if resp.clicked() && !on {
             let _ = app.run("view.filter", json!({"value": f}));
         }
-        x = tab.max.x + TAB_GAP;
+        x = if hebrew { tab.min.x - TAB_GAP } else { tab.max.x + TAB_GAP };
     }
 }
 
@@ -1514,6 +1545,30 @@ mod tests {
         let rows_end = rect.max.x;
         let sort = at(&harness, "listSort", 1);
         assert!(sort.max.x <= rows_end && sort.min.x > at(&harness, "listSort", 0).min.x);
+    }
+
+    /// In Hebrew the list's filter tabs start at the right, with the sort controls on the left.
+    /// The hit targets and filter actions stay usable rather than only painting mirrored text.
+    #[test]
+    fn hebrew_header_mirrors_tabs_and_sort_without_changing_filter_actions() {
+        let _language = crate::i18n::RestoreLanguage::hold();
+        let mut a = app();
+        a.ui.language = "he".to_string();
+        let mut harness = window(a, (1280.0, 800.0));
+        let all = at(&harness, "listTab", 0);
+        let unread = at(&harness, "listTab", 1);
+        let sort = at(&harness, "listSort", 0);
+        let arrow = at(&harness, "listSort", 1);
+        assert!(sort.max.x < unread.min.x && unread.max.x < all.min.x, "RTL tabs follow the sort controls, right to left");
+        assert!(arrow.max.x < sort.min.x, "sort direction remains a separate target on the left");
+        click_at(&mut harness, unread.center());
+        assert_eq!(harness.state().session.view.filter, Filter::Unread);
+        click_at(&mut harness, all.center());
+        assert_eq!(harness.state().session.view.filter, Filter::All);
+        harness.state_mut().execute("view.filter", json!({"value": "flagged"})).unwrap();
+        harness.run_steps(3);
+        let third = at(&harness, "listTab", 2);
+        assert!(third.max.x < unread.min.x && sort.max.x < third.min.x, "optional filter stays between the tabs and sort");
     }
 
     /// The header: All and Unread are tabs that run `view.filter`; a filter without a tab shows
