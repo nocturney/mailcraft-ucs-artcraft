@@ -620,7 +620,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon/view_menus.rs
 msgid "Actual Size"
-msgstr ""
+msgstr "גודל בפועל"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/forms/junk.rs
@@ -866,7 +866,7 @@ msgstr ""
 #. interface, name
 #: crates/engine/src/session.rs crates/model/src/offline.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/keep_offline.rs
 msgid "All"
-msgstr ""
+msgstr "הכול"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -893,7 +893,7 @@ msgstr "כל תיבות הדואר"
 #. interface
 #: crates/ui-egui/src/widgets.rs
 msgid "All accounts"
-msgstr ""
+msgstr "כל החשבונות"
 
 #. interface, what a command says
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
@@ -1310,7 +1310,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Approval Needed"
-msgstr ""
+msgstr "נדרש אישור"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -1364,7 +1364,7 @@ msgstr ""
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
 msgid "Arrangement"
-msgstr ""
+msgstr "סידור"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -1513,7 +1513,7 @@ msgstr "צרף קובץ"
 #. command label, interface, name
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/pick_item.rs
 msgid "Attach Item"
-msgstr ""
+msgstr "צרף פריט"
 
 #. interface, name
 #: crates/ui-egui/src/pick_item.rs
@@ -1593,7 +1593,7 @@ msgstr "אוטומטי"
 #. command label, interface
 #: crates/engine/src/cmd/auto_replies.rs crates/ui-egui/src/auto_replies.rs
 msgid "Automatic Replies"
-msgstr ""
+msgstr "תשובות אוטומטיות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -1747,7 +1747,7 @@ msgstr "הקודם"
 #. interface
 #: crates/ui-egui/src/send_receive.rs
 msgid "Back online"
-msgstr ""
+msgstr "החיבור חודש"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -1757,7 +1757,7 @@ msgstr "חזרה להודעה"
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Back to account settings"
-msgstr ""
+msgstr "חזרה להגדרות החשבון"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -1813,7 +1813,7 @@ msgstr "כחול"
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
 msgid "Body"
-msgstr ""
+msgstr "גוף ההודעה"
 
 #. name
 #: crates/ui-egui/src/forms.rs
@@ -1919,7 +1919,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
 msgid "Calendar Connection Check"
-msgstr ""
+msgstr "בדיקת החיבור ללוח השנה"
 
 #. interface
 #: crates/ui-egui/src/open_shared.rs
@@ -2036,7 +2036,7 @@ msgstr "בטל שליחה וקבלה"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Cancel Sign-In"
-msgstr ""
+msgstr "ביטול הכניסה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2086,7 +2086,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/security.rs
 msgid "Certificates"
-msgstr ""
+msgstr "אישורים דיגיטליים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -2239,7 +2239,7 @@ msgstr "בדיקת החיבור ללוח השנה"
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs
 msgid "Check Names"
-msgstr ""
+msgstr "בדיקת שמות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2255,12 +2255,12 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Check for New Versions"
-msgstr ""
+msgstr "בדוק אם קיימות גרסאות חדשות"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/updates.rs
 msgid "Check for Updates"
-msgstr ""
+msgstr "בדוק אם קיימים עדכונים"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -2319,7 +2319,7 @@ msgstr "מתבצעת בדיקה: הדוח יופיע בעוד רגע…"
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Checking…"
-msgstr ""
+msgstr "מתבצעת בדיקה…"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -2334,7 +2334,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Choose a category"
-msgstr ""
+msgstr "בחירת קטגוריה"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -2406,7 +2406,7 @@ msgstr "נקה את כל העיצוב"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Clear Downloaded Pictures"
-msgstr ""
+msgstr "מחיקת תמונות שהורדו"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
@@ -2524,7 +2524,7 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Collapse the Ribbon"
-msgstr ""
+msgstr "מזער את רצועת הכלים"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/signatures.rs
@@ -2672,7 +2672,7 @@ msgstr "המשך"
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Continue editing"
-msgstr ""
+msgstr "המשך עריכה"
 
 #. interface
 #, fuzzy
@@ -2717,17 +2717,17 @@ msgstr ""
 #. interface, name
 #: crates/ui-egui/src/move_items.rs
 msgid "Copy Items"
-msgstr ""
+msgstr "העתק פריטים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Copy Link"
-msgstr ""
+msgstr "העתק קישור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Copy Link Address"
-msgstr ""
+msgstr "העתק כתובת קישור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2956,7 +2956,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Create Message"
-msgstr ""
+msgstr "יצירת הודעה"
 
 #. command label
 #: crates/engine/src/cmd/rules.rs
@@ -3045,7 +3045,7 @@ msgstr "תאריך ושעה"
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
 msgid "Date received"
-msgstr ""
+msgstr "תאריך קבלה"
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
@@ -3263,7 +3263,7 @@ msgstr "תיאור"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Desktop Alerts"
-msgstr ""
+msgstr "התראות שולחן העבודה"
 
 #. interface
 #, fuzzy
@@ -3549,7 +3549,7 @@ msgstr "הורדת הודעות במלואן:"
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Download pictures"
-msgstr ""
+msgstr "הורד תמונות"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -3591,7 +3591,7 @@ msgstr[1] ""
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Downloading pictures…"
-msgstr ""
+msgstr "מוריד תמונות…"
 
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
@@ -3627,7 +3627,7 @@ msgstr "טיוטה"
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Draft saved"
-msgstr ""
+msgstr "הטיוטה נשמרה"
 
 #. name
 #: crates/model/src/mailbox.rs
@@ -3791,7 +3791,7 @@ msgstr ""
 #. command label, interface, name
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/meeting_dialogs.rs
 msgid "Email Calendar"
-msgstr ""
+msgstr "שלח לוח שנה בדוא״ל"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -4043,7 +4043,7 @@ msgstr "ייצוא תיקייה"
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Export…"
-msgstr ""
+msgstr "ייצוא…"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
@@ -4398,7 +4398,7 @@ msgstr ""
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
 msgid "Format"
-msgstr ""
+msgstr "עיצוב"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/ribbon.rs
@@ -5462,12 +5462,12 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Interface Language"
-msgstr ""
+msgstr "שפת הממשק"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Interface Size"
-msgstr ""
+msgstr "גודל הממשק"
 
 #. command label, ribbon
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
