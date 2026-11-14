@@ -591,16 +591,14 @@ mod hebrew_properties_layout_tests {
                 screen_rect: Some(egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1000.0, 900.0))),
                 ..Default::default()
             };
-            let _ = ctx.run(input, |ctx| {
-                egui::CentralPanel::default().show(ctx, |ui| {
-                    ui.set_max_width(WIDTH);
-                    let response = properties_tab_strip(ui, hebrew, |ui| {
-                        for tab in Tab::ALL {
-                            ui.selectable_label(tab == Tab::General, tab.label());
-                        }
-                    });
-                    height = response.rect.height();
+            let _ = ctx.run_ui(input, |ui| {
+                ui.set_max_width(WIDTH);
+                let response = properties_tab_strip(ui, hebrew, |ui| {
+                    for tab in Tab::ALL {
+                        ui.selectable_label(tab == Tab::General, tab.label());
+                    }
                 });
+                height = response.rect.height();
             });
             assert!(height >= 20.0 && height < 140.0, "hebrew={hebrew}: tab row stretched to {height} px");
         }
