@@ -906,8 +906,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/lib.rs
+#, fuzzy
 msgid "Allow Changing Automatic Replies"
-msgstr ""
+msgstr "אפשר שינוי של תשובות אוטומטיות"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -921,8 +922,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Allow MailCraft to change your automatic replies on the page that opened in your browser…"
-msgstr ""
+msgstr "יש לאפשר ל־MailCraft לשנות את התשובות האוטומטיות בדף שנפתח בדפדפן…"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -1604,83 +1606,99 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies are off"
-msgstr ""
+msgstr "תשובות אוטומטיות כבויות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies are on"
-msgstr ""
+msgstr "תשובות אוטומטיות מופעלות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies are set for the time range you chose"
-msgstr ""
+msgstr "התשובות האוטומטיות מוגדרות לטווח הזמנים שבחרת"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: MailCraft needs you to sign in again to read them"
-msgstr ""
+msgstr "תשובות אוטומטיות: יש להתחבר מחדש כדי ש־MailCraft יוכל לקרוא אותן"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: Microsoft no longer takes the sign-in"
-msgstr ""
+msgstr "תשובות אוטומטיות: Microsoft כבר אינה מאשרת את ההתחברות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: asking for your permission to change them…"
-msgstr ""
+msgstr "תשובות אוטומטיות: מבקש הרשאה לשנות אותן…"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: changing them not allowed ({why})"
-msgstr ""
+msgstr "תשובות אוטומטיות: השינוי לא אושר ({why})"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: changing them waits for your permission"
-msgstr ""
+msgstr "תשובות אוטומטיות: השינוי ממתין להרשאתך"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: couldn't be read ({why})"
-msgstr ""
+msgstr "תשובות אוטומטיות: הקריאה נכשלה ({why})"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: during a time range"
-msgstr ""
+msgstr "תשובות אוטומטיות: בטווח זמנים מוגדר"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: from {start} to {end}"
-msgstr ""
+msgstr "תשובות אוטומטיות: מ־{start} עד {end}"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: not read yet"
-msgstr ""
+msgstr "תשובות אוטומטיות: טרם נקראו"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: off"
-msgstr ""
+msgstr "תשובות אוטומטיות: כבויות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: on, until you turn them off"
-msgstr ""
+msgstr "תשובות אוטומטיות: מופעלות עד שתכבה אותן"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: reading…"
-msgstr ""
+msgstr "תשובות אוטומטיות: קורא…"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Automatic replies: your organisation doesn't let MailCraft change them"
-msgstr ""
+msgstr "תשובות אוטומטיות: הארגון שלך אינו מאפשר ל־MailCraft לשנות אותן"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -2138,8 +2156,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Changing your automatic replies…"
-msgstr ""
+msgstr "מעדכן את התשובות האוטומטיות שלך…"
 
 #. interface
 #: crates/ui-egui/src/symbol.rs
@@ -3399,8 +3418,9 @@ msgstr "לא לשלוח"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Don't send automatic replies"
-msgstr ""
+msgstr "אל תשלח תשובות אוטומטיות"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -3630,8 +3650,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Each sender gets one automatic reply, with the message below:"
-msgstr ""
+msgstr "כל שולח יקבל תשובה אוטומטית אחת ובה ההודעה הבאה:"
 
 #. interface, name
 #: crates/ui-egui/src/menubar.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
@@ -3772,8 +3793,9 @@ msgstr "סיום"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "End time:"
-msgstr ""
+msgstr "שעת סיום:"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -5315,8 +5337,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Inside My Organization"
-msgstr ""
+msgstr "בתוך הארגון שלי"
 
 #. command label
 #: crates/engine/src/cmd/view.rs
@@ -6181,8 +6204,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "MailCraft needs your permission to change your automatic replies first: File › Info › Ask again."
-msgstr ""
+msgstr "כדי לשנות את התשובות האוטומטיות, MailCraft זקוק תחילה להרשאתך: קובץ › מידע › בקש שוב."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -7831,8 +7855,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Only send during this time range:"
-msgstr ""
+msgstr "שלח רק במהלך טווח הזמנים הבא:"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -8181,13 +8206,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Outside My Organization (Off)"
-msgstr ""
+msgstr "מחוץ לארגון שלי (כבוי)"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Outside My Organization (On)"
-msgstr ""
+msgstr "מחוץ לארגון שלי (פעיל)"
 
 #. name
 #: crates/engine/src/session.rs crates/ui-egui/src/tasks_view.rs
@@ -8742,8 +8769,9 @@ msgstr "קריאת תיבות דואר משותפות מחייבת הרשאה. �
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Reading the automatic replies stopped unexpectedly"
-msgstr ""
+msgstr "קריאת התשובות האוטומטיות הופסקה באופן בלתי צפוי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -8752,8 +8780,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Reading your automatic replies from the server…"
-msgstr ""
+msgstr "קורא את התשובות האוטומטיות מהשרת…"
 
 #. name
 #: crates/ui-egui/src/credits.rs
@@ -9944,8 +9973,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Send automatic replies"
-msgstr ""
+msgstr "שלח תשובות אוטומטיות"
 
 #. interface
 #, fuzzy
@@ -10548,8 +10578,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/backstage.rs
+#, fuzzy
 msgid "Sign In Again"
-msgstr ""
+msgstr "התחבר מחדש"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -10657,8 +10688,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Sign in with Send/Receive first, then change your automatic replies."
-msgstr ""
+msgstr "תחילה יש להתחבר באמצעות שליחה/קבלה, ולאחר מכן לשנות את התשובות האוטומטיות."
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -10910,8 +10942,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Start time:"
-msgstr ""
+msgstr "שעת התחלה:"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
@@ -12706,8 +12739,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "This build can't reach the server to change automatic replies. Use the desktop app."
-msgstr ""
+msgstr "גרסה זו אינה יכולה להתחבר לשרת כדי לשנות תשובות אוטומטיות. יש להשתמש ביישום למחשב."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -14275,13 +14309,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Your automatic replies couldn't be read: {error}"
-msgstr ""
+msgstr "לא ניתן לקרוא את התשובות האוטומטיות שלך: {error}"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Your automatic replies weren't changed"
-msgstr ""
+msgstr "התשובות האוטומטיות שלך לא שונו"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -14383,8 +14419,9 @@ msgstr "הארגון אינו מתיר ל־MailCraft לקרוא את לוחות 
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Your organisation doesn't let MailCraft change automatic replies"
-msgstr ""
+msgstr "הארגון שלך אינו מאפשר ל־MailCraft לשנות תשובות אוטומטיות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -14428,8 +14465,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "Your organisation's administrator has to approve MailCraft changing automatic replies once: File › Info"
-msgstr ""
+msgstr "מנהל המערכת בארגון צריך לאשר פעם אחת שינוי של תשובות אוטומטיות על ידי MailCraft: קובץ › מידע"
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -16710,8 +16748,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "you signed in as somebody else"
-msgstr ""
+msgstr "התחברת באמצעות חשבון אחר"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -16949,8 +16988,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
+#, fuzzy
 msgid "{line} · MailCraft may change them"
-msgstr ""
+msgstr "{line} · ל־MailCraft יש הרשאה לשנות אותן"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
