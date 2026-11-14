@@ -1437,6 +1437,16 @@ pub(crate) fn buttons(ui: &mut Ui, ok_label: &str, ok_enabled: bool) -> (bool, b
     result
 }
 
+/// Isolate an untranslated English root name inside a Hebrew location caption.
+/// Folder paths are user data and must retain their original bidirectional text.
+fn folder_place_for_caption(place: &str, is_root: bool, language: crate::i18n::Lang) -> String {
+    if is_root && !place.is_empty() && place.is_ascii() && language == crate::i18n::Lang::Hebrew {
+        format!("\u{2066}{place}\u{2069}")
+    } else {
+        place.to_owned()
+    }
+}
+
 /// Keep the command-search input on the reading edge, as the main search box does.
 /// The command IDs and shortcut text remain unchanged (and LTR).
 fn command_query_alignment(language: crate::i18n::Lang) -> Align2 {
@@ -1594,8 +1604,17 @@ pub fn show(app: &mut MailApp, ctx: &egui::Context) {
             let mut submit = false;
             let open = window(ctx, title, 380.0, |ui| {
                 if let FolderMode::New { parent } = mode {
+                    let is_root = parent.is_none();
                     let place = parent.map(|p| crate::nav::folder_path(&app.session.mailbox, p)).unwrap_or_else(|| tl!("the top level").to_string());
-                    ui.label(egui::RichText::new(crate::i18n::fmt(tl!("In {place}"), &[("place", &place)])).color(t.text_dim));
+                    let place = folder_place_for_caption(&place, is_root, crate::i18n::current());
+                    let location = crate::i18n::fmt(tl!("In {place}"), &[("place", &place)]);
+                    if crate::i18n::current() == crate::i18n::Lang::Hebrew {
+                        ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                            ui.label(egui::RichText::new(location).color(t.text_dim));
+                        });
+                    } else {
+                        ui.label(egui::RichText::new(location).color(t.text_dim));
+                    }
                 }
                 // Folder names are user-authored text: keep Hebrew at the reading edge,
                 // without changing the LTR layout for English or pseudo-locales.
@@ -2351,6 +2370,24 @@ mod tests {
         // Displayed translations still match as text; command IDs continue to match too.
         assert_eq!(score("חפש", "חפש פקודות", "בית", "ui.commands"), Some(0));
         assert_eq!(score("commands", "חפש פקודות", "בית", "ui.commands"), Some(3));
+    }
+
+    #[test]
+    fn hebrew_folder_location_isolates_only_english_root_fallback() {
+        use crate::i18n::Lang;
+
+        let isolated = folder_place_for_caption("the top level", true, Lang::Hebrew);
+        assert_eq!(isolated, "\u{2066}the top level\u{2069}");
+        assert_eq!(
+            crate::i18n::fmt("בתוך {place}", &[("place", &isolated)]),
+            "בתוך \u{2066}the top level\u{2069}"
+        );
+        assert_eq!(folder_place_for_caption("הרמה העליונה", true, Lang::Hebrew), "הרמה העליונה");
+        assert_eq!(folder_place_for_caption("the top level", true, Lang::English), "the top level");
+        assert_eq!(folder_place_for_caption("the top level", true, Lang::Pseudo), "the top level");
+        assert_eq!(folder_place_for_caption("Archive/2026", false, Lang::Hebrew), "Archive/2026");
+        assert_eq!(folder_place_for_caption("ארכיון/2026", false, Lang::Hebrew), "ארכיון/2026");
+        assert_eq!(folder_place_for_caption("", true, Lang::Hebrew), "");
     }
 
     #[test]
