@@ -13,7 +13,7 @@
 //! The dialog moves the selection and nothing else: it takes no ids, so that whoever opens it (an
 //! agent may, through `ui.dialog`) can't have the owner move messages they didn't select.
 
-use egui::{Key, Ui, vec2};
+use egui::{Align2, Key, Ui, vec2};
 use std::collections::HashMap;
 
 use mailcraft_model::{Folder, FolderKind, Id, Mailbox};
@@ -30,6 +30,40 @@ const ROWS_MAX: usize = 5_000;
 const FOLDERS_MAX: usize = 100_000;
 /// How deep the tree is walked.
 const DEPTH_MAX: usize = 32;
+
+/// Keep typed folder searches on the reading edge, without changing their query semantics.
+fn move_search_alignment(language: crate::i18n::Lang) -> Align2 {
+    if language == crate::i18n::Lang::Hebrew { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER }
+}
+
+/// Text anchor and available width for a folder row. Tree depth belongs to the right
+/// edge in Hebrew, just as it belongs to the left edge in English.
+fn folder_row_bounds(rect: egui::Rect, depth: usize, searching: bool, language: crate::i18n::Lang) -> (f32, f32) {
+    let indent = if searching { 0.0 } else { 16.0 * depth.min(12) as f32 };
+    let inset = 10.0 + indent;
+    if language == crate::i18n::Lang::Hebrew {
+        let right = (rect.max.x - inset).max(rect.min.x + 10.0);
+        (right, (right - rect.min.x - 10.0).max(0.0))
+    } else {
+        let left = (rect.min.x + inset).min(rect.max.x - 10.0);
+        (left, (rect.max.x - 10.0 - left).max(0.0))
+    }
+}
+
+/// The right-anchored counterpart of theme::paint_clipped, with the same one-line
+/// ellipsis behavior. Moving the galley rather than the click rectangle preserves
+/// the folder row's existing pointer/keyboard targets.
+fn paint_right_clipped(painter: &egui::Painter, right: f32, center_y: f32, width: f32, text: &str, font: egui::FontId, color: egui::Color32) {
+    if width <= 4.0 || text.is_empty() {
+        return;
+    }
+    let mut job =
+        egui::text::LayoutJob::single_section(text.to_owned(), egui::text::TextFormat { font_id: font, color, ..Default::default() });
+    job.wrap = egui::text::TextWrapping { max_width: width, max_rows: 1, break_anywhere: true, overflow_character: Some('…') };
+    let galley = painter.layout_job(job);
+    let size = galley.size();
+    painter.galley(egui::pos2(right - size.x, center_y - size.y / 2.0), galley, color);
+}
 
 /// The dialog's state.
 pub struct MoveItems {
@@ -126,8 +160,14 @@ impl MoveItems {
         // (A move into the folder in view moves nothing: it isn't offered, as in Home › Move.)
         let here = (!self.copy).then_some(app.session.view.folder);
         ui.label(if self.copy { tl!("Copy the selected items to the folder:") } else { tl!("Move the selected items to the folder:") });
-        let resp =
-            ui.add(egui::TextEdit::singleline(&mut self.query).hint_text(tl!("Search folders")).char_limit(QUERY_MAX).desired_width(f32::INFINITY));
+        let language = crate::i18n::current();
+        let resp = ui.add(
+            egui::TextEdit::singleline(&mut self.query)
+                .hint_text(tl!("Search folders"))
+                .char_limit(QUERY_MAX)
+                .align(move_search_alignment(language))
+                .desired_width(f32::INFINITY),
+        );
         let resp = crate::text_menu::field(resp);
         crate::text_menu::hold(&resp);
         let wanted = mailcraft_model::words::fold(&self.query);
@@ -179,10 +219,15 @@ impl MoveItems {
                 } else if can && resp.hovered() {
                     ui.painter().rect_filled(r, 4.0, t.hover);
                 }
-                let (text, x) =
-                    if wanted.is_empty() { (&row.name, r.min.x + 10.0 + 16.0 * row.depth.min(12) as f32) } else { (&row.path, r.min.x + 10.0) };
+                let searching = !wanted.is_empty();
+                let text = if searching { &row.path } else { &row.name };
                 let ink = if can { t.text } else { t.text_disabled };
-                crate::theme::paint_clipped(ui.painter(), egui::pos2(x, r.center().y), (r.max.x - x - 10.0).max(40.0), text, regular(13.0), ink);
+                let (anchor, width) = folder_row_bounds(r, row.depth, searching, language);
+                if language == crate::i18n::Lang::Hebrew {
+                    paint_right_clipped(ui.painter(), anchor, r.center().y, width, text, regular(13.0), ink);
+                } else {
+                    crate::theme::paint_clipped(ui.painter(), egui::pos2(anchor, r.center().y), width, text, regular(13.0), ink);
+                }
                 if can && resp.clicked() {
                     self.marked = Some(row.folder);
                 }
@@ -236,4 +281,39 @@ fn rows(mb: &Mailbox, account: Id) -> Vec<Row> {
     let mut out = Vec::new();
     walk(&under, None, "", 0, &mut out);
     out
+}
+
+
+#[cfg(test)]
+mod hebrew_move_dialog_layout_tests {
+    use super::*;
+
+    #[test]
+    fn move_and_copy_folder_search_read_from_the_correct_edge() {
+        assert_eq!(move_search_alignment(crate::i18n::Lang::Hebrew), Align2::RIGHT_CENTER);
+        for language in [crate::i18n::Lang::English, crate::i18n::Lang::Pseudo] {
+            assert_eq!(move_search_alignment(language), Align2::LEFT_CENTER);
+        }
+    }
+
+    #[test]
+    fn move_and_copy_folder_rows_mirror_depth_without_changing_hit_areas() {
+        for width in [84.0, 180.0, 520.0] {
+            let rect = egui::Rect::from_min_size(egui::pos2(14.0, 24.0), vec2(width, 26.0));
+            for depth in [0, 1, 4, 12, 24] {
+                for searching in [false, true] {
+                    let (left, left_width) = folder_row_bounds(rect, depth, searching, crate::i18n::Lang::English);
+                    let (right, right_width) = folder_row_bounds(rect, depth, searching, crate::i18n::Lang::Hebrew);
+                    assert!(left >= rect.min.x + 10.0 && left <= rect.max.x - 10.0);
+                    assert!(right >= rect.min.x + 10.0 && right <= rect.max.x - 10.0);
+                    assert!((left + right - rect.min.x - rect.max.x).abs() < 0.01);
+                    assert!((left_width - right_width).abs() < 0.01);
+                    if searching {
+                        assert!((left - rect.min.x - 10.0).abs() < 0.01);
+                        assert!((rect.max.x - right - 10.0).abs() < 0.01);
+                    }
+                }
+            }
+        }
+    }
 }
