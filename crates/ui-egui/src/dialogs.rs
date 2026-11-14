@@ -1437,17 +1437,20 @@ pub(crate) fn buttons(ui: &mut Ui, ok_label: &str, ok_enabled: bool) -> (bool, b
     result
 }
 
-/// Disjoint Hebrew command-search row regions: title on the right, its ribbon path in
-/// the middle, and the LTR keyboard shortcut on the left. The full row stays clickable.
-fn command_row_hebrew_columns(min_x: f32, max_x: f32) -> [(f32, f32); 3] {
+/// Hebrew command results put the title above its ribbon path, both right-aligned.
+/// A separate left-hand region keeps the LTR shortcut legible; the whole row is clickable.
+const HEBREW_COMMAND_ROW_HEIGHT: f32 = 44.0;
+fn command_row_hebrew_columns(min_x: f32, max_x: f32) -> [(f32, f32); 2] {
     let left = min_x + 10.0;
     let right = max_x - 10.0;
     let width = (right - left).max(0.0);
-    let shortcut_end = left + width * 0.21;
-    let location_start = shortcut_end + 6.0;
-    let location_end = left + width * 0.50;
-    let title_start = location_end + 6.0;
-    [(title_start, right), (location_start, location_end), (left, shortcut_end)]
+    let shortcut_end = left + width * 0.23;
+    [(shortcut_end + 10.0, right), (left, shortcut_end)]
+}
+
+fn command_row_hebrew_lines(min_y: f32) -> [(f32, f32); 2] {
+    let half = HEBREW_COMMAND_ROW_HEIGHT * 0.5;
+    [(min_y, min_y + half), (min_y + half, min_y + HEBREW_COMMAND_ROW_HEIGHT)]
 }
 
 pub fn show(app: &mut MailApp, ctx: &egui::Context) {
@@ -1496,8 +1499,10 @@ pub fn show(app: &mut MailApp, ctx: &egui::Context) {
                 let mut run: Option<String> = None;
                 egui::ScrollArea::vertical().max_height(340.0).auto_shrink([false, true]).show(ui, |ui| {
                     ui.spacing_mut().item_spacing = vec2(0.0, 1.0);
+                    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
                     for (i, (_, (id, label, location, shortcut, enabled))) in hits.iter().enumerate() {
-                        let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), egui::Sense::click());
+                        let height = if hebrew { HEBREW_COMMAND_ROW_HEIGHT } else { 30.0 };
+                        let (r, resp) = ui.allocate_exact_size(vec2(ui.available_width(), height), egui::Sense::click());
                         if i == *selected {
                             ui.painter().rect_filled(r, 4.0, t.selection);
                             if ui.input(|i| i.key_pressed(Key::ArrowDown) || i.key_pressed(Key::ArrowUp)) {
@@ -1507,23 +1512,38 @@ pub fn show(app: &mut MailApp, ctx: &egui::Context) {
                             ui.painter().rect_filled(r, 4.0, t.hover);
                         }
                         let ink = if *enabled { t.text } else { t.text_disabled };
-                        if crate::i18n::current() == crate::i18n::Lang::Hebrew {
-                            let [title_col, location_col, shortcut_col] = command_row_hebrew_columns(r.min.x, r.max.x);
-                            // Clip each independently; long Hebrew labels never cover a Latin shortcut.
-                            for (bounds, anchor_x, text, align, size, color) in [
-                                (title_col, title_col.1, label.as_str(), Align2::RIGHT_CENTER, 13.0, ink),
-                                (location_col, location_col.1, location.as_str(), Align2::RIGHT_CENTER, 11.0, t.text_dim),
-                                (shortcut_col, shortcut_col.0, shortcut.as_str(), Align2::LEFT_CENTER, 11.0, t.text_dim),
+                        if hebrew {
+                            let [content_col, shortcut_col] = command_row_hebrew_columns(r.min.x, r.max.x);
+                            let [title_line, path_line] = command_row_hebrew_lines(r.min.y);
+                            // Put long command names and ribbon paths on separate lines. Both
+                            // use the full right column instead of crowding into narrow columns.
+                            for (line, text, size, color) in [
+                                (title_line, label.as_str(), 13.0, ink),
+                                (path_line, location.as_str(), 11.0, t.text_dim),
                             ] {
-                                let clip = egui::Rect::from_min_max(egui::pos2(bounds.0, r.min.y), egui::pos2(bounds.1, r.max.y));
+                                let clip = egui::Rect::from_min_max(
+                                    egui::pos2(content_col.0, line.0),
+                                    egui::pos2(content_col.1, line.1),
+                                );
                                 ui.painter().with_clip_rect(clip).text(
-                                    egui::pos2(anchor_x, r.center().y),
-                                    align,
+                                    egui::pos2(content_col.1, (line.0 + line.1) * 0.5),
+                                    Align2::RIGHT_CENTER,
                                     text,
                                     regular(size),
                                     color,
                                 );
                             }
+                            let shortcut_clip = egui::Rect::from_min_max(
+                                egui::pos2(shortcut_col.0, r.min.y),
+                                egui::pos2(shortcut_col.1, r.max.y),
+                            );
+                            ui.painter().with_clip_rect(shortcut_clip).text(
+                                egui::pos2(shortcut_col.0, r.center().y),
+                                Align2::LEFT_CENTER,
+                                shortcut,
+                                regular(11.0),
+                                t.text_dim,
+                            );
                         } else {
                             let w = crate::theme::paint_clipped(
                                 ui.painter(),
@@ -2289,17 +2309,19 @@ mod tests {
     }
 
     #[test]
-    fn hebrew_command_rows_keep_labels_paths_and_shortcuts_separate() {
+    fn hebrew_command_rows_stack_labels_and_paths_without_overlapping_shortcuts() {
         for width in [320.0_f32, 520.0, 900.0] {
             for offset in [0.0_f32, 65.0] {
                 let left = offset;
                 let right = left + width;
-                let [title, location, shortcut] = command_row_hebrew_columns(left, right);
+                let [content, shortcut] = command_row_hebrew_columns(left, right);
+                let [title_line, path_line] = command_row_hebrew_lines(12.0);
                 assert!(left < shortcut.0 && shortcut.0 < shortcut.1);
-                assert!(shortcut.1 < location.0 && location.0 < location.1);
-                assert!(location.1 < title.0 && title.0 < title.1);
-                assert!(title.1 < right);
-                assert!(title.1 - title.0 > location.1 - location.0);
+                assert!(shortcut.1 + 8.0 <= content.0 && content.0 < content.1);
+                assert!(content.1 <= right);
+                assert!(content.1 - content.0 >= width * 0.65);
+                assert_eq!(title_line.1, path_line.0);
+                assert_eq!(path_line.1 - title_line.0, HEBREW_COMMAND_ROW_HEIGHT);
             }
         }
     }
