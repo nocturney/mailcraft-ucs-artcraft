@@ -499,9 +499,6 @@ fn scroll_arrows(app: &mut MailApp, ui: &mut Ui, lane: Rect, out: &egui::scroll_
     }
 }
 
-/// While a search is on, a bar over the list says so: how many it found and where, with a way
-/// back to the folder (✕, or Esc). Search is quick enough that the list changing by itself
-/// went unnoticed (#115).
 /// The search summary mirrors its clear button and text anchor in Hebrew while
 /// keeping the click area and the rest of the message list unchanged.
 fn search_bar_regions(rect: Rect, hebrew: bool) -> (Rect, Rect) {
@@ -538,6 +535,9 @@ mod hebrew_search_bar_tests {
     }
 }
 
+/// While a search is on, a bar over the list says so: how many it found and where, with a way
+/// back to the folder (✕, or Esc). Search is quick enough that the list changing by itself
+/// went unnoticed (#115).
 fn search_bar(app: &mut MailApp, ui: &mut Ui, found: usize) {
     let on = !app.session.view.search.trim().is_empty();
     // It fades in when a search starts; with no search it is gone at once, ready to fade again.
@@ -573,9 +573,22 @@ fn search_bar(app: &mut MailApp, ui: &mut Ui, found: usize) {
     let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     let (close, label) = search_bar_regions(r, hebrew);
     if hebrew {
-        ui.painter().with_clip_rect(label).text(pos2(label.max.x, label.center().y), Align2::RIGHT_CENTER, &said, semibold(12.0), t.text);
+        ui.painter().with_clip_rect(label).text(
+            pos2(label.max.x, label.center().y),
+            Align2::RIGHT_CENTER,
+            &said,
+            semibold(12.0),
+            t.text,
+        );
     } else {
-        crate::theme::paint_clipped(ui.painter(), pos2(label.min.x, label.center().y), label.width(), &said, semibold(12.0), t.text);
+        crate::theme::paint_clipped(
+            ui.painter(),
+            pos2(label.min.x, label.center().y),
+            label.width(),
+            &said,
+            semibold(12.0),
+            t.text,
+        );
     }
     let x = ui.interact(close, ui.scope_id().with("search_bar_close"), Sense::click()).on_hover_text(tl!("Clear search (Esc)"));
     x.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, tl!("Clear search")));
