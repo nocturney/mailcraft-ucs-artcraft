@@ -508,8 +508,9 @@ msgstr ""
 
 #. interface, name
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/menubar.rs
+#, fuzzy
 msgid "About MailCraft"
-msgstr ""
+msgstr "אודות MailCraft"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2735,8 +2736,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/view_source.rs
+#, fuzzy
 msgid "Copy all of it"
-msgstr ""
+msgstr "העתקת הכול"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
@@ -3601,8 +3603,9 @@ msgstr ""
 
 #. interface, ribbon
 #: crates/ui-egui/src/compose.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Draft"
-msgstr ""
+msgstr "טיוטה"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -3742,8 +3745,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Edit signature as text"
-msgstr ""
+msgstr "עריכת החתימה כטקסט"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/ribbon.rs
@@ -4850,8 +4854,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Have replies sent to"
-msgstr ""
+msgstr "שליחת תשובות אל"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -5299,13 +5304,15 @@ msgstr "לפי סדר התיקיות בחלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "In the message"
-msgstr ""
+msgstr "בהודעה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "In the selection"
-msgstr ""
+msgstr "בטקסט שנבחר"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -5321,8 +5328,9 @@ msgstr "בתיקייה {folder}"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "In {place}"
-msgstr ""
+msgstr "בתוך {place}"
 
 #. name
 #: crates/model/src/mailbox.rs crates/model/src/sync/progress.rs
@@ -5386,8 +5394,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Insert Link"
-msgstr ""
+msgstr "הוספת קישור"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/signature.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
@@ -5597,8 +5606,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Its messages in other folders stay where they are."
-msgstr ""
+msgstr "ההודעות שלו בתיקיות אחרות יישארו במקומן."
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5993,8 +6003,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Local mailbox"
-msgstr ""
+msgstr "תיבת דואר מקומית"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/forms.rs
@@ -6156,8 +6167,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/lib.rs
+#, fuzzy
 msgid "Mail to Keep Offline"
-msgstr ""
+msgstr "דואר לשמירה במצב לא מקוון"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -6253,8 +6265,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "MailCraft keeps it in memory until you close the app. It is never written to disk."
-msgstr ""
+msgstr "MailCraft שומר זאת בזיכרון עד לסגירת היישום. המידע לעולם אינו נכתב לדיסק."
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -6546,8 +6559,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Merge Duplicate Contacts"
-msgstr ""
+msgstr "מיזוג אנשי קשר כפולים"
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -6827,8 +6841,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Move All and Send Invitations"
-msgstr ""
+msgstr "העברת הכול ושליחת הזמנות"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
@@ -6853,8 +6868,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Move Recurring Item"
-msgstr ""
+msgstr "העברת פריט חוזר"
 
 #. command label
 #: crates/engine/src/cmd/rules.rs
@@ -6868,8 +6884,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Move the Appointments Only"
-msgstr ""
+msgstr "העברת הפגישות בלבד"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -6921,8 +6938,9 @@ msgstr "העבר ללוח השנה של החשבון שלי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Move to Your Account's Calendar"
-msgstr ""
+msgstr "העברה ללוח השנה של החשבון שלך"
 
 #. name
 #: crates/ui-egui/src/forms.rs
@@ -6989,8 +7007,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Names or addresses, separated by ;"
-msgstr ""
+msgstr "שמות או כתובות, מופרדים בנקודה־פסיק (;)"
 
 #. ribbon location
 #: crates/engine/src/cmd/view.rs
@@ -7159,8 +7178,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/alerts.rs crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "New message"
-msgstr ""
+msgstr "הודעה חדשה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -7511,8 +7531,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Nobody has proposed another time."
-msgstr ""
+msgstr "לא הוצע מועד חלופי."
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -7588,8 +7609,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Not an e-mail address: {names}"
-msgstr ""
+msgstr "כתובת דוא״ל לא תקינה: {names}"
 
 #. interface
 #: crates/ui-egui/src
@@ -7644,8 +7666,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Not saved"
-msgstr ""
+msgstr "לא נשמר"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -8385,8 +8408,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Paragraphs"
-msgstr ""
+msgstr "פסקאות"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -8411,8 +8435,9 @@ msgstr "סיסמה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Password for {account}"
-msgstr ""
+msgstr "סיסמה לחשבון {account}"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -8760,23 +8785,27 @@ msgstr ""
 
 #. interface, name
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Proposed Times"
-msgstr ""
+msgstr "מועדים מוצעים"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Proposed end"
-msgstr ""
+msgstr "שעת סיום מוצעת"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Proposed start"
-msgstr ""
+msgstr "שעת התחלה מוצעת"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Proposed time"
-msgstr ""
+msgstr "מועד מוצע"
 
 #. command label
 #: crates/engine/src/cmd/keys.rs
@@ -9080,8 +9109,9 @@ msgstr "הסר הכול"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Remove Link"
-msgstr ""
+msgstr "הסרת קישור"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -9284,8 +9314,9 @@ msgstr "השב לכולם"
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Reply all"
-msgstr ""
+msgstr "השב לכולם"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -9300,8 +9331,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Reply to"
-msgstr ""
+msgstr "השב אל"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -9368,8 +9400,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Respond to Recurring Item"
-msgstr ""
+msgstr "תגובה לפריט חוזר"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -9711,8 +9744,9 @@ msgstr "שמור כ־iCalendar…"
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Save draft"
-msgstr ""
+msgstr "שמירת טיוטה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -9753,8 +9787,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Saved to Drafts"
-msgstr ""
+msgstr "נשמר בטיוטות"
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -10023,8 +10058,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Select a meeting first"
-msgstr ""
+msgstr "יש לבחור תחילה פגישה"
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/reading/remote.rs crates/ui-egui/src/ribbon.rs
@@ -10069,8 +10105,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Send Cancellation"
-msgstr ""
+msgstr "שליחת הודעת ביטול"
 
 #. command label
 #: crates/engine/src/cmd/tasks_remote.rs
@@ -10096,8 +10133,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Send This Invitation?"
-msgstr ""
+msgstr "לשלוח את ההזמנה הזו?"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs
@@ -10112,8 +10150,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading/invitation.rs
+#, fuzzy
 msgid "Send a Response?"
-msgstr ""
+msgstr "לשלוח תשובה?"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10149,8 +10188,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading/invitation.rs
+#, fuzzy
 msgid "Send the Response Now"
-msgstr ""
+msgstr "שליחת התשובה כעת"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -10615,8 +10655,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose.rs
+#, fuzzy
 msgid "Show signature as it is sent"
-msgstr ""
+msgstr "הצגת החתימה כפי שהיא נשלחת"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
