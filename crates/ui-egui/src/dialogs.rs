@@ -1437,6 +1437,12 @@ pub(crate) fn buttons(ui: &mut Ui, ok_label: &str, ok_enabled: bool) -> (bool, b
     result
 }
 
+/// Keep the command-search input on the reading edge, as the main search box does.
+/// The command IDs and shortcut text remain unchanged (and LTR).
+fn command_query_alignment(language: crate::i18n::Lang) -> Align2 {
+    if language == crate::i18n::Lang::Hebrew { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER }
+}
+
 /// Hebrew command results put the title above its ribbon path, both right-aligned.
 /// A separate left-hand region keeps the LTR shortcut legible; the whole row is clickable.
 const HEBREW_COMMAND_ROW_HEIGHT: f32 = 44.0;
@@ -1479,7 +1485,11 @@ pub fn show(app: &mut MailApp, ctx: &egui::Context) {
         Dialog::Commands { query, selected } => {
             let open = window(ctx, tl!("Search Commands"), 520.0, |ui| {
                 let resp = ui.add(
-                    egui::TextEdit::singleline(query).hint_text(tl!("Type what you want to do")).desired_width(f32::INFINITY).font(regular(14.0)),
+                    egui::TextEdit::singleline(query)
+                        .hint_text(tl!("Type what you want to do"))
+                        .desired_width(f32::INFINITY)
+                        .font(regular(14.0))
+                        .align(command_query_alignment(crate::i18n::current())),
                 );
                 let resp = crate::text_menu::field(resp);
                 crate::text_menu::hold(&resp);
@@ -2324,6 +2334,16 @@ mod tests {
                 assert_eq!(path_line.1 - title_line.0, HEBREW_COMMAND_ROW_HEIGHT);
             }
         }
+    }
+
+    #[test]
+    fn command_search_input_respects_hebrew_reading_direction() {
+        assert_eq!(command_query_alignment(crate::i18n::Lang::Hebrew), Align2::RIGHT_CENTER);
+        assert_eq!(command_query_alignment(crate::i18n::Lang::English), Align2::LEFT_CENTER);
+        assert_eq!(command_query_alignment(crate::i18n::Lang::Pseudo), Align2::LEFT_CENTER);
+        // Displayed translations still match as text; command IDs continue to match too.
+        assert_eq!(score("חפש", "חפש פקודות", "בית", "ui.commands"), Some(0));
+        assert_eq!(score("commands", "חפש פקודות", "בית", "ui.commands"), Some(3));
     }
 
     #[test]
