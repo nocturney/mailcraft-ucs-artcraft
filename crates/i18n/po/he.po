@@ -521,7 +521,7 @@ msgstr "כ־{size} של דואר שגילו עולה על {window} יוסר מה
 #. ribbon location
 #: crates/ui-egui/src/lib.rs
 msgid "Above the status bar"
-msgstr ""
+msgstr "מעל שורת המצב"
 
 #. interface
 #, fuzzy
@@ -532,7 +532,7 @@ msgstr "צבע הדגשה"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Accent Colour"
-msgstr ""
+msgstr "צבע הדגשה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -988,7 +988,7 @@ msgstr "אפשר שליחה מתיבות דואר משותפות"
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Already in your contacts"
-msgstr ""
+msgstr "כבר נמצא באנשי הקשר"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
@@ -1515,7 +1515,7 @@ msgstr "צרף פריט"
 #. interface, name
 #: crates/ui-egui/src/pick_item.rs
 msgid "Attach a Contact Card"
-msgstr ""
+msgstr "צרף כרטיס איש קשר"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -1543,7 +1543,7 @@ msgstr "אפשרויות קובץ מצורף"
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Attachment options for {name}"
-msgstr ""
+msgstr "אפשרויות הקובץ המצורף {name}"
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/lib.rs
@@ -1559,7 +1559,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Attendance"
-msgstr ""
+msgstr "נוכחות"
 
 #. ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/calendar/share.rs
@@ -1595,12 +1595,12 @@ msgstr "תשובות אוטומטיות"
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
 msgid "Automatic Replies - {address}"
-msgstr ""
+msgstr "תשובות אוטומטיות – {address}"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
 msgid "Automatic Replies for {address}"
-msgstr ""
+msgstr "תשובות אוטומטיות עבור {address}"
 
 #. interface
 #, fuzzy
@@ -1611,7 +1611,7 @@ msgstr "רשימות תבליטים ומספור אוטומטיות"
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
 msgid "Automatic replies are being sent for {address}"
-msgstr ""
+msgstr "תשובות אוטומטיות נשלחות עבור {address}"
 
 #. what a command says
 #: crates/engine/src/cmd/auto_replies.rs
@@ -1921,7 +1921,7 @@ msgstr "בדיקת החיבור ללוח השנה"
 #. interface
 #: crates/ui-egui/src/open_shared.rs
 msgid "Calendar Listed Twice"
-msgstr ""
+msgstr "לוח השנה מופיע פעמיים"
 
 #. name
 #: crates/model/src/sync/progress.rs
@@ -2095,7 +2095,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/auto_replies.rs
 msgid "Change Automatic Replies"
-msgstr ""
+msgstr "שנה תשובות אוטומטיות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2321,7 +2321,7 @@ msgstr "מתבצעת בדיקה…"
 #. command label
 #: crates/engine/src/cmd/signature.rs
 msgid "Choose Default Signature"
-msgstr ""
+msgstr "בחר חתימת ברירת מחדל"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2532,7 +2532,7 @@ msgstr "צבע"
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/ribbon.rs
 msgid "Communicate"
-msgstr ""
+msgstr "תקשורת"
 
 #. name
 #: crates/engine/src/cmd/view/display.rs
@@ -2585,12 +2585,12 @@ msgstr "הושלם."
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/unconfirmed.rs
 msgid "Confirm Servers"
-msgstr ""
+msgstr "אשר שרתים"
 
 #. interface
 #: crates/ui-egui/src/unconfirmed.rs
 msgid "Confirm servers"
-msgstr ""
+msgstr "אישור שרתים"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/calendar_view.rs
@@ -2883,7 +2883,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/opening.rs
 msgid "Couldn't open {name}: {error}"
-msgstr ""
+msgstr "לא ניתן לפתוח את {name}: {error}"
 
 #. why a mail server couldn't be used
 #: crates/net/src/push.rs
@@ -2923,7 +2923,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Couldn't save the mailbox: {error}"
-msgstr ""
+msgstr "לא ניתן לשמור את תיבת הדואר: {error}"
 
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
@@ -3083,7 +3083,7 @@ msgstr "דחייה ללא שליחת הודעה"
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Declined"
-msgstr ""
+msgstr "נדחה"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -3274,7 +3274,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/alerts.rs
 msgid "Desktop alerts can't be shown"
-msgstr ""
+msgstr "לא ניתן להציג התראות שולחן עבודה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -3285,7 +3285,7 @@ msgstr "התראות שולחן עבודה רק על הודעות בקטגורי
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Detail"
-msgstr ""
+msgstr "פרטים"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs crates/ui-egui/src/tasks_view.rs
@@ -3296,7 +3296,7 @@ msgstr "פרטים"
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Diagnostics copied. Nothing was sent."
-msgstr ""
+msgstr "נתוני האבחון הועתקו. לא נשלח דבר."
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -3306,7 +3306,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Digital Signature"
-msgstr ""
+msgstr "חתימה דיגיטלית"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -3378,7 +3378,7 @@ msgstr "סגור תזכורת"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Dismiss Settings Notice"
-msgstr ""
+msgstr "סגור את הודעת ההגדרות"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -3388,12 +3388,12 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Dismiss Update Notice"
-msgstr ""
+msgstr "סגור את הודעת העדכון"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Dismiss Warnings"
-msgstr ""
+msgstr "סגור אזהרות"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
@@ -3415,12 +3415,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
 msgid "Don't Allow"
-msgstr ""
+msgstr "אל תאפשר"
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
 msgid "Don't Delete"
-msgstr ""
+msgstr "אל תמחק"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -3431,7 +3431,7 @@ msgstr "לא לשמור"
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
 msgid "Don't Send"
-msgstr ""
+msgstr "אל תשלח"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading/invitation.rs
@@ -3490,7 +3490,7 @@ msgstr "הושלם · פריטים חדשים: {n}"
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Double-click to open {name}; right-click to save it"
-msgstr ""
+msgstr "לחץ פעמיים כדי לפתוח את {name}; לחץ לחיצה ימנית כדי לשמור"
 
 #. ribbon location
 #: crates/engine/src/cmd/send_receive.rs
@@ -3528,7 +3528,7 @@ msgstr "הורדת תמונות בכל הודעות הדואר"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Download Pictures in Mail Automatically"
-msgstr ""
+msgstr "הורד תמונות בדואר באופן אוטומטי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
