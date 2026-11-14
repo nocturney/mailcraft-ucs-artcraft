@@ -1038,7 +1038,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "An Exchange server or IMAP?"
-msgstr ""
+msgstr "שרת Exchange או IMAP?"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -1460,7 +1460,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Asking your domain's DNS…"
-msgstr ""
+msgstr "בודק את רשומות ה־DNS של הדומיין שלך…"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -1717,7 +1717,7 @@ msgstr "תשובות אוטומטיות: הארגון שלך אינו מאפשר
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Automatic setup (Autodiscover)"
-msgstr ""
+msgstr "הגדרה אוטומטית (Autodiscover)"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -2295,7 +2295,7 @@ msgstr "בודק את החשבון…"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Checking the address with Microsoft…"
-msgstr ""
+msgstr "בודק את הכתובת מול Microsoft…"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
@@ -3958,7 +3958,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Exchange server"
-msgstr ""
+msgstr "שרת Exchange"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
@@ -3969,7 +3969,7 @@ msgstr "שרת Exchange של הארגון"
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Exchange server account"
-msgstr ""
+msgstr "חשבון בשרת Exchange"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -4199,7 +4199,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/approval.rs crates/ui-egui/src/lib.rs
 msgid "Finish signing in first (your browser is waiting)"
-msgstr ""
+msgstr "יש להשלים תחילה את ההתחברות בדפדפן"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -4764,7 +4764,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Google blocked access to MailCraft"
-msgstr ""
+msgstr "Google חסמה את הגישה של MailCraft"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4794,12 +4794,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Google sign-in did not finish"
-msgstr ""
+msgstr "ההתחברות באמצעות Google לא הושלמה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Google sign-in didn't work"
-msgstr ""
+msgstr "ההתחברות באמצעות Google נכשלה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4830,7 +4830,7 @@ msgstr "התחברות באמצעות Google מחייבת שימוש בשרת IM
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Google sign-in was declined"
-msgstr ""
+msgstr "בקשת ההתחברות באמצעות Google נדחתה"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -5508,7 +5508,7 @@ msgstr "הזמנת משתתפים"
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Issued by"
-msgstr ""
+msgstr "הונפק על ידי"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -5518,7 +5518,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Issued to"
-msgstr ""
+msgstr "הונפק עבור"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -5935,7 +5935,7 @@ msgstr "אפשר להשאיר ריק כדי לשמור על הערך הנוכח�
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Leave it empty to look for the server from your address. It must begin with https://."
-msgstr ""
+msgstr "אפשר להשאיר ריק כדי לאתר את השרת לפי כתובת הדוא״ל. כתובת שרת חייבת להתחיל ב־https://."
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -6071,7 +6071,7 @@ msgstr "כתובת דומה ומטעה."
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Looking at the server's certificate…"
-msgstr ""
+msgstr "בודק את אישור האבטחה של השרת…"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -6081,7 +6081,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Looking for your Exchange server…"
-msgstr ""
+msgstr "מחפש את שרת Exchange שלך…"
 
 #. interface
 #: crates/ui-egui/src/import_tree.rs
@@ -6193,7 +6193,7 @@ msgstr "הודעות הדוא״ל בשרתים אינן מושפעות. אי א�
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Mail only"
-msgstr ""
+msgstr "דוא״ל בלבד"
 
 #. command label, interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/lib.rs
@@ -6362,7 +6362,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "MailCraft tries the usual places for your address."
-msgstr ""
+msgstr "MailCraft מחפש הגדרות שרת במיקומים המקובלים לפי הכתובת שלך."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -6822,7 +6822,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "More about this"
-msgstr ""
+msgstr "מידע נוסף"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
@@ -7629,7 +7629,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Not an Exchange server? Set it up with IMAP"
-msgstr ""
+msgstr "זה לא שרת Exchange? אפשר להגדיר באמצעות IMAP"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -7686,7 +7686,7 @@ msgstr "עדיין לא נשמר לקובץ: יש לבחור פתיחה וייצ
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/task_sync.rs
 msgid "Not now"
-msgstr ""
+msgstr "לא כעת"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -8195,7 +8195,7 @@ msgstr "פתיחת ההודעה"
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Open the page again"
-msgstr ""
+msgstr "פתח שוב את הדף"
 
 #. interface
 #: crates/ui-egui/src/reading/sharing.rs
@@ -9656,7 +9656,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "SHA-256 fingerprint"
-msgstr ""
+msgstr "טביעת אצבע SHA-256"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10268,7 +10268,7 @@ msgstr "לשלוח את הסיסמה לשרת אחר?"
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Send your sign-in to another server?"
-msgstr ""
+msgstr "לשלוח את פרטי ההתחברות לשרת אחר?"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -10447,7 +10447,7 @@ msgstr "תעודת האבטחה של השרת"
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Server address (Exchange Web Services)"
-msgstr ""
+msgstr "כתובת השרת (Exchange Web Services)"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -10467,7 +10467,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Set up manually"
-msgstr ""
+msgstr "הגדרה ידנית"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -10799,7 +10799,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Sign In"
-msgstr ""
+msgstr "התחברות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/backstage.rs
@@ -10831,7 +10831,7 @@ msgstr "התחברו שוב ובחרו ב־{typed} בדף ההתחברות, או
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Sign in again, asking for mail alone"
-msgstr ""
+msgstr "להתחבר מחדש עם גישה לדוא״ל בלבד"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -11527,7 +11527,7 @@ msgstr "דווח למפתחי MailCraft על התקלה ב־GitHub או בדוא
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Tenant"
-msgstr ""
+msgstr "דייר (Tenant)"
 
 #. interface, name, ribbon
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs crates/ui-egui/src/ribbon.rs
@@ -12230,7 +12230,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The message you are writing has changes that aren't saved."
-msgstr ""
+msgstr "בהודעה שאתה כותב יש שינויים שטרם נשמרו."
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -12508,12 +12508,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "The server's certificate"
-msgstr ""
+msgstr "אישור האבטחה של השרת"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "The server's certificate has changed"
-msgstr ""
+msgstr "אישור האבטחה של השרת השתנה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -13194,7 +13194,7 @@ msgstr "זה אינו החשבון שהזנתם"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "This item has changes that aren't saved. Save them?"
-msgstr ""
+msgstr "בפריט זה יש שינויים שלא נשמרו. לשמור אותם?"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/meeting.rs
@@ -13743,12 +13743,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Trust this certificate for this account"
-msgstr ""
+msgstr "לתת אמון באישור הזה עבור החשבון"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Trust this server's certificate?"
-msgstr ""
+msgstr "לתת אמון באישור האבטחה של השרת?"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -13768,7 +13768,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/nav.rs crates/ui-egui/src/reading/remote.rs crates/ui-egui/src/report_problem.rs
 msgid "Try again"
-msgstr ""
+msgstr "נסה שוב"
 
 #. date and time, name
 #: crates/i18n/src/date.rs crates/time/src/lib.rs
@@ -13823,17 +13823,17 @@ msgstr "סוג"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Type the name of the incoming mail server"
-msgstr ""
+msgstr "יש להזין את שם שרת הדואר הנכנס"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Type what you want to do"
-msgstr ""
+msgstr "הקלד את הפעולה שברצונך לבצע"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Type your address. MailCraft finds your mail servers and how you sign in."
-msgstr ""
+msgstr "יש להזין את כתובת הדוא״ל שלך. MailCraft יאתר את שרתי הדואר ואת שיטת ההתחברות."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -13904,12 +13904,12 @@ msgstr "לא נקראו: {n}"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "שינויים שלא נשמרו"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Unsaved Message"
-msgstr ""
+msgstr "הודעה שלא נשמרה"
 
 #. interface
 #: crates/ui-egui/src/windows.rs
@@ -14017,7 +14017,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
 msgid "User name"
-msgstr ""
+msgstr "שם משתמש"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -14032,12 +14032,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Usually the whole address"
-msgstr ""
+msgstr "בדרך כלל כתובת הדוא״ל המלאה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Valid"
-msgstr ""
+msgstr "תקין"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -14397,7 +14397,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/account_setup.rs
 msgid "Work or school mail"
-msgstr ""
+msgstr "דוא״ל של העבודה או של מוסד הלימודים"
 
 #. name
 #: crates/model/src/calendar.rs
@@ -14602,7 +14602,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Your domain's DNS couldn't be asked. Check the network connection and search again."
-msgstr ""
+msgstr "לא ניתן לברר את רשומות ה־DNS של הדומיין. בדוק את החיבור לרשת ונסה לחפש שוב."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -14665,12 +14665,12 @@ msgstr "תיבת הדואר שלך תוקנה"
 #. interface
 #: crates/ui-egui/src/account_setup.rs
 msgid "Your name"
-msgstr ""
+msgstr "השם שלך"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
 msgid "Your organisation doesn't allow Exchange Web Services for this account. Ask your administrator."
-msgstr ""
+msgstr "הארגון שלך אינו מאפשר שימוש ב־Exchange Web Services בחשבון הזה. יש לפנות למנהל המערכת."
 
 #. interface
 #: crates/ui-egui/src/rule_sync.rs
@@ -14707,12 +14707,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Your organisation has approved MailCraft. Now sign in with your own account."
-msgstr ""
+msgstr "הארגון שלך אישר את MailCraft. כעת יש להתחבר באמצעות החשבון שלך."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Your organisation has to approve MailCraft first"
-msgstr ""
+msgstr "הארגון שלך צריך לאשר תחילה את MailCraft"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
