@@ -270,7 +270,7 @@ msgstr ""
 #. what a command says
 #: crates/engine/src/import_pst.rs
 msgid "A .pst file is being imported: try again when it is done"
-msgstr ""
+msgstr "מתבצע ייבוא של קובץ ‎.pst; נסו שוב לאחר סיומו"
 
 #. what a command says
 #: crates/model/src/mailbox_snooze.rs
@@ -1043,7 +1043,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "An OpenPGP secret key, protected by a passphrase"
-msgstr ""
+msgstr "מפתח OpenPGP סודי, המוגן באמצעות סיסמת מפתח"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -1053,12 +1053,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "An S/MIME certificate with its private key, in a .p12 or .pfx file"
-msgstr ""
+msgstr "תעודת S/MIME והמפתח הפרטי שלה, בקובץ ‎.p12 או ‎.pfx"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "An X.509 certificate (.cer, .pem) or an OpenPGP Public key (.asc)"
-msgstr ""
+msgstr "תעודת X.509 ‏(.cer, .pem) או מפתח ציבורי של OpenPGP ‏(.asc)"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -4472,7 +4472,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/import_tree.rs
 msgid "Found in {path}. Nothing is imported until you press Import."
-msgstr ""
+msgstr "נמצא בנתיב {path}. דבר לא ייובא עד ללחיצה על 'ייבוא'."
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -5136,12 +5136,12 @@ msgstr "ייבא אנשי קשר"
 #. command label
 #: crates/engine/src/cmd/keys.rs
 msgid "Import Public Keys"
-msgstr ""
+msgstr "ייבוא מפתחות ציבוריים"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Import Your Certificate or Key"
-msgstr ""
+msgstr "ייבוא התעודה או המפתח שלך"
 
 #. command label, interface
 #, fuzzy
@@ -5152,7 +5152,7 @@ msgstr "ייבוא קובץ ‎.pst"
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Import a Certificate"
-msgstr ""
+msgstr "ייבוא תעודה"
 
 #. command label, interface
 #, fuzzy
@@ -5163,27 +5163,27 @@ msgstr "ייבוא תיקייה של תיבות דואר"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Import a Public Key"
-msgstr ""
+msgstr "ייבוא מפתח ציבורי"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Import a Public key…"
-msgstr ""
+msgstr "ייבוא מפתח ציבורי…"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Import a certificate (.p12)…"
-msgstr ""
+msgstr "ייבוא תעודה (‎.p12)…"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Import an OpenPGP Key"
-msgstr ""
+msgstr "ייבוא מפתח OpenPGP"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Import an OpenPGP key (.asc)…"
-msgstr ""
+msgstr "ייבוא מפתח OpenPGP ‏(‎.asc)…"
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -5214,57 +5214,57 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Imported"
-msgstr ""
+msgstr "יובא"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Imported from {file}"
-msgstr ""
+msgstr "יובא מתוך {file}"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Imported here"
-msgstr ""
+msgstr "יובא לכאן"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what}"
-msgstr ""
+msgstr "יובא: {what}"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what} from the .pst file"
-msgstr ""
+msgstr "יובא {what} מקובץ ‎.pst"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what} into Drafts on this computer: a draft stays on this computer until it is sent"
-msgstr ""
+msgstr "יובא {what} לתיקיית טיוטות במחשב הזה. הטיוטה תישאר במחשב עד לשליחתה"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what} into a local folder: move it into the account to put it on Microsoft's server"
-msgstr ""
+msgstr "יובא {what} לתיקייה מקומית. כדי לשמור אותו בשרת של Microsoft, העבירו אותו לחשבון"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what} into the new folder {name}"
-msgstr ""
+msgstr "יובא {what} לתיקייה החדשה {name}"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Imported {what}; stopped after {count}: the file has more than one import takes"
-msgstr ""
+msgstr "יובא {what}; הייבוא נעצר לאחר {count} פריטים, מכיוון שהקובץ גדול מדי לייבוא אחד"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Imported: MailCraft keeps it in the system's credential store, still protected by its passphrase."
-msgstr ""
+msgstr "יובא: MailCraft שומר אותו במאגר פרטי הכניסה של המערכת, כשהוא עדיין מוגן בסיסמת המפתח שלו."
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Imported: the system keeps it, and it is listed with your certificates."
-msgstr ""
+msgstr "יובא: המערכת שומרת אותו והוא מופיע ברשימת התעודות שלך."
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -5275,12 +5275,12 @@ msgstr "ייבוא קובצי ‎.pst‎ עדיין אינו נתמך בדפדפ
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Importing…"
-msgstr ""
+msgstr "מייבא…"
 
 #. interface
 #: crates/ui-egui/src/import_tree.rs
 msgid "Importing… {messages} of {total}"
-msgstr ""
+msgstr "מייבא… {messages} מתוך {total}"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -5827,7 +5827,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Kept Public key"
-msgstr ""
+msgstr "מפתח ציבורי שמור"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6060,7 +6060,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Look for your certificates and keys again"
-msgstr ""
+msgstr "חיפוש חוזר של התעודות והמפתחות שלך"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
@@ -6128,12 +6128,12 @@ msgstr "דואר"
 #. what a command says
 #: crates/engine/src/io.rs
 msgid "Mail can't be imported into an Outbox: it would be sent."
-msgstr ""
+msgstr "אין אפשרות לייבא דואר לתיבת הדואר היוצא: ההודעות יישלחו."
 
 #. what a command says
 #: crates/engine/src/io.rs
 msgid "Mail can't be imported into an Outbox: it would be sent. Choose another folder."
-msgstr ""
+msgstr "אין אפשרות לייבא דואר לתיבת הדואר היוצא: ההודעות יישלחו. יש לבחור תיקייה אחרת."
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -7306,7 +7306,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "No Public keys are kept yet."
-msgstr ""
+msgstr "עדיין לא נשמרו מפתחות ציבוריים."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -8840,12 +8840,12 @@ msgstr "מועד מוצע"
 #. command label
 #: crates/engine/src/cmd/keys.rs
 msgid "Public Keys"
-msgstr ""
+msgstr "מפתחות ציבוריים"
 
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Public keys kept ({n}):"
-msgstr ""
+msgstr "מפתחות ציבוריים שמורים ({n}):"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -9060,7 +9060,7 @@ msgstr "רענן"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Refresh Your Certificates and Keys"
-msgstr ""
+msgstr "רענון התעודות והמפתחות שלך"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9174,7 +9174,7 @@ msgstr "הסרת תמונה"
 #. command label
 #: crates/engine/src/cmd/keys.rs
 msgid "Remove Public Key"
-msgstr ""
+msgstr "הסרת מפתח ציבורי"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -9196,7 +9196,7 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Remove Your Imported Key"
-msgstr ""
+msgstr "הסרת המפתח שיובא"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -9501,7 +9501,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
 msgid "Review certificate…"
-msgstr ""
+msgstr "סקירת התעודה…"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -14597,7 +14597,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Your certificates and keys"
-msgstr ""
+msgstr "התעודות והמפתחות שלך"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
