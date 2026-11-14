@@ -232,7 +232,10 @@ impl FolderProperties {
         let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
         // Native right-to-left tab placement in Hebrew, including wrapped rows.
         // The order and selectable commands remain exactly the same in both languages.
-        ui.with_layout(properties_tab_layout(hebrew), |ui| {
+        // A horizontal layout with no allocated height stretches to the entire remaining
+        // dialog height, centering the tabs inside a large blank region. Give it a compact
+        // initial row instead; egui grows it only if translated tab names wrap.
+        properties_tab_strip(ui, hebrew, |ui| {
             for tab in Tab::ALL {
                 if ui.selectable_label(self.tab == tab, tab.label()).clicked() {
                     self.tab = tab;
@@ -518,6 +521,12 @@ fn shown_path(folders: &HashMap<Id, &Folder>, f: &Folder) -> String {
     parts.join(" › ")
 }
 
+/// Keep the horizontal tab row compact even when the parent window is very tall.
+/// The child can grow if a narrow dialog wraps translated tab names into more rows.
+fn properties_tab_strip(ui: &mut Ui, hebrew: bool, add: impl FnOnce(&mut Ui)) -> egui::Response {
+    ui.allocate_ui_with_layout(vec2(ui.available_width(), ui.spacing().interact_size.y), properties_tab_layout(hebrew), add).response
+}
+
 /// A folder's tabs begin at the language's reading edge and wrap in that direction.
 fn properties_tab_layout(hebrew: bool) -> egui::Layout {
     if hebrew {
@@ -572,6 +581,30 @@ mod folder_properties_tests;
 #[cfg(test)]
 mod hebrew_properties_layout_tests {
     use super::*;
+
+    #[test]
+    fn folder_tab_strip_does_not_stretch_to_the_window_height() {
+        for hebrew in [false, true] {
+            let ctx = egui::Context::default();
+            let mut height = 0.0;
+            let input = egui::RawInput {
+                screen_rect: Some(egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1000.0, 900.0))),
+                ..Default::default()
+            };
+            let _ = ctx.run(input, |ctx| {
+                egui::CentralPanel::default().show(ctx, |ui| {
+                    ui.set_max_width(WIDTH);
+                    let response = properties_tab_strip(ui, hebrew, |ui| {
+                        for tab in Tab::ALL {
+                            ui.selectable_label(tab == Tab::General, tab.label());
+                        }
+                    });
+                    height = response.rect.height();
+                });
+            });
+            assert!(height >= 20.0 && height < 140.0, "hebrew={hebrew}: tab row stretched to {height} px");
+        }
+    }
 
     #[test]
     fn tabs_and_general_columns_follow_hebrew_reading_direction() {
