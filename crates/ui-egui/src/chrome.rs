@@ -135,6 +135,24 @@ pub const MAC_CONTENT_LEFT: f32 = MAC_LIGHTS_LEFT + 2.0 * MAC_LIGHT_PITCH + MAC_
 /// word being typed may be (#308; `search_suggest`), and Escape closes that first; and the button
 /// at its right opens Advanced Search under it (#329), which Escape closes before it clears
 /// anything (`advanced_search::escape`).
+/// Align search text with the interface reading direction while preserving the
+/// existing search-scope, advanced-search and keyboard hit targets.
+fn search_text_alignment(language: crate::i18n::Lang) -> Align2 {
+    if language == crate::i18n::Lang::Hebrew { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER }
+}
+
+#[cfg(test)]
+mod search_alignment_tests {
+    use super::*;
+
+    #[test]
+    fn hebrew_search_text_is_right_aligned_without_changing_other_languages() {
+        assert_eq!(search_text_alignment(crate::i18n::Lang::Hebrew), Align2::RIGHT_CENTER);
+        assert_eq!(search_text_alignment(crate::i18n::Lang::English), Align2::LEFT_CENTER);
+        assert_eq!(search_text_alignment(crate::i18n::Lang::Pseudo), Align2::LEFT_CENTER);
+    }
+}
+
 fn search_box(app: &mut MailApp, ui: &mut Ui, rect: Rect) {
     let t = Tokens::get(ui.ctx());
     let id = search_box_id();
@@ -233,7 +251,7 @@ fn search_box(app: &mut MailApp, ui: &mut Ui, rect: Rect) {
         .frame(egui::Frame::NONE)
         .hint_text(hint)
         .font(font.clone())
-        .align(egui::Align2::LEFT_CENTER)
+        .align(search_text_alignment(crate::i18n::current()))
         .desired_width(edit_rect.width())
         // Tab is for the list while it shows. Escape is always the box's.
         .event_filter(list_keys(open))
