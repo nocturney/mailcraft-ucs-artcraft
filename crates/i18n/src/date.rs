@@ -102,9 +102,11 @@ impl Lang {
                 };
                 Conventions { twelve_hour, week_start, pad_numeric: true, day_first: true }
             }
-            Lang::French | Lang::German | Lang::Spanish | Lang::Italian | Lang::Dutch | Lang::Romanian | Lang::Hebrew => {
+            Lang::French | Lang::German | Lang::Spanish | Lang::Italian | Lang::Dutch | Lang::Romanian => {
                 Conventions { twelve_hour: false, week_start: 0, pad_numeric: true, day_first: true }
             }
+            // Hebrew calendars in Israel begin on Sunday (CLDR firstDay for IL).
+            Lang::Hebrew => Conventions { twelve_hour: false, week_start: 6, pad_numeric: true, day_first: true },
             Lang::ChineseSimplified => Conventions { twelve_hour: false, week_start: 0, pad_numeric: true, day_first: false },
         }
     }
@@ -448,10 +450,15 @@ mod tests {
     fn each_language_has_its_own_clock_and_week() {
         assert_eq!(Lang::English.conventions(), Conventions { twelve_hour: true, week_start: 6, pad_numeric: false, day_first: false });
         assert_eq!(Lang::Pseudo.conventions(), Lang::English.conventions());
-        for lang in [Lang::French, Lang::German, Lang::Spanish, Lang::Italian, Lang::Dutch, Lang::Romanian, Lang::Hebrew] {
+        for lang in [Lang::French, Lang::German, Lang::Spanish, Lang::Italian, Lang::Dutch, Lang::Romanian] {
             let c = lang.conventions();
             assert_eq!((c.twelve_hour, c.week_start, c.pad_numeric), (false, 0, true), "{lang:?}");
         }
+        // Israel's week starts on Sunday, while dates stay day-first on a 24-hour clock.
+        let he = Lang::Hebrew.conventions();
+        assert_eq!(he, Conventions { twelve_hour: false, week_start: 6, pad_numeric: true, day_first: true });
+        assert_eq!(Lang::Hebrew.conventions_in(region_of("he-IL")), he);
+        assert_eq!(Lang::Hebrew.conventions_in(region_of("iw_IL")), he);
     }
 
     /// English outside the US, Canada and the Philippines writes the day first (#978).
