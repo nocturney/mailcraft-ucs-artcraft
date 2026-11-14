@@ -86,11 +86,13 @@ fn heading_text_bounds(r: Rect, name_width: f32, room: f32, hebrew: bool) -> (f3
     (folder_text_start(left, right, name_width, hebrew), right)
 }
 
-fn heading_color_dot_x(r: Rect, visible_name_width: f32, hebrew: bool) -> f32 {
+fn heading_color_dot_x(name_x: f32, visible_name_width: f32, hebrew: bool) -> f32 {
+    // Keep the marker next to the visible label, not marooned at the opposite
+    // edge of the pane when an account name is short.
     if hebrew {
-        r.min.x + 8.0 + ACCOUNT_DOT_ROOM / 2.0
+        name_x - ACCOUNT_DOT_ROOM / 2.0 - 1.0
     } else {
-        r.min.x + NAME_LEFT + visible_name_width + ACCOUNT_DOT_ROOM / 2.0 + 1.0
+        name_x + visible_name_width + ACCOUNT_DOT_ROOM / 2.0 + 1.0
     }
 }
 
@@ -117,15 +119,16 @@ mod hebrew_folder_geometry_tests {
         let (rtl_x, rtl_right) = heading_text_bounds(r, 80.0, ACCOUNT_DOT_ROOM, true);
         assert_eq!((ltr_x, ltr_right), (36.0, 206.0));
         assert_eq!((rtl_x, rtl_right), (124.0, 204.0));
-        assert_eq!(heading_color_dot_x(r, 80.0, false), 125.0);
-        let dot = heading_color_dot_x(r, 80.0, true);
-        assert_eq!(dot, 26.0);
+        assert_eq!(heading_color_dot_x(ltr_x, 80.0, false), 125.0);
+        let dot = heading_color_dot_x(rtl_x, 80.0, true);
+        assert_eq!(dot, 115.0);
         assert!(dot + ACCOUNT_DOT_RADIUS < rtl_x);
         assert!(rtl_right < heading_chevron_x(r, true));
         // Long account names remain clipped before the right-hand chevron.
         let (clipped_x, right) = heading_text_bounds(r, 300.0, ACCOUNT_DOT_ROOM, true);
         assert_eq!(clipped_x, 34.0);
         assert_eq!(right, 204.0);
+        assert!(heading_color_dot_x(clipped_x, 170.0, true) - ACCOUNT_DOT_RADIUS > r.min.x + 8.0);
         // Favorites have no account-colour dot, and keep their own full-width hit target.
         let (favorite_x, favorite_right) = heading_text_bounds(r, 80.0, 0.0, true);
         assert_eq!((favorite_x, favorite_right), (124.0, 204.0));
@@ -312,7 +315,7 @@ fn heading(app: &mut MailApp, ui: &mut Ui, id: Id, name: &str, height: f32, text
     let (name_x, name_right) = heading_text_bounds(r, name_width, room, hebrew);
     let w = paint_clipped(ui.painter(), pos2(name_x, y), (name_right - name_x).max(0.0), name, font, t.text);
     if let Some(color) = color {
-        let center = pos2(heading_color_dot_x(r, w, hebrew), y + 1.0);
+        let center = pos2(heading_color_dot_x(name_x, w, hebrew), y + 1.0);
         ui.painter().circle_filled(center, ACCOUNT_DOT_RADIUS, crate::theme::c32(color));
         // (In High Contrast a ring in the text's colour, so that a mid-tone stays in sight.)
         if t.high_contrast {
