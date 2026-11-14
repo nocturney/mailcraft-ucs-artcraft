@@ -667,12 +667,10 @@ msgstr "הוסף את השולח לאנשי הקשר"
 
 #. command label, interface
 #: crates/engine/src/cmd/shared.rs crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Add Shared Mailbox"
 msgstr "הוסף תיבת דואר משותפת"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Add Shared Mailbox…"
 msgstr "הוספת תיבת דואר משותפת…"
@@ -880,7 +878,6 @@ msgstr "כל הקטגוריות"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "All Categories…"
 msgstr "כל הקטגוריות…"
 
@@ -2970,12 +2967,10 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
-#, fuzzy
 msgid "Create from details"
 msgstr "יצירה מתוך פרטים"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Current Folder"
 msgstr "התיקייה הנוכחית"
@@ -3830,7 +3825,6 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Empty Folder"
 msgstr "ריקון תיקייה"
 
@@ -4029,7 +4023,6 @@ msgid ""
 msgstr ""
 
 #. command label, interface
-#, fuzzy
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/backstage.rs
 msgid "Export Contacts"
 msgstr "ייצוא אנשי קשר"
@@ -4991,7 +4984,6 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "High Importance"
 msgstr "חשיבות גבוהה"
 
@@ -5394,9 +5386,8 @@ msgstr "דואר נכנס (IMAP)"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Increase Indent"
-msgstr "הגדלת כניסה"
+msgstr "הגדל כניסה"
 
 #. interface
 #, fuzzy
@@ -5471,12 +5462,10 @@ msgstr "גודל הממשק"
 
 #. command label, ribbon
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Interface Theme"
 msgstr "ערכת הנושא של הממשק"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Interface size"
 msgstr "גודל הממשק"
@@ -6214,7 +6203,6 @@ msgstr "דואר לשמירה במצב לא מקוון"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-#, fuzzy
 msgid "Mail to keep offline"
 msgstr "דואר לשמירה במצב לא מקוון"
 
@@ -10010,18 +9998,15 @@ msgstr "חיפוש תיקיות"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
-#, fuzzy
 msgid "Search in"
 msgstr "חיפוש בתוך"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Search mail"
 msgstr "חיפוש בדואר"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Search mail (try from:, has:attachment, is:unread)"
 msgstr "חיפוש בדואר (לדוגמה: from:, has:attachment, is:unread)"
@@ -10906,7 +10891,6 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-#, fuzzy
 msgid "Sign in to your account"
 msgstr "כניסה לחשבון"
 
@@ -11531,7 +11515,6 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
-#, fuzzy
 msgid "Teams meeting"
 msgstr "פגישת Teams"
 
