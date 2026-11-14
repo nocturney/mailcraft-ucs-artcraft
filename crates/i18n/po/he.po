@@ -245,7 +245,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "3D Models"
-msgstr ""
+msgstr "מודלים תלת־ממדיים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
@@ -567,7 +567,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Access token for {account}"
-msgstr ""
+msgstr "אסימון גישה עבור {account}"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -837,7 +837,7 @@ msgstr "כתובת:"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Addresses separated by ; (leave empty for replies to come to you)"
-msgstr ""
+msgstr "כתובות מופרדות בנקודה־פסיק ; (יש להשאיר ריק כדי שהתשובות יגיעו אליך)"
 
 #. command label, interface
 #, fuzzy
@@ -3533,7 +3533,7 @@ msgstr "הורד תמונות בדואר באופן אוטומטי"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Download in all mail"
-msgstr ""
+msgstr "הורד בכל ההודעות"
 
 #. interface
 #, fuzzy
@@ -3638,7 +3638,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Drop Cap"
-msgstr ""
+msgstr "אות פתיחה מוגדלת"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -3803,7 +3803,7 @@ msgstr "כתובת דוא״ל"
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Email the people of this meeting"
-msgstr ""
+msgstr "שלח דוא״ל למשתתפי הפגישה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -4419,7 +4419,7 @@ msgstr "עיצוב כטקסט רגיל"
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Forums"
-msgstr ""
+msgstr "פורומים"
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/compose.rs crates/engine/src/cmd/view.rs crates/ui-egui/src/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -4698,7 +4698,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Go"
-msgstr ""
+msgstr "עבור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -4884,7 +4884,7 @@ msgstr "שליחת תשובות אל"
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Have replies sent to other addresses"
-msgstr ""
+msgstr "שלח תשובות לכתובות אחרות"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -5700,7 +5700,7 @@ msgstr "הצטרף לפגישת {service}"
 #. interface, ribbon location
 #: crates/engine/src/cmd/notes.rs crates/ui-egui/src/nav.rs
 msgid "Journal"
-msgstr ""
+msgstr "יומן פעילות"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -6215,7 +6215,7 @@ msgstr "דואר לשמירה במצב לא מקוון:"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Mail, calendar, people and tasks, written from scratch in Rust."
-msgstr ""
+msgstr "דואר, לוח שנה, אנשי קשר ומשימות, שפותחו מאפס ב־Rust."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6925,7 +6925,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/move_items.rs
 msgid "Move the selected items to the folder:"
-msgstr ""
+msgstr "העבר את הפריטים שנבחרו לתיקייה:"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8028,7 +8028,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
 msgid "Only the meeting's organizer can change its time."
-msgstr ""
+msgstr "רק מארגן הפגישה יכול לשנות את מועדה."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -8137,7 +8137,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Open a message you sent as a new one"
-msgstr ""
+msgstr "פתח הודעה ששלחת כהודעה חדשה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -8623,7 +8623,7 @@ msgstr "הצמד"
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Pin to the top of the list"
-msgstr ""
+msgstr "הצמד לראש הרשימה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -8753,7 +8753,7 @@ msgstr "העמוד הקודם"
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Primary"
-msgstr ""
+msgstr "ראשי"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -8769,7 +8769,7 @@ msgstr "פרטי"
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Promotions"
-msgstr ""
+msgstr "קידומי מכירות"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/writing_tools.rs crates/ui-egui/src/ribbon.rs
@@ -8784,7 +8784,7 @@ msgstr "מאפיינים"
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Properties…"
-msgstr ""
+msgstr "מאפיינים…"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8920,7 +8920,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Read the Favorites from Outlook again now"
-msgstr ""
+msgstr "טען מחדש כעת את המועדפים מ־Outlook"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -8959,7 +8959,7 @@ msgstr "קריאת התשובות האוטומטיות הופסקה באופן �
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Reading the calendar from Microsoft…"
-msgstr ""
+msgstr "קורא את לוח השנה מ־Microsoft…"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -9065,7 +9065,7 @@ msgstr "רענון התעודות והמפתחות שלך"
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Related"
-msgstr ""
+msgstr "פריטים קשורים"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -11082,7 +11082,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "Social"
-msgstr ""
+msgstr "רשתות חברתיות"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -11109,7 +11109,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/reading/invitation.rs
 msgid "Somebody else"
-msgstr ""
+msgstr "אדם אחר"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/meeting.rs
@@ -11130,7 +11130,7 @@ msgstr "מיין לפי"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "Source of {subject}"
-msgstr ""
+msgstr "מקור ההודעה {subject}"
 
 #. command label
 #: crates/engine/src/cmd/offline.rs
@@ -11700,7 +11700,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The Entire Series"
-msgstr ""
+msgstr "הסדרה כולה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -11975,7 +11975,7 @@ msgstr "אנשי הקשר שבחרת"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The conversations' messages in other folders stay where they are."
-msgstr ""
+msgstr "הודעות השיחות בתיקיות אחרות יישארו במקומן."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -12022,7 +12022,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The e-mail address of the person whose calendar you want to open"
-msgstr ""
+msgstr "כתובת הדוא״ל של האדם שאת לוח השנה שלו ברצונך לפתוח"
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -12568,7 +12568,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The shared mailbox couldn't be added"
-msgstr ""
+msgstr "לא ניתן להוסיף את תיבת הדואר המשותפת"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -12583,7 +12583,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 msgid "The shared mailbox's e-mail address"
-msgstr ""
+msgstr "כתובת הדוא״ל של תיבת הדואר המשותפת"
 
 #. interface, what a command says
 #, fuzzy
@@ -17075,7 +17075,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/nav.rs
 msgid "{account} · No access"
-msgstr ""
+msgstr "{account} · אין גישה"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
