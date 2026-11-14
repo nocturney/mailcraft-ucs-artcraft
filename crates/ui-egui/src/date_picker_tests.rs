@@ -9,7 +9,7 @@ use egui_kittest::Harness;
 use egui_kittest::kittest::{By, NodeT as _, Queryable as _};
 use mailcraft_time::{Date, Weekday};
 
-use super::{Calendar, Picked, moved};
+use super::{Calendar, Picked, month_arrow_x, moved, moved_in_direction, visual_column};
 
 fn day(s: &str) -> Date {
     Date::parse_iso(s).unwrap()
@@ -301,4 +301,36 @@ fn two_fields_keep_their_own_calendars() {
     h.key_press(Key::Enter);
     h.run_steps(2);
     assert_eq!(h.state(), &["2026-01-05".to_string(), "2026-06-21".to_string()]);
+}
+
+#[test]
+fn hebrew_calendar_columns_and_month_controls_are_reversed_only_visually() {
+    // The weekday/date sequence remains the same, but Sunday occupies the rightmost cell.
+    let normal: Vec<_> = (0..7).map(|i| visual_column(i, false)).collect();
+    let hebrew: Vec<_> = (0..7).map(|i| visual_column(i, true)).collect();
+    assert_eq!(normal, [0, 1, 2, 3, 4, 5, 6]);
+    assert_eq!(hebrew, [6, 5, 4, 3, 2, 1, 0]);
+    for i in 0..7 {
+        assert_eq!(visual_column(visual_column(i, true), true), i);
+    }
+
+    let heading = egui::Rect::from_min_max(egui::pos2(10.0, 5.0), egui::pos2(220.0, 31.0));
+    assert_eq!(month_arrow_x(heading, true, false), 22.0);
+    assert_eq!(month_arrow_x(heading, false, false), 208.0);
+    assert_eq!(month_arrow_x(heading, true, true), 208.0);
+    assert_eq!(month_arrow_x(heading, false, true), 22.0);
+}
+
+#[test]
+fn hebrew_calendar_horizontal_keys_follow_the_visible_direction() {
+    let date = day("2026-10-14");
+    assert_eq!(moved_in_direction(date, Key::ArrowLeft, false), Some(day("2026-10-13")));
+    assert_eq!(moved_in_direction(date, Key::ArrowRight, false), Some(day("2026-10-15")));
+    assert_eq!(moved_in_direction(date, Key::ArrowLeft, true), Some(day("2026-10-15")));
+    assert_eq!(moved_in_direction(date, Key::ArrowRight, true), Some(day("2026-10-13")));
+    // Vertical and month navigation must keep their existing semantics.
+    for key in [Key::ArrowUp, Key::ArrowDown, Key::PageUp, Key::PageDown, Key::Enter] {
+        assert_eq!(moved_in_direction(date, key, true), moved(date, key), "{key:?}");
+    }
+    assert_eq!(moved_in_direction(day("0001-01-01"), Key::ArrowRight, true), Some(day("0001-01-01")));
 }
