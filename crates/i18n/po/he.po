@@ -191,13 +191,15 @@ msgstr "קובץ ‎.pst‎ ({format})"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "1 day"
-msgstr ""
+msgstr "יום אחד"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "1 hour"
-msgstr ""
+msgstr "שעה אחת"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
@@ -485,8 +487,9 @@ msgstr ""
 
 #. date and time, interface
 #: crates/i18n/src/date.rs crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "AM"
-msgstr ""
+msgstr "לפנה״צ"
 
 #. ribbon location
 #: crates/ui-egui/src/lib.rs
@@ -1573,8 +1576,9 @@ msgstr "העברה אוטומטית לארכיון"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Automatic"
-msgstr ""
+msgstr "אוטומטי"
 
 #. command label, interface
 #: crates/engine/src/cmd/auto_replies.rs crates/ui-egui/src/auto_replies.rs
@@ -2539,8 +2543,9 @@ msgstr ""
 
 #. interface, name, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/engine/src/session.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Completed"
-msgstr ""
+msgstr "הושלם"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -2593,8 +2598,9 @@ msgstr "התחברות ל־Microsoft (דואר, לוח שנה ואנשי קשר)
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Connect to show your category colours and working hours"
-msgstr ""
+msgstr "התחבר כדי להציג את צבעי הקטגוריות ואת שעות העבודה שלך"
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -3331,8 +3337,9 @@ msgstr "התעלם"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "Dismiss All"
-msgstr ""
+msgstr "סגור את כל התזכורות"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -5611,8 +5618,9 @@ msgstr "תפקיד"
 
 #. interface, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/reminders.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Join"
-msgstr ""
+msgstr "הצטרף"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
@@ -5829,8 +5837,9 @@ msgstr "שם משפחה"
 
 #. interface, name
 #: crates/ui-egui/src/graph_switch.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Later"
-msgstr ""
+msgstr "מאוחר יותר"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -7188,8 +7197,9 @@ msgstr ""
 
 #. interface, name, ribbon
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "No Date"
-msgstr ""
+msgstr "ללא תאריך"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -7389,8 +7399,9 @@ msgstr "אין חיפושים אחרונים"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "No reminders are due."
-msgstr ""
+msgstr "אין תזכורות שמועדן הגיע."
 
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
@@ -8269,8 +8280,9 @@ msgstr "מחוץ לארגון שלי (פעיל)"
 
 #. name
 #: crates/engine/src/session.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "Overdue"
-msgstr ""
+msgstr "באיחור"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -8291,8 +8303,9 @@ msgstr ""
 
 #. date and time, interface
 #: crates/i18n/src/date.rs crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "PM"
-msgstr ""
+msgstr "אחה״צ"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -8955,8 +8968,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "Remind me again later"
-msgstr ""
+msgstr "הזכר לי שוב מאוחר יותר"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
@@ -9743,8 +9757,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Say which group of calendars (`group`: its heading)"
-msgstr ""
+msgstr "ציין את קבוצת לוחות השנה (`group`: הכותרת שלה)"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -10535,8 +10550,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Show the Copy under Shared Calendars"
-msgstr ""
+msgstr "הצג את העותק תחת לוחות שנה משותפים"
 
 #. interface
 #: crates/ui-egui/src/favorites_sync.rs
@@ -10708,8 +10724,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Sign in once more, so that MailCraft may show and change your calendar"
-msgstr ""
+msgstr "התחבר מחדש כדי ש־MailCraft יוכל להציג ולשנות את לוח השנה שלך"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -10905,8 +10922,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/snooze.rs crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "Snooze"
-msgstr ""
+msgstr "דחה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -10982,8 +11000,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Stand this calendar beside the others"
-msgstr ""
+msgstr "הצג לוח שנה זה לצד האחרים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/tasks_view.rs
@@ -11349,8 +11368,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Teams meeting"
-msgstr ""
+msgstr "פגישת Teams"
 
 #. interface
 #, fuzzy
@@ -12653,8 +12673,9 @@ msgstr "הפרטים המשותפים להם: {what}."
 
 #. name, ribbon
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
+#, fuzzy
 msgid "This Week"
-msgstr ""
+msgstr "השבוע"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12836,8 +12857,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "This calendar can only be read: new items can't go to it"
-msgstr ""
+msgstr "לוח שנה זה לקריאה בלבד; אי אפשר להוסיף אליו פריטים חדשים"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -13816,8 +13838,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Use my own working hours"
-msgstr ""
+msgstr "השתמש בשעות העבודה שלי"
 
 #. name
 #: crates/ui-egui/src/motion.rs crates/ui-egui/src/theme.rs
@@ -14466,8 +14489,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "Your mailbox has: {days} · {from} – {to}"
-msgstr ""
+msgstr "בתיבת הדואר שלך מוגדרות השעות: {days} · {from} – {to}"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -15109,8 +15133,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "hours"
-msgstr ""
+msgstr "שעות"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
@@ -15134,8 +15159,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "in {time}"
-msgstr ""
+msgstr "בעוד {time}"
 
 #. why a command can't run
 #: crates/engine/src/cmd/calendar/invitation.rs
@@ -15299,8 +15325,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "minutes"
-msgstr ""
+msgstr "דקות"
 
 #. why a command can't run
 #: crates/engine/src/cmd/calendar/invitation.rs
@@ -15599,8 +15626,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "now"
-msgstr ""
+msgstr "כעת"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -16954,8 +16982,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "{calendar} · This calendar can only be read"
-msgstr ""
+msgstr "{calendar} · לוח שנה זה לקריאה בלבד"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -17032,8 +17061,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "{from} – {to}, {year}"
-msgstr ""
+msgstr "{from} עד {to}, {year}"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -17104,8 +17134,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
+#, fuzzy
 msgid "{month} {first} – {last}, {year}"
-msgstr ""
+msgstr "{first} – {last} {month} {year}"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -18033,8 +18064,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
+#, fuzzy
 msgid "{time} ago"
-msgstr ""
+msgstr "לפני {time}"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
