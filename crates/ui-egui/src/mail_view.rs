@@ -502,6 +502,42 @@ fn scroll_arrows(app: &mut MailApp, ui: &mut Ui, lane: Rect, out: &egui::scroll_
 /// While a search is on, a bar over the list says so: how many it found and where, with a way
 /// back to the folder (✕, or Esc). Search is quick enough that the list changing by itself
 /// went unnoticed (#115).
+/// The search summary mirrors its clear button and text anchor in Hebrew while
+/// keeping the click area and the rest of the message list unchanged.
+fn search_bar_regions(rect: Rect, hebrew: bool) -> (Rect, Rect) {
+    let clear_x = if hebrew { rect.min.x + 22.0 } else { rect.max.x - 22.0 };
+    let clear = Rect::from_center_size(pos2(clear_x, rect.center().y), vec2(22.0, 22.0));
+    let (start, end) = if hebrew {
+        (clear.max.x + 8.0, rect.max.x - 16.0)
+    } else {
+        (rect.min.x + 16.0, clear.min.x - 8.0)
+    };
+    let label = Rect::from_min_max(pos2(start, rect.min.y), pos2(end.max(start), rect.max.y));
+    (clear, label)
+}
+
+#[cfg(test)]
+mod hebrew_search_bar_tests {
+    use super::*;
+
+    #[test]
+    fn clear_button_and_search_summary_mirror_only_in_hebrew() {
+        for width in [240.0, 420.0] {
+            let r = Rect::from_min_max(pos2(10.0, 20.0), pos2(10.0 + width, 50.0));
+            let (ltr_clear, ltr_label) = search_bar_regions(r, false);
+            let (he_clear, he_label) = search_bar_regions(r, true);
+            assert_eq!(ltr_clear.size(), vec2(22.0, 22.0));
+            assert_eq!(he_clear.size(), vec2(22.0, 22.0));
+            assert_eq!(ltr_clear.center().x, r.max.x - 22.0);
+            assert_eq!(he_clear.center().x, r.min.x + 22.0);
+            assert!(ltr_label.max.x + 8.0 <= ltr_clear.min.x);
+            assert!(he_clear.max.x + 8.0 <= he_label.min.x);
+            assert!(ltr_label.width() > 0.0 && he_label.width() > 0.0);
+            assert!(r.contains(ltr_clear.center()) && r.contains(he_clear.center()));
+        }
+    }
+}
+
 fn search_bar(app: &mut MailApp, ui: &mut Ui, found: usize) {
     let on = !app.session.view.search.trim().is_empty();
     // It fades in when a search starts; with no search it is gone at once, ready to fade again.
@@ -534,8 +570,13 @@ fn search_bar(app: &mut MailApp, ui: &mut Ui, found: usize) {
     resp.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Label, true, &said));
     let fill = t.selection.gamma_multiply(shown);
     ui.painter().rect_filled(r.shrink2(vec2(6.0, 3.0)), 4.0, fill);
-    let close = Rect::from_center_size(pos2(r.max.x - 22.0, r.center().y), vec2(22.0, 22.0));
-    crate::theme::paint_clipped(ui.painter(), pos2(r.min.x + 16.0, r.center().y), close.min.x - r.min.x - 24.0, &said, semibold(12.0), t.text);
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let (close, label) = search_bar_regions(r, hebrew);
+    if hebrew {
+        ui.painter().with_clip_rect(label).text(pos2(label.max.x, label.center().y), Align2::RIGHT_CENTER, &said, semibold(12.0), t.text);
+    } else {
+        crate::theme::paint_clipped(ui.painter(), pos2(label.min.x, label.center().y), label.width(), &said, semibold(12.0), t.text);
+    }
     let x = ui.interact(close, ui.scope_id().with("search_bar_close"), Sense::click()).on_hover_text(tl!("Clear search (Esc)"));
     x.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, tl!("Clear search")));
     app.hit.add("searchBarClose", 0, close);
