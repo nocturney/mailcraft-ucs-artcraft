@@ -497,7 +497,7 @@ msgstr "לפנה״צ"
 #. ribbon location
 #: crates/ui-egui/src/lib.rs
 msgid "About"
-msgstr ""
+msgstr "אודות"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -537,7 +537,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Accept"
-msgstr ""
+msgstr "קבל"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs
@@ -547,7 +547,7 @@ msgstr ""
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Accepted"
-msgstr ""
+msgstr "אושר"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -615,7 +615,7 @@ msgstr "פעולות"
 #. name
 #: crates/engine/src/session.rs
 msgid "Active"
-msgstr ""
+msgstr "פעיל"
 
 #. command label, interface
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon/view_menus.rs
@@ -856,7 +856,7 @@ msgstr "אפשרויות מתקדמות"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "After"
-msgstr ""
+msgstr "אחרי"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -871,12 +871,12 @@ msgstr "הכול"
 #. interface
 #: crates/ui-egui/src/scheduling.rs
 msgid "All Attendees"
-msgstr ""
+msgstr "כל המשתתפים"
 
 #. command label
 #: crates/engine/src/cmd/category.rs
 msgid "All Categories"
-msgstr ""
+msgstr "כל הקטגוריות"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -915,7 +915,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
 msgid "Allow"
-msgstr ""
+msgstr "אפשר"
 
 #. command label, interface
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/lib.rs
@@ -1031,7 +1031,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/motion.rs
 msgid "Always play"
-msgstr ""
+msgstr "הפעל תמיד"
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
@@ -1300,7 +1300,7 @@ msgstr "פעילות חוזרת"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Appointment Window"
-msgstr ""
+msgstr "חלון פעילות"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/share.rs
@@ -1320,7 +1320,7 @@ msgstr ""
 #. date and time
 #: crates/i18n/src/date.rs
 msgid "April"
-msgstr ""
+msgstr "אפריל"
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/mail.rs crates/model/src/mailbox.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -1336,7 +1336,7 @@ msgstr ""
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
 msgid "Arrange"
-msgstr ""
+msgstr "סדר"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -1354,12 +1354,12 @@ msgstr "סידור לפי"
 #. command label
 #: crates/engine/src/cmd/people.rs
 msgid "Arrange Contacts By"
-msgstr ""
+msgstr "סדר אנשי קשר לפי"
 
 #. command label
 #: crates/engine/src/cmd/tasks.rs
 msgid "Arrange Tasks By"
-msgstr ""
+msgstr "סדר משימות לפי"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/calendar_extra.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
@@ -1567,7 +1567,7 @@ msgstr ""
 #. ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/calendar/share.rs
 msgid "Attendees"
-msgstr ""
+msgstr "משתתפים"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -1577,7 +1577,7 @@ msgstr ""
 #. date and time
 #: crates/i18n/src/date.rs
 msgid "August"
-msgstr ""
+msgstr "אוגוסט"
 
 #. interface, name
 #: crates/ui-egui/src/folder_properties.rs
@@ -1857,7 +1857,7 @@ msgstr "תבליטים"
 #. name
 #: crates/model/src/calendar.rs
 msgid "Busy"
-msgstr ""
+msgstr "עסוק"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -1914,7 +1914,7 @@ msgstr "שינויים בלוח השנה הממתינים לשליחה"
 #. command label
 #: crates/engine/src/cmd/calendar_settings.rs
 msgid "Calendar Colour"
-msgstr ""
+msgstr "צבע לוח השנה"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
@@ -2139,7 +2139,7 @@ msgstr "שינוי כתובת הדוא״ל"
 #. interface
 #: crates/ui-egui/src/widgets.rs
 msgid "Change the colour"
-msgstr ""
+msgstr "שנה את הצבע"
 
 #. interface
 #, fuzzy
@@ -2193,7 +2193,7 @@ msgstr "מעדכן את התשובות האוטומטיות שלך…"
 #. interface
 #: crates/ui-egui/src/symbol.rs
 msgid "Character code"
-msgstr ""
+msgstr "קוד תו"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2210,7 +2210,7 @@ msgstr "תווים (כולל רווחים)"
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Chart"
-msgstr ""
+msgstr "תרשים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -2228,7 +2228,7 @@ msgstr "בדיקת נגישות"
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/reading/signature.rs
 msgid "Check Again"
-msgstr ""
+msgstr "בדוק שוב"
 
 #. command label, interface
 #, fuzzy
@@ -2372,7 +2372,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "City"
-msgstr ""
+msgstr "עיר"
 
 #. name
 #: crates/ui-egui/src/ribbon.rs
@@ -2383,7 +2383,7 @@ msgstr "רצועת הכלים הקלאסית"
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/folder.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/rules.rs crates/ui-egui/src/ribbon.rs
 msgid "Clean Up"
-msgstr ""
+msgstr "נקה"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -2519,7 +2519,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Collapse Conversation"
-msgstr ""
+msgstr "כווץ שיחה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2540,7 +2540,7 @@ msgstr ""
 #. name
 #: crates/engine/src/cmd/view/display.rs
 msgid "Compact"
-msgstr ""
+msgstr "מצומצם"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
@@ -2583,7 +2583,7 @@ msgstr "הושלמה בתאריך {date}"
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Completed."
-msgstr ""
+msgstr "הושלם."
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/unconfirmed.rs
@@ -2655,7 +2655,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/compose.rs
 msgid "Contact Card"
-msgstr ""
+msgstr "כרטיס איש קשר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2951,7 +2951,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Country"
-msgstr ""
+msgstr "מדינה"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -3005,7 +3005,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/theme.rs
 msgid "Dark"
-msgstr ""
+msgstr "כהה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
