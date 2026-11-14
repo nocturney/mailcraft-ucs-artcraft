@@ -3351,12 +3351,12 @@ msgstr ""
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
 msgid "Direct Replies To"
-msgstr ""
+msgstr "נתב תשובות אל"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/compose.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
 msgid "Discard"
-msgstr ""
+msgstr "בטל ללא שמירה"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs crates/ui-egui/src/reminders.rs
@@ -3774,7 +3774,7 @@ msgstr ""
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
 msgid "Email"
-msgstr ""
+msgstr "דואר אלקטרוני"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -5736,7 +5736,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "Junk E-mail Options…"
-msgstr ""
+msgstr "אפשרויות דואר זבל…"
 
 #. name
 #: crates/model/src/mailbox.rs
@@ -6096,7 +6096,7 @@ msgstr ""
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
 msgid "Low Importance"
-msgstr ""
+msgstr "חשיבות נמוכה"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -6123,7 +6123,7 @@ msgstr ""
 #. command label, interface, name, ribbon location
 #: crates/engine/src/cmd/compose.rs crates/engine/src/cmd/graph_send.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs
 msgid "Mail"
-msgstr ""
+msgstr "דואר"
 
 #. what a command says
 #: crates/engine/src/io.rs
@@ -6465,7 +6465,7 @@ msgstr "ניהול כללים"
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "Manage Rules…"
-msgstr ""
+msgstr "ניהול כללים…"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/tasks.rs crates/ui-egui/src/ribbon.rs
@@ -6827,7 +6827,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
 msgid "More commands"
-msgstr ""
+msgstr "פקודות נוספות"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -6957,7 +6957,7 @@ msgstr "העברה לתיקייה"
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
 msgid "Move to Junk"
-msgstr ""
+msgstr "העבר לדואר זבל"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7063,12 +7063,12 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/ribbon.rs
 msgid "Never Block Sender"
-msgstr ""
+msgstr "לעולם אל תחסום את השולח"
 
 #. command label, interface
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/ribbon.rs
 msgid "Never Block Sender's Domain"
-msgstr ""
+msgstr "לעולם אל תחסום את שם התחום של השולח"
 
 #. name
 #: crates/ui-egui/src/motion.rs
@@ -7285,7 +7285,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "No Color"
-msgstr ""
+msgstr "ללא צבע"
 
 #. interface, name, ribbon
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
@@ -7530,7 +7530,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "No signatures yet"
-msgstr ""
+msgstr "עדיין אין חתימות"
 
 #. interface
 #: crates/ui-egui/src/keep_offline.rs
@@ -7609,7 +7609,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
 msgid "Not Junk"
-msgstr ""
+msgstr "אינו דואר זבל"
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -7650,7 +7650,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/widgets.rs
 msgid "Not available: {reason}"
-msgstr ""
+msgstr "לא זמין: {reason}"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs crates/ui-egui/src/server_search.rs
@@ -8618,7 +8618,7 @@ msgstr "תמונות: {n} ק״ב מתוך {max} ק״ב"
 #. command label, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
 msgid "Pin"
-msgstr ""
+msgstr "הצמד"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -8795,7 +8795,7 @@ msgstr "הצעות למועדים"
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/ribbon.rs
 msgid "Propose New Time"
-msgstr ""
+msgstr "הצע מועד חדש"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -9102,7 +9102,7 @@ msgstr ""
 #. interface, ribbon location
 #: crates/ui-egui/src/alerts.rs crates/ui-egui/src/lib.rs
 msgid "Reminders"
-msgstr ""
+msgstr "תזכורות"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9300,7 +9300,7 @@ msgstr "חוזר"
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/edit.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/find_replace.rs crates/ui-egui/src/ribbon.rs
 msgid "Replace"
-msgstr ""
+msgstr "החלף"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
@@ -9528,7 +9528,7 @@ msgstr ""
 #. command label, interface, ribbon
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/ribbon.rs
 msgid "Ribbon Layout"
-msgstr ""
+msgstr "פריסת רצועת הכלים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9554,7 +9554,7 @@ msgstr ""
 #. interface, ribbon
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
 msgid "Rules"
-msgstr ""
+msgstr "כללים"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -9631,7 +9631,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/rules.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
 msgid "Run Rules Now"
-msgstr ""
+msgstr "הפעל כללים כעת"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -10036,7 +10036,7 @@ msgstr ""
 #. interface, ribbon location
 #: crates/engine/src/cmd/keys.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/lib.rs
 msgid "Security"
-msgstr ""
+msgstr "אבטחה"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -10092,12 +10092,12 @@ msgstr "יש לבחור תחילה פגישה"
 #. interface
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/reading/remote.rs crates/ui-egui/src/ribbon.rs
 msgid "Select a message first"
-msgstr ""
+msgstr "תחילה בחר הודעה"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Select an item to read"
-msgstr ""
+msgstr "בחר פריט לקריאה"
 
 #. interface
 #: crates/ui-egui/src/reading/select.rs
@@ -10583,7 +10583,7 @@ msgstr "הצג רק לוח שנה זה"
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/nav.rs
 msgid "Show Outlook's Favorites"
-msgstr ""
+msgstr "הצג את המועדפים של Outlook"
 
 #. command label
 #: crates/engine/src/cmd/sync_progress.rs
@@ -10658,7 +10658,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
 msgid "Show in Groups"
-msgstr ""
+msgstr "הצג בקבוצות"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10952,7 +10952,7 @@ msgstr "החתימות נשמרות במחשב זה ואינן מסתנכרנו�
 #. interface
 #: crates/ui-egui/src/ribbon.rs
 msgid "Signatures…"
-msgstr ""
+msgstr "חתימות…"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -11435,7 +11435,7 @@ msgstr ""
 #. interface, ribbon location
 #: crates/engine/src/cmd/tasks.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
 msgid "Task"
-msgstr ""
+msgstr "משימה"
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -14321,7 +14321,7 @@ msgstr "רוחב"
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/ribbon.rs
 msgid "Window"
-msgstr ""
+msgstr "חלון"
 
 #. interface
 #: crates/ui-egui/src/security.rs
