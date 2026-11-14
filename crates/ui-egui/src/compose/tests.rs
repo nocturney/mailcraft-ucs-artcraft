@@ -953,3 +953,25 @@ fn an_html_signature_is_shown_as_it_goes_out_until_edited_as_text() {
     // Edited, it is the copy that goes out: there is no way back to the HTML.
     assert!(h.state().hit.rect("composeSignatureAsHtml", 0).is_none());
 }
+
+/// The Hebrew compose header's field and Bcc placement must not overlap the label.
+#[test]
+fn compose_header_mirrors_in_hebrew() {
+    use super::{bcc_link_rect, line_positions};
+    use egui::{Align2, Rect, pos2};
+
+    let row = Rect::from_min_max(pos2(0.0, 0.0), pos2(600.0, 30.0));
+    let (ltr_label, ltr_align, ltr_edit) = line_positions(row, 44.0, false);
+    let (he_label, he_align, he_edit) = line_positions(row, 44.0, true);
+    assert_eq!((ltr_label.x, ltr_align), (16.0, Align2::LEFT_CENTER));
+    assert_eq!((he_label.x, he_align), (588.0, Align2::RIGHT_CENTER));
+    assert_eq!((ltr_edit.min.x, ltr_edit.max.x), (78.0, 544.0));
+    assert_eq!((he_edit.min.x, he_edit.max.x), (60.0, 526.0));
+    let ltr_bcc = bcc_link_rect(row, 0.0, false, false);
+    let he_bcc = bcc_link_rect(row, 0.0, false, true);
+    assert_eq!(ltr_bcc.min.x, 548.0);
+    assert_eq!(he_bcc.max.x, 52.0);
+    assert!(he_bcc.max.x < he_edit.min.x, "Bcc must not cover the Hebrew address field");
+    assert!(ltr_edit.max.x < ltr_bcc.min.x, "Bcc must not cover the LTR address field");
+    assert_eq!(bcc_link_rect(row, 0.0, true, true).min.y, 34.0);
+}
