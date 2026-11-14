@@ -17570,8 +17570,8 @@ msgstr[1] ""
 #: crates/ui-egui/src/reminders.rs
 msgid "{n} Reminder"
 msgid_plural "{n} Reminders"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} תזכורת"
+msgstr[1] "{n} תזכורות"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -18036,8 +18036,8 @@ msgstr[1] ""
 #: crates/ui-egui/src/alerts.rs
 msgid "{n} reminder is due"
 msgid_plural "{n} reminders are due"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} תזכורת שמועדה הגיע"
+msgstr[1] "{n} תזכורות שמועדן הגיע"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
