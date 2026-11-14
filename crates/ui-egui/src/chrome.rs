@@ -47,9 +47,17 @@ fn report_pill(ui: &mut Ui, app: &mut MailApp, h: f32) {
 fn pill_content_positions(rect: Rect, rtl: bool) -> (egui::Pos2, egui::Pos2, Align2) {
     let cy = rect.center().y;
     if rtl {
-        (pos2(rect.max.x - 15.0, cy), pos2(rect.max.x - 26.0, cy), Align2::RIGHT_CENTER)
+        (
+            pos2(rect.max.x - 15.0, cy),
+            pos2(rect.max.x - 26.0, cy),
+            Align2::RIGHT_CENTER,
+        )
     } else {
-        (pos2(rect.min.x + 15.0, cy), pos2(rect.min.x + 26.0, cy), Align2::LEFT_CENTER)
+        (
+            pos2(rect.min.x + 15.0, cy),
+            pos2(rect.min.x + 26.0, cy),
+            Align2::LEFT_CENTER,
+        )
     }
 }
 
@@ -88,8 +96,15 @@ fn pill(ui: &mut Ui, app: &mut MailApp, h: f32, icon: &str, label: &str, tip: &s
     ui.painter().rect(r, h / 2.0, fill, Stroke::new(1.0, t.border), egui::StrokeKind::Inside);
     let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     let (icon_at, label_at, label_anchor) = pill_content_positions(r, rtl);
-    icons::paint(ui.painter(), Rect::from_center_size(icon_at, vec2(16.0, 16.0)), icon, t.icon, t.accent);
-    ui.painter().text(label_at, label_anchor, label, font, t.text);
+    icons::paint(
+        ui.painter(),
+        Rect::from_center_size(icon_at, vec2(16.0, 16.0)),
+        icon,
+        t.icon,
+        t.accent,
+    );
+    ui.painter()
+        .text(label_at, label_anchor, label, font, t.text);
     resp.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, label));
     if resp.on_hover_text(tip).clicked() {
         let _ = app.run(id, json!({}));
