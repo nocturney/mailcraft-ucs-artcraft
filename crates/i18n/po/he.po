@@ -412,7 +412,7 @@ msgstr "הערה מצורפת (לא חובה)"
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
 msgid "A note to the organizer (optional)"
-msgstr ""
+msgstr "הערה למארגן (לא חובה)"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -542,7 +542,7 @@ msgstr "קבל"
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs
 msgid "Accept Proposal"
-msgstr ""
+msgstr "קבל הצעה"
 
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
@@ -787,7 +787,7 @@ msgstr "הוסף מסננים"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Add from file…"
-msgstr ""
+msgstr "הוסף מקובץ…"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -1835,7 +1835,7 @@ msgstr "סימנייה"
 #. command label
 #: crates/engine/src/cmd/calendar_settings.rs
 msgid "Bring Calendar to Front"
-msgstr ""
+msgstr "הבא את לוח השנה לחזית"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -1929,7 +1929,7 @@ msgstr ""
 #. name
 #: crates/model/src/sync/progress.rs
 msgid "Calendar and contacts"
-msgstr ""
+msgstr "לוח שנה ואנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs crates/ui-egui/src/lib.rs
@@ -1980,7 +1980,7 @@ msgstr "לוחות שנה: ממתינים להרשאה"
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
 msgid "Calendar…"
-msgstr ""
+msgstr "לוח שנה…"
 
 #. name
 #: crates/model/src/rich.rs
@@ -2650,7 +2650,7 @@ msgstr ""
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/ribbon.rs
 msgid "Contact Attendees"
-msgstr ""
+msgstr "צור קשר עם המשתתפים"
 
 #. command label
 #: crates/engine/src/cmd/compose.rs
@@ -2712,7 +2712,7 @@ msgstr "העתק מידע לאבחון"
 #. command label
 #: crates/engine/src/cmd/calendar_extra.rs
 msgid "Copy Event"
-msgstr ""
+msgstr "העתק אירוע"
 
 #. interface, name
 #: crates/ui-egui/src/move_items.rs
@@ -2732,7 +2732,7 @@ msgstr "העתק כתובת קישור"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Copy Selected Text"
-msgstr ""
+msgstr "העתק את הטקסט שנבחר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2995,7 +2995,7 @@ msgstr "תצוגה נוכחית"
 #. command label, name
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/menubar.rs
 msgid "Cut"
-msgstr ""
+msgstr "גזור"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -3028,7 +3028,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/writing_tools.rs
 msgid "Date & Time"
-msgstr ""
+msgstr "תאריך ושעה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -3066,7 +3066,7 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Decline"
-msgstr ""
+msgstr "דחה"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -3192,7 +3192,7 @@ msgstr "מחק חתימה"
 #. command label
 #: crates/engine/src/cmd/format.rs
 msgid "Delete Text"
-msgstr ""
+msgstr "מחק טקסט"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -3219,7 +3219,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Delete this category"
-msgstr ""
+msgstr "מחק קטגוריה זו"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -3229,7 +3229,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Delete this rule"
-msgstr ""
+msgstr "מחק כלל זה"
 
 #. name
 #: crates/model/src/mailbox.rs
@@ -3378,7 +3378,7 @@ msgstr "סגור את כל התזכורות"
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Dismiss Reminder"
-msgstr ""
+msgstr "סגור תזכורת"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -3654,7 +3654,7 @@ msgstr "תאריך יעד"
 #. name
 #: crates/engine/src/session.rs
 msgid "Due Date"
-msgstr ""
+msgstr "תאריך יעד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -3680,12 +3680,12 @@ msgstr ""
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Due today"
-msgstr ""
+msgstr "מועד להיום"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Due tomorrow"
-msgstr ""
+msgstr "מועד למחר"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -3733,22 +3733,22 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/people.rs
 msgid "Edit Contact"
-msgstr ""
+msgstr "ערוך איש קשר"
 
 #. command label
 #: crates/engine/src/cmd/calendar.rs
 msgid "Edit Event"
-msgstr ""
+msgstr "ערוך אירוע"
 
 #. command label
 #: crates/engine/src/cmd/compose.rs
 msgid "Edit Message"
-msgstr ""
+msgstr "ערוך הודעה"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
 msgid "Edit Signature"
-msgstr ""
+msgstr "ערוך חתימה"
 
 #. command label
 #: crates/engine/src/cmd/compose.rs
@@ -3758,7 +3758,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/tasks.rs
 msgid "Edit Task"
-msgstr ""
+msgstr "ערוך משימה"
 
 #. interface
 #: crates/ui-egui/src/compose.rs
@@ -4161,7 +4161,7 @@ msgstr "חפש"
 #. command label
 #: crates/engine/src/cmd/people_merge.rs
 msgid "Find Duplicate Contacts"
-msgstr ""
+msgstr "חפש אנשי קשר כפולים"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
@@ -4232,7 +4232,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/mail.rs
 msgid "Flag Message"
-msgstr ""
+msgstr "סמן הודעה בדגל"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -4273,12 +4273,12 @@ msgstr ""
 #. command label, ribbon location
 #: crates/engine/src/cmd/account.rs crates/engine/src/cmd/view.rs
 msgid "Folder Pane"
-msgstr ""
+msgstr "חלונית התיקיות"
 
 #. command label
 #: crates/engine/src/cmd/folder.rs
 msgid "Folder Properties"
-msgstr ""
+msgstr "מאפייני תיקייה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
@@ -4731,7 +4731,7 @@ msgstr "מעבר לתאריך"
 #. command label
 #: crates/engine/src/cmd/folder.rs
 msgid "Go to Folder"
-msgstr ""
+msgstr "עבור לתיקייה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
@@ -4932,7 +4932,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Hide Details"
-msgstr ""
+msgstr "הסתר פרטים"
 
 #. interface
 #: crates/ui-egui/src/menubar.rs
