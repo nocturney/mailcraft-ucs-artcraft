@@ -143,8 +143,9 @@ msgstr "(ללא כותרת)"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "(none)"
-msgstr ""
+msgstr "(ללא)"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
@@ -1370,8 +1371,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "As recipients see it"
-msgstr ""
+msgstr "כפי שהנמענים רואים אותה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2139,8 +2141,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Changed: saved when you choose another signature or leave this page."
-msgstr ""
+msgstr "בוצעו שינויים. הם יישמרו בעת בחירת חתימה אחרת או ביציאה מהעמוד."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -2326,8 +2329,9 @@ msgstr "בחירת תיקייה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Choose default signatures"
-msgstr ""
+msgstr "בחירת חתימות ברירת מחדל"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -2941,8 +2945,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Create from details"
-msgstr ""
+msgstr "יצירה מתוך פרטים"
 
 #. interface
 #, fuzzy
@@ -3223,8 +3228,9 @@ msgstr "מחלקה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Description"
-msgstr ""
+msgstr "תיאור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -3858,8 +3864,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Every message with this signature gets heavier by as much."
-msgstr ""
+msgstr "גודלה של כל הודעה הכוללת חתימה זו יגדל בהתאם."
 
 #. interface
 #, fuzzy
@@ -4298,8 +4305,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Font"
-msgstr ""
+msgstr "גופן"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -4809,8 +4817,9 @@ msgstr "קבוצה {n} מתוך {total}"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -5254,13 +5263,15 @@ msgstr "בתיקייה חדשה בשם {name} במחשב הזה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "In a plain-text message"
-msgstr ""
+msgstr "בהודעת טקסט פשוט"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "In line with text"
-msgstr ""
+msgstr "בשורה עם הטקסט"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -5366,8 +5377,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/signature.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Insert Picture"
-msgstr ""
+msgstr "הוספת תמונה"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -5580,8 +5592,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Its text is replaced"
-msgstr ""
+msgstr "הטקסט שלה מוחלף"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5907,8 +5920,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/security.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "קישור"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -6353,8 +6367,9 @@ msgstr "תיבת דואר"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Make a signature with New."
-msgstr ""
+msgstr "כדי ליצור חתימה, בחרו ב״חדש״."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -6364,8 +6379,9 @@ msgstr "הגדרת חזרה…"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Make the signature from these details"
-msgstr ""
+msgstr "יצירת החתימה מהפרטים האלה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6989,8 +7005,9 @@ msgstr ""
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/compose.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "New"
-msgstr ""
+msgstr "חדש"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -7123,8 +7140,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "New messages"
-msgstr ""
+msgstr "הודעות חדשות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8376,13 +8394,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Paste Picture"
-msgstr ""
+msgstr "הדבקת תמונה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Paste or write the signature's HTML"
-msgstr ""
+msgstr "הדבקה או כתיבה של קוד ה־HTML של החתימה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8456,13 +8476,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Picture above text"
-msgstr ""
+msgstr "תמונה מעל הטקסט"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Picture beside text"
-msgstr ""
+msgstr "תמונה לצד הטקסט"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/picture.rs crates/ui-egui/src/ribbon.rs
@@ -8501,8 +8523,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Pictures: {n} KB of {max} KB"
-msgstr ""
+msgstr "תמונות: {n} ק״ב מתוך {max} ק״ב"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
@@ -9047,8 +9070,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/signature.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Remove Picture"
-msgstr ""
+msgstr "הסרת תמונה"
 
 #. command label
 #: crates/engine/src/cmd/keys.rs
@@ -9137,8 +9161,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Rename"
-msgstr ""
+msgstr "שינוי שם"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9196,8 +9221,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Replies and forwards"
-msgstr ""
+msgstr "תשובות והעברות"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
@@ -9408,8 +9434,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Rich text"
-msgstr ""
+msgstr "טקסט עשיר"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -10264,8 +10291,9 @@ msgstr "פריטים שנשלחו"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Sent as written, without anything that runs or tracks. Pictures come from their web address, and recipients' programs decide whether to load them. A message you write shows a simpler copy of this signature; if you edit it there, that copy is sent instead."
-msgstr ""
+msgstr "החתימה נשלחת כפי שנכתבה, ללא רכיבים פעילים או מעקב. התמונות מגיעות מכתובות האינטרנט שלהן, ותוכנת הדוא״ל של הנמען קובעת אם לטעון אותן. בזמן כתיבת הודעה מוצג עותק פשוט יותר של החתימה; אם תערכו אותו בהודעה, העותק הערוך הוא שיישלח."
 
 #. name
 #: crates/ui-egui/src/forms.rs
@@ -10799,13 +10827,15 @@ msgstr ""
 
 #. command label, interface, ribbon location
 #: crates/engine/src/cmd/signature.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Signatures"
-msgstr ""
+msgstr "חתימות"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Signatures are kept on this computer. They can't be kept in step with Outlook: on another device set them up there, or paste one from Outlook on the web (Settings › Signatures)."
-msgstr ""
+msgstr "החתימות נשמרות במחשב זה ואינן מסתנכרנות עם Outlook. במכשיר אחר יש להגדיר אותן בנפרד, או להדביק חתימה מ־Outlook באינטרנט (הגדרות › חתימות)."
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -11012,8 +11042,9 @@ msgstr "התחלה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Start again from the details"
-msgstr ""
+msgstr "יצירה מחדש מהפרטים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -11440,8 +11471,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Thanks, Thursday at ten works for me. I'll bring the drawings."
-msgstr ""
+msgstr "תודה, יום חמישי בעשר מתאים לי. אביא את השרטוטים."
 
 #. what a command says
 #: crates/engine/src/cmd/calendar.rs
@@ -12019,8 +12051,9 @@ msgstr "התוכנה המקומית מקבלת את הקובץ המצורף שנ
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "The logo is the signature's first picture: add one with Insert Picture."
-msgstr ""
+msgstr "הלוגו הוא התמונה הראשונה בחתימה. ניתן להוסיף תמונה באמצעות ״הוספת תמונה״."
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -12148,8 +12181,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "The picture was too big, so it was made smaller ({w} px wide)."
-msgstr ""
+msgstr "התמונה הייתה גדולה מדי ולכן הוקטנה (רוחב {w} פיקסלים)."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12585,8 +12619,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "There is no picture on the clipboard."
-msgstr ""
+msgstr "אין תמונה בלוח."
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -14157,8 +14192,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Width"
-msgstr ""
+msgstr "רוחב"
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/ribbon.rs
@@ -14350,8 +14386,9 @@ msgstr "אין לך הרשאת גישה אל {address}. אם ההרשאה נית
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "You edited the signature by hand, so the details no longer change it."
-msgstr ""
+msgstr "ערכת את החתימה ידנית, ולכן שינוי הפרטים כבר לא יעדכן אותה."
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -16913,8 +16950,9 @@ msgstr "יובאו {added} מתוך {found} שנמצאו."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "{address} (shared mailbox)"
-msgstr ""
+msgstr "{address} (תיבת דואר משותפת)"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
