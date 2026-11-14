@@ -386,7 +386,7 @@ msgstr ""
 #. what a command says
 #: crates/engine/src/cmd/calendar/meeting.rs
 msgid "A meeting is forwarded to {n} people at most at once."
-msgstr ""
+msgstr "ניתן להעביר פגישה לעד {n} אנשים בכל פעם."
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -455,7 +455,7 @@ msgstr "דוח יישמר לצד קובץ תיבת הדואר שלך."
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "A rule needs a name, and something to look for."
-msgstr ""
+msgstr "יש להזין שם לכלל ותנאי לחיפוש."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -907,7 +907,7 @@ msgstr "כולם"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "All the conditions must hold"
-msgstr ""
+msgstr "כל התנאים חייבים להתקיים"
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
@@ -1137,12 +1137,12 @@ msgstr ""
 #. what a command says
 #: crates/engine/src/cmd/calendar/invitation.rs
 msgid "Another time proposed: {title}"
-msgstr ""
+msgstr "הוצע מועד אחר: {title}"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
 msgid "Another time was proposed to {name}"
-msgstr ""
+msgstr "הוצע מועד אחר ל־{name}"
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
@@ -1302,7 +1302,7 @@ msgstr "חלון פעילות"
 #. what a command says
 #: crates/engine/src/cmd/calendar/share.rs
 msgid "Appointments not listed:"
-msgstr ""
+msgstr "פגישות שאינן מוצגות:"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -1430,7 +1430,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Ask once more for the pictures that couldn't be downloaded."
-msgstr ""
+msgstr "נסה להוריד שוב את התמונות שהורדתן נכשלה."
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -1470,7 +1470,7 @@ msgstr ""
 #. what a command says
 #: crates/engine/src/cmd/people_merge.rs
 msgid "At most {max} contacts can be merged at once."
-msgstr ""
+msgstr "ניתן למזג עד {max} אנשי קשר בכל פעם."
 
 #. what a command says
 #: crates/engine/src/cmd/calendar_opened.rs
@@ -1554,7 +1554,7 @@ msgstr "קבצים מצורפים"
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
 msgid "Attachments can't be opened here: save it with Save As instead."
-msgstr ""
+msgstr "לא ניתן לפתוח כאן קבצים מצורפים. יש לשמור אותם באמצעות שמירה בשם."
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -1727,7 +1727,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Availability only: when you are free or busy"
-msgstr ""
+msgstr "זמינות בלבד: מתי פנויים או עסוקים"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -1815,7 +1815,7 @@ msgstr "גוף ההודעה"
 #. name
 #: crates/ui-egui/src/forms.rs
 msgid "Body contains"
-msgstr ""
+msgstr "גוף ההודעה מכיל"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/ribbon.rs
@@ -1987,7 +1987,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Can't sign"
-msgstr ""
+msgstr "לא ניתן לחתום"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/chrome.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/import_pst.rs crates/ui-egui/src/import_tree.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/report_problem.rs crates/ui-egui/src/security.rs
@@ -2056,7 +2056,7 @@ msgstr "קטגוריות"
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
 msgid "Categories:"
-msgstr ""
+msgstr "קטגוריות:"
 
 #. command label, interface, name, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/tasks.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs crates/ui-egui/src/tasks_view.rs
@@ -2153,7 +2153,7 @@ msgstr "שינוי שם החשבון, פרטי ההתחברות והדואר ל�
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Changed after it was signed"
-msgstr ""
+msgstr "שונה לאחר החתימה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -2511,7 +2511,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Closes this window. Nothing is kept."
-msgstr ""
+msgstr "סוגר את החלון הזה. השינויים לא יישמרו."
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -2548,7 +2548,7 @@ msgstr "חברה"
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Compare fingerprint…"
-msgstr ""
+msgstr "השוואת טביעת אצבע…"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -2823,7 +2823,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Couldn't find out whether a new version is out: {why}."
-msgstr ""
+msgstr "לא ניתן לבדוק אם קיימת גרסה חדשה: {why}."
 
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
@@ -2943,7 +2943,7 @@ msgstr "לא ניתן לשלוח דואר"
 #. why a mail server couldn't be used
 #: crates/net/src/sync.rs
 msgid "Couldn't send mail: the account has no outgoing server"
-msgstr ""
+msgstr "לא ניתן לשלוח דואר: לחשבון אין שרת דואר יוצא"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -3011,7 +3011,7 @@ msgstr "נתונים במחשב זה"
 #. name
 #: crates/engine/src/session.rs
 msgid "Date"
-msgstr ""
+msgstr "תאריך"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -3301,7 +3301,7 @@ msgstr "נתוני האבחון הועתקו. לא נשלח דבר."
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
 msgid "Diagram"
-msgstr ""
+msgstr "תרשים"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -3316,7 +3316,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Digital signatures and encryption"
-msgstr ""
+msgstr "חתימות דיגיטליות והצפנה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -3326,7 +3326,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Digitally signed and verified"
-msgstr ""
+msgstr "חתום דיגיטלית ומאומת"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -3346,7 +3346,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Digitally signed, signer not verified"
-msgstr ""
+msgstr "חתום דיגיטלית, זהות החותם לא אומתה"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -3501,17 +3501,17 @@ msgstr "הורד"
 #. command label
 #: crates/engine/src/cmd/ews_mail.rs
 msgid "Download Exchange Messages in Full"
-msgstr ""
+msgstr "הורדת הודעות Exchange במלואן"
 
 #. command label
 #: crates/engine/src/cmd/jmap_mail.rs
 msgid "Download JMAP Messages in Full"
-msgstr ""
+msgstr "הורדת הודעות JMAP במלואן"
 
 #. command label
 #: crates/engine/src/cmd/graph_mail.rs
 msgid "Download Messages in Full"
-msgstr ""
+msgstr "הורדת הודעות במלואן"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -3549,7 +3549,7 @@ msgstr "הורד תמונות"
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Download pictures in all mail"
-msgstr ""
+msgstr "הורדת תמונות בכל ההודעות"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -3559,7 +3559,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Download pictures in mail automatically"
-msgstr ""
+msgstr "הורדת תמונות בהודעות באופן אוטומטי"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -3591,7 +3591,7 @@ msgstr "מוריד תמונות…"
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
 msgid "Downloading the message first…"
-msgstr ""
+msgstr "מוריד תחילה את ההודעה…"
 
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
@@ -3601,7 +3601,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading.rs
 msgid "Downloading the whole message…"
-msgstr ""
+msgstr "מוריד את ההודעה במלואה…"
 
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
