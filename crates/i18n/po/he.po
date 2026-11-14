@@ -416,8 +416,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "A on top"
-msgstr ""
+msgstr "א׳ בראש הרשימה"
 
 #. what a command says
 #: crates/engine/src/private_keys.rs
@@ -1854,33 +1855,39 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By Categories"
-msgstr ""
+msgstr "לפי קטגוריות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By Date"
-msgstr ""
+msgstr "לפי תאריך"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By From"
-msgstr ""
+msgstr "לפי שולח"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By Importance"
-msgstr ""
+msgstr "לפי חשיבות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By Size"
-msgstr ""
+msgstr "לפי גודל"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "By Subject"
-msgstr ""
+msgstr "לפי נושא"
 
 #. command label, interface, name, ribbon, ribbon location, what a command says
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar/share.rs crates/engine/src/cmd/calendar_settings.rs crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/ui-egui/src/backstage.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/ribbon.rs
@@ -4203,8 +4210,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Flag for follow-up"
-msgstr ""
+msgstr "סמן בדגל למעקב"
 
 #. name
 #: crates/engine/src/session.rs
@@ -4413,8 +4421,9 @@ msgstr "העבר מופע זה…"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Forward as Attachment"
-msgstr ""
+msgstr "העבר כקובץ מצורף"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -4919,8 +4928,9 @@ msgstr "הסתרת חלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Hide the messages of this conversation"
-msgstr ""
+msgstr "הסתר את ההודעות בשיחה זו"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -4963,8 +4973,9 @@ msgstr "חשיבות גבוהה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "High on top"
-msgstr ""
+msgstr "חשיבות גבוהה בראש הרשימה"
 
 #. command label
 #: crates/engine/src/cmd/graph_send.rs
@@ -5677,8 +5688,9 @@ msgstr ""
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Junk"
-msgstr ""
+msgstr "דואר זבל"
 
 #. command label, interface
 #: crates/engine/src/cmd/junk.rs crates/ui-egui/src/forms.rs
@@ -5828,8 +5840,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Largest on top"
-msgstr ""
+msgstr "ההודעות הגדולות ביותר בראש הרשימה"
 
 #. command label
 #: crates/engine/src/cmd/mail.rs
@@ -6052,8 +6065,9 @@ msgstr "חשיבות נמוכה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Low on top"
-msgstr ""
+msgstr "חשיבות נמוכה בראש הרשימה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6480,13 +6494,15 @@ msgstr ""
 
 #. interface, name
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Mark as read"
-msgstr ""
+msgstr "סמן כנקרא"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Mark as unread"
-msgstr ""
+msgstr "סמן כלא נקרא"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -6587,8 +6603,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Messages from Sender"
-msgstr ""
+msgstr "הודעות מאת השולח"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
@@ -7158,8 +7175,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Newest on top"
-msgstr ""
+msgstr "ההודעות החדשות ביותר בראש הרשימה"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs crates/ui-egui/src/security.rs
@@ -7436,8 +7454,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "No results in {scope}"
-msgstr ""
+msgstr "לא נמצאו תוצאות ב־{scope}"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7657,8 +7676,9 @@ msgstr "עדיין לא נשלחו או התקבלו הודעות."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Nothing here yet."
-msgstr ""
+msgstr "אין כאן הודעות עדיין."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -7773,8 +7793,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Oldest on top"
-msgstr ""
+msgstr "ההודעות הישנות ביותר בראש הרשימה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8014,8 +8035,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Open Draft"
-msgstr ""
+msgstr "פתח טיוטה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -8067,8 +8089,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Open in a Window"
-msgstr ""
+msgstr "פתח בחלון"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -8549,8 +8572,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Pinned"
-msgstr ""
+msgstr "מוצמד"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9265,8 +9289,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Reply and Delete"
-msgstr ""
+msgstr "השב ומחק"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/ribbon.rs
@@ -9320,8 +9345,9 @@ msgstr "נדרשים"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Resend Message"
-msgstr ""
+msgstr "שלח את ההודעה שוב"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9663,8 +9689,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Save Message As…"
-msgstr ""
+msgstr "שמור הודעה בשם…"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -10552,8 +10579,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Show as Conversations"
-msgstr ""
+msgstr "הצג כשיחות"
 
 #. command label
 #: crates/engine/src/cmd/calendar/invitation.rs
@@ -10620,8 +10648,9 @@ msgstr "הצגת חלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Show the messages of this conversation"
-msgstr ""
+msgstr "הצג את ההודעות בשיחה זו"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -10958,8 +10987,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Smallest on top"
-msgstr ""
+msgstr "ההודעות הקטנות ביותר בראש הרשימה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -14693,8 +14723,9 @@ msgstr "השם שלך."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Z on top"
-msgstr ""
+msgstr "ת׳ בראש הרשימה"
 
 #. command label, interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/attachment_preview.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/ribbon.rs
@@ -14718,8 +14749,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "[Draft]"
-msgstr ""
+msgstr "[טיוטה]"
 
 #. interface
 #: crates/ui-egui/src/keep_offline.rs crates/ui-egui/src/lib.rs
@@ -17113,8 +17145,9 @@ msgstr "מאפייני {folder}"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "{folder} and its subfolders"
-msgstr ""
+msgstr "{folder} ותיקיות המשנה שלה"
 
 #. what a command says
 #: crates/engine/src/cmd/ews_mail.rs
