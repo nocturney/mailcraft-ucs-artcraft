@@ -229,8 +229,10 @@ impl FolderProperties {
     /// when it is done with.
     pub fn show(&mut self, ui: &mut Ui, enter: bool) -> bool {
         let t = Tokens::get(ui.ctx());
-        // On a second line when the tabs' names don't fit on one.
-        ui.horizontal_wrapped(|ui| {
+        let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+        // Native right-to-left tab placement in Hebrew, including wrapped rows.
+        // The order and selectable commands remain exactly the same in both languages.
+        ui.with_layout(properties_tab_layout(hebrew), |ui| {
             for tab in Tab::ALL {
                 if ui.selectable_label(self.tab == tab, tab.label()).clicked() {
                     self.tab = tab;
@@ -266,15 +268,29 @@ impl FolderProperties {
             Some((tl!("Messages"), g.messages.to_string())),
             Some((tl!("Unread"), g.unread.to_string())),
         ];
+        let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+        let [left, right] = properties_general_columns(hebrew);
         egui::Grid::new("folder_properties_general").num_columns(2).spacing(vec2(GAP, 6.0)).show(ui, |ui| {
             for (label, value) in lines.into_iter().flatten() {
-                cell(ui, LABEL_W, false, |ui| ui.label(RichText::new(label).color(t.text_dim)));
-                cell(ui, VALUE_W, false, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
+                if hebrew {
+                    cell(ui, left.0, left.1, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
+                    cell(ui, right.0, right.1, |ui| ui.label(RichText::new(label).color(t.text_dim)));
+                } else {
+                    cell(ui, left.0, left.1, |ui| ui.label(RichText::new(label).color(t.text_dim)));
+                    cell(ui, right.0, right.1, |ui| ui.add(egui::Label::new(RichText::new(value).color(t.text)).truncate()));
+                }
                 ui.end_row();
             }
         });
         ui.add_space(8.0);
-        if ui.button(tl!("Folder Size…")).on_hover_text(tl!("How many messages each folder holds and the space they take")).clicked() {
+        let size_clicked = if hebrew {
+            ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                ui.button(tl!("Folder Size…")).on_hover_text(tl!("How many messages each folder holds and the space they take")).clicked()
+            }).inner
+        } else {
+            ui.button(tl!("Folder Size…")).on_hover_text(tl!("How many messages each folder holds and the space they take")).clicked()
+        };
+        if size_clicked {
             self.size_open = true;
         }
     }
@@ -360,6 +376,7 @@ impl FolderSize {
     /// the folder whose name was.
     fn show(&mut self, ui: &mut Ui, t: &Tokens, height: f32) -> (bool, Option<Id>) {
         let total = self.total;
+        let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
         let mut summary = vec![tln!(total.messages, "{n} message", "{n} messages"), tln!(total.unread, "{n} unread", "{n} unread"), size(total.size)];
         if total.unknown > 0 {
             summary.push(tln!(total.unknown, "{n} message of unknown size", "{n} messages of unknown size"));
@@ -424,7 +441,7 @@ impl FolderSize {
                             for r in order.get(shown).into_iter().flatten().filter_map(|i| rows.get(*i)) {
                                 // In the pane's order a folder is under its parent; in any other, its path says where it is.
                                 let name = if tree { format!("{}{}", "    ".repeat(r.depth.min(12)), r.name) } else { r.path.clone() };
-                                let link = cell(ui, name_w, false, |ui| {
+                                let link = cell(ui, name_w, hebrew, |ui| {
                                     ui.add(egui::Button::new(RichText::new(name).color(t.accent_text)).frame(false).truncate())
                                 });
                                 if link.on_hover_text(format!("{}\n{}", r.path, tl!("Go to the folder"))).clicked() {
@@ -501,6 +518,21 @@ fn shown_path(folders: &HashMap<Id, &Folder>, f: &Folder) -> String {
     parts.join(" › ")
 }
 
+/// A folder's tabs begin at the language's reading edge and wrap in that direction.
+fn properties_tab_layout(hebrew: bool) -> egui::Layout {
+    if hebrew {
+        egui::Layout::right_to_left(egui::Align::Center).with_main_wrap(true)
+    } else {
+        egui::Layout::left_to_right(egui::Align::Center).with_main_wrap(true)
+    }
+}
+
+/// General has a wide value and a short caption. In Hebrew the caption is
+/// on the right, and both columns are anchored toward the reading edge.
+fn properties_general_columns(hebrew: bool) -> [(f32, bool); 2] {
+    if hebrew { [(VALUE_W, true), (LABEL_W, true)] } else { [(LABEL_W, false), (VALUE_W, false)] }
+}
+
 /// A cell `width` wide, what is in it at the left, or at the right (a number).
 fn cell<R>(ui: &mut Ui, width: f32, right: bool, add: impl FnOnce(&mut Ui) -> R) -> R {
     let layout = if right { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) };
@@ -536,3 +568,17 @@ fn sized(ui: &mut Ui, t: &Tokens, tally: Tally) {
 #[cfg(test)]
 #[path = "folder_properties_tests.rs"]
 mod folder_properties_tests;
+
+#[cfg(test)]
+mod hebrew_properties_layout_tests {
+    use super::*;
+
+    #[test]
+    fn tabs_and_general_columns_follow_hebrew_reading_direction() {
+        assert_eq!(properties_tab_layout(false).main_dir, egui::Direction::LeftToRight);
+        assert_eq!(properties_tab_layout(true).main_dir, egui::Direction::RightToLeft);
+        assert_eq!(properties_general_columns(false), [(LABEL_W, false), (VALUE_W, false)]);
+        assert_eq!(properties_general_columns(true), [(VALUE_W, true), (LABEL_W, true)]);
+        assert_eq!(properties_general_columns(true)[0].0 + properties_general_columns(true)[1].0, LABEL_W + VALUE_W);
+    }
+}
