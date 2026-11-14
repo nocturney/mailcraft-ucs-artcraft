@@ -42,6 +42,36 @@ fn report_pill(ui: &mut Ui, app: &mut MailApp, h: f32) {
     pill(ui, app, h, "report", tl!("Report a Problem"), tip, "ui.reportProblem");
 }
 
+/// Mirror the icon/label within a title-bar action when the interface is Hebrew.
+/// Keep the hit box and the action identical in both reading directions.
+fn pill_content_positions(rect: Rect, rtl: bool) -> (egui::Pos2, egui::Pos2, Align2) {
+    let cy = rect.center().y;
+    if rtl {
+        (pos2(rect.max.x - 15.0, cy), pos2(rect.max.x - 26.0, cy), Align2::RIGHT_CENTER)
+    } else {
+        (pos2(rect.min.x + 15.0, cy), pos2(rect.min.x + 26.0, cy), Align2::LEFT_CENTER)
+    }
+}
+
+#[cfg(test)]
+mod hebrew_pill_tests {
+    use super::*;
+
+    #[test]
+    fn title_bar_action_pill_mirrors_icon_and_label_without_moving_hit_box() {
+        let rect = Rect::from_min_size(pos2(20.0, 10.0), vec2(140.0, 24.0));
+        let (left_icon, left_label, left_anchor) = pill_content_positions(rect, false);
+        let (right_icon, right_label, right_anchor) = pill_content_positions(rect, true);
+        assert_eq!(left_anchor, Align2::LEFT_CENTER);
+        assert_eq!(right_anchor, Align2::RIGHT_CENTER);
+        assert_eq!(left_icon.x + right_icon.x, rect.min.x + rect.max.x);
+        assert_eq!(left_label.x + right_label.x, rect.min.x + rect.max.x);
+        assert!(left_icon.x < left_label.x && right_label.x < right_icon.x);
+        assert_eq!(left_icon.y, right_icon.y);
+        assert_eq!(left_label.y, right_label.y);
+    }
+}
+
 /// A rounded button of the title bar, with its icon and its label, that runs `id` by hand.
 fn pill(ui: &mut Ui, app: &mut MailApp, h: f32, icon: &str, label: &str, tip: &str, id: &str) {
     let t = Tokens::get(ui.ctx());
@@ -56,8 +86,10 @@ fn pill(ui: &mut Ui, app: &mut MailApp, h: f32, icon: &str, label: &str, tip: &s
         t.title_bar
     };
     ui.painter().rect(r, h / 2.0, fill, Stroke::new(1.0, t.border), egui::StrokeKind::Inside);
-    icons::paint(ui.painter(), Rect::from_center_size(pos2(r.min.x + 15.0, r.center().y), vec2(16.0, 16.0)), icon, t.icon, t.accent);
-    ui.painter().text(pos2(r.min.x + 26.0, r.center().y), Align2::LEFT_CENTER, label, font, t.text);
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let (icon_at, label_at, label_anchor) = pill_content_positions(r, rtl);
+    icons::paint(ui.painter(), Rect::from_center_size(icon_at, vec2(16.0, 16.0)), icon, t.icon, t.accent);
+    ui.painter().text(label_at, label_anchor, label, font, t.text);
     resp.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, label));
     if resp.on_hover_text(tip).clicked() {
         let _ = app.run(id, json!({}));
