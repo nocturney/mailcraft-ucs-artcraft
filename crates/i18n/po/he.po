@@ -364,9 +364,10 @@ msgid "A mailbox kept here, with no mail server"
 msgstr "תיבת דואר מקומית, ללא שרת דואר"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "A meeting answer or invitation from this shared mailbox waits: sending from shared mailboxes needs your permission. Use Send/Receive."
-msgstr ""
+msgstr "תגובה להזמנה לפגישה או הזמנה חדשה מתיבת דואר משותפת זו ממתינה: שליחה מתיבות דואר משותפות מחייבת הרשאה. יש להשתמש בשלח/קבל."
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/meeting.rs
@@ -939,19 +940,22 @@ msgid "Allow MailCraft to read other people's calendars on the page that opened 
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Allow MailCraft to read shared mailboxes on the page that opened in your browser…"
-msgstr ""
+msgstr "יש לאפשר ל־MailCraft לקרוא תיבות דואר משותפות בדף שנפתח בדפדפן…"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Allow MailCraft to read shared mailboxes' calendars on the page that opened in your browser…"
-msgstr ""
+msgstr "יש לאפשר ל־MailCraft לקרוא את לוחות השנה של תיבות דואר משותפות בדף שנפתח בדפדפן…"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Allow MailCraft to send from shared mailboxes on the page that opened in your browser…"
-msgstr ""
+msgstr "יש לאפשר ל־MailCraft לשלוח הודעות מתיבות דואר משותפות בדף שנפתח בדפדפן…"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -1892,34 +1896,40 @@ msgid "Calendars you opened by address need your permission to be read: open one
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: allowed"
-msgstr ""
+msgstr "לוחות שנה: ניתנה הרשאה"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: allowed, reading them…"
-msgstr ""
+msgstr "לוחות שנה: ניתנה הרשאה, מתבצעת קריאה…"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: asking for your permission…"
-msgstr ""
+msgstr "לוחות שנה: מתבצעת בקשת הרשאה…"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: not allowed ({why})"
-msgstr ""
+msgstr "לוחות שנה: לא ניתנה הרשאה ({why})"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: not asked yet (ticking one of them asks)"
-msgstr ""
+msgstr "לוחות שנה: טרם התבקשה הרשאה (סימון אחד מהם יציג בקשה)"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: waiting for your permission"
-msgstr ""
+msgstr "לוחות שנה: ממתינים להרשאה"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -6011,9 +6021,10 @@ msgid "Mail from another mailbox can't go into an Outbox: the next Send/Receive 
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Mail from the shared mailbox waits: {error}"
-msgstr ""
+msgstr "דואר מתיבת הדואר המשותפת ממתין: {error}"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -6021,9 +6032,10 @@ msgid "Mail in Junk E-mail still asks first. File › Options turns this off aga
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Mail in this shared mailbox's Outbox waits: sending from shared mailboxes needs your permission. Use Send/Receive."
-msgstr ""
+msgstr "הודעות בדואר היוצא של תיבה משותפת זו ממתינות: שליחה מתיבות דואר משותפות מחייבת הרשאה. יש להשתמש בשלח/קבל."
 
 #. what a command says
 #: crates/model/src/mailbox.rs
@@ -6580,9 +6592,10 @@ msgid "Microsoft only lets a registered application show its sign-in page, and t
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Microsoft won't open this shared mailbox for you: Send/Receive tries again"
-msgstr ""
+msgstr "Microsoft אינה מאפשרת לפתוח את תיבת הדואר המשותפת הזו. יתבצע ניסיון נוסף בפעולת שלח/קבל."
 
 #. name
 #: crates/model/src/sync.rs
@@ -8722,9 +8735,10 @@ msgid "Reading Pane"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Reading shared mailboxes needs your permission: use Send/Receive"
-msgstr ""
+msgstr "קריאת תיבות דואר משותפות מחייבת הרשאה. יש להשתמש בשלח/קבל"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -9934,9 +9948,10 @@ msgid "Send automatic replies"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Send from a Shared Mailbox"
-msgstr ""
+msgstr "שליחה מתיבת דואר משותפת"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
@@ -10254,14 +10269,16 @@ msgid "Shared mailbox · the account it was opened through is gone: remove it"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Shared mailboxes weren't allowed: {error}"
-msgstr ""
+msgstr "לא ניתנה הרשאה לתיבות דואר משותפות: {error}"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Shared mailboxes' calendars weren't allowed: {error}"
-msgstr ""
+msgstr "לא ניתנה הרשאה ללוחות השנה של תיבות דואר משותפות: {error}"
 
 #. ribbon location
 #: crates/engine/src/cmd/calendar/share.rs
@@ -10352,9 +10369,10 @@ msgid "Show Training"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Show a Shared Mailbox's Calendars"
-msgstr ""
+msgstr "הצגת לוחות השנה של תיבת דואר משותפת"
 
 #. interface
 #: crates/ui-egui/src/alerts.rs
@@ -10621,9 +10639,10 @@ msgid "Sign in to your account"
 msgstr "כניסה לחשבון"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Sign in to {owner} first (Send/Receive), then add the shared mailbox."
-msgstr ""
+msgstr "יש להיכנס תחילה לחשבון {owner} באמצעות שלח/קבל, ולאחר מכן להוסיף את תיבת הדואר המשותפת."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -11356,9 +11375,10 @@ msgid "That isn't a GitHub username: letters, digits and single hyphens, 39 at m
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "That isn't a shared mailbox"
-msgstr ""
+msgstr "זו אינה תיבת דואר משותפת"
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs
@@ -11423,9 +11443,10 @@ msgid "The account couldn't be set up. Check the details, or type the server's a
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "The account is gone"
-msgstr ""
+msgstr "החשבון אינו קיים עוד"
 
 #. interface
 #: crates/ui-egui/src/approval.rs
@@ -11594,9 +11615,10 @@ msgid ""
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "The calendars of the shared mailbox wait: {error}"
-msgstr ""
+msgstr "לוחות השנה של תיבת הדואר המשותפת ממתינים: {error}"
 
 #. what a command says
 #: crates/engine/src/sync_driver/calendar_plan.rs
@@ -11880,9 +11902,10 @@ msgid "The mail, contacts, calendar, tasks and notes of a .pst file, onto this c
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "The mailbox at {address} can't be reached through Microsoft Graph."
-msgstr ""
+msgstr "לא ניתן לגשת לתיבת הדואר בכתובת {address} באמצעות Microsoft Graph."
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -12282,14 +12305,16 @@ msgid "The shared mailbox's e-mail address"
 msgstr ""
 
 #. interface, what a command says
+#, fuzzy
 #: crates/engine/src/sync_driver/calendar_plan.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "The sign-in of the account this shared mailbox is opened through was refused: sign in again with Send/Receive"
-msgstr ""
+msgstr "הכניסה לחשבון שבאמצעותו נפתחת תיבת הדואר המשותפת נדחתה. יש להיכנס שוב באמצעות שלח/קבל"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "The sign-in to {address} waiting in your browser was stopped so the shared mailbox could be read. Send/Receive will ask you to sign in again."
-msgstr ""
+msgstr "הכניסה לחשבון {address} שהמתינה בדפדפן הופסקה כדי לאפשר קריאה של תיבת הדואר המשותפת. בפעולת שלח/קבל תתבקש כניסה מחדש."
 
 #. interface
 #: crates/ui-egui/src/compose.rs
@@ -12447,9 +12472,10 @@ msgid "There's no mailbox at {address}, or its calendar can't be reached through
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "There's no mailbox at {address}."
-msgstr ""
+msgstr "לא נמצאה תיבת דואר בכתובת {address}."
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -12537,9 +12563,10 @@ msgid "This account has no mail server to send the answer through."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/open_shared.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs crates/ui-egui/src/task_sync.rs
 msgid "This account has no sign-in with Microsoft"
-msgstr ""
+msgstr "לחשבון זה אין כניסה באמצעות Microsoft"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -12612,9 +12639,10 @@ msgid "This build can't ask a server when other people are busy: only your own c
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/sending.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "This build can't connect to Microsoft"
-msgstr ""
+msgstr "גרסה זו אינה יכולה להתחבר אל Microsoft"
 
 #. interface
 #: crates/ui-egui/src/ews_mail.rs crates/ui-egui/src/jmap_mail.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/sending.rs
@@ -13140,14 +13168,16 @@ msgid "This series is still on its way to the account's server. Change one of it
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "This shared mailbox's account is gone"
-msgstr ""
+msgstr "החשבון המשויך לתיבת הדואר המשותפת אינו קיים עוד"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "This shared mailbox's account is gone: remove the shared mailbox and add it again"
-msgstr ""
+msgstr "החשבון המשויך לתיבת הדואר המשותפת אינו קיים עוד: יש להסיר את התיבה המשותפת ולהוסיף אותה מחדש"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -13637,9 +13667,10 @@ msgid "Use Google sign-in instead"
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/shared_mailboxes.rs
 msgid "Use Send/Receive to sign in to {address}"
-msgstr ""
+msgstr "יש להשתמש בשלח/קבל כדי להיכנס לחשבון {address}"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -14167,9 +14198,10 @@ msgid "You don't have access to the calendar of {address}. They need to share it
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "You don't have access to {address}. If access was just given, try again in an hour."
-msgstr ""
+msgstr "אין לך הרשאת גישה אל {address}. אם ההרשאה ניתנה זה עתה, יש לנסות שוב בעוד שעה."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -14344,9 +14376,10 @@ msgid "Your organisation doesn't allow MailCraft to keep tasks in step with Micr
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Your organisation doesn't allow MailCraft to read shared mailboxes' calendars"
-msgstr ""
+msgstr "הארגון אינו מתיר ל־MailCraft לקרוא את לוחות השנה של תיבות דואר משותפות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
@@ -14414,14 +14447,16 @@ msgid "Your organisation's administrator has to approve reading other people's c
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "Your organisation's administrator has to approve reading shared mailboxes once: File › Info"
-msgstr ""
+msgstr "מנהל המערכת בארגון צריך לאשר פעם אחת קריאת תיבות דואר משותפות: קובץ › מידע"
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Your organisation's administrator has to approve reading shared mailboxes' calendars once: File › Info"
-msgstr ""
+msgstr "מנהל המערכת בארגון צריך לאשר פעם אחת קריאת לוחות שנה של תיבות דואר משותפות: קובץ › מידע"
 
 #. interface
 #: crates/ui-egui/src
@@ -16737,14 +16772,16 @@ msgid "{address} and the mail kept for it on this device will be removed. The sh
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "{address} couldn't be opened."
-msgstr ""
+msgstr "לא ניתן לפתוח את {address}."
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "{address} couldn't be opened: {error}"
-msgstr ""
+msgstr "לא ניתן לפתוח את {address}: {error}"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar_opened.rs
@@ -16772,14 +16809,16 @@ msgid "{address} isn't a shared mailbox open here."
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "{address}: {error}. It will try again at the next Send/Receive."
-msgstr ""
+msgstr "{address}: {error}. המערכת תנסה שוב בפעולת שלח/קבל הבאה."
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "{address}: {error}. See File › Info."
-msgstr ""
+msgstr "{address}: {error}. למידע נוסף: קובץ › מידע."
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -17909,9 +17948,10 @@ msgid "{why}, so sign-ins aren't remembered: MailCraft asks again each time it s
 msgstr ""
 
 #. interface
+#, fuzzy
 #: crates/ui-egui/src/shared_mailboxes.rs
 msgid "{why}. {n} changes made in it here wait on this computer."
-msgstr ""
+msgstr "{why}. {n} שינויים שבוצעו בתיבה זו ממתינים במחשב הזה."
 
 #. what a command says
 #: crates/engine/src/cmd/compose.rs
