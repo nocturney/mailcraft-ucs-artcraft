@@ -205,42 +205,42 @@ msgstr "שעה אחת"
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "1 month"
-msgstr ""
+msgstr "חודש אחד"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "1 week"
-msgstr ""
+msgstr "שבוע אחד"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "10 years"
-msgstr ""
+msgstr "עשר שנים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "12 months"
-msgstr ""
+msgstr "12 חודשים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "2 weeks"
-msgstr ""
+msgstr "שבועיים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "2 years"
-msgstr ""
+msgstr "שנתיים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "3 days"
-msgstr ""
+msgstr "שלושה ימים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "3 months"
-msgstr ""
+msgstr "שלושה חודשים"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -250,12 +250,12 @@ msgstr "מודלים תלת־ממדיים"
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "5 years"
-msgstr ""
+msgstr "חמש שנים"
 
 #. interface, name
 #: crates/model/src/offline.rs crates/ui-egui/src/keep_offline.rs
 msgid "6 months"
-msgstr ""
+msgstr "שישה חודשים"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -2164,7 +2164,7 @@ msgstr "בוצעו שינויים. הם יישמרו בעת בחירת חתימ�
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Change…"
-msgstr ""
+msgstr "שינוי…"
 
 #. what a command says
 #: crates/engine/src/sync_driver/calendar_plan.rs
@@ -4113,7 +4113,7 @@ msgstr "חלונות בחירת קבצים אינם זמינים כאן"
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "File:"
-msgstr ""
+msgstr "קובץ:"
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
@@ -4189,12 +4189,12 @@ msgstr "מאתר את הגדרות החשבון…"
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
 msgid "Fingerprint (SHA-256):"
-msgstr ""
+msgstr "טביעת אצבע (SHA-256):"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs crates/ui-egui/src/security.rs
 msgid "Fingerprint:"
-msgstr ""
+msgstr "טביעת אצבע:"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/approval.rs crates/ui-egui/src/lib.rs
@@ -4515,7 +4515,7 @@ msgstr "מהשולח"
 #. name
 #: crates/ui-egui/src/forms.rs
 msgid "From contains"
-msgstr ""
+msgstr "השדה ״מאת״ מכיל"
 
 #. interface
 #: crates/ui-egui/src/reading/warnings.rs
@@ -4873,7 +4873,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/forms.rs
 msgid "Has an attachment"
-msgstr ""
+msgstr "מכיל קובץ מצורף"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -4975,12 +4975,12 @@ msgstr "הסתר שוב את האזהרה בהודעה זו"
 #. interface, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/forms.rs
 msgid "High"
-msgstr ""
+msgstr "גבוהה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "High Contrast"
-msgstr ""
+msgstr "ניגודיות גבוהה"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/calendar/meeting.rs crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
@@ -5443,12 +5443,12 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Install Updates Automatically"
-msgstr ""
+msgstr "התקן עדכונים באופן אוטומטי"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Install updates automatically"
-msgstr ""
+msgstr "התקן עדכונים באופן אוטומטי"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -5806,7 +5806,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Keep this version"
-msgstr ""
+msgstr "השאר גרסה זו"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -5962,7 +5962,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/theme.rs
 msgid "Light"
-msgstr ""
+msgstr "בהיר"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -6091,7 +6091,7 @@ msgstr ""
 #. interface, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/forms.rs
 msgid "Low"
-msgstr ""
+msgstr "נמוכה"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
@@ -6549,7 +6549,7 @@ msgstr "סמן כלא נקרא"
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Mark as verified"
-msgstr ""
+msgstr "סמן כמאומת"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
@@ -6787,7 +6787,7 @@ msgstr "שם אמצעי"
 #. interface
 #: crates/ui-egui/src/menubar.rs
 msgid "Minimize"
-msgstr ""
+msgstr "מזער"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -6817,7 +6817,7 @@ msgstr ""
 #. command label
 #: crates/engine/src/cmd/search_server.rs crates/ui-egui/src/lib.rs
 msgid "More Results on the Server"
-msgstr ""
+msgstr "תוצאות נוספות בשרת"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -6832,7 +6832,7 @@ msgstr "פקודות נוספות"
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
 msgid "More results on the server"
-msgstr ""
+msgstr "תוצאות נוספות בשרת"
 
 #. what a command says
 #: crates/engine/src/cmd/search_server.rs
@@ -7253,7 +7253,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/date_picker.rs
 msgid "Next Month"
-msgstr ""
+msgstr "החודש הבא"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -7311,7 +7311,7 @@ msgstr "עדיין לא נשמרו מפתחות ציבוריים."
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "No Send/Receive is running"
-msgstr ""
+msgstr "לא מתבצעת שליחה או קבלה"
 
 #. what a command says
 #: crates/engine/src/cmd/calendar/invitation.rs
@@ -7354,7 +7354,7 @@ msgstr "לא נמצאו פגישות מתאימות."
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "No categories yet"
-msgstr ""
+msgstr "אין עדיין קטגוריות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
@@ -7398,12 +7398,12 @@ msgstr "עדיין אין משימות שהושלמו."
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "No contacts from this account yet"
-msgstr ""
+msgstr "עדיין אין אנשי קשר בחשבון הזה"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "No contacts yet"
-msgstr ""
+msgstr "אין עדיין אנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -7435,7 +7435,7 @@ msgstr "ללא תאריך סיום"
 #. interface
 #: crates/ui-egui/src/forms/junk.rs
 msgid "No entries yet"
-msgstr ""
+msgstr "אין עדיין רשומות"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -7452,7 +7452,7 @@ msgstr "לא נמצאו תיקיות מתאימות"
 #. interface
 #: crates/ui-egui/src/scheduling.rs
 msgid "No information"
-msgstr ""
+msgstr "אין מידע"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -7477,7 +7477,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "No new version is ready to install."
-msgstr ""
+msgstr "אין גרסה חדשה שמוכנה להתקנה."
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -7499,7 +7499,7 @@ msgstr "אין תזכורות שמועדן הגיע."
 #. interface, name
 #: crates/model/src/calendar.rs crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "No response"
-msgstr ""
+msgstr "ללא תגובה"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -7510,7 +7510,7 @@ msgstr "לא נמצאו תוצאות ב־{scope}"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "No rules yet. A rule files, flags or deletes mail as it arrives."
-msgstr ""
+msgstr "אין עדיין כללים. כלל יכול להעביר הודעות לתיקיות, לסמן אותן או למחוק אותן כשהן מתקבלות."
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -7604,7 +7604,7 @@ msgstr ""
 #. interface, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/forms.rs
 msgid "Normal"
-msgstr ""
+msgstr "רגילה"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
@@ -7645,7 +7645,7 @@ msgstr "כתובת דוא״ל לא תקינה: {names}"
 #. interface
 #: crates/ui-egui/src
 msgid "Not available for this account"
-msgstr ""
+msgstr "לא זמין לחשבון זה"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs crates/ui-egui/src/widgets.rs
@@ -7655,7 +7655,7 @@ msgstr "לא זמין: {reason}"
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs crates/ui-egui/src/server_search.rs
 msgid "Not connected"
-msgstr ""
+msgstr "לא מחובר"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -7702,7 +7702,7 @@ msgstr "לא נשמר"
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Not verified"
-msgstr ""
+msgstr "לא אומת"
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/notes.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/nav.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/tasks_view.rs
@@ -7898,7 +7898,7 @@ msgstr "במחשב זה"
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "On this computer for now"
-msgstr ""
+msgstr "בינתיים, במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7981,7 +7981,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
 msgid "Only my contacts"
-msgstr ""
+msgstr "אנשי הקשר שלי בלבד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7991,7 +7991,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Only on this computer"
-msgstr ""
+msgstr "במחשב זה בלבד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8220,7 +8220,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
 msgid "Opening Mail Attachment"
-msgstr ""
+msgstr "פתיחת קובץ מצורף להודעה"
 
 #. interface
 #: crates/ui-egui/src/opening.rs
@@ -8260,7 +8260,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs/share.rs crates/ui-egui/src/reading/invitation.rs crates/ui-egui/src/scheduling.rs
 msgid "Optional"
-msgstr ""
+msgstr "לא חובה"
 
 #. command label, interface, name, ribbon location
 #, fuzzy
@@ -8277,7 +8277,7 @@ msgstr "או שאולי אחד מאלה?"
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
 msgid "Organizer"
-msgstr ""
+msgstr "מארגן"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -8550,7 +8550,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/layout.rs
 msgid "Picture"
-msgstr ""
+msgstr "תמונה"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -8592,12 +8592,12 @@ msgstr "תמונות בדואר"
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Pictures not downloaded."
-msgstr ""
+msgstr "התמונות לא הורדו."
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
 msgid "Pictures not shown."
-msgstr ""
+msgstr "התמונות לא מוצגות."
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -8674,7 +8674,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/compose.rs
 msgid "Pop Out"
-msgstr ""
+msgstr "פתח בחלון נפרד"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8743,7 +8743,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/date_picker.rs
 msgid "Previous Month"
-msgstr ""
+msgstr "החודש הקודם"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -8811,7 +8811,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
 msgid "Proposed"
-msgstr ""
+msgstr "הוצע"
 
 #. interface, name
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -8894,7 +8894,7 @@ msgstr "גישה מהירה"
 #. interface
 #: crates/ui-egui/src/menubar.rs
 msgid "Quit MailCraft"
-msgstr ""
+msgstr "צא מ־MailCraft"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8930,7 +8930,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Read-only"
-msgstr ""
+msgstr "לקריאה בלבד"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -9004,12 +9004,12 @@ msgstr "חיפושים אחרונים"
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Recent mail"
-msgstr ""
+msgstr "דואר אחרון"
 
 #. name
 #: crates/ui-egui/src/forms.rs
 msgid "Recipient's address contains"
-msgstr ""
+msgstr "כתובת הנמען מכילה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -9239,12 +9239,12 @@ msgstr "הסרת החשבון והדואר שנשמר עבורו במחשב זה
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Remove this action"
-msgstr ""
+msgstr "הסר פעולה זו"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
 msgid "Remove this condition"
-msgstr ""
+msgstr "הסר תנאי זה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -9305,7 +9305,7 @@ msgstr "החלף"
 #. interface
 #: crates/ui-egui/src/find_replace.rs
 msgid "Replace All"
-msgstr ""
+msgstr "החלף הכול"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -9315,7 +9315,7 @@ msgstr "החלפת תיבת הדואר הפתוחה בקובץ .mailcraft"
 #. interface
 #: crates/ui-egui/src/find_replace.rs
 msgid "Replace with"
-msgstr ""
+msgstr "החלף ב־"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -9368,7 +9368,7 @@ msgstr "השב אל"
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
 msgid "Reply to people outside my organization"
-msgstr ""
+msgstr "השב גם לאנשים מחוץ לארגון שלי"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar.rs crates/ui-egui/src/ribbon.rs
@@ -9437,7 +9437,7 @@ msgstr "תגובה לפריט חוזר"
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Response"
-msgstr ""
+msgstr "תגובה"
 
 #. command label, interface
 #: crates/engine/src/cmd/calendar/meeting.rs crates/ui-egui/src/forms.rs
@@ -9453,12 +9453,12 @@ msgstr ""
 #. command label
 #: crates/ui-egui/src/lib.rs
 msgid "Restart to Update"
-msgstr ""
+msgstr "הפעל מחדש כדי לעדכן"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
 msgid "Restart to update"
-msgstr ""
+msgstr "הפעל מחדש כדי לעדכן"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -9841,7 +9841,7 @@ msgstr "נשמר עותק של תיבת הדואר שלך לפני המעבר…
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Saving the mailbox…"
-msgstr ""
+msgstr "שומר את תיבת הדואר…"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -10026,7 +10026,7 @@ msgstr "חיפוש אזורי זמן"
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
 msgid "Searching the server…"
-msgstr ""
+msgstr "מחפש בשרת…"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -10081,7 +10081,7 @@ msgstr "בחר טקסט"
 #. interface
 #: crates/ui-egui/src/people_view.rs
 msgid "Select a contact to see the details"
-msgstr ""
+msgstr "בחר איש קשר כדי להציג את פרטיו"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -10341,7 +10341,7 @@ msgstr ""
 #. name
 #: crates/ui-egui/src/forms.rs
 msgid "Sender's address contains"
-msgstr ""
+msgstr "כתובת השולח מכילה"
 
 #. name
 #: crates/model/src/sync/progress.rs
@@ -10367,7 +10367,7 @@ msgstr "קודם נשלח מה שממתין לשרת; לאחר מכן החשבו
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Sending your changes…"
-msgstr ""
+msgstr "שולח את השינויים שלך…"
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -10379,7 +10379,7 @@ msgstr[1] ""
 #. interface
 #: crates/ui-egui/src/lib.rs
 msgid "Sending…"
-msgstr ""
+msgstr "שולח…"
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
