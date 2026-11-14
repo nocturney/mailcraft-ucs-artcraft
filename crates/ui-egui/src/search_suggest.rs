@@ -45,6 +45,62 @@ pub(crate) struct Suggesting {
     for_mailbox: (u64, u64),
 }
 
+/// Regions for a right-to-left suggestion row. The label reads from the right;
+/// a category mark is beyond its right edge, and an LTR address keeps the left
+/// side. The row's click target and the order of suggestions do not change.
+fn hebrew_suggestion_regions(r: Rect, colored: bool, name_width: f32, addressed: bool) -> (Option<Rect>, Rect, Option<Rect>) {
+    let left = r.min.x + 8.0;
+    let mut right = r.max.x - 8.0;
+    let mark = if colored {
+        let rect = Rect::from_center_size(pos2(right - MARK / 2.0, r.center().y), vec2(MARK, MARK));
+        right -= MARK + 8.0;
+        Some(rect)
+    } else {
+        None
+    };
+    let room = (right - left).max(0.0);
+    let name_room = if addressed { room * 0.6 } else { room };
+    let name_used = name_width.max(0.0).min(name_room);
+    let name = Rect::from_min_max(pos2(right - name_used, r.min.y), pos2(right, r.max.y));
+    let address = addressed.then(|| {
+        Rect::from_min_max(pos2(left, r.min.y), pos2((name.min.x - 8.0).max(left), r.max.y))
+    });
+    (mark, name, address)
+}
+
+#[cfg(test)]
+mod hebrew_suggestion_layout_tests {
+    use super::*;
+
+    #[test]
+    fn hebrew_rows_anchor_names_right_and_addresses_left_without_overlap() {
+        for width in [140.0, 240.0, 420.0] {
+            let row = Rect::from_min_max(pos2(10.0, 20.0), pos2(10.0 + width, 46.0));
+            for colored in [false, true] {
+                let (mark, name, address) = hebrew_suggestion_regions(row, colored, 75.0, true);
+                let address = address.expect("person's address stays visible on the left");
+                assert_eq!(name.width(), 75.0);
+                assert!(address.min.x >= row.min.x + 8.0);
+                assert!(address.max.x + 8.0 <= name.min.x);
+                assert!(name.max.x <= row.max.x - 8.0);
+                if colored {
+                    let mark = mark.expect("category mark is to the right");
+                    assert!(name.max.x + 8.0 <= mark.min.x);
+                    assert_eq!(mark.center().x, row.max.x - 8.0 - MARK / 2.0);
+                } else {
+                    assert!(mark.is_none());
+                    assert_eq!(name.max.x, row.max.x - 8.0);
+                }
+                let (_, long_name, _) = hebrew_suggestion_regions(row, colored, 2000.0, true);
+                assert!(long_name.width() <= (width - 16.0) * 0.6);
+            }
+            let (_, single, none) = hebrew_suggestion_regions(row, false, 30.0, false);
+            assert_eq!(single.max.x, row.max.x - 8.0);
+            assert!(none.is_none());
+        }
+    }
+}
+
 impl Suggesting {
     fn store_id() -> egui::Id {
         egui::Id::unique("search_suggesting")
@@ -143,23 +199,39 @@ impl Suggesting {
                     if self.selected == Some(i) || row.hovered() {
                         ui.painter().rect_filled(r, 4.0, if self.selected == Some(i) { t.selection } else { t.hover });
                     }
-                    let mut x = r.min.x + 8.0;
-                    if let Some(color) = s.color {
-                        ui.painter().rect_filled(Rect::from_center_size(pos2(x + MARK / 2.0, r.center().y), vec2(MARK, MARK)), 2.0, c32(color));
-                        x += MARK + 8.0;
-                    }
-                    // Somebody: the name, and the address beside it, as the recipient suggestions show them.
-                    let room = (r.max.x - x - 8.0).max(0.0);
-                    let w = paint_clipped(
-                        ui.painter(),
-                        pos2(x, r.center().y),
-                        if shows_address(s).is_some() { room * 0.6 } else { room },
-                        &s.label,
-                        regular(12.5),
-                        t.text,
-                    );
-                    if let Some(address) = shows_address(s) {
-                        paint_clipped(ui.painter(), pos2(x + w + 8.0, r.center().y), (room - w - 8.0).max(0.0), address, regular(11.5), t.text_dim);
+                    let address = shows_address(s);
+                    if crate::i18n::current() == crate::i18n::Lang::Hebrew {
+                        // The suggestions follow the Hebrew search box. Preserve Latin email
+                        // addresses left-to-right on the left, and the original full-row hit area.
+                        let font = regular(12.5);
+                        let name_width = crate::theme::text_width(ui.painter(), &s.label, &font, 0.0, t.text);
+                        let (mark, name, address_rect) = hebrew_suggestion_regions(r, s.color.is_some(), name_width, address.is_some());
+                        if let (Some(mark), Some(color)) = (mark, s.color) {
+                            ui.painter().rect_filled(mark, 2.0, c32(color));
+                        }
+                        let _ = paint_clipped(ui.painter(), pos2(name.min.x, name.center().y), name.width(), &s.label, font, t.text);
+                        if let (Some(address), Some(rect)) = (address, address_rect) {
+                            paint_clipped(ui.painter(), pos2(rect.min.x, rect.center().y), rect.width(), address, regular(11.5), t.text_dim);
+                        }
+                    } else {
+                        let mut x = r.min.x + 8.0;
+                        if let Some(color) = s.color {
+                            ui.painter().rect_filled(Rect::from_center_size(pos2(x + MARK / 2.0, r.center().y), vec2(MARK, MARK)), 2.0, c32(color));
+                            x += MARK + 8.0;
+                        }
+                        // Somebody: the name, and the address beside it, as the recipient suggestions show them.
+                        let room = (r.max.x - x - 8.0).max(0.0);
+                        let w = paint_clipped(
+                            ui.painter(),
+                            pos2(x, r.center().y),
+                            if address.is_some() { room * 0.6 } else { room },
+                            &s.label,
+                            regular(12.5),
+                            t.text,
+                        );
+                        if let Some(address) = address {
+                            paint_clipped(ui.painter(), pos2(x + w + 8.0, r.center().y), (room - w - 8.0).max(0.0), address, regular(11.5), t.text_dim);
+                        }
                     }
                     if row.clicked() {
                         take = Some(i);
