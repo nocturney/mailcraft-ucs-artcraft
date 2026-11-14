@@ -149,7 +149,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "* The sizes leave out messages whose size isn't known here: only their headers are on this computer and their server gave no size, or they were too large to download."
-msgstr ""
+msgstr "* חישוב הגדלים אינו כולל הודעות שגודלן אינו ידוע כאן: רק הכותרות שלהן שמורות במחשב זה והשרת לא מסר את גודלן, או שהן היו גדולות מדי להורדה."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -1566,7 +1566,7 @@ msgstr ""
 #. interface, name
 #: crates/ui-egui/src/folder_properties.rs
 msgid "AutoArchive"
-msgstr ""
+msgstr "העברה אוטומטית לארכיון"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/calendar_view.rs crates/ui-egui/src/ribbon.rs
@@ -1735,7 +1735,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Back to Message"
-msgstr ""
+msgstr "חזרה להודעה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4179,7 +4179,7 @@ msgstr "כווץ את לוחות השנה בקבוצה זו"
 #. interface, name, ribbon location
 #: crates/engine/src/cmd/calendar.rs crates/engine/src/cmd/calendar_opened.rs crates/engine/src/cmd/folder.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/rules.rs crates/model/src/mailbox.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/menubar.rs
 msgid "Folder"
-msgstr ""
+msgstr "תיקייה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -4208,12 +4208,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Folder Size"
-msgstr ""
+msgstr "גודל תיקייה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Folder Size…"
-msgstr ""
+msgstr "גודל תיקייה…"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -4650,7 +4650,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Go to the folder"
-msgstr ""
+msgstr "מעבר לתיקייה"
 
 #. interface
 #: crates/ui-egui/src/reading/view.rs
@@ -4949,7 +4949,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "How many messages each folder holds and the space they take"
-msgstr ""
+msgstr "מספר ההודעות בכל תיקייה והשטח שהן תופסות"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -5199,7 +5199,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "In Junk E-mail, preview an attachment from its menu."
-msgstr ""
+msgstr "בתיקיית דואר זבל, יש לפתוח תצוגה מקדימה של קובץ מצורף דרך התפריט שלו."
 
 #. what a command says
 #: crates/engine/src/cmd/tasks/status.rs
@@ -5236,7 +5236,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "In the folder pane's order"
-msgstr ""
+msgstr "לפי סדר התיקיות בחלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5928,7 +5928,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/forms.rs
 msgid "Location"
-msgstr ""
+msgstr "מיקום"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -6031,12 +6031,12 @@ msgstr "ההודעות מיובאות תוך כדי קריאתן. ביטול י�
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Mail folder"
-msgstr ""
+msgstr "תיקיית דואר"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Mail folder: the account's {folder}"
-msgstr ""
+msgstr "תיקיית דואר: {folder} של החשבון"
 
 #. what a command says
 #: crates/model/src/mailbox.rs
@@ -6501,7 +6501,7 @@ msgstr ""
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/engine/src/cmd/view/display.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/ribbon.rs
 msgid "Messages"
-msgstr ""
+msgstr "הודעות"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6526,17 +6526,17 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Messages in the folder and the folders under it"
-msgstr ""
+msgstr "הודעות בתיקייה ובתיקיות המשנה שלה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Messages in the folder as its server counted them at the last Send/Receive that read it to the end"
-msgstr ""
+msgstr "מספר ההודעות בתיקייה לפי ספירת השרת בעת פעולת השליחה/קבלה האחרונה שקראה אותה במלואה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Messages in the folder itself"
-msgstr ""
+msgstr "הודעות בתיקייה עצמה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -6877,7 +6877,7 @@ msgstr ""
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs/share.rs
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -7117,7 +7117,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Next Page"
-msgstr ""
+msgstr "העמוד הבא"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -7335,7 +7335,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "No preview helper is available for this attachment."
-msgstr ""
+msgstr "לא זמין כלי מקומי לתצוגה מקדימה של קובץ מצורף זה."
 
 #. interface
 #: crates/ui-egui/src/ribbon/view_menus.rs
@@ -7701,7 +7701,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/mail_view/server_rows.rs
 msgid "On the server"
-msgstr ""
+msgstr "בשרת"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -8328,7 +8328,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/nav.rs crates/ui-egui/src/ribbon.rs
 msgid "Pending development"
-msgstr ""
+msgstr "בפיתוח"
 
 #. command label, interface, name, ribbon location
 #: crates/engine/src/cmd/people.rs crates/engine/src/cmd/people_merge.rs crates/engine/src/cmd/view.rs crates/engine/src/session.rs crates/ui-egui/src/people_view.rs
@@ -8339,7 +8339,7 @@ msgstr "אנשי קשר"
 #. interface, name
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Permissions"
-msgstr ""
+msgstr "הרשאות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/merge_contacts.rs
@@ -8485,7 +8485,7 @@ msgstr ""
 #. interface, name
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Policy"
-msgstr ""
+msgstr "מדיניות"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -8513,7 +8513,7 @@ msgstr "העדפות"
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Preparing attachment preview…"
-msgstr ""
+msgstr "מכין תצוגה מקדימה של הקובץ המצורף…"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -8533,17 +8533,17 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Preview attachments with local PdfCraft"
-msgstr ""
+msgstr "הצגת תצוגה מקדימה של קבצים מצורפים באמצעות PdfCraft המקומית"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Preview attachments with local PdfCraft and PhotoCraft"
-msgstr ""
+msgstr "הצגת תצוגה מקדימה של קבצים מצורפים באמצעות PdfCraft ו־PhotoCraft המקומיות"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Preview attachments with local PhotoCraft"
-msgstr ""
+msgstr "הצגת תצוגה מקדימה של קבצים מצורפים באמצעות PhotoCraft המקומית"
 
 #. interface
 #, fuzzy
@@ -8569,7 +8569,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Previous Page"
-msgstr ""
+msgstr "העמוד הקודם"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
@@ -9895,7 +9895,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Select the message before previewing its attachment."
-msgstr ""
+msgstr "יש לבחור הודעה לפני הצגת התצוגה המקדימה של הקובץ המצורף אליה."
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/agent_gate.rs crates/ui-egui/src/compose.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -10801,7 +10801,7 @@ msgstr ""
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/signatures.rs
 msgid "Size"
-msgstr ""
+msgstr "גודל"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/merge_contacts.rs crates/ui-egui/src/sync_panel.rs
@@ -11148,7 +11148,7 @@ msgstr ""
 #. interface, name
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Synchronization"
-msgstr ""
+msgstr "סנכרון"
 
 #. name
 #: crates/model/src/rich.rs
@@ -11534,12 +11534,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "The attachment preview could not be opened."
-msgstr ""
+msgstr "לא ניתן לפתוח את התצוגה המקדימה של הקובץ המצורף."
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "The attachment preview timed out."
-msgstr ""
+msgstr "הזמן שהוקצב לתצוגה המקדימה של הקובץ המצורף הסתיים."
 
 #. interface
 #: crates/ui-egui/src/files.rs
@@ -11917,7 +11917,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "The local program receives the selected attachment and runs with your permissions."
-msgstr ""
+msgstr "התוכנה המקומית מקבלת את הקובץ המצורף שנבחר ופועלת עם ההרשאות שלך."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -12382,12 +12382,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "The space the folder and the folders under it take on this computer"
-msgstr ""
+msgstr "השטח שהתיקייה ותיקיות המשנה שלה תופסות במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "The space the folder's own messages take on this computer"
-msgstr ""
+msgstr "השטח שהודעות התיקייה עצמה תופסות במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/graph_switch.rs
@@ -12659,12 +12659,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "This attachment could not be previewed."
-msgstr ""
+msgstr "לא ניתן להציג תצוגה מקדימה של הקובץ המצורף."
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "This attachment is too large to preview."
-msgstr ""
+msgstr "הקובץ המצורף גדול מדי לתצוגה מקדימה."
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -13456,12 +13456,12 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Total messages"
-msgstr ""
+msgstr "סך כל ההודעות"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Total size"
-msgstr ""
+msgstr "גודל כולל"
 
 #. command label, interface, name, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar/share.rs crates/engine/src/cmd/compose.rs crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -13521,7 +13521,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Turn on attachment previews in File › Options."
-msgstr ""
+msgstr "יש להפעיל תצוגה מקדימה של קבצים מצורפים דרך קובץ › אפשרויות."
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -13556,7 +13556,7 @@ msgstr ""
 #. command label, interface
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/folder_properties.rs
 msgid "Type"
-msgstr ""
+msgstr "סוג"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -13614,12 +13614,12 @@ msgstr "בטל: {what}"
 #. interface, name
 #: crates/engine/src/session.rs crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/folder_properties.rs
 msgid "Unread"
-msgstr ""
+msgstr "לא נקראו"
 
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "Unread messages in the folder itself"
-msgstr ""
+msgstr "הודעות שלא נקראו בתיקייה עצמה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -13850,7 +13850,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
 msgid "Wait for the other attachment preview to finish."
-msgstr ""
+msgstr "יש להמתין לסיום התצוגה המקדימה של הקובץ המצורף האחר."
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
@@ -14525,7 +14525,7 @@ msgstr ""
 #. command label, interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/attachment_preview.rs crates/ui-egui/src/menubar.rs crates/ui-egui/src/ribbon.rs
 msgid "Zoom"
-msgstr ""
+msgstr "שינוי גודל תצוגה"
 
 #. command label, interface
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon/view_menus.rs
@@ -16918,7 +16918,7 @@ msgstr ""
 #. interface
 #: crates/ui-egui/src/folder_properties.rs
 msgid "{folder} Properties"
-msgstr ""
+msgstr "מאפייני {folder}"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
