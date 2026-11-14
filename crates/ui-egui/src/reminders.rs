@@ -317,6 +317,42 @@ fn publish(app: &MailApp, ctx: &egui::Context) {
 
 /// The window's own pass: what [`Shared`] holds, and what is clicked left there for the main
 /// window, which is woken for it.
+
+#[derive(Clone, Copy, Debug)]
+struct ReminderRowGeometry {
+    icon_x: f32,
+    text_x: f32,
+    text_width: f32,
+    when_x: f32,
+    button_x: f32,
+    join_x: f32,
+}
+
+/// Keep the reminder and its full-row hit target in place, mirroring only its visual columns.
+/// The button width includes the translated label, so longer Hebrew actions cannot overlap the text.
+fn reminder_row_geometry(rect: egui::Rect, button_width: f32, join_room: f32, hebrew: bool) -> ReminderRowGeometry {
+    let text_width = (rect.width() - button_width - 66.0 - join_room).max(0.0);
+    if hebrew {
+        ReminderRowGeometry {
+            icon_x: rect.max.x - 16.0,
+            text_x: rect.max.x - 34.0,
+            text_width,
+            when_x: rect.min.x + button_width + 14.0 + join_room,
+            button_x: rect.min.x + 6.0,
+            join_x: rect.min.x + button_width + 12.0,
+        }
+    } else {
+        ReminderRowGeometry {
+            icon_x: rect.min.x + 16.0,
+            text_x: rect.min.x + 34.0,
+            text_width,
+            when_x: rect.max.x - button_width - 14.0 - join_room,
+            button_x: rect.max.x - button_width - 6.0,
+            join_x: rect.max.x - button_width - 6.0 - join_room,
+        }
+    }
+}
+
 fn paint(ui: &mut egui::Ui, class: egui::ViewportClass, shared: &Mutex<Shared>) {
     let ctx = ui.ctx().clone();
     let t = Tokens::get(&ctx);
@@ -325,6 +361,7 @@ fn paint(ui: &mut egui::Ui, class: egui::ViewportClass, shared: &Mutex<Shared>) 
     let mut done = Vec::new();
     let mut hits = Vec::new();
     let own_window = class != egui::ViewportClass::EmbeddedWindow;
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     if own_window {
         if ctx.input(|i| i.viewport().close_requested()) {
             done.push(Action::Close);
@@ -356,44 +393,59 @@ fn paint(ui: &mut egui::Ui, class: egui::ViewportClass, shared: &Mutex<Shared>) 
                 if resp.hovered() {
                     ui.painter().rect_filled(rect, 4.0, t.hover);
                 }
-                icons::paint(
-                    ui.painter(),
-                    egui::Rect::from_center_size(egui::pos2(rect.min.x + 16.0, rect.center().y), vec2(16.0, 16.0)),
-                    "bell",
-                    t.icon,
-                    t.accent,
-                );
                 let name = if r.title.trim().is_empty() { tl!("(no title)") } else { r.title.as_str() };
                 let aside = if join.is_some() { 56.0 } else { 0.0 };
                 // Dismiss is as wide as its word needs in the interface language (64 at least).
                 let font = egui::TextStyle::Button.resolve(ui.style());
                 let wide = ui.fonts_mut(|f| f.layout_no_wrap(tl!("Dismiss").to_string(), font, t.text).size().x + 16.0).max(64.0);
-                crate::theme::paint_clipped(
+                let g = reminder_row_geometry(rect, wide, aside, hebrew);
+                icons::paint(
                     ui.painter(),
-                    egui::pos2(rect.min.x + 34.0, rect.min.y + 15.0),
-                    rect.width() - wide - 66.0 - aside,
-                    name,
-                    semibold(12.5),
-                    t.text,
+                    egui::Rect::from_center_size(egui::pos2(g.icon_x, rect.center().y), vec2(16.0, 16.0)),
+                    "bell",
+                    t.icon,
+                    t.accent,
                 );
                 let time = if r.all_day { crate::dates::medium(r.start.date) } else { crate::dates::medium_time(r.start, twelve) };
                 let detail = if r.location.trim().is_empty() { time } else { format!("{time} · {}", r.location) };
-                crate::theme::paint_clipped(
-                    ui.painter(),
-                    egui::pos2(rect.min.x + 34.0, rect.min.y + 32.0),
-                    rect.width() - wide - 66.0 - aside,
-                    &detail,
-                    regular(11.5),
-                    t.text_dim,
-                );
+                if hebrew {
+                    // egui's clipped label helper is left-anchored. For Hebrew paint a
+                    // right-anchored galley in the same finite text column; do not let a
+                    // long event title or mixed-direction location obscure the buttons.
+                    let left = g.text_x - g.text_width;
+                    let clip = egui::Rect::from_min_max(
+                        egui::pos2(left, rect.min.y),
+                        egui::pos2(g.text_x, rect.max.y),
+                    );
+                    let painter = ui.painter().with_clip_rect(clip);
+                    painter.text(egui::pos2(g.text_x, rect.min.y + 15.0), Align2::RIGHT_CENTER, name, semibold(12.5), t.text);
+                    painter.text(egui::pos2(g.text_x, rect.min.y + 32.0), Align2::RIGHT_CENTER, &detail, regular(11.5), t.text_dim);
+                } else {
+                    crate::theme::paint_clipped(
+                        ui.painter(),
+                        egui::pos2(g.text_x, rect.min.y + 15.0),
+                        g.text_width,
+                        name,
+                        semibold(12.5),
+                        t.text,
+                    );
+                    crate::theme::paint_clipped(
+                        ui.painter(),
+                        egui::pos2(g.text_x, rect.min.y + 32.0),
+                        g.text_width,
+                        &detail,
+                        regular(11.5),
+                        t.text_dim,
+                    );
+                }
                 let color = if r.minutes <= 0 { t.red } else { t.text_dim };
-                let said = egui::pos2(rect.max.x - wide - 14.0 - aside, rect.min.y + 15.0);
-                ui.painter().text(said, Align2::RIGHT_CENTER, when(r.minutes), regular(11.5), color);
-                let button = egui::Rect::from_min_size(egui::pos2(rect.max.x - wide - 6.0, rect.center().y - 12.0), vec2(wide, 24.0));
+                let when_align = if hebrew { Align2::LEFT_CENTER } else { Align2::RIGHT_CENTER };
+                ui.painter().text(egui::pos2(g.when_x, rect.min.y + 15.0), when_align, when(r.minutes), regular(11.5), color);
+                let button = egui::Rect::from_min_size(egui::pos2(g.button_x, rect.center().y - 12.0), vec2(wide, 24.0));
                 // The link is shown where it leads, and followed only on the click.
                 let mut pressed = false;
                 if let Some(link) = join {
-                    let place = egui::Rect::from_min_size(egui::pos2(button.min.x - aside, button.min.y), vec2(aside - 6.0, 24.0));
+                    let place = egui::Rect::from_min_size(egui::pos2(g.join_x, button.min.y), vec2(aside - 6.0, 24.0));
                     let joins = ui.put(place, egui::Button::new(tl!("Join"))).on_hover_text(link.as_str());
                     hits.push(("reminderJoin", r.event, joins.rect));
                     if joins.clicked() {
@@ -471,6 +523,22 @@ mod reminders_tests;
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn reminder_columns_mirror_only_in_hebrew_and_preserve_action_hit_width() {
+        let r = egui::Rect::from_min_max(egui::pos2(0.0, 0.0), egui::pos2(420.0, 46.0));
+        let english = reminder_row_geometry(r, 80.0, 56.0, false);
+        let hebrew = reminder_row_geometry(r, 80.0, 56.0, true);
+        assert_eq!((english.icon_x, english.text_x, english.when_x, english.button_x, english.join_x),
+            (16.0, 34.0, 270.0, 334.0, 278.0));
+        assert_eq!((hebrew.icon_x, hebrew.text_x, hebrew.when_x, hebrew.button_x, hebrew.join_x),
+            (404.0, 386.0, 150.0, 6.0, 92.0));
+        assert_eq!((english.text_width, hebrew.text_width), (218.0, 218.0));
+        assert!(hebrew.join_x >= hebrew.button_x + 80.0);
+        assert!(hebrew.text_x - hebrew.text_width > hebrew.when_x);
+        assert!(reminder_row_geometry(r, 300.0, 200.0, true).text_width >= 0.0);
+    }
+
 
     #[test]
     fn times_in_words() {
