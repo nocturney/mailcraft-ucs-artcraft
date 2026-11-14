@@ -2477,17 +2477,36 @@ fn waiting_page(ui: &mut Ui, pass: &Pass, page_in_view: Page, text: &str, detail
     cancel.then_some(Action::Back)
 }
 
+/// The header is mirrored only for a Hebrew interface. Email and server input data
+/// remain untouched, including their left-to-right identifiers.
+fn wizard_header_positions(r: Rect, rtl: bool) -> (egui::Pos2, egui::Pos2, Align2) {
+    if rtl {
+        (pos2(r.max.x - 18.0, r.center().y), pos2(r.max.x - 46.0, r.center().y), Align2::RIGHT_CENTER)
+    } else {
+        (pos2(r.min.x + 18.0, r.center().y), pos2(r.min.x + 46.0, r.center().y), Align2::LEFT_CENTER)
+    }
+}
+
+fn wizard_page_margin(rtl: bool) -> Margin {
+    if rtl {
+        Margin { left: 0, right: PAD, top: 6, bottom: 4 }
+    } else {
+        Margin { left: PAD, right: 0, top: 6, bottom: 4 }
+    }
+}
+
 /// A page: the mail glyph in an accent circle beside the product's name, then what `add` lays
 /// out. It scrolls when the window is short, so the buttons under it stay in view.
 fn page(ui: &mut Ui, t: &Tokens, add: impl FnOnce(&mut Ui)) {
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     body(ui, |ui| {
-        egui::Frame::NONE.inner_margin(Margin { left: PAD, right: 0, top: 6, bottom: 4 }).show(ui, |ui| {
+        egui::Frame::NONE.inner_margin(wizard_page_margin(rtl)).show(ui, |ui| {
             ui.spacing_mut().item_spacing = vec2(8.0, 6.0);
             let (r, _) = ui.allocate_exact_size(vec2(ui.available_width().max(0.0), 38.0), Sense::hover());
-            let center = pos2(r.min.x + 18.0, r.center().y);
+            let (center, title_pos, title_align) = wizard_header_positions(r, rtl);
             ui.painter().circle_filled(center, 18.0, t.accent);
             icons::paint(ui.painter(), Rect::from_center_size(center, vec2(20.0, 20.0)), "mail", t.on_accent, t.on_accent);
-            ui.painter().text(pos2(r.min.x + 46.0, r.center().y), Align2::LEFT_CENTER, "MailCraft", semibold(17.0), t.text);
+            ui.painter().text(title_pos, title_align, "MailCraft", semibold(17.0), t.text);
             ui.add_space(10.0);
             add(ui);
         });
@@ -2708,6 +2727,22 @@ mod tests {
     use crate::forms::Form;
     use crate::{Services, SignInRequest};
     use egui::Key;
+
+    #[test]
+    fn account_wizard_brand_header_mirrors_for_hebrew_without_changing_english() {
+        let r = Rect::from_min_size(pos2(100.0, 10.0), vec2(380.0, 38.0));
+        let (english_icon, english_title, english_align) = wizard_header_positions(r, false);
+        let (hebrew_icon, hebrew_title, hebrew_align) = wizard_header_positions(r, true);
+        assert_eq!((english_icon, english_title), (pos2(118.0, 29.0), pos2(146.0, 29.0)));
+        assert_eq!((hebrew_icon, hebrew_title), (pos2(462.0, 29.0), pos2(434.0, 29.0)));
+        assert_eq!(english_align, Align2::LEFT_CENTER);
+        assert_eq!(hebrew_align, Align2::RIGHT_CENTER);
+        let english_margin = wizard_page_margin(false);
+        let hebrew_margin = wizard_page_margin(true);
+        assert_eq!((english_margin.left, english_margin.right), (PAD, 0));
+        assert_eq!((hebrew_margin.left, hebrew_margin.right), (0, PAD));
+        assert_eq!((english_margin.top, english_margin.bottom), (hebrew_margin.top, hebrew_margin.bottom));
+    }
 
     /// The account's name in the folder pane (#1017).
     mod account_name;
