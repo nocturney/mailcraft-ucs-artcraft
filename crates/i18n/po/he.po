@@ -458,8 +458,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "A save of the mailbox is still running: try again in a moment"
-msgstr ""
+msgstr "שמירת תיבת הדואר עדיין מתבצעת. נסה שוב בעוד רגע."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -2984,8 +2985,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Data on this computer"
-msgstr ""
+msgstr "נתונים במחשב זה"
 
 #. name
 #: crates/engine/src/session.rs
@@ -3908,8 +3910,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Everything else is gone. MailCraft quits when you close this."
-msgstr ""
+msgstr "כל שאר הנתונים הוסרו. MailCraft ייסגר כשתסגור חלון זה."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -5527,8 +5530,9 @@ msgstr "הפריט יוסר גם משרת הדואר, ולא ניתן לבטל �
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "It is the same for an installed and a portable copy. MailCraft quits afterwards."
-msgstr ""
+msgstr "הפעולה זהה בגרסה מותקנת ובגרסה ניידת. MailCraft ייסגר בסיומה."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -6121,13 +6125,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Mail on the servers is not touched."
-msgstr ""
+msgstr "הודעות הדוא״ל בשרתים אינן מושפעות."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Mail on the servers is not touched. This can't be undone."
-msgstr ""
+msgstr "הודעות הדוא״ל בשרתים אינן מושפעות. אי אפשר לבטל פעולה זו."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -6346,8 +6352,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "MailCraft's data has been removed already"
-msgstr ""
+msgstr "הנתונים של MailCraft כבר הוסרו"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -7365,8 +7372,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "No file manager could be started to show the folder."
-msgstr ""
+msgstr "לא ניתן לפתוח מנהל קבצים להצגת התיקייה."
 
 #. interface
 #: crates/ui-egui/src/move_items.rs crates/ui-egui/src/ribbon.rs
@@ -8011,8 +8019,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Open MailCraft's data folder"
-msgstr ""
+msgstr "פתח את תיקיית הנתונים של MailCraft"
 
 #. command label
 #: crates/engine/src/cmd/file.rs crates/ui-egui/src/lib.rs
@@ -8093,8 +8102,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Open the mailbox's folder"
-msgstr ""
+msgstr "פתח את תיקיית תיבת הדואר"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -9040,8 +9050,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Remove Everything"
-msgstr ""
+msgstr "הסר הכול"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -9050,8 +9061,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Remove MailCraft's Data"
-msgstr ""
+msgstr "הסר את הנתונים של MailCraft"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -9060,8 +9072,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Remove MailCraft's data from this computer…"
-msgstr ""
+msgstr "הסר את הנתונים של MailCraft ממחשב זה…"
 
 #. command label
 #: crates/engine/src/cmd/offline.rs
@@ -9156,8 +9169,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Removing MailCraft's data isn't available here"
-msgstr ""
+msgstr "הסרת הנתונים של MailCraft אינה זמינה כאן"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -10663,13 +10677,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Shows {path}, which holds the mailbox and the settings, in your file manager."
-msgstr ""
+msgstr "מציג במנהל הקבצים את {path}, המכיל את תיבת הדואר ואת ההגדרות."
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Shows {path}, which holds the mailbox open now, in your file manager. MailCraft's settings are in a folder of their own."
-msgstr ""
+msgstr "מציג במנהל הקבצים את {path}, המכיל את תיבת הדואר הפתוחה כעת. ההגדרות של MailCraft נשמרות בתיקייה נפרדת."
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -10978,8 +10994,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Some of it is still there, as listed above. MailCraft quits when you close this."
-msgstr ""
+msgstr "חלק מהנתונים נותרו במחשב, כמפורט לעיל. MailCraft ייסגר כשתסגור חלון זה."
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -11303,8 +11320,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "Take everything MailCraft keeps here with you when you are done: for a shared or work computer, or before deleting a portable copy."
-msgstr ""
+msgstr "לפני סיום השימוש במחשב משותף או במחשב עבודה, או לפני מחיקת גרסה ניידת, הסר מהמחשב את כל הנתונים ש־MailCraft שמר בו."
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -11948,8 +11966,9 @@ msgstr[1] ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "The folder isn't there."
-msgstr ""
+msgstr "התיקייה אינה קיימת."
 
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
@@ -12528,8 +12547,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "The system's credential store"
-msgstr ""
+msgstr "מאגר פרטי ההתחברות של המערכת"
 
 #. interface
 #: crates/ui-egui/src/lib.rs
@@ -12538,8 +12558,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "The system's credential store: {key}"
-msgstr ""
+msgstr "מאגר פרטי ההתחברות של המערכת: {key}"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
@@ -12604,8 +12625,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "There is no data folder to open here"
-msgstr ""
+msgstr "אין כאן תיקיית נתונים שאפשר לפתוח"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -12662,8 +12684,9 @@ msgstr "אי אפשר למזג אנשי קשר אלה כאן: ניתן לערו�
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "These could not be removed. Remove them yourself:"
-msgstr ""
+msgstr "לא ניתן היה להסיר את הפריטים הבאים. יש להסיר אותם ידנית:"
 
 #. interface
 #: crates/ui-egui/src/task_sync.rs
@@ -12677,8 +12700,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "These were left alone:"
-msgstr ""
+msgstr "הפריטים הבאים לא שונו:"
 
 #. interface
 #: crates/ui-egui/src/reading/remote.rs
@@ -13321,8 +13345,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "This removes everything MailCraft keeps on this computer: every account's mail, attachments, contacts, calendar and settings, the sign-ins remembered in the system's credential store, downloaded pictures, opened attachments and logs."
-msgstr ""
+msgstr "פעולה זו מסירה את כל הנתונים ש־MailCraft שומר במחשב זה: הודעות הדוא״ל, הקבצים המצורפים, אנשי הקשר, לוחות השנה וההגדרות של כל החשבונות, פרטי ההתחברות השמורים במאגר של המערכת, תמונות שהורדו, קבצים מצורפים שנפתחו וקובצי יומן."
 
 #. interface
 #: crates/ui-egui/src/report_problem.rs
@@ -15165,8 +15190,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "has too many files: the rest was not removed"
-msgstr ""
+msgstr "מכיל יותר מדי קבצים; יתר הקבצים לא הוסרו"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
@@ -15207,33 +15233,39 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "is a link: not followed, and nothing in it was removed"
-msgstr ""
+msgstr "הוא קישור; לא נעשה מעבר ליעד הקישור, ולא הוסר דבר מתוכנו"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "is nested too deep: left alone"
-msgstr ""
+msgstr "נמצא בעומק תיקיות רב מדי; לא שונה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "is outside the folder being cleared: left alone"
-msgstr ""
+msgstr "נמצא מחוץ לתיקייה שמנקים; לא שונה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "is part of a mailbox you opened from outside MailCraft's own folder: it is yours and was not touched"
-msgstr ""
+msgstr "שייך לתיבת דואר שנפתחה מחוץ לתיקייה של MailCraft; הוא נשאר ברשותך ולא שונה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "isn't a folder MailCraft keeps its data in: left alone"
-msgstr ""
+msgstr "אינו תיקייה שבה MailCraft שומר נתונים; לא שונה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "isn't a folder: left alone"
-msgstr ""
+msgstr "אינו תיקייה; לא שונה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -15262,8 +15294,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "it could not be removed"
-msgstr ""
+msgstr "לא ניתן היה להסיר אותו"
 
 #. name
 #: crates/engine/src/agent.rs
@@ -16796,8 +16829,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
+#, fuzzy
 msgid "was kept because the mailbox file beside it could not be removed: remove them together"
-msgstr ""
+msgstr "נשמר מפני שלא ניתן היה להסיר את קובץ תיבת הדואר שלצדו; יש להסיר את שניהם יחד"
 
 #. name
 #: crates/model/src/calendar.rs
