@@ -133,6 +133,20 @@ fn writing_brings_up_the_message_tab_and_errors_reach_the_status_bar() {
 }
 
 #[test]
+fn language_command_schema_lists_every_available_language() {
+    // Command discovery must not hide a language which the window can actually select.
+    let schema = crate::UI_COMMANDS
+        .iter()
+        .find(|(id, ..)| *id == "ui.language")
+        .map(|(_, _, _, schema)| *schema)
+        .unwrap_or("");
+    assert!(schema.contains("\"auto\""));
+    for lang in crate::i18n::Lang::available() {
+        assert!(schema.contains(&format!("\"{}\"", lang.code())), "ui.language schema omits {}", lang.code());
+    }
+}
+
+#[test]
 fn window_commands_validate() {
     let mut a = app();
     assert_eq!(a.execute("ui.theme", json!({"value": "dark"})).unwrap()["value"], "dark");
