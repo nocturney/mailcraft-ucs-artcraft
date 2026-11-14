@@ -79,7 +79,8 @@ mod hebrew_suggestion_layout_tests {
             for colored in [false, true] {
                 let (mark, name, address) = hebrew_suggestion_regions(row, colored, 75.0, true);
                 let address = address.expect("person's address stays visible on the left");
-                assert_eq!(name.width(), 75.0);
+                let room = width - 16.0 - if colored { MARK + 8.0 } else { 0.0 };
+                assert!((name.width() - 75.0_f32.min(room * 0.6)).abs() < 0.001);
                 assert!(address.min.x >= row.min.x + 8.0);
                 assert!(address.max.x + 8.0 <= name.min.x);
                 assert!(name.max.x <= row.max.x - 8.0);
