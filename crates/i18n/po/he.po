@@ -1356,8 +1356,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "As Folders"
-msgstr ""
+msgstr "כתיקיות"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -2088,8 +2089,9 @@ msgstr "לשנות פגישה זו?"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Change View"
-msgstr ""
+msgstr "שינוי תצוגה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2314,8 +2316,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Choose a folder"
-msgstr ""
+msgstr "בחירת תיקייה"
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -2736,8 +2739,9 @@ msgstr "העתק את מספר הגרסה, פרטי הפלטפורמה ואת ס
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Copy to Folder"
-msgstr ""
+msgstr "העתקה לתיקייה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -2948,8 +2952,9 @@ msgstr "תיבת הדואר הנוכחית"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Current View"
-msgstr ""
+msgstr "תצוגה נוכחית"
 
 #. command label, name
 #: crates/engine/src/cmd/format.rs crates/ui-egui/src/menubar.rs
@@ -3780,8 +3785,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Empty Folder"
-msgstr ""
+msgstr "ריקון תיקייה"
 
 #. interface
 #, fuzzy
@@ -3945,8 +3951,9 @@ msgstr ""
 
 #. command label
 #: crates/ui-egui/src/lib.rs
+#, fuzzy
 msgid "Expand or Collapse Folder"
-msgstr ""
+msgstr "הרחבה או כיווץ של תיקייה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -4072,8 +4079,9 @@ msgstr ""
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Filter"
-msgstr ""
+msgstr "סינון"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -4084,13 +4092,15 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Filter Email"
-msgstr ""
+msgstr "סינון דואר אלקטרוני"
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Filter Tasks"
-msgstr ""
+msgstr "סינון משימות"
 
 #. command label, interface, ribbon, ribbon location
 #: crates/engine/src/cmd/calendar/share.rs crates/engine/src/cmd/edit.rs crates/engine/src/cmd/mail.rs crates/engine/src/cmd/people.rs crates/engine/src/cmd/view.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/ribbon.rs
@@ -4105,13 +4115,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
+#, fuzzy
 msgid "Find Next"
-msgstr ""
+msgstr "חיפוש הבא"
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Find Related Messages"
-msgstr ""
+msgstr "חיפוש הודעות קשורות"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -4121,8 +4133,9 @@ msgstr "חיפוש מועד"
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
+#, fuzzy
 msgid "Find what"
-msgstr ""
+msgstr "מה לחפש"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -4881,8 +4894,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/nav.rs
+#, fuzzy
 msgid "Hide the folder pane"
-msgstr ""
+msgstr "הסתרת חלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -6449,8 +6463,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/find_replace.rs
+#, fuzzy
 msgid "Match case"
-msgstr ""
+msgstr "התאמה לאותיות רישיות וקטנות"
 
 #. date and time
 #: crates/i18n/src/date.rs
@@ -6514,8 +6529,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Message Preview"
-msgstr ""
+msgstr "תצוגה מקדימה של הודעה"
 
 #. interface, ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/engine/src/cmd/view/display.rs crates/ui-egui/src/folder_properties.rs crates/ui-egui/src/ribbon.rs
@@ -6777,8 +6793,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Move Folder"
-msgstr ""
+msgstr "העברת תיקייה"
 
 #. interface
 #: crates/ui-egui/src/move_items.rs
@@ -6838,8 +6855,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/lib.rs crates/ui-egui/src/opened_message.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Move to Folder"
-msgstr ""
+msgstr "העברה לתיקייה"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
@@ -6859,8 +6877,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/forms.rs
+#, fuzzy
 msgid "Move to folder"
-msgstr ""
+msgstr "העברה לתיקייה"
 
 #. command label
 #: crates/engine/src/cmd/calendar.rs
@@ -7042,8 +7061,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "New Folder"
-msgstr ""
+msgstr "תיקייה חדשה"
 
 #. ribbon
 #: crates/ui-egui/src/ribbon.rs
@@ -7225,8 +7245,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
+#, fuzzy
 msgid "No appointment matches."
-msgstr ""
+msgstr "לא נמצאו פגישות מתאימות."
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -7321,8 +7342,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/move_items.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "No folders match"
-msgstr ""
+msgstr "לא נמצאו תיקיות מתאימות"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -7361,8 +7383,9 @@ msgstr "לא זמין כלי מקומי לתצוגה מקדימה של קובץ 
 
 #. interface
 #: crates/ui-egui/src/ribbon/view_menus.rs
+#, fuzzy
 msgid "No recent searches"
-msgstr ""
+msgstr "אין חיפושים אחרונים"
 
 #. interface
 #: crates/ui-egui/src/reminders.rs
@@ -7447,8 +7470,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
+#, fuzzy
 msgid "Nobody matches the search"
-msgstr ""
+msgstr "לא נמצאו אנשי קשר התואמים לחיפוש"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -7622,18 +7646,21 @@ msgstr "לא מתבצעת שליחה או קבלה של דואר. לחץ כדי 
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Nothing matches the search."
-msgstr ""
+msgstr "לא נמצאו תוצאות התואמות לחיפוש."
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Nothing matches this filter."
-msgstr ""
+msgstr "לא נמצאו פריטים התואמים למסנן זה."
 
 #. interface
 #: crates/ui-egui/src/pick_item.rs
+#, fuzzy
 msgid "Nothing matches."
-msgstr ""
+msgstr "לא נמצאו פריטים מתאימים."
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -8547,13 +8574,15 @@ msgstr ""
 
 #. interface, name
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/signatures.rs
+#, fuzzy
 msgid "Preview"
-msgstr ""
+msgstr "תצוגה מקדימה"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/reading.rs
+#, fuzzy
 msgid "Preview Attachment"
-msgstr ""
+msgstr "תצוגה מקדימה של קובץ מצורף"
 
 #. interface
 #: crates/ui-egui/src/attachment_preview.rs
@@ -8839,8 +8868,9 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Recent Searches"
-msgstr ""
+msgstr "חיפושים אחרונים"
 
 #. interface
 #: crates/ui-egui/src/people_view.rs
@@ -9110,8 +9140,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/folder.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Rename Folder"
-msgstr ""
+msgstr "שינוי שם תיקייה"
 
 #. command label
 #: crates/engine/src/cmd/signature.rs
@@ -9310,8 +9341,9 @@ msgstr ""
 
 #. command label, interface
 #: crates/engine/src/cmd/view.rs crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Reverse Sort"
-msgstr ""
+msgstr "היפוך סדר המיון"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -9766,13 +9798,15 @@ msgstr ""
 
 #. command label, interface, name
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/meeting_dialogs.rs
+#, fuzzy
 msgid "Search Calendar"
-msgstr ""
+msgstr "חיפוש בלוח השנה"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Search Commands"
-msgstr ""
+msgstr "חיפוש פקודות"
 
 #. command label
 #: crates/engine/src/cmd/people.rs
@@ -9786,33 +9820,39 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
+#, fuzzy
 msgid "Search again"
-msgstr ""
+msgstr "חיפוש מחדש"
 
 #. interface
 #: crates/ui-egui/src/pick_item.rs
+#, fuzzy
 msgid "Search by subject or sender"
-msgstr ""
+msgstr "חיפוש לפי נושא או שולח"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Search commands"
-msgstr ""
+msgstr "חיפוש פקודות"
 
 #. interface
 #: crates/ui-egui/src/pick_item.rs
+#, fuzzy
 msgid "Search contacts"
-msgstr ""
+msgstr "חיפוש אנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/move_items.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "Search folders"
-msgstr ""
+msgstr "חיפוש תיקיות"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
+#, fuzzy
 msgid "Search in"
-msgstr ""
+msgstr "חיפוש בתוך"
 
 #. interface
 #, fuzzy
@@ -9834,8 +9874,9 @@ msgstr "חיפוש באנשי קשר"
 
 #. interface
 #: crates/ui-egui/src/zones.rs
+#, fuzzy
 msgid "Search time zones"
-msgstr ""
+msgstr "חיפוש אזורי זמן"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
@@ -10515,8 +10556,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/nav.rs
+#, fuzzy
 msgid "Show the folder pane"
-msgstr ""
+msgstr "הצגת חלונית התיקיות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
@@ -10893,8 +10935,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
+#, fuzzy
 msgid "Some of the search was checked on this computer"
-msgstr ""
+msgstr "חלק מהחיפוש בוצע במחשב זה"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs crates/ui-egui/src/reading/invitation.rs
@@ -10918,8 +10961,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/credits.rs
+#, fuzzy
 msgid "Sort by"
-msgstr ""
+msgstr "מיין לפי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -11013,8 +11057,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "Still indexing: some older mail is searched more slowly"
-msgstr ""
+msgstr "יצירת האינדקס נמשכת: החיפוש בהודעות ישנות עשוי להיות איטי יותר"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
@@ -13877,8 +13922,9 @@ msgstr ""
 
 #. command label, interface, ribbon
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/mail_view.rs crates/ui-egui/src/ribbon.rs
+#, fuzzy
 msgid "View Source"
-msgstr ""
+msgstr "הצגת המקור"
 
 #. interface, name
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/theme/accent.rs
@@ -16934,8 +16980,9 @@ msgstr "{counted} · מושהה עד השליחה והקבלה הבאות"
 
 #. interface
 #: crates/ui-egui/src/mail_view.rs
+#, fuzzy
 msgid "{count} messages weren't searched in full: only their beginning is here until they download."
-msgstr ""
+msgstr "לא נערך חיפוש מלא ב־{count} הודעות: עד להורדתן זמינה רק תחילתן."
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
