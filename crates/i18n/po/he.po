@@ -1632,97 +1632,81 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies are off"
 msgstr "תשובות אוטומטיות כבויות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies are on"
 msgstr "תשובות אוטומטיות מופעלות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies are set for the time range you chose"
 msgstr "התשובות האוטומטיות מוגדרות לטווח הזמנים שבחרת"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: MailCraft needs you to sign in again to read them"
 msgstr "תשובות אוטומטיות: יש להתחבר מחדש כדי ש־MailCraft יוכל לקרוא אותן"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: Microsoft no longer takes the sign-in"
 msgstr "תשובות אוטומטיות: Microsoft כבר אינה מאשרת את ההתחברות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: asking for your permission to change them…"
 msgstr "תשובות אוטומטיות: מבקש הרשאה לשנות אותן…"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: changing them not allowed ({why})"
-msgstr "תשובות אוטומטיות: השינוי לא אושר ({why})"
+msgstr "תשובות אוטומטיות: אין הרשאה לשנות אותן ({why})"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: changing them waits for your permission"
 msgstr "תשובות אוטומטיות: השינוי ממתין להרשאתך"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: couldn't be read ({why})"
 msgstr "תשובות אוטומטיות: הקריאה נכשלה ({why})"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: during a time range"
 msgstr "תשובות אוטומטיות: בטווח זמנים מוגדר"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: from {start} to {end}"
 msgstr "תשובות אוטומטיות: מ־{start} עד {end}"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: not read yet"
 msgstr "תשובות אוטומטיות: טרם נקראו"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: off"
 msgstr "תשובות אוטומטיות: כבויות"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: on, until you turn them off"
 msgstr "תשובות אוטומטיות: מופעלות עד שתכבה אותן"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: reading…"
-msgstr "תשובות אוטומטיות: קורא…"
+msgstr "תשובות אוטומטיות: מתבצעת קריאה…"
 
 #. interface
 #: crates/ui-egui/src/auto_replies.rs
-#, fuzzy
 msgid "Automatic replies: your organisation doesn't let MailCraft change them"
 msgstr "תשובות אוטומטיות: הארגון שלך אינו מאפשר ל־MailCraft לשנות אותן"
 
@@ -1756,7 +1740,6 @@ msgstr "חזרה"
 
 #. interface
 #: crates/ui-egui/src/send_receive.rs
-#, fuzzy
 msgid "Back online"
 msgstr "החיבור חודש"
 
@@ -1922,13 +1905,11 @@ msgstr "צבע לוח השנה"
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
-#, fuzzy
 msgid "Calendar Connection Check"
 msgstr "בדיקת חיבור ללוח השנה"
 
 #. interface
 #: crates/ui-egui/src/open_shared.rs
-#, fuzzy
 msgid "Calendar Listed Twice"
 msgstr "לוח השנה מופיע פעמיים"
 
@@ -1949,37 +1930,31 @@ msgid "Calendars you opened by address need your permission to be read: open one
 msgstr ""
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: allowed"
 msgstr "לוחות שנה: ניתנה הרשאה"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: allowed, reading them…"
 msgstr "לוחות שנה: ניתנה הרשאה, מתבצעת קריאה…"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: asking for your permission…"
-msgstr "לוחות שנה: מתבצעת בקשת הרשאה…"
+msgstr "לוחות שנה: מתבקשת הרשאתך…"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: not allowed ({why})"
 msgstr "לוחות שנה: לא ניתנה הרשאה ({why})"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: not asked yet (ticking one of them asks)"
 msgstr "לוחות שנה: טרם התבקשה הרשאה (סימון אחד מהם יציג בקשה)"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/shared_calendars.rs
 msgid "Calendars: waiting for your permission"
 msgstr "לוחות שנה: ממתינים להרשאה"
@@ -2241,25 +2216,21 @@ msgstr "בדוק נגישות"
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/reading/signature.rs
-#, fuzzy
 msgid "Check Again"
 msgstr "בדוק שוב"
 
 #. command label, interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/dialogs.rs crates/ui-egui/src/lib.rs
 msgid "Check Calendar Connection"
 msgstr "בדיקת החיבור ללוח השנה"
 
 #. command label, interface
 #: crates/engine/src/cmd/compose.rs crates/ui-egui/src/forms.rs
-#, fuzzy
 msgid "Check Names"
 msgstr "בדוק שמות"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Check Now"
 msgstr "בדיקה כעת"
 
@@ -2270,29 +2241,24 @@ msgstr ""
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Check for New Versions"
 msgstr "בדוק אם קיימות גרסאות חדשות"
 
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/updates.rs
-#, fuzzy
 msgid "Check for Updates"
 msgstr "בדוק אם קיימים עדכונים"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
-#, fuzzy
 msgid "Check for new versions"
 msgstr "בדיקת גרסאות חדשות"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-#, fuzzy
 msgid "Check the account's settings"
 msgstr "בדיקת הגדרות החשבון"
 
-#, fuzzy
 #. interface
 #: crates/ui-egui/src/security.rs
 msgid "Checked with its certification authority"
@@ -2300,21 +2266,18 @@ msgstr "נבדק מול רשות האישורים"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
-#, fuzzy
 msgid "Checking for a new version…"
 msgstr "בודק אם קיימת גרסה חדשה…"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-#, fuzzy
 msgid "Checking the account stopped unexpectedly"
 msgstr "בדיקת החשבון הופסקה באופן בלתי צפוי"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
-#, fuzzy
 msgid "Checking the account…"
-msgstr "בודק את החשבון…"
+msgstr "מתבצעת בדיקת החשבון…"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -2323,9 +2286,8 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/calendar_sync.rs
-#, fuzzy
 msgid "Checking the calendar connection…"
-msgstr "בודק את החיבור ללוח השנה…"
+msgstr "מתבצעת בדיקת החיבור ללוח השנה…"
 
 #. what a command says
 #: crates/model/src/sync/progress.rs
@@ -2334,14 +2296,12 @@ msgid "Checking {folder} ({done} of {total})"
 msgstr "בודק את {folder} ({done} מתוך {total})"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Checking: the report comes in a moment…"
 msgstr "מתבצעת בדיקה: הדוח יופיע בעוד רגע…"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
-#, fuzzy
 msgid "Checking…"
 msgstr "מתבצעת בדיקה…"
 
