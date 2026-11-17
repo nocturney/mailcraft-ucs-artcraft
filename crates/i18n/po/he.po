@@ -804,8 +804,9 @@ msgstr "הוסף מספר טלפון נוסף"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Add as a Microsoft account"
-msgstr ""
+#, fuzzy
+msgid Add as a Microsoft account"
+msgstr "הוסף כחשבון Microsoft"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
@@ -1036,8 +1037,9 @@ msgstr "כבר נמצא באנשי הקשר שלך"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
-msgid "Also Hotmail, Live and MSN"
-msgstr ""
+#, fuzzy
+msgid Also Hotmail, Live and MSN"
+msgstr "כולל Hotmail, Live ו־MSN"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -1084,8 +1086,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "An Exchange server or IMAP?"
-msgstr ""
+#, fuzzy
+msgid An Exchange server or IMAP?"
+msgstr "שרת Exchange או IMAP?"
 
 #. interface
 #: crates/ui-egui/src/security.rs
@@ -1129,8 +1132,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "An application ID is letters, digits, dots and dashes"
-msgstr ""
+#, fuzzy
+msgid An application ID is letters, digits, dots and dashes"
+msgstr "מזהה יישום מורכב מאותיות, ספרות, נקודות ומקפים"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -1458,8 +1462,9 @@ msgstr "כפי שהנמענים רואים אותה"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "As the people you write to see it"
-msgstr ""
+#, fuzzy
+msgid As the people you write to see it"
+msgstr "כפי שהוא מוצג לאנשים שאליהם אתה כותב"
 
 #. interface
 #, fuzzy
@@ -1538,8 +1543,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Asking your domain's DNS…"
-msgstr ""
+#, fuzzy
+msgid Asking your domain's DNS…"
+msgstr "מתבצעת בדיקה ברשומות ה־DNS של הדומיין שלך…"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -4935,8 +4941,9 @@ msgstr "קטגוריות Gmail"
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
-msgid "Gmail and Google Workspace"
-msgstr ""
+#, fuzzy
+msgid Gmail and Google Workspace"
+msgstr "Gmail ו־Google Workspace"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -5088,8 +5095,9 @@ msgstr "הכניסה באמצעות Google לא הושלמה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Google sign-in didn't work"
-msgstr ""
+#, fuzzy
+msgid Google sign-in didn't work"
+msgstr "ההתחברות באמצעות Google נכשלה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -5116,13 +5124,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "Google sign-in needs Google's IMAP server"
-msgstr ""
+#, fuzzy
+msgid Google sign-in needs Google's IMAP server"
+msgstr "התחברות באמצעות Google מחייבת שימוש בשרת ה־IMAP של Google"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Google sign-in was declined"
-msgstr ""
+#, fuzzy
+msgid Google sign-in was declined"
+msgstr "בקשת ההתחברות באמצעות Google נדחתה"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -5382,8 +5392,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "If that page says you need admin approval"
-msgstr ""
+#, fuzzy
+msgid If that page says you need admin approval"
+msgstr "אם בדף מצוין שנדרש אישור ממנהל המערכת"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -5830,8 +5841,9 @@ msgstr "הזמנת משתתפים"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Issued by"
-msgstr ""
+#, fuzzy
+msgid Issued by"
+msgstr "הונפק על ידי"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -5840,8 +5852,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Issued to"
-msgstr ""
+#, fuzzy
+msgid Issued to"
+msgstr "הונפק עבור"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs.rs
@@ -6403,8 +6416,9 @@ msgstr "כתובת דומה ומטעה."
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Looking at the server's certificate…"
-msgstr ""
+#, fuzzy
+msgid Looking at the server's certificate…"
+msgstr "מתבצעת בדיקה של אישור האבטחה של השרת…"
 
 #. interface
 #: crates/ui-egui/src/reading/invitation.rs
@@ -6413,8 +6427,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Looking for your Exchange server…"
-msgstr ""
+#, fuzzy
+msgid Looking for your Exchange server…"
+msgstr "מתבצע חיפוש של שרת Exchange שלך…"
 
 #. interface
 #: crates/ui-egui/src/import_tree.rs
@@ -7041,8 +7056,9 @@ msgstr ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
-msgid "Microsoft 365"
-msgstr ""
+#, fuzzy
+msgid Microsoft 365"
+msgstr "Microsoft 365"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -7103,8 +7119,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Microsoft's approval page is open in your browser"
-msgstr ""
+#, fuzzy
+msgid Microsoft's approval page is open in your browser"
+msgstr "דף האישור של Microsoft פתוח בדפדפן שלך"
 
 #. interface
 #: crates/ui-egui/src/approval.rs
@@ -7123,8 +7140,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
-msgid "Microsoft's server couldn't be reached. Click to try again."
-msgstr ""
+#, fuzzy
+msgid Microsoft's server couldn't be reached. Click to try again."
+msgstr "לא ניתן להגיע לשרת של Microsoft. לחץ כדי לנסות שוב."
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -7169,8 +7187,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "More about this"
-msgstr ""
+#, fuzzy
+msgid More about this"
+msgstr "מידע נוסף בנושא"
 
 #. interface
 #: crates/ui-egui/src/forms.rs crates/ui-egui/src/ribbon.rs
@@ -7179,8 +7198,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
-msgid "More results on the server"
-msgstr ""
+#, fuzzy
+msgid More results on the server"
+msgstr "תוצאות נוספות בשרת"
 
 #. what a command says
 #: crates/engine/src/cmd/search_server.rs
@@ -7888,8 +7908,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/approval.rs
-msgid "No sign-in with Microsoft is under way"
-msgstr ""
+#, fuzzy
+msgid No sign-in with Microsoft is under way"
+msgstr "לא מתבצעת כעת התחברות באמצעות Microsoft"
 
 #. interface
 #: crates/ui-egui/src/ribbon.rs
@@ -7992,8 +8013,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Not an Exchange server? Set it up with IMAP"
-msgstr ""
+#, fuzzy
+msgid Not an Exchange server? Set it up with IMAP"
+msgstr "זה אינו שרת Exchange? הגדר אותו באמצעות IMAP"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -8018,8 +8040,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs crates/ui-egui/src/server_search.rs
-msgid "Not connected"
-msgstr ""
+#, fuzzy
+msgid Not connected"
+msgstr "לא מחובר"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
@@ -8049,8 +8072,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/task_sync.rs
-msgid "Not now"
-msgstr ""
+#, fuzzy
+msgid Not now"
+msgstr "לא עכשיו"
 
 #. interface
 #: crates/ui-egui/src/updates.rs
@@ -8137,8 +8161,9 @@ msgstr "לא נמצאו פריטים מתאימים."
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
-msgid "Nothing more was found on the server"
-msgstr ""
+#, fuzzy
+msgid Nothing more was found on the server"
+msgstr "לא נמצאו תוצאות נוספות בשרת"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
@@ -8230,8 +8255,9 @@ msgstr "בשרת"
 
 #. interface
 #: crates/ui-egui/src/mail_view/server_rows.rs
-msgid "On the server · Searching…"
-msgstr ""
+#, fuzzy
+msgid On the server · Searching…"
+msgstr "בשרת · מתבצע חיפוש…"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -8563,8 +8589,9 @@ msgstr "פתיחת ההודעה"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Open the page again"
-msgstr ""
+#, fuzzy
+msgid Open the page again"
+msgstr "פתח את הדף שוב"
 
 #. interface
 #: crates/ui-egui/src/reading/sharing.rs
@@ -9067,8 +9094,9 @@ msgstr "מכין תצוגה מקדימה של הקובץ המצורף…"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "Press Send/Receive to download your mail."
-msgstr ""
+#, fuzzy
+msgid Press Send/Receive to download your mail."
+msgstr "לחץ על שלח/קבל כדי להוריד את הדואר שלך."
 
 #. interface, name
 #: crates/engine/src/cmd/view/display.rs crates/ui-egui/src/signatures.rs
@@ -10826,13 +10854,15 @@ msgstr "תעודת האבטחה של השרת"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Server address (Exchange Web Services)"
-msgstr ""
+#, fuzzy
+msgid Server address (Exchange Web Services)"
+msgstr "כתובת השרת (Exchange Web Services)"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Server settings"
-msgstr ""
+#, fuzzy
+msgid Server settings"
+msgstr "הגדרות שרת"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -10846,13 +10876,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Set up manually"
-msgstr ""
+#, fuzzy
+msgid Set up manually"
+msgstr "הגדרה ידנית"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Setting up the account stopped unexpectedly"
-msgstr ""
+#, fuzzy
+msgid Setting up the account stopped unexpectedly"
+msgstr "תהליך הגדרת החשבון הופסק באופן בלתי צפוי"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -11210,13 +11242,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Sign in again, asking for mail alone"
-msgstr ""
+#, fuzzy
+msgid Sign in again, asking for mail alone"
+msgstr "התחבר שוב ובקש גישה לדואר בלבד"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Sign in again, once an administrator has approved"
-msgstr ""
+#, fuzzy
+msgid Sign in again, once an administrator has approved"
+msgstr "התחבר שוב לאחר אישור מנהל המערכת"
 
 #. interface
 #: crates/ui-egui/src/backstage.rs
@@ -13482,8 +13516,9 @@ msgstr[1] ""
 
 #. name
 #: crates/ui-egui/src/account_setup.rs
-msgid "This device only"
-msgstr ""
+#, fuzzy
+msgid This device only"
+msgstr "במכשיר זה בלבד"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -13569,8 +13604,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "This isn't the account you typed"
-msgstr ""
+#, fuzzy
+msgid This isn't the account you typed"
+msgstr "זה אינו החשבון שהזנת"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -13614,8 +13650,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "This mailbox is in Microsoft 365"
-msgstr ""
+#, fuzzy
+msgid This mailbox is in Microsoft 365"
+msgstr "תיבת דואר זו נמצאת ב־Microsoft 365"
 
 #. interface
 #, fuzzy
@@ -14123,13 +14160,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Trust this certificate for this account"
-msgstr ""
+#, fuzzy
+msgid Trust this certificate for this account"
+msgstr "תן אמון באישור אבטחה זה עבור החשבון"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
-msgid "Trust this server's certificate?"
-msgstr ""
+#, fuzzy
+msgid Trust this server's certificate?"
+msgstr "לתת אמון באישור האבטחה של השרת?"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -14340,8 +14379,9 @@ msgstr "מעדכן את {account}"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "Use Google sign-in instead"
-msgstr ""
+#, fuzzy
+msgid Use Google sign-in instead"
+msgstr "השתמש בהתחברות באמצעות Google במקום זאת"
 
 #. interface
 #, fuzzy
@@ -14366,13 +14406,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/help.rs
-msgid "Use an app password"
-msgstr ""
+#, fuzzy
+msgid Use an app password"
+msgstr "השתמש בסיסמה ליישום"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "Use an app password instead"
-msgstr ""
+#, fuzzy
+msgid Use an app password instead"
+msgstr "השתמש בסיסמה ליישום במקום זאת"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -14397,8 +14439,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs
-msgid "User name"
-msgstr ""
+#, fuzzy
+msgid User name"
+msgstr "שם משתמש"
 
 #. interface
 #: crates/ui-egui/src/ews_setup.rs
@@ -14510,8 +14553,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/approval.rs
-msgid "Waiting for the approval stopped unexpectedly"
-msgstr ""
+#, fuzzy
+msgid Waiting for the approval stopped unexpectedly"
+msgstr "ההמתנה לאישור הופסקה באופן בלתי צפוי"
 
 #. interface
 #: crates/ui-egui/src/credits.rs
@@ -14592,8 +14636,9 @@ msgstr ""
 
 #. interface, name
 #: crates/engine/src/sync_driver/favorites.rs crates/ui-egui/src/account_setup/help.rs
-msgid "What to do next"
-msgstr ""
+#, fuzzy
+msgid What to do next"
+msgstr "מה לעשות כעת"
 
 #. interface
 #: crates/ui-egui/src/graph_fetch.rs
@@ -14819,13 +14864,15 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/compose/editor.rs
-msgid "Write your message"
-msgstr ""
+#, fuzzy
+msgid Write your message"
+msgstr "כתוב את ההודעה שלך"
 
 #. interface
 #: crates/ui-egui/src/compose/editor.rs
-msgid "Write your signature"
-msgstr ""
+#, fuzzy
+msgid Write your signature"
+msgstr "כתוב את החתימה שלך"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -15047,8 +15094,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
-msgid "Your name"
-msgstr ""
+#, fuzzy
+msgid Your name"
+msgstr "השם שלך"
 
 #. interface
 #: crates/ui-egui/src/account_setup/exchange.rs
@@ -15084,8 +15132,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/approval.rs
-msgid "Your organisation has approved MailCraft"
-msgstr ""
+#, fuzzy
+msgid Your organisation has approved MailCraft"
+msgstr "הארגון שלך אישר את MailCraft"
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -15094,8 +15143,9 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
-msgid "Your organisation has to approve MailCraft first"
-msgstr ""
+#, fuzzy
+msgid Your organisation has to approve MailCraft first"
+msgstr "הארגון שלך צריך לאשר תחילה את MailCraft"
 
 #. interface
 #: crates/ui-egui/src/nav.rs
