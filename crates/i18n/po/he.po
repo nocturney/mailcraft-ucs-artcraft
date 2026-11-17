@@ -2478,7 +2478,6 @@ msgstr "סגור חתימה"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Close Window"
 msgstr "סגור חלון"
 
@@ -2532,7 +2531,6 @@ msgstr "חברה"
 
 #. interface
 #: crates/ui-egui/src/security.rs
-#, fuzzy
 msgid "Compare fingerprint…"
 msgstr "השוואת טביעת אצבע…"
 
@@ -2553,23 +2551,19 @@ msgstr ""
 
 #. interface, name, what a command says
 #: crates/engine/src/cmd/tasks/status.rs crates/engine/src/session.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/tasks_view.rs
-#, fuzzy
 msgid "Completed"
 msgstr "הושלם"
 
 #. interface
 #: crates/ui-egui/src/tasks_view.rs
-#, fuzzy
 msgid "Completed on {date}"
-msgstr "הושלמה בתאריך {date}"
+msgstr "הושלם בתאריך {date}"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
-#, fuzzy
 msgid "Completed."
 msgstr "הושלם."
 
-#, fuzzy
 #. command label, interface
 #: crates/ui-egui/src/lib.rs crates/ui-egui/src/unconfirmed.rs
 msgid "Confirm Servers"
@@ -2577,19 +2571,16 @@ msgstr "אשר שרתים"
 
 #. interface
 #: crates/ui-egui/src/unconfirmed.rs
-#, fuzzy
 msgid "Confirm servers"
 msgstr "אישור שרתים"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/calendar_view.rs
-#, fuzzy
 msgid "Connect"
-msgstr "התחברות"
+msgstr "התחבר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Connect Calendar and Contacts"
 msgstr "חבר לוח שנה ואנשי קשר"
 
@@ -2599,20 +2590,17 @@ msgid "Connect Outlook's Favorites"
 msgstr ""
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Connect calendar and contacts"
 msgstr "חיבור לוח שנה ואנשי קשר"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Connect to Microsoft (mail, calendar and contacts)"
 msgstr "התחברות ל־Microsoft (דואר, לוח שנה ואנשי קשר)"
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
-#, fuzzy
 msgid "Connect to show your category colours and working hours"
 msgstr "התחבר כדי להציג את צבעי הקטגוריות ואת שעות העבודה שלך"
 
@@ -2624,7 +2612,6 @@ msgstr "מתחבר לשרת הדואר"
 
 #. interface, ribbon location
 #: crates/engine/src/cmd/people.rs crates/ui-egui/src/forms.rs crates/ui-egui/src/people_view.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Contact"
 msgstr "איש קשר"
 
@@ -2637,7 +2624,6 @@ msgstr ""
 
 #. command label, ribbon
 #: crates/engine/src/cmd/calendar/share.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Contact Attendees"
 msgstr "צור קשר עם המשתתפים"
 
@@ -2649,24 +2635,20 @@ msgstr "כרטיס איש קשר"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Contacts don't go to Deleted Items."
 msgstr "אנשי קשר אינם מועברים לפריטים שנמחקו."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/account_setup/exchange.rs crates/ui-egui/src/auto_replies.rs crates/ui-egui/src/open_shared.rs crates/ui-egui/src/opening.rs crates/ui-egui/src/rule_sync.rs crates/ui-egui/src/shared_calendars.rs crates/ui-egui/src/shared_mailboxes.rs crates/ui-egui/src/task_sync.rs
-#, fuzzy
 msgid "Continue"
 msgstr "המשך"
 
 #. interface
 #: crates/ui-egui/src/reading.rs
-#, fuzzy
 msgid "Continue editing"
 msgstr "המשך בעריכה"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/backstage.rs
 msgid "Contributors"
 msgstr "תורמים"
@@ -2694,7 +2676,6 @@ msgid ""
 msgstr ""
 
 #. command label, interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/lib.rs
 msgid "Copy Diagnostics"
 msgstr "העתק מידע לאבחון"
@@ -2707,9 +2688,8 @@ msgstr "העתקת אירוע"
 
 #. interface, name
 #: crates/ui-egui/src/move_items.rs
-#, fuzzy
 msgid "Copy Items"
-msgstr "העתקת פריטים"
+msgstr "העתק פריטים"
 
 #. interface
 #: crates/ui-egui/src/forms.rs
@@ -2718,15 +2698,13 @@ msgstr "העתק קישור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Copy Link Address"
-msgstr "העתקת כתובת קישור"
+msgstr "העתק כתובת קישור"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Copy Selected Text"
-msgstr "העתקת הטקסט שנבחר"
+msgstr "העתק את הטקסט שנבחר"
 
 #. command label
 #: crates/ui-egui/src/lib.rs
@@ -2735,31 +2713,26 @@ msgstr ""
 
 #. command label
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Copy a Message for My Administrator"
 msgstr "העתק הודעה למנהל המערכת שלי"
 
 #. interface, name
 #: crates/engine/src/sync_driver/favorites.rs crates/ui-egui/src/account_setup/help.rs
-#, fuzzy
 msgid "Copy a message for my administrator"
 msgstr "העתק הודעה למנהל המערכת שלי"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs crates/ui-egui/src/view_source.rs
-#, fuzzy
 msgid "Copy all of it"
-msgstr "העתקת הכול"
+msgstr "העתק הכול"
 
 #. interface
 #: crates/ui-egui/src/sync_panel.rs
-#, fuzzy
 msgid "Copy problems"
-msgstr "העתק בעיות"
+msgstr "העתק את פירוט הבעיות"
 
 #. interface
 #: crates/ui-egui/src/move_items.rs
-#, fuzzy
 msgid "Copy the selected items to the folder:"
 msgstr "העתק את הפריטים שנבחרו לתיקייה:"
 
@@ -2771,11 +2744,9 @@ msgstr "העתק את מספר הגרסה, פרטי הפלטפורמה ואת ס
 
 #. command label, interface
 #: crates/engine/src/cmd/mail.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Copy to Folder"
-msgstr "העתקה לתיקייה"
+msgstr "העתק לתיקייה"
 
-#, fuzzy
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
 msgid "Could not open Google sign-in"
@@ -2825,7 +2796,6 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/updates.rs
-#, fuzzy
 msgid "Couldn't find out whether a new version is out: {why}."
 msgstr "לא ניתן לבדוק אם זמינה גרסה חדשה: {why}."
 
@@ -2887,7 +2857,6 @@ msgstr ""
 
 #. interface
 #: crates/ui-egui/src/opening.rs
-#, fuzzy
 msgid "Couldn't open {name}: {error}"
 msgstr "לא ניתן לפתוח את {name}: {error}"
 
@@ -2930,7 +2899,6 @@ msgstr "לא ניתן לשמור בשרת את הטיוטה '{subject}': השר�
 
 #. interface
 #: crates/ui-egui/src/lib.rs
-#, fuzzy
 msgid "Couldn't save the mailbox: {error}"
 msgstr "לא ניתן לשמור את תיבת הדואר: {error}"
 
@@ -2964,7 +2932,6 @@ msgstr "מדינה"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
-#, fuzzy
 msgid "Create Message"
 msgstr "יצירת הודעה"
 
@@ -2986,20 +2953,17 @@ msgid "Create from details"
 msgstr "יצירה מתוך פרטים"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs
 msgid "Current Folder"
 msgstr "התיקייה הנוכחית"
 
 #. interface
-#, fuzzy
 #: crates/ui-egui/src/chrome.rs crates/ui-egui/src/mail_view.rs
 msgid "Current Mailbox"
 msgstr "תיבת הדואר הנוכחית"
 
 #. ribbon, ribbon location
 #: crates/engine/src/cmd/view.rs crates/engine/src/cmd/view/display.rs crates/ui-egui/src/ribbon.rs
-#, fuzzy
 msgid "Current View"
 msgstr "תצוגה נוכחית"
 
@@ -3020,7 +2984,6 @@ msgstr "כהה"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
-#, fuzzy
 msgid "Data on this computer"
 msgstr "נתונים במחשב זה"
 
@@ -3045,19 +3008,16 @@ msgstr "תאריך ושעה"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Date (YYYY-MM-DD)"
 msgstr "תאריך (YYYY-MM-DD)"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
-#, fuzzy
 msgid "Date and Time"
 msgstr "תאריך ושעה"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs
-#, fuzzy
 msgid "Date received"
 msgstr "תאריך קבלה"
 
