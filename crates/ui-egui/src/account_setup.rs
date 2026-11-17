@@ -2543,7 +2543,8 @@ fn field(ui: &mut Ui, pass: &mut Pass, key: &'static str, label: &str, value: &m
 /// ports with and without TLS from the first byte, shown as the hint.
 fn server_row(ui: &mut Ui, pass: &mut Pass, label: &str, key: &'static str, server: &mut ServerFields, host_hint: &str, ports: (u16, u16)) {
     caption(ui, label, &pass.t);
-    ui.horizontal(|ui| {
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let draw = |ui: &mut Ui| {
         let mut choices = vec![(Security::Tls, "TLS"), (Security::StartTls, "STARTTLS")];
         // An account that came with an unencrypted server (one on this computer) shows it.
         if server.security == Security::None {
@@ -2574,20 +2575,37 @@ fn server_row(ui: &mut Ui, pass: &mut Pass, label: &str, key: &'static str, serv
         if server.port.chars().any(|c| !c.is_ascii_digit()) || server.port.chars().count() > 5 {
             server.port = server.port.chars().filter(char::is_ascii_digit).take(5).collect();
         }
-        encryption(ui, key, &mut server.security, &choices, resp.rect.height(), &pass.t);
-    });
+        encryption(ui, key, &mut server.security, &choices, resp.rect.height(), &pass.t, hebrew);
+    };
+    if hebrew {
+        // Mirror the controls, not the server hostnames or port digits themselves.
+        ui.allocate_ui_with_layout(vec2(ui.available_width().max(0.0), 32.0), server_row_layout(true), draw);
+    } else {
+        // Preserve the existing English row geometry.
+        ui.horizontal(draw);
+    }
+}
+
+fn server_row_layout(hebrew: bool) -> Layout {
+    if hebrew { Layout::right_to_left(Align::Center) } else { Layout::left_to_right(Align::Center) }
+}
+
+fn encryption_corners(index: usize, count: usize, hebrew: bool) -> (u8, u8) {
+    let first = if index == 0 { 4 } else { 0 };
+    let last = if index + 1 == count { 4 } else { 0 };
+    if hebrew { (last, first) } else { (first, last) }
 }
 
 /// How the connection to a server is encrypted: a choice as buttons joined in a row, as tall as
 /// the fields beside them.
-fn encryption(ui: &mut Ui, key: &'static str, value: &mut Security, choices: &[(Security, &str)], height: f32, t: &Tokens) {
+fn encryption(ui: &mut Ui, key: &'static str, value: &mut Security, choices: &[(Security, &str)], height: f32, t: &Tokens, hebrew: bool) {
     let gap = std::mem::replace(&mut ui.spacing_mut().item_spacing.x, 0.0);
     for (i, (choice, label)) in choices.iter().enumerate() {
         let (_, r) = ui.allocate_space(vec2(78.0, height));
         let resp = ui.interact(r, ui.scope_id().with((key, choice.code())), Sense::click());
         let on = *value == *choice;
         resp.widget_info(|| WidgetInfo::selected(Role::RadioButton, true, on, *label));
-        let (left, right) = (if i == 0 { 4 } else { 0 }, if i + 1 == choices.len() { 4 } else { 0 });
+        let (left, right) = encryption_corners(i, choices.len(), hebrew);
         let corners = egui::CornerRadius { nw: left, sw: left, ne: right, se: right };
         let fill = if on {
             t.checked
@@ -2710,6 +2728,10 @@ fn tile(ui: &mut Ui, kind: Kind, width: f32, t: &Tokens) -> Response {
     paint_clipped(ui.painter(), pos2(r.min.x + 46.0, r.min.y + 34.0), r.width() - 54.0, detail, regular(11.0), t.text_dim);
     resp
 }
+
+#[cfg(test)]
+#[path = "account_setup_rtl_tests.rs"]
+mod account_setup_rtl_tests;
 
 #[cfg(test)]
 mod delete_question_tests;
