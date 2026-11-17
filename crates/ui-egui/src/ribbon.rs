@@ -1900,30 +1900,34 @@ fn simplified(app: &mut MailApp, ui: &mut Ui, t: &Tokens, tab: &Tab, area: Rect)
         _ => 0.0,
     };
     let plan = plan(&buttons, &width, area.width());
-    let mut x = area.min.x;
+    // Physical ribbon placement follows the reading edge; command order is unchanged.
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let mut x = if rtl { area.max.x } else { area.min.x };
     let mut before: Option<u8> = None;
     for (i, labelled) in &plan.shown {
         let Some(b) = buttons.get(*i) else { continue };
         if let Some(section) = before {
             if section == b.item.section {
-                x += BUTTON_GAP;
+                x += if rtl { -BUTTON_GAP } else { BUTTON_GAP };
             } else {
                 // A rule between two stretches of the row.
-                let rule = (x + RULE_GAP / 2.0).floor() + 0.5;
+                let rule = (x + if rtl { -RULE_GAP / 2.0 } else { RULE_GAP / 2.0 }).floor() + 0.5;
                 ui.painter().line_segment([pos2(rule, area.min.y), pos2(rule, area.max.y)], Stroke::new(1.0, t.border_strong));
-                x += RULE_GAP;
+                x += if rtl { -RULE_GAP } else { RULE_GAP };
             }
         }
         let w = width(*i, *labelled);
-        simple_button(app, ui, t, b, *labelled, Rect::from_min_size(pos2(x, area.min.y), vec2(w, area.height())));
-        x += w;
+        let button_x = if rtl { x - w } else { x };
+        simple_button(app, ui, t, b, *labelled, Rect::from_min_size(pos2(button_x, area.min.y), vec2(w, area.height())));
+        x += if rtl { -w } else { w };
         before = Some(b.item.section);
     }
     let more: Vec<&Button<'_>> = plan.more.iter().filter_map(|i| buttons.get(*i)).collect();
     ui.data_mut(|d| d.insert_temp(egui::Id::unique("ribbon_more"), more.iter().map(|b| b.item.key).collect::<Vec<&'static str>>()));
     if !more.is_empty() {
         // What didn't fit, behind `…` at the end of the row.
-        let rect = Rect::from_min_size(pos2(area.max.x - MORE_W, area.min.y), vec2(MORE_W, area.height()));
+        let more_x = if rtl { area.min.x } else { area.max.x - MORE_W };
+        let rect = Rect::from_min_size(pos2(more_x, area.min.y), vec2(MORE_W, area.height()));
         let resp = ui.interact(rect, ui.scope_id().with("ribbon_more"), Sense::click());
         app.hit.add("ribbonMore", 0, rect);
         bg(ui, rect, &resp, false, t);
@@ -1940,10 +1944,15 @@ fn simplified(app: &mut MailApp, ui: &mut Ui, t: &Tokens, tab: &Tab, area: Rect)
                 before = Some(b.item.section);
             }
         });
-    } else if !tab.note.is_empty() && area.max.x - x - 16.0 >= NOTE_MIN {
-        // Room is left: the tab's line of explanation, as much of it as fits (all of it in the tooltip).
-        let rect = Rect::from_min_max(pos2(x + 16.0, area.min.y), area.max);
-        paint_clipped(ui.painter(), pos2(rect.min.x, rect.center().y), rect.width(), tl!(tab.note), regular(12.0), t.text_dim);
+    } else if !tab.note.is_empty() && (if rtl { x - area.min.x } else { area.max.x - x }) - 16.0 >= NOTE_MIN {
+        // Explanation uses the same reading edge as commands and is clipped to free space.
+        let rect =
+            if rtl { Rect::from_min_max(area.min, pos2(x - 16.0, area.max.y)) } else { Rect::from_min_max(pos2(x + 16.0, area.min.y), area.max) };
+        if rtl {
+            ui.painter().with_clip_rect(rect).text(pos2(rect.max.x, rect.center().y), Align2::RIGHT_CENTER, tl!(tab.note), regular(12.0), t.text_dim);
+        } else {
+            paint_clipped(ui.painter(), pos2(rect.min.x, rect.center().y), rect.width(), tl!(tab.note), regular(12.0), t.text_dim);
+        }
         ui.interact(rect, ui.scope_id().with("ribbon_note"), Sense::hover()).on_hover_text(tl!(tab.note));
     }
 }
@@ -2178,7 +2187,9 @@ fn strip(app: &mut MailApp, ui: &mut Ui, tabs: &[&'static str], current: &str, i
         .show_separator_line(false)
         .frame(egui::Frame::NONE.fill(t.tab_strip).inner_margin(egui::Margin { left: 3, right: 10, top: 0, bottom: 0 }))
         .show(ui, |ui| {
-            ui.horizontal_centered(|ui| {
+            let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+            let tabs_layout = if rtl { egui::Layout::right_to_left(egui::Align::Center) } else { egui::Layout::left_to_right(egui::Align::Center) };
+            ui.with_layout(tabs_layout, |ui| {
                 ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
                 for tab in tabs {
                     let shown = tl!(tab);
@@ -2212,7 +2223,9 @@ fn strip(app: &mut MailApp, ui: &mut Ui, tabs: &[&'static str], current: &str, i
                 let label = tl!("Search commands");
                 let shown = fit::search(ui.available_width(), widgets::icon_text_width(ui, label));
                 if shown != fit::Search::Hidden {
-                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                    let search_layout =
+                        if rtl { egui::Layout::left_to_right(egui::Align::Center) } else { egui::Layout::right_to_left(egui::Align::Center) };
+                    ui.with_layout(search_layout, |ui| {
                         let resp = match shown {
                             fit::Search::Named => widgets::icon_text_button(ui, "search", label, true),
                             _ => widgets::icon_button(ui, "search", label, 16.0, true),
@@ -2238,14 +2251,24 @@ fn band(app: &mut MailApp, ui: &mut Ui, tab: &Tab, id: egui::Id) {
         Mode::Classic => (CONTENT_H + LABEL_H + 10.0, 4.0),
         Mode::Simplified => (BAND_H, (BAND_H - BUTTON_H) / 2.0),
     };
-    let margin = egui::Margin { left: 8, right: (16.0 + MODE_W) as i8, top: (edge + TOP_GAP) as i8, bottom: (edge + SHEET_GAP) as i8 };
+    let rtl = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let margin = egui::Margin {
+        left: (if rtl { 16.0 + MODE_W } else { 8.0 }) as i8,
+        right: (if rtl { 8.0 } else { 16.0 + MODE_W }) as i8,
+        top: (edge + TOP_GAP) as i8,
+        bottom: (edge + SHEET_GAP) as i8,
+    };
     egui::Panel::top(id)
         .exact_size(height + TOP_GAP + SHEET_GAP)
         .show_separator_line(false)
         .frame(egui::Frame::NONE.fill(t.tab_strip).inner_margin(margin))
         .show(ui, |ui| {
             let area = ui.max_rect();
-            let sheet = Rect::from_min_max(pos2(area.min.x - 8.0, area.min.y - edge), pos2(area.max.x + 8.0 + MODE_W, area.max.y + edge));
+            let sheet = if rtl {
+                Rect::from_min_max(pos2(area.min.x - 8.0 - MODE_W, area.min.y - edge), pos2(area.max.x + 8.0, area.max.y + edge))
+            } else {
+                Rect::from_min_max(pos2(area.min.x - 8.0, area.min.y - edge), pos2(area.max.x + 8.0 + MODE_W, area.max.y + edge))
+            };
             // In the dark the sheet stands out by itself; on a light window it needs its edge.
             let line = t.ribbon_edge;
             ui.painter().rect(sheet, 8.0, t.ribbon, line, egui::StrokeKind::Inside);
@@ -2253,7 +2276,8 @@ fn band(app: &mut MailApp, ui: &mut Ui, tab: &Tab, id: egui::Id) {
             match mode {
                 Mode::Classic => {
                     egui::ScrollArea::horizontal().scroll_bar_visibility(egui::scroll_area::ScrollBarVisibility::AlwaysHidden).show(ui, |ui| {
-                        ui.horizontal_top(|ui| {
+                        let layout = if rtl { egui::Layout::right_to_left(egui::Align::Min) } else { egui::Layout::left_to_right(egui::Align::Min) };
+                        ui.with_layout(layout, |ui| {
                             ui.spacing_mut().item_spacing = vec2(2.0, 2.0);
                             classic(app, ui, &t, tab, area.width());
                         });
@@ -2267,9 +2291,10 @@ fn band(app: &mut MailApp, ui: &mut Ui, tab: &Tab, id: egui::Id) {
             }
             // The layout button, at the right end of the sheet (at its foot in the classic layout).
             let side = MODE_W - 4.0;
+            let mode_x = if rtl { sheet.min.x + 4.0 + side / 2.0 } else { sheet.max.x - 4.0 - side / 2.0 };
             let centre = match mode {
-                Mode::Classic => pos2(sheet.max.x - 4.0 - side / 2.0, sheet.max.y - 4.0 - side / 2.0),
-                Mode::Simplified => pos2(sheet.max.x - 4.0 - side / 2.0, sheet.center().y),
+                Mode::Classic => pos2(mode_x, sheet.max.y - 4.0 - side / 2.0),
+                Mode::Simplified => pos2(mode_x, sheet.center().y),
             };
             let rect = Rect::from_center_size(centre, vec2(side, side));
             let resp = ui.interact(rect, ui.scope_id().with("ribbon_mode"), Sense::click());
