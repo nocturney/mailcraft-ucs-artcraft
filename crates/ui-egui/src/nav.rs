@@ -61,7 +61,9 @@ const ACCOUNT_DOT_ROOM: f32 = 16.0;
 /// the ribbon as well as the panes, so the window lays it out before the ribbon.
 pub fn module_bar(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    egui::Panel::left("modules").exact_size(RAIL_W).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(t.nav)).show(ui, |ui| {
+    // Keep navigation at the outer reading edge of the chosen interface language.
+    let modules = if crate::i18n::current() == crate::i18n::Lang::Hebrew { egui::Panel::right("modules") } else { egui::Panel::left("modules") };
+    modules.exact_size(RAIL_W).resizable(false).show_separator_line(false).frame(egui::Frame::NONE.fill(t.nav)).show(ui, |ui| {
         ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
         for m in Module::ALL {
             let (icon, id) = match m {
@@ -74,7 +76,8 @@ pub fn module_bar(app: &mut MailApp, ui: &mut Ui) {
             let active = app.session.view.module == m;
             if active {
                 // The module in view: a bar at the window's edge, and its icon in the accent.
-                let bar = Rect::from_min_size(pos2(r.min.x + 6.0, r.center().y - 16.0), vec2(2.0, 32.0));
+                let edge_x = if crate::i18n::current() == crate::i18n::Lang::Hebrew { r.max.x - 8.0 } else { r.min.x + 6.0 };
+                let bar = Rect::from_min_size(pos2(edge_x, r.center().y - 16.0), vec2(2.0, 32.0));
                 ui.painter().rect_filled(bar, 1.0, t.accent);
             } else if resp.hovered() {
                 ui.painter().rect_filled(r.shrink(6.0), 4.0, if resp.is_pointer_button_down_on() { t.pressed } else { t.hover });
@@ -727,7 +730,9 @@ fn pane_top(app: &mut MailApp, ui: &mut Ui, t: &Tokens) {
 /// brings it back, where the button that hid it was.
 pub fn folder_pane_strip(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    egui::Panel::left("folders_hidden").exact_size(STRIP_W).resizable(false).frame(egui::Frame::NONE.fill(t.canvas)).show(ui, |ui| {
+    let strip =
+        if crate::i18n::current() == crate::i18n::Lang::Hebrew { egui::Panel::right("folders_hidden") } else { egui::Panel::left("folders_hidden") };
+    strip.exact_size(STRIP_W).resizable(false).frame(egui::Frame::NONE.fill(t.canvas)).show(ui, |ui| {
         sheet(ui.painter(), ui.max_rect(), &t);
         ui.spacing_mut().item_spacing = vec2(0.0, 0.0);
         ui.add_space(4.0);
@@ -750,7 +755,8 @@ pub fn folder_pane_strip(app: &mut MailApp, ui: &mut Ui) {
 /// The folder pane: favourites, then every account's folders.
 pub fn folder_pane(app: &mut MailApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
-    let panel = egui::Panel::left("folders")
+    let panel = if crate::i18n::current() == crate::i18n::Lang::Hebrew { egui::Panel::right("folders") } else { egui::Panel::left("folders") };
+    let panel = panel
         .default_size(app.ui.folder_pane_width)
         .size_range(160.0..=420.0)
         .resizable(true)

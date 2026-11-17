@@ -141,12 +141,11 @@ pub fn show(app: &mut MailApp, ui: &mut Ui) {
             .show(ui, |ui| list(app, ui));
     } else {
         let max = (ui.available_width() - 260.0).max(260.0);
-        let shown = egui::Panel::left("message_list")
-            .default_size(app.ui.list_width.min(max))
-            .size_range(240.0..=max)
-            .resizable(true)
-            .frame(frame)
-            .show(ui, |ui| list(app, ui));
+        // Hebrew mirrors pane *placement*, not message content or addresses.
+        let list_panel =
+            if crate::i18n::current() == crate::i18n::Lang::Hebrew { egui::Panel::right("message_list") } else { egui::Panel::left("message_list") };
+        let shown =
+            list_panel.default_size(app.ui.list_width.min(max)).size_range(240.0..=max).resizable(true).frame(frame).show(ui, |ui| list(app, ui));
         app.ui.list_width = shown.response.rect.width();
     }
     egui::CentralPanel::default().frame(egui::Frame::NONE.fill(t.surface)).show(ui, |ui| {
