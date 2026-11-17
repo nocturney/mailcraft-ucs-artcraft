@@ -2480,16 +2480,30 @@ fn waiting_page(ui: &mut Ui, pass: &Pass, page_in_view: Page, text: &str, detail
 /// A page: the mail glyph in an accent circle beside the product's name, then what `add` lays
 /// out. It scrolls when the window is short, so the buttons under it stay in view.
 fn page(ui: &mut Ui, t: &Tokens, add: impl FnOnce(&mut Ui)) {
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
     body(ui, |ui| {
-        egui::Frame::NONE.inner_margin(Margin { left: PAD, right: 0, top: 6, bottom: 4 }).show(ui, |ui| {
+        let margin = if hebrew {
+            Margin { left: 0, right: PAD, top: 6, bottom: 4 }
+        } else {
+            Margin { left: PAD, right: 0, top: 6, bottom: 4 }
+        };
+        egui::Frame::NONE.inner_margin(margin).show(ui, |ui| {
             ui.spacing_mut().item_spacing = vec2(8.0, 6.0);
             let (r, _) = ui.allocate_exact_size(vec2(ui.available_width().max(0.0), 38.0), Sense::hover());
-            let center = pos2(r.min.x + 18.0, r.center().y);
+            let center = pos2(if hebrew { r.max.x - 18.0 } else { r.min.x + 18.0 }, r.center().y);
             ui.painter().circle_filled(center, 18.0, t.accent);
             icons::paint(ui.painter(), Rect::from_center_size(center, vec2(20.0, 20.0)), "mail", t.on_accent, t.on_accent);
-            ui.painter().text(pos2(r.min.x + 46.0, r.center().y), Align2::LEFT_CENTER, "MailCraft", semibold(17.0), t.text);
+            let name_x = if hebrew { r.max.x - 46.0 } else { r.min.x + 46.0 };
+            let name_anchor = if hebrew { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER };
+            ui.painter().text(pos2(name_x, r.center().y), name_anchor, "MailCraft", semibold(17.0), t.text);
             ui.add_space(10.0);
-            add(ui);
+            if hebrew {
+                // Keep pages top-to-bottom, but anchor their controls at the right.
+                // A horizontal RTL layout would put successive fields on one row.
+                ui.with_layout(Layout::top_down(Align::RIGHT), add);
+            } else {
+                add(ui);
+            }
         });
     });
 }
@@ -2515,6 +2529,8 @@ fn field(ui: &mut Ui, pass: &mut Pass, key: &'static str, label: &str, value: &m
     let edit = TextEdit::singleline(value)
         .id(field_id(("account", key)))
         .desired_width(f32::INFINITY)
+        // Addresses, host names and server identifiers stay LTR even in a Hebrew UI.
+        .align(Align2::LEFT_CENTER)
         .margin(FIELD_MARGIN)
         .char_limit(limit)
         .hint_text(hint.to_owned());
@@ -2591,7 +2607,13 @@ fn encryption(ui: &mut Ui, key: &'static str, value: &mut Security, choices: &[(
 
 /// What sits under a disclosure, set in from it.
 fn indented(ui: &mut Ui, add: impl FnOnce(&mut Ui)) {
-    egui::Frame::NONE.inner_margin(Margin { left: 20, right: 0, top: 0, bottom: 2 }).show(ui, add);
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let margin = if hebrew {
+        Margin { left: 0, right: 20, top: 0, bottom: 2 }
+    } else {
+        Margin { left: 20, right: 0, top: 0, bottom: 2 }
+    };
+    egui::Frame::NONE.inner_margin(margin).show(ui, add);
 }
 
 /// What went wrong, in red above the buttons, where it stays in view however long the page is.
@@ -2659,14 +2681,18 @@ fn disclosure(ui: &mut Ui, label: &str, open: &mut bool, t: &Tokens) {
     let (r, resp) = ui.allocate_exact_size(vec2(width, 24.0), Sense::click());
     resp.widget_info(|| WidgetInfo::labeled(Role::Button, true, label));
     let ink = if resp.hovered() || resp.has_focus() { t.accent } else { t.accent_text };
+    let hebrew = crate::i18n::current() == crate::i18n::Lang::Hebrew;
+    let icon_x = if hebrew { r.max.x - 6.0 } else { r.min.x + 6.0 };
     icons::paint(
         ui.painter(),
-        Rect::from_center_size(pos2(r.min.x + 6.0, r.center().y), vec2(12.0, 12.0)),
+        Rect::from_center_size(pos2(icon_x, r.center().y), vec2(12.0, 12.0)),
         if *open { "expanded" } else { "collapsed" },
         ink,
         ink,
     );
-    ui.painter().text(pos2(r.min.x + 18.0, r.center().y), Align2::LEFT_CENTER, label, regular(12.5), ink);
+    let label_x = if hebrew { r.max.x - 18.0 } else { r.min.x + 18.0 };
+    let anchor = if hebrew { Align2::RIGHT_CENTER } else { Align2::LEFT_CENTER };
+    ui.painter().text(pos2(label_x, r.center().y), anchor, label, regular(12.5), ink);
     if resp.on_hover_cursor(egui::CursorIcon::PointingHand).clicked() {
         *open = !*open;
     }
