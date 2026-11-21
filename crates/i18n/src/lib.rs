@@ -37,6 +37,10 @@ macro_rules! said {
 #[cfg(test)]
 mod chinese_tests;
 #[cfg(test)]
+mod czech_tests;
+#[cfg(test)]
+mod polish_tests;
+#[cfg(test)]
 mod said_tests;
 
 use std::collections::HashMap;
@@ -65,7 +69,12 @@ pub enum Lang {
     Italian,
     Dutch,
     Romanian,
+    Hebrew,
+    Hungarian,
+    Polish,
+    Czech,
     ChineseSimplified,
+    Georgian,
     /// Accented look-alikes of the English text, for finding text that skips translation. Set by
     /// command only; never offered.
     Pseudo,
@@ -73,8 +82,22 @@ pub enum Lang {
 
 impl Lang {
     /// Every language there is a name for (whether or not it has a catalogue yet).
-    pub const ALL: [Lang; 9] =
-        [Lang::English, Lang::French, Lang::German, Lang::Spanish, Lang::Italian, Lang::Dutch, Lang::Romanian, Lang::ChineseSimplified, Lang::Pseudo];
+    pub const ALL: [Lang; 14] = [
+        Lang::English,
+        Lang::French,
+        Lang::German,
+        Lang::Spanish,
+        Lang::Italian,
+        Lang::Dutch,
+        Lang::Romanian,
+        Lang::Hebrew,
+        Lang::Hungarian,
+        Lang::Polish,
+        Lang::Czech,
+        Lang::ChineseSimplified,
+        Lang::Georgian,
+        Lang::Pseudo,
+    ];
 
     /// Its code: `en`, `fr`, `pseudo` (the settings' and the commands' value; the `.po` file's name).
     pub fn code(self) -> &'static str {
@@ -86,7 +109,12 @@ impl Lang {
             Lang::Italian => "it",
             Lang::Dutch => "nl",
             Lang::Romanian => "ro",
+            Lang::Hebrew => "he",
+            Lang::Hungarian => "hu",
+            Lang::Polish => "pl",
+            Lang::Czech => "cs",
             Lang::ChineseSimplified => "zh_CN",
+            Lang::Georgian => "ka",
             Lang::Pseudo => "pseudo",
         }
     }
@@ -124,6 +152,11 @@ impl Lang {
             "it" => Some(Lang::Italian),
             "nl" => Some(Lang::Dutch),
             "ro" => Some(Lang::Romanian),
+            "he" | "iw" => Some(Lang::Hebrew),
+            "hu" => Some(Lang::Hungarian),
+            "pl" => Some(Lang::Polish),
+            "cs" => Some(Lang::Czech),
+            "ka" => Some(Lang::Georgian),
             _ => None,
         }
     }
@@ -138,14 +171,33 @@ impl Lang {
             Lang::Italian => "Italiano",
             Lang::Dutch => "Nederlands",
             Lang::Romanian => "Română",
+            Lang::Hebrew => "עברית",
+            Lang::Hungarian => "Magyar",
+            Lang::Polish => "Polski",
+            Lang::Czech => "Čeština",
             Lang::ChineseSimplified => "简体中文",
+            Lang::Georgian => "ქართული",
             Lang::Pseudo => "Pseudo",
         }
     }
 
     /// No native speaker has reviewed its main screens yet: named "(preview)" where it is chosen.
     pub fn preview(self) -> bool {
-        matches!(self, Lang::French | Lang::German | Lang::Spanish | Lang::Italian | Lang::Dutch | Lang::Romanian | Lang::ChineseSimplified)
+        matches!(
+            self,
+            Lang::French
+                | Lang::German
+                | Lang::Spanish
+                | Lang::Italian
+                | Lang::Dutch
+                | Lang::Romanian
+                | Lang::Hebrew
+                | Lang::Hungarian
+                | Lang::Polish
+                | Lang::Czech
+                | Lang::ChineseSimplified
+                | Lang::Georgian
+        )
     }
 
     /// Its name as the language picker shows it: in its own language, and, while it is a preview,
@@ -400,6 +452,9 @@ mod tests {
         assert_eq!(Lang::from_code("es_MX.UTF-8"), Some(Lang::Spanish));
         assert_eq!(Lang::from_code("it-CH"), Some(Lang::Italian));
         assert_eq!(Lang::from_code("nl-NL"), Some(Lang::Dutch));
+        assert_eq!(Lang::from_code("he-IL.UTF-8"), Some(Lang::Hebrew));
+        assert_eq!(Lang::from_code("iw_IL"), Some(Lang::Hebrew));
+        assert_eq!(Lang::Hebrew.code(), "he");
         let fr = if Lang::French.has_catalogue() { Lang::French } else { Lang::English };
         assert_eq!(Lang::from_pref("auto", Some("fr-BE")), fr);
         assert_eq!(Lang::from_pref("fr", None), fr);
@@ -438,10 +493,15 @@ mod tests {
             "Italiano (anteprima)",
             "Nederlands (voorbeeld)",
             "Română (previzualizare)",
+            "עברית (תצוגה מקדימה)",
+            "Magyar (előzetes)",
+            "Polski (wersja zapoznawcza)",
+            "Čeština (náhled)",
         ];
         if !cfg!(target_arch = "wasm32") {
             expected.push("简体中文（预览）");
         }
+        expected.push("ქართული (საცდელი)");
         assert_eq!(names, expected);
         assert_eq!(Lang::from_pref("auto", Some("de_AT.UTF-8")), Lang::German);
         assert_eq!(Lang::from_pref("auto", Some("es-MX")), Lang::Spanish);
@@ -451,6 +511,14 @@ mod tests {
         assert_eq!(Lang::from_pref("nl", None), Lang::Dutch);
         assert_eq!(Lang::from_pref("auto", Some("ro_RO.UTF-8")), Lang::Romanian);
         assert_eq!(Lang::from_pref("ro", None), Lang::Romanian);
+        assert_eq!(Lang::from_pref("he", None), Lang::Hebrew);
+        assert_eq!(Lang::from_pref("auto", Some("he_IL")), Lang::Hebrew);
+        assert_eq!(Lang::Hebrew.t("Inbox"), "דואר נכנס");
+        assert_eq!(Lang::Hebrew.folder("Archive"), "ארכיון");
+        assert_eq!(Lang::from_pref("auto", Some("hu_HU.UTF-8")), Lang::Hungarian);
+        assert_eq!(Lang::from_pref("hu", None), Lang::Hungarian);
+        assert_eq!(Lang::from_pref("auto", Some("ka_GE.UTF-8")), Lang::Georgian);
+        assert_eq!(Lang::from_pref("ka", None), Lang::Georgian);
     }
 
     #[test]

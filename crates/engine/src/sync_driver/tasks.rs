@@ -23,6 +23,10 @@ pub struct TasksDriver {
     /// When each account's to-dos were last asked for, the failures since the last answer, and
     /// the changes waiting.
     pub book: JobBook,
+    /// The time as the front end's last look read it (milliseconds): a job's answer is taken in
+    /// within a frame of it, so a job that came to nothing waits from when it ended, however long
+    /// it ran (#661).
+    pub clock: f64,
     /// Where each account's permission for to-dos stands.
     pub perm: HashMap<Id, Permission>,
     /// The owner allowed the to-dos on Microsoft's page: how many refusals are still taken for
@@ -82,6 +86,7 @@ impl TasksDriver {
 
     /// Account removal: nothing of these accounts' permission is kept.
     pub fn forget_accounts(&mut self, gone: &std::collections::HashSet<Id>) {
+        self.book.forget_accounts(gone);
         self.perm.retain(|account, _| !gone.contains(account));
         self.settling.retain(|account, _| !gone.contains(account));
     }
@@ -90,8 +95,8 @@ impl TasksDriver {
 /// What the host says of itself when it asks whether the to-dos are due.
 #[derive(Clone, Copy, Debug)]
 pub struct TasksFacts {
-    /// Automatic checking is on and the host has a way to reach the to-dos' server.
-    pub enabled: bool,
+    /// The host has a way to reach the to-dos' server.
+    pub reachable: bool,
     /// A to-do job is in flight already.
     pub running: bool,
     /// What else is at work.
@@ -128,9 +133,11 @@ impl Session {
     pub fn tasks_due(&mut self, facts: &TasksFacts, refresh: impl Fn(Id) -> Option<String>, now: f64) -> Vec<Id> {
         let mut due = Vec::new();
         // One thing at a time: the calendar's job, a Send/Receive and a sign-in go first.
-        if !facts.enabled || facts.running || facts.busy.blocks(Start::Tasks) {
+        if !facts.reachable || !self.driver.auto_sync() || facts.running || facts.busy.blocks(Start::Tasks) {
             return due;
         }
+        // Working offline: the books go on (a change waits its quiet time as ever), nothing is started.
+        let offline = self.prefs.offline;
         for account in tasks_remote::task_accounts(&self.mailbox) {
             if self.tasks_blocked(account, refresh(account).as_deref()) {
                 continue;
@@ -140,7 +147,7 @@ impl Session {
                 self.driver.tasks.perm.remove(&account);
             }
             let ready = self.tasks_ready(account);
-            if self.driver.tasks.book.due(&Pacing::TASKS, account, ready, now) {
+            if self.driver.tasks.book.due(&Pacing::TASKS, account, ready, now) && !offline {
                 due.push(account);
             }
         }
@@ -158,7 +165,8 @@ impl Session {
         self.driver.tasks.book.started(account, now);
     }
 
-    /// A to-do job for `account` answered. `started`: when it began; `given`: the
+    /// A to-do job for `account` answered. `started`: when it began (a failure waits from when
+    /// the answer was read, [`TasksDriver::clock`], never from before that); `given`: the
     /// [`fingerprint`](super::fingerprint) of the refresh token it was given; `ran_for`: the
     /// account as the job had it; `lang`: the words a refusal that is kept is said in. Say what went wrong, in order.
     pub fn tasks_answered(
@@ -177,6 +185,7 @@ impl Session {
         }
         let mut errors = Vec::new();
         let tasks = &mut self.driver.tasks;
+        let failed_at = tasks.clock.max(started);
         let standing = super::Standing {
             consent_needed: came.consent_needed,
             denied: came.denied,
@@ -186,7 +195,7 @@ impl Session {
         let said = || said!("This account may not use its to-dos through Microsoft Graph").in_lang(lang);
         let read = came.download.is_some() || came.uploaded.is_some();
         let noted =
-            super::standing_in("tasks", &mut tasks.book, &mut tasks.perm, &mut tasks.settling, account, (started, given), standing, (said, read));
+            super::standing_in("tasks", &mut tasks.book, &mut tasks.perm, &mut tasks.settling, account, (failed_at, given), standing, (said, read));
         let mut worked = false;
         if let Some(uploaded) = came.uploaded {
             // (Taken in for the account as the job had it, never relabelled with what is here now.)
@@ -210,7 +219,7 @@ impl Session {
         } else if worked && errors.is_empty() && !came.job_errors {
             self.driver.tasks.book.worked(account);
         } else if !came.consent_needed && !came.sign_in_refused {
-            self.driver.tasks.book.failed(account, started);
+            self.driver.tasks.book.failed(account, failed_at);
         }
         errors
     }

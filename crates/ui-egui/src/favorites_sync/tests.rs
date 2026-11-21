@@ -15,6 +15,7 @@ use serde_json::json;
 
 use super::*;
 use crate::{GraphRequest, Services, SignInRequest};
+use egui_kittest::kittest::Queryable;
 
 /// Wednesday 2026-10-14 16:00 UTC.
 const NOW: i64 = 1_791_993_600;
@@ -450,7 +451,7 @@ fn window(rig: Rig) -> (egui_kittest::Harness<'static, MailApp>, Arc<Mutex<Host>
     let host = rig.host.clone();
     let mut app = rig.app;
     // (The harness looks at the server by the real clock: nothing is due there but the start.)
-    app.auto_sync = false;
+    app.session.driver.set_auto_sync(false);
     let mut harness =
         egui_kittest::Harness::builder().with_accessibility_check(false).allow_missing_glyphs().with_size(egui::vec2(1280.0, 800.0)).build_ui_state(
             |ui, app: &mut MailApp| {
@@ -551,6 +552,8 @@ fn the_offer_is_one_line_under_the_heading_and_in_the_options() {
     rig.look(0.0);
     let (mut harness, host, [account, ..]) = window(rig);
     harness.state_mut().execute("ui.backstage", json!({"value": true, "page": "options"})).unwrap();
+    harness.run_steps(3);
+    harness.get_by_label("Connect Outlook's Favorites").scroll_to_me();
     harness.run_steps(3);
     let switch = at(&harness, "favoritesOption", 0).expect("the switch");
     let connect = at(&harness, "favoritesConnect", account).expect("the offer");
@@ -788,6 +791,8 @@ fn file_options_offers_an_organisations_account_the_same_connection_as_any_other
     let (mut harness, host, [account, ..]) = window(rig);
     let at = |h: &egui_kittest::Harness<'static, MailApp>, kind: &str, id: Id| h.state().hit.rect(kind, id);
     harness.state_mut().execute("ui.backstage", json!({"value": true, "page": "options"})).unwrap();
+    harness.run_steps(3);
+    harness.get_by_label("Connect Outlook's Favorites").scroll_to_me();
     harness.run_steps(3);
     let switch = at(&harness, "favoritesOption", 0).expect("the switch");
     // No ways to choose from: the switch, and the offer to connect them.

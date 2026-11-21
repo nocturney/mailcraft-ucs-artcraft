@@ -12,7 +12,7 @@ use std::collections::{HashMap, HashSet};
 
 use mailcraft_i18n::Text;
 use mailcraft_model::Id;
-use mailcraft_model::remote_rules::{RulesDownload, RulesUploaded};
+use mailcraft_model::remote_rules::{RuleResult, RulesDownload, RulesUploaded};
 
 use super::{Busy, JobBook, Pacing, Permission, SETTLING_TRIES, Start};
 use crate::Session;
@@ -24,6 +24,10 @@ pub struct RulesDriver {
     /// When each account's rules were last asked for, the failures since the last answer, and
     /// the changes waiting.
     pub book: JobBook,
+    /// The time as the front end's last look read it (milliseconds): a job's answer is taken in
+    /// within a frame of it, so a job that came to nothing waits from when it ended, however long
+    /// it ran (#661).
+    pub clock: f64,
     /// Where each account's permission to change its rules on the server stands.
     pub perm: HashMap<Id, Permission>,
     /// The owner allowed changing the rules on Microsoft's page: how many refusals are still
@@ -88,6 +92,7 @@ impl RulesDriver {
 
     /// Account removal: nothing of these accounts' permission or rules is kept.
     pub fn forget_accounts(&mut self, gone: &HashSet<Id>) {
+        self.book.forget_accounts(gone);
         self.perm.retain(|account, _| !gone.contains(account));
         self.settling.retain(|account, _| !gone.contains(account));
         self.read.retain(|account| !gone.contains(account));
@@ -98,8 +103,8 @@ impl RulesDriver {
 /// What the host says of itself when it asks whether the rules are due.
 #[derive(Clone, Copy, Debug)]
 pub struct RulesFacts {
-    /// Automatic checking is on and the host has a way to reach the rules' server.
-    pub enabled: bool,
+    /// The host has a way to reach the rules' server.
+    pub reachable: bool,
     /// A rules job is in flight already.
     pub running: bool,
     /// What else is at work.
@@ -156,9 +161,11 @@ impl Session {
         let mut due = Vec::new();
         // One thing at a time: the calendar's job, the to-dos', the automatic replies', a
         // Send/Receive and a sign-in go first (the jobs renew the same sign-in).
-        if !facts.enabled || facts.running || facts.busy.blocks(Start::Rules) {
+        if !facts.reachable || !self.driver.auto_sync() || facts.running || facts.busy.blocks(Start::Rules) {
             return due;
         }
+        // Working offline: the books go on, nothing is started.
+        let offline = self.prefs.offline;
         for account in rules_remote::rule_accounts(&self.mailbox) {
             if self.rules_signed_out(account, refresh(account).as_deref()) {
                 continue;
@@ -172,7 +179,7 @@ impl Session {
             let book = &mut self.driver.rules.book;
             let pushes = book.quiet_over(&Pacing::RULES, account, ready, now);
             let asked = book.checked(account);
-            if !(pushes || asked.is_none_or(|at| now - at >= Pacing::RULES.refresh_ms)) || !book.patient(&Pacing::RULES, account, now) {
+            if !(pushes || asked.is_none_or(|at| now - at >= Pacing::RULES.refresh_ms)) || !book.patient(&Pacing::RULES, account, now) || offline {
                 continue;
             }
             due.push(RulesPlan { account, writes });
@@ -191,7 +198,8 @@ impl Session {
         self.driver.rules.book.started(account, now);
     }
 
-    /// A rules job for `account` answered. `started`: when it began; `given`: the
+    /// A rules job for `account` answered. `started`: when it began (a failure waits from when
+    /// the answer was read, [`RulesDriver::clock`], never from before that); `given`: the
     /// [`fingerprint`](super::fingerprint) of the refresh token it was given; `lang`: the words a
     /// refusal that is kept is said in. Say what went wrong, in order.
     pub fn rules_answered(&mut self, account: Id, started: f64, given: u64, lang: mailcraft_i18n::Lang, came: &RulesCame<'_>) -> Vec<Text> {
@@ -202,6 +210,7 @@ impl Session {
         }
         let mut errors = Vec::new();
         let rules = &mut self.driver.rules;
+        let failed_at = rules.clock.max(started);
         let standing = super::Standing {
             consent_needed: came.consent_needed,
             denied: came.denied,
@@ -215,7 +224,7 @@ impl Session {
             &mut rules.perm,
             &mut rules.settling,
             account,
-            (started, given),
+            (failed_at, given),
             standing,
             (said, came.uploaded.is_some()),
         );
@@ -245,12 +254,19 @@ impl Session {
                 Err(e) => errors.push(said!("The rules on the server couldn't be taken in: {error}", error = e.to_string())),
             }
         }
+        // A change the server couldn't take now (busy, or changed there meanwhile) goes again after
+        // the wait, as a job that came to nothing does (#661).
+        if came.uploaded.is_some_and(|u| u.outcomes.iter().any(|o| o.result == RuleResult::Failed)) {
+            worked = false;
+        }
         if noted {
             // (A failure is noted for this answer already: a success doesn't undo it.)
         } else if worked && errors.is_empty() && !came.job_errors {
             self.driver.rules.book.forget_failures(account);
-        } else if !came.consent_needed && !came.sign_in_refused && !came.unreadable {
-            self.driver.rules.book.failed(account, started);
+        } else if !came.consent_needed && !came.sign_in_refused && (!came.unreadable || came.uploaded.is_some()) {
+            // (And so is a change that couldn't go when the rules then couldn't be read: what
+            // waits goes again after the wait, not at the next look, #661.)
+            self.driver.rules.book.failed(account, failed_at);
         }
         errors
     }

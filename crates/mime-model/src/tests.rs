@@ -59,7 +59,8 @@ fn expected(m: &Message, opts: &WriteOptions) -> Message {
         importance: m.importance,
         categories: m.categories.clone(),
         answered: m.answered,
-        headers: m.headers.clone(),
+        headers: mailcraft_model::headers::split(m.all_headers()).0,
+        header_block: mailcraft_model::headers::split(m.all_headers()).1,
         ..Message::default()
     }
 }
@@ -324,7 +325,7 @@ fn a_foreign_message_survives_reading_writing_and_reading() {
     assert_eq!(first.body.text, "La réunion est à 10h.");
     assert_eq!(first.body.html.as_deref(), Some("<p>La réunion est à <b>10h</b>.</p>"));
     assert_eq!(first.attachments[0].name, "ordre du jour été.pdf");
-    assert_eq!((first.importance, first.read, first.categories.len(), first.headers.len()), (Importance::High, true, 2, 1));
+    assert_eq!((first.importance, first.read, first.categories.len(), first.all_headers().len()), (Importance::High, true, 2, 1));
     let opts = WriteOptions { include_bcc: true, offset_minutes: 120 };
     let second = parse(&write(&first, &opts));
     assert_eq!(second, first);
@@ -519,9 +520,11 @@ fn message() -> impl Strategy<Value = Message> {
             flag,
             importance,
             read_receipt: false,
+            reaction: false,
             categories,
             answered,
             headers,
+            header_block: Default::default(),
             fresh_stamps: false,
             id: 7,
             account: 3,
@@ -533,12 +536,14 @@ fn message() -> impl Strategy<Value = Message> {
             warnings_dismissed: vec!["external".into()],
             forwarded: true,
             flag_due: Some(1),
+            follow_up: None,
             synced: Some(mailcraft_model::sync::RemoteFlags { uid: 11, read: true, ..Default::default() }),
             not_downloaded: 62_914_560,
             gmail_category: Some(mailcraft_model::GmailCategory::Social),
             gmail_synced: Some(mailcraft_model::GmailCategory::Updates),
             gmail_refusals: 0,
             gmail_id: 42,
+            gmail_labels: vec!["Not/Carried".into()],
             server: Some(mailcraft_model::sync::ServerMessage { id: "AAMkAGI2-not-carried".into(), ..Default::default() }),
             unfetched: false,
             refetch: false,
@@ -550,7 +555,9 @@ fn message() -> impl Strategy<Value = Message> {
             incomplete: false,
             server_draft: None,
             held: String::new(),
+            send_at: None,
             sending: false,
+            sent_here: false,
             answers: None,
             kept: None,
             original: None,
@@ -784,4 +791,29 @@ fn exchanges_direction_is_kept_past_the_header_cap() {
     assert_eq!(words(&parse(flood.as_bytes())).len(), MAX_AUTH_AS);
     let long = format!("{DIRECTIONALITY}: Incoming{}x\r\n\r\n", " ".repeat(10_000));
     assert_ne!(words(&parse(long.as_bytes()))[0].trim(), "Incoming");
+}
+
+/// A reaction (#1544) goes out with its part marked, and what is read back is an ordinary message
+/// whose text is the emoji: the mark is never read into the model, so mail that comes in is not
+/// taken for a reaction.
+#[test]
+fn a_reaction_is_written_marked_and_read_back_as_plain_text() {
+    let m = Message {
+        from: a("", "ada@example.org"),
+        to: vec![a("", "bo@example.org")],
+        subject: "RE: Plans".into(),
+        in_reply_to: "plans@example.org".into(),
+        body: Body { text: "\u{1F44D}".into(), html: None },
+        reaction: true,
+        ..Default::default()
+    };
+    let bytes = write(&m, &WriteOptions::default());
+    let text = String::from_utf8(bytes.clone()).unwrap();
+    assert_eq!(text.matches("Content-Disposition: reaction").count(), 1, "{text}");
+    let back = parse(&bytes);
+    assert_eq!(back.body.text, "\u{1F44D}");
+    assert!(back.attachments.is_empty());
+    assert!(!back.reaction);
+    // Not marked, not written as one.
+    assert!(!String::from_utf8(write(&Message { reaction: false, ..m }, &WriteOptions::default())).unwrap().contains("reaction"));
 }
